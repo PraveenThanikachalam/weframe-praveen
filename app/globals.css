@@ -2,26 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.pattern {
+    background-image: linear-gradient(rgba(1, 15, 19, 0.997) 2px, transparent 4px), linear-gradient(to right, rgb(2, 16, 16) 2px,  #020C0D 2px);
+    background-size: 80px 80px;
+    
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.glow {
+    text-shadow: 0px 0px 15px white;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+button {
+    z-index: 20;
+}
+
+
+
+.line {
+    box-shadow: -0px -100px 500px 300px rgba(111, 241, 255, 0.477);
+
+    background-color: rgba(111, 241, 255, 0.697);
+}
+
+.footer {
+    background-color: #031416;
+}
+
+.navbar {
+    background-color: #020C0D;
+    backdrop-filter: blur(32px);
 }
