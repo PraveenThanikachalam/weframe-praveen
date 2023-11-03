@@ -3,9 +3,9 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div className='w-full navbar flex items-center justify-between text-white p-6'>
+    <div className='w-full navbar flex items-center justify-between text-white p-10'>
       <div>
-            <p>logo</p>
+            <img src="/assets/logo.svg" alt="" />
       </div>
       <nav >
         <ul className='gap-16 flex text-sm font-medium items-center justify-center'>

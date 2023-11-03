@@ -2,14 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-.pattern {
-    background-image: linear-gradient(rgba(1, 15, 19, 0.997) 2px, transparent 4px), linear-gradient(to right, rgb(2, 16, 16) 2px,  #020C0D 2px);
-    background-size: 80px 80px;
-    
+.sec1{
+    background-image: url('/assets/matrix.svg');
+    height: 115vh;
+    background-size: cover;
+    background-position: bottom;
 }
+
 
 .glow {
     text-shadow: 0px 0px 15px white;
+}
+
+body{
+    background-color:#020C0D ;
 }
 
 button {
@@ -31,4 +37,10 @@ button {
 .navbar {
     background-color: #020C0D;
     backdrop-filter: blur(32px);
+}
+
+.serviceCard{
+    background-image: url('/assets/services/union.svg');
+    background-size: cover;
+    background-position: center;
 }

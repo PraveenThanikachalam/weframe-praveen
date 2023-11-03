@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className='footer w-full h-96 p-10 flex flex-col items-center justify-center text-white '>
         <div className='w-[90%] flex items-center justify-end'>
-            <div className='flex gap-8 font-light'>
+            <div className='flex gap-8 font-light text-gray-300'>
                 <ul className='flex flex-col gap-8'>
                     <li>Jamstack</li>
                     <li>Headless Commerce</li>
