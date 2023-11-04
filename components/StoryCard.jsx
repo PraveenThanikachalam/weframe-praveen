@@ -13,9 +13,9 @@ const StoryCard = () => {
         </div>
         <p className='text-sm text-gray-300'>Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients. Wave farewell to the past and step confidently into the future with Jamstack. Beyond websites, we're here to bring your narrative to life through our expertise. Get an instant quote for your project</p>
         <div className='flex mt-5 items-center justify-between w-full'>
-            <div className='flex gap-3'>
-                <div className='w-12 h-12 rounded-full border border-white'></div>
-                <div className='w-12 h-12 rounded-full border border-white'></div>
+            <div className='flex gap-3 text-white'>
+                <div className='w-12 h-12 rounded-full border flex items-center justify-center border-white'><i class="ri-arrow-left-line"></i></div>
+                <div className='w-12 h-12 rounded-full border flex items-center justify-center border-white'><i class="ri-arrow-right-line"></i></div>
             </div>
             <button className='w-36 rounded-full px-4 py-3 bg-white  font-medium'>Read</button>
         </div>

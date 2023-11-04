@@ -14,11 +14,11 @@ export default function Home() {
   return (
     <main>
 
-      <div className='pattern sec1   text-center text-white w-full flex flex-col items-center justify-end '>
+      <div className='pattern sec1  z-30 text-center text-white w-full flex flex-col items-center justify-end '>
 
         <div className='overlay w-full h-[85%] flex flex-col relative items-center justify-between '>
           <img src="/assets/glow-beam-part1.png" className='absolute opacity-50  w-full h-full object-bottom' alt="" />
-          <div className='w-[60%]  z-40 flex flex-col items-center justify-center'>
+          <div className='w-[60%] z-30  flex flex-col items-center justify-center'>
             <h1 className='text-7xl font-extrabold'>Jamstack & Headless <br /> Commerce Agency</h1>
             <div className='w-[50%]'>
               <p className='text-base font-light my-7 text-gray-300'>We recognize the demand for high-speed, secure, and easily scalable websites. Leveraging the power of Jamstack, we deliver an exceptional web development experience tailored to your specific requirements, Get an instant quote for your project.</p>
@@ -29,7 +29,7 @@ export default function Home() {
               <button className='px-5 w-48 py-3 font-medium text-white glow border  bg-transparent rounded-full'>Case Studies</button>
             </div>
           </div>
-          <div className='w-full z-40  flex flex-col mt-6 items-center justify-center '>
+          <div className='w-full z-30  flex flex-col mt-6 items-center justify-center '>
             <p className='mb-8 text-md font-medium'>Trusted by</p>
             <div className='flex gap-28 mb-10'>
               <img src="/assets/companies/Ownerpreneur.svg" alt="" />
@@ -129,9 +129,9 @@ export default function Home() {
           <div>
             <h1 className='text-4xl text-white font-bold'>Hear from Clients</h1>
           </div>
-          <div className='flex gap-3'>
-            <div className='w-12 h-12 rounded-full border border-white'></div>
-            <div className='w-12 h-12 rounded-full border border-white'></div>
+          <div className='flex gap-3 text-white'>
+            <div className='w-12 h-12 rounded-full flex items-center justify-center border border-white'><i class="ri-arrow-left-line"></i></div>
+            <div className='w-12 h-12 rounded-full flex items-center justify-center border border-white'><i class="ri-arrow-right-line"></i></div>
           </div>
         </div>
 
@@ -159,7 +159,7 @@ export default function Home() {
                 </div>
               </div>
               <div>
-                <p className='absolute top-6 right-6 text-white text-xs font-bold'>View Project</p>
+                <p className='absolute top-6 right-6 text-white text-xs font-bold'>View Project <i class="ri-arrow-right-line"></i> </p>
               </div>
             </div>
             <div className='w-[700px] h-96 relative flex items-center justify-center rounded-xl'>
@@ -183,7 +183,7 @@ export default function Home() {
                 </div>
               </div>
               <div>
-                <p className='absolute top-6 right-6 text-white text-xs font-bold'>View Project</p>
+                <p className='absolute z-20 top-6 right-6 text-white text-xs font-bold'>View Project <i class="ri-arrow-right-line"></i></p>
               </div>
             </div>
             <div className='w-[700px] h-96 relative flex items-center justify-center rounded-xl'>
@@ -204,7 +204,7 @@ export default function Home() {
 
               </div>
               <div>
-                <p className='absolute top-6 right-6 text-white text-xs font-bold'>View Project</p>
+                <p className='absolute z-20 top-6 right-6 text-white text-xs font-bold'>View Project <i class="ri-arrow-right-line"></i></p>
               </div>
             </div>
 
