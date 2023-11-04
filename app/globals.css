@@ -4,7 +4,6 @@
 
 .sec1{
     background-image: url('/assets/matrix.svg');
-    height: 115vh;
     background-size: cover;
     background-position: bottom;
 }
@@ -26,6 +25,11 @@ button {
     z-index: 20;
 }
 
+Image{
+    width: auto ;
+    height: auto;
+}
+
 
 
 .line {
@@ -43,8 +47,27 @@ button {
     backdrop-filter: blur(32px);
 }
 
-.serviceCard{
+/* .serviceCard{
     background-image: url('/assets/services/union.svg');
     background-size: cover;
     background-position: center;
-}
+    z-index: 90;
+} */
+
+
+.borderGrd {
+    background: linear-gradient(#020C0D, #020C0D) padding-box,
+                linear-gradient(to bottom, rgb(141, 141, 141), #1e1e1e) border-box;
+    border-radius: 15px;
+    border: 2px solid transparent;
+ }
+
+/* .borderGrd:hover {
+    background: linear-gradient(#020C0D, #020C0D) padding-box,
+                linear-gradient(to bottom, rgb(141, 141, 141), rgb(11, 243, 243)) border-box;
+    border-radius: 15px;
+    border: 2px solid transparent;
+
+    
+  } */
+
