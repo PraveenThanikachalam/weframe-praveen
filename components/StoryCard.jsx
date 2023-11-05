@@ -26,7 +26,7 @@ const StoryCard = () => {
           triumphs. These case studies highlight our track record of delivering
           impactful digital solutions for our clients. Wave farewell to the past
           and step confidently into the future with Jamstack. Beyond websites,
-          we're here to bring your narrative to life through our expertise. Get
+          we&apos;re here to bring your narrative to life through our expertise. Get
           an instant quote for your project
         </p>
         <div className="flex mt-5 items-center justify-between w-full">
