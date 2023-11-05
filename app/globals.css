@@ -2,49 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-.sec1{
-    background-image: url('/assets/matrix.svg');
-    background-size: cover;
-    background-position: bottom;
+.sec1 {
+  background-image: url('/assets/matrix.svg');
+  background-size: cover;
+  background-position: bottom;
 }
 
-.bar{
-    z-index: 90;
+.bar {
+  z-index: 90;
 }
-
 
 .glow {
-    text-shadow: 0px 0px 15px white;
+  text-shadow: 0px 0px 15px white;
 }
 
-body{
-    background-color:#020C0D ;
+body {
+  background-color: #020c0d;
 }
 
 button {
-    z-index: 20;
+  z-index: 20;
 }
 
-Image{
-    width: auto ;
-    height: auto;
+Image {
+  width: auto;
+  height: auto;
 }
-
-
 
 .line {
-    box-shadow: -0px -100px 500px 300px rgba(111, 241, 255, 0.477);
+  box-shadow: -0px -100px 500px 300px rgba(111, 241, 255, 0.477);
 
-    background-color: rgba(111, 241, 255, 0.697);
+  background-color: rgba(111, 241, 255, 0.697);
 }
 
 .footer {
-    background-color: #031416;
+  background-color: #031416;
 }
 
 .navbar {
-    background-color: #020C0D;
-    backdrop-filter: blur(32px);
+  background-color: #020c0d;
+  backdrop-filter: blur(32px);
 }
 
 /* .serviceCard{
@@ -54,13 +51,13 @@ Image{
     z-index: 90;
 } */
 
-
 .borderGrd {
-    background: linear-gradient(#020C0D, #020C0D) padding-box,
-                linear-gradient(to bottom, rgb(141, 141, 141), #1e1e1e) border-box;
-    border-radius: 15px;
-    border: 2px solid transparent;
- }
+  background:
+    linear-gradient(#020c0d, #020c0d) padding-box,
+    linear-gradient(to bottom, rgb(141, 141, 141), #1e1e1e) border-box;
+  border-radius: 15px;
+  border: 2px solid transparent;
+}
 
 /* .borderGrd:hover {
     background: linear-gradient(#020C0D, #020C0D) padding-box,
@@ -70,4 +67,3 @@ Image{
 
     
   } */
-
