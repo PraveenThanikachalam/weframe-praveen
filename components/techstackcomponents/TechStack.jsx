@@ -1,8 +1,7 @@
 'use client';
 import React, { useState } from 'react';
-import Backend from '@/components/techstackcomponents/Backend';
 import Deployement from '@/components/techstackcomponents/Deployement';
-import HeadlessCms from '@/components/techstackcomponents/HeadlessCms';
+import CmsAndBackend from './CmsAndBackend';
 import MobileFrameworks from '@/components/techstackcomponents/MobileFrameworks';
 import WebFrameworks from '@/components/techstackcomponents/WebFrameworks';
 
@@ -40,9 +39,8 @@ const TechStack = () => {
       cursor-pointer
       <div className="techstackComponents w-full flex flex-col items-center justify-center lg:gap-12 gap-8">
         {shift ? <WebFrameworks /> : <MobileFrameworks />}
-        <HeadlessCms />
+        <CmsAndBackend />
         <Deployement />
-        <Backend />
       </div>
     </div>
   );

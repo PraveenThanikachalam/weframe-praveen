@@ -2,8 +2,8 @@ import React from 'react';
 
 const StoryCard = () => {
   return (
-    <div className="lg:w-[80%] w-[85%] borderGrd border border-gray-400 rounded-xl flex flex-col-reverse lg:flex-row lg:h-[75vh]">
-      <div className="lg:w-[40%] w-full flex lg:p-10 p-5 flex-col items-center justify-center">
+    <div className="lg:w-[80%] w-[85%] borderGrd border border-gray-400 rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
+      <div className="lg:w-[40%] w-full flex lg:p-12 p-6 flex-col items-center justify-center">
         <h1 className="lg:text-2xl text-xl font-bold text-white">
           Freemium Blog Platform for Entrepreneurs
         </h1>
@@ -26,8 +26,8 @@ const StoryCard = () => {
           triumphs. These case studies highlight our track record of delivering
           impactful digital solutions for our clients. Wave farewell to the past
           and step confidently into the future with Jamstack. Beyond websites,
-          we&apos;re here to bring your narrative to life through our expertise. Get
-          an instant quote for your project
+          we&apos;re here to bring your narrative to life through our expertise.
+          Get an instant quote for your project
         </p>
         <div className="flex mt-5 items-center justify-between w-full">
           <div className="flex gap-3 text-white">

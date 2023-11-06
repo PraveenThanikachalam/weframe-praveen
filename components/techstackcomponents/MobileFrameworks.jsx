@@ -3,12 +3,7 @@ import Image from 'next/image';
 
 const MobileFrameworks = () => {
   return (
-    <div className="w-[80%] mt-16  borderGrd rounded-xl p-16 border relative border-gray-500 flex overflow-hidden items-center justify-start">
-      <img
-        src="/assets/techstack/effect.svg"
-        className="absolute top-0 left-0 "
-        alt=""
-      />
+    <div className="w-[80%] mt-16 bg-gradient-to-br from-[#1FBCCB1F] to-[#020C0D] rounded-xl p-16 border relative border-gray-500 flex overflow-hidden items-center justify-start">
       <div className="w-full absolute text-white font-medium glow top-0 left-0 p-8 flex items-center justify-start">
         <h2>MOBILE FRAMEWORKS</h2>
       </div>
