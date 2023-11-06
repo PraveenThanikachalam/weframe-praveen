@@ -1,14 +1,11 @@
-
 import FaqComponent from '@/components/FaqComponent';
 import StoryCard from '@/components/StoryCard';
 import TechStack from '@/components/TechStack';
-
 
 import Image from 'next/image';
 import ClientComponent from '@/components/ClientComponent';
 
 export default function Home() {
-
   return (
     <main>
       <div className="pattern sec1 lg:h-[115vh] h-[125vh] md:h-[80vh]  z-30 text-center text-white w-full flex flex-col items-center justify-end ">
@@ -244,9 +241,8 @@ export default function Home() {
         </div>
       </div>
 
-
-      <div className='w-full mt-32'>
-        <ClientComponent/>
+      <div className="w-full mt-32">
+        <ClientComponent />
       </div>
 
       <div className=" clients mt-48 w-full flex flex-col items-center justify-center">

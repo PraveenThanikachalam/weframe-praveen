@@ -61,16 +61,14 @@ Image {
 }
 
 .borderGrd:hover {
-    background: linear-gradient(#020C0D, #020C0D) padding-box,
-                linear-gradient(to bottom, rgb(141, 141, 141), rgb(18, 159, 177)) border-box;
-    border-radius: 15px;
-    border: 2px solid transparent;
+  background:
+    linear-gradient(#020c0d, #020c0d) padding-box,
+    linear-gradient(to bottom, rgb(141, 141, 141), rgb(18, 159, 177)) border-box;
+  border-radius: 15px;
+  border: 2px solid transparent;
+}
 
-    
-  }
-
-  .swiper {
-    width: 600px;
-    height: 300px;
-  }
-  
+.swiper {
+  width: 600px;
+  height: 300px;
+}
