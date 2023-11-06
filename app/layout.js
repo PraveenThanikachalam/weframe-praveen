@@ -1,9 +1,10 @@
-import { Inter } from 'next/font/google';
+import { Lexend } from 'next/font/google';
+import { oceanwide } from '@/fonts';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const font = Lexend({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,8 +13,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={oceanwide.variable}>
+      <body className={font.className}>
         <link
           href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
           rel="stylesheet"

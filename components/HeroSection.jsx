@@ -3,7 +3,7 @@ import React from 'react';
 const HeroSection = () => {
   return (
     <div className="lg:w-[60%] w-[85%] z-30  flex flex-col items-center justify-center">
-      <h1 className="lg:text-7xl text-5xl font-extrabold">
+      <h1 className="lg:text-6xl text-5xl font-semibold font-title-font">
         Jamstack & Headless <br /> Commerce Agency
       </h1>
       <div className="lg:w-[50%] w-[85%]">
