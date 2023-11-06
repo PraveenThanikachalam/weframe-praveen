@@ -57,13 +57,20 @@ Image {
     linear-gradient(to bottom, rgb(141, 141, 141), #1e1e1e) border-box;
   border-radius: 15px;
   border: 2px solid transparent;
+  transition: border 1s;
 }
 
-/* .borderGrd:hover {
+.borderGrd:hover {
     background: linear-gradient(#020C0D, #020C0D) padding-box,
-                linear-gradient(to bottom, rgb(141, 141, 141), rgb(11, 243, 243)) border-box;
+                linear-gradient(to bottom, rgb(141, 141, 141), rgb(18, 159, 177)) border-box;
     border-radius: 15px;
     border: 2px solid transparent;
 
     
-  } */
+  }
+
+  .swiper {
+    width: 600px;
+    height: 300px;
+  }
+  
