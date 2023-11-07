@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
 
 .sec1 {
   background-image: url('/assets/matrix.svg');
@@ -64,4 +65,9 @@ Image {
 .swiper {
   width: 600px;
   height: 300px;
+}
+
+.blogBtn{
+  background-color: #eefeff;
+  font-family: 'Fira Mono', monospace;
 }

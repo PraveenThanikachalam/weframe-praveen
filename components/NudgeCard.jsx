@@ -10,7 +10,7 @@ const NudgeCard = () => {
         <h1 className="text-3xl text-cyan-300 font-bold">
           Book a discovery <br /> call to witness speed
         </h1>
-        <button className="px-8 mt-8 py-2 rounded-full font-medium bg-white ">
+        <button className="px-8 mt-8 py-2 rounded-full text-sm font-medium bg-white ">
           Book Now
         </button>
       </div>
