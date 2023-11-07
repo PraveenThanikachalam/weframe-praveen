@@ -13,17 +13,17 @@ const Navbar = () => {
       </div>
       <nav className="hidden lg:block">
         <ul className="gap-16 flex text-sm font-medium items-center justify-center">
-          <Link
-            href={'/'}
+          <div
             onClick={() => {
               setVisible(!visible);
             }}
+            className='cursor-pointer'
           >
             Services <i className="ri-arrow-down-s-line"></i>
-          </Link>
+          </div>
           <Link href={'/'}>Case Studies</Link>
           <Link href={'/blogs'}>Blogs</Link>
-          <Link href={'/'}>About Us</Link>
+          <Link href={'/about'}>About Us</Link>
           <Link href={'/'}>Contact</Link>
         </ul>
       </nav>

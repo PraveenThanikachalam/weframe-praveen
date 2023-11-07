@@ -1,5 +1,6 @@
 import React from 'react';
 import StoryCard from './StoryCard';
+import Button from '../ui/Button';
 
 const SuccessStory = () => {
   return (
@@ -14,9 +15,7 @@ const SuccessStory = () => {
           </p>
         </div>
         <div>
-          <button className="text-white font-semibold px-4 mt-4 lg:mt-0 py-3 rounded-full border">
-            Explore Case Studies
-          </button>
+          <Button variant='outline' label='Explore Case Studies'/>
         </div>
       </div>
       <StoryCard />

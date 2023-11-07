@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './ui/Button';
 
 const HeroSection = () => {
   return (
@@ -15,12 +16,8 @@ const HeroSection = () => {
         </p>
       </div>
       <div className="gap-5 flex flex-col lg:flex-row">
-        <button className=" px-5 w-48 py-3 font-medium text-black bg-white rounded-full">
-          Instant Quotation
-        </button>
-        <button className="px-5 w-48 py-3 font-medium text-white glow border  bg-transparent rounded-full">
-          Case Studies
-        </button>
+        <Button variant='filled' label='Instant Quotation'/>
+        <Button variant='outline' label='Book a Meeting'/>
       </div>
     </div>
   );
