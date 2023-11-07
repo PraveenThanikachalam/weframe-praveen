@@ -76,7 +76,10 @@ export default function Home() {
       </div>
 
       <div>
-        <NudgeCard />
+        <NudgeCard
+          title={'Book a discovery call to witness speed'}
+          label={'Book Now'}
+        />
       </div>
 
       <div className="w-full mt-32">

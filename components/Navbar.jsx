@@ -17,14 +17,14 @@ const Navbar = () => {
             onClick={() => {
               setVisible(!visible);
             }}
-            className='cursor-pointer'
+            className="cursor-pointer"
           >
             Services <i className="ri-arrow-down-s-line"></i>
           </div>
           <Link href={'/'}>Case Studies</Link>
           <Link href={'/blogs'}>Blogs</Link>
           <Link href={'/about'}>About Us</Link>
-          <Link href={'/'}>Contact</Link>
+          <Link href={'/contact'}>Contact</Link>
         </ul>
       </nav>
       <div className="flex items-center justify-center gap-5 lg:hidden">
