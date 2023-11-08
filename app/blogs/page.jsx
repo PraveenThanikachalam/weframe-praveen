@@ -7,7 +7,11 @@ const Blogs = () => {
   return (
     <main className="relative">
       <div>
-        <img src="/assets/matrix.svg" className="absolute -z-20 w-full top-0" alt="" />
+        <img
+          src="/assets/matrix.svg"
+          className="absolute -z-20 w-full top-0"
+          alt=""
+        />
       </div>
       <div className="w-full lg:h-[60vh] md:h-[60vh] h-[80vh] flex items-center justify-center">
         <div className="lg:w-[70%] w-[90%] flex flex-col items-center justify-center">

@@ -8,7 +8,11 @@ const CaseStudy = () => {
   return (
     <main>
       <div>
-        <img src="/assets/matrix.svg" className="absolute -z-20 top-0 left-0 w-full right-0" alt="" />
+        <img
+          src="/assets/matrix.svg"
+          className="absolute -z-20 top-0 left-0 w-full right-0"
+          alt=""
+        />
       </div>
       <div className="w-full lg:h-[60vh] md:h-[60vh] h-[80vh] flex items-center justify-center">
         <div className="lg:w-[70%] w-[90%] flex flex-col items-center justify-center">
@@ -34,13 +38,13 @@ const CaseStudy = () => {
           </div>
         </div>
       </div>
-      <div className='flex flex-col gap-14 items-center justify-center'>
-        <StoryCard slide={false} video={true}/>
-        <StoryCard slide={false}/>
-        <StoryCard slide={false}/>
+      <div className="flex flex-col gap-14 items-center justify-center">
+        <StoryCard slide={false} video={true} />
+        <StoryCard slide={false} />
+        <StoryCard slide={false} />
       </div>
-      <div className='w-full flex items-center justify-center my-16'>
-        <Button variant='outline' label={'See More Case Studies'}/>
+      <div className="w-full flex items-center justify-center my-16">
+        <Button variant="outline" label={'See More Case Studies'} />
       </div>
       <div className="min-h-[60vh] w-full flex items-center justify-center">
         <NudgeCard

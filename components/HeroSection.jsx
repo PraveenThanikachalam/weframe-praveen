@@ -17,7 +17,9 @@ const HeroSection = () => {
         </p>
       </div>
       <div className="gap-5 flex flex-col lg:flex-row">
-        <Link href={'/quotation'}><Button variant="filled" label="Instant Quotation" /></Link>
+        <Link href={'/quotation'}>
+          <Button variant="filled" label="Instant Quotation" />
+        </Link>
         <Button variant="outline" label="Book a Meeting" />
       </div>
     </div>

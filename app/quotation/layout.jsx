@@ -1,7 +1,7 @@
-import NudgeCard from '@/components/NudgeCard'
-import React from 'react'
+import NudgeCard from '@/components/NudgeCard';
+import React from 'react';
 
-const layout = ({children}) => {
+const layout = ({ children }) => {
   return (
     <div>
       {children}
@@ -18,7 +18,7 @@ const layout = ({children}) => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default layout
+export default layout;

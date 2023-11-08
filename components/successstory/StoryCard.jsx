@@ -39,16 +39,13 @@ const StoryCard = ({ slide, video }) => {
             </div>
           </div>
           <button className="w-36 rounded-full px-4 py-3 bg-white  font-medium">
-            {
-              video ? 'Play' : 'Read'
-            }
-            
+            {video ? 'Play' : 'Read'}
           </button>
         </div>
       </div>
       <div className="lg:w-[60%] w-full py-2 lg:py-0 flex items-center justify-center">
         {video ? (
-          <video width="0" height="0" className='w-[90%]' controls>
+          <video width="0" height="0" className="w-[90%]" controls>
             <source src="/assets/demo.mp4" muted type="video/mp4" />
           </video>
         ) : (

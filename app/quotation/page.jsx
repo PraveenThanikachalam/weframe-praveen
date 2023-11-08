@@ -26,7 +26,7 @@ const Quote = () => {
           />
         </div>
 
-        <div className='lg:w-[50%] w-[75%] mt-6'>
+        <div className="lg:w-[50%] w-[75%] mt-6">
           <div className="form w-full flex items-center lg:justify-center justify-center">
             <div className="lg:w-full md:w-[90%] w-full ">
               <div className="flex  lg:flex-row md:flex-row flex-col gap-3 lg:gap-0 md:gap-0 flex-wrap -m-2">
@@ -55,7 +55,6 @@ const Quote = () => {
                     >
                       UI/UX Consideration
                     </label>
-                 
 
                     <select className="w-full bg-opacity-50 navbar font-light rounded-lg border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-300 h-10 px-3 leading-8 transition-colors duration-200 ease-in-out">
                       <option value="Yes">Yes</option>
@@ -68,16 +67,51 @@ const Quote = () => {
           </div>
         </div>
 
-        <div className='flex lg:w-[50%] md:w-[60%] w-full flex-col items-center justify-center'>
-            <TagComponent title={'Frontend Technology'} labels={['Nextjs','Gatsby','Nuxtjs','Astrojs','React Native','Expressjs','Vuejs','Angularjs','Svelte','Bootstrap']}/>
-            <TagComponent title={'Backend Technology'} labels={['Firebase','Nodejs','Go','Supabase']}/>
-            <TagComponent title={'Third-party Integration'} labels={['Nextjs','Gatsby','Nuxtjs','Astrojs','React Native','Expressjs','Vuejs','Angularjs','Svelte','Bootstrap']}/>
-            <TagComponent title={'Deployment Platform'} labels={['Vercel','AWS','Digital Ocean','Netlify']}/>
-
+        <div className="flex lg:w-[50%] md:w-[60%] w-full flex-col items-center justify-center">
+          <TagComponent
+            title={'Frontend Technology'}
+            labels={[
+              'Nextjs',
+              'Gatsby',
+              'Nuxtjs',
+              'Astrojs',
+              'React Native',
+              'Expressjs',
+              'Vuejs',
+              'Angularjs',
+              'Svelte',
+              'Bootstrap',
+            ]}
+          />
+          <TagComponent
+            title={'Backend Technology'}
+            labels={['Firebase', 'Nodejs', 'Go', 'Supabase']}
+          />
+          <TagComponent
+            title={'Third-party Integration'}
+            labels={[
+              'Nextjs',
+              'Gatsby',
+              'Nuxtjs',
+              'Astrojs',
+              'React Native',
+              'Expressjs',
+              'Vuejs',
+              'Angularjs',
+              'Svelte',
+              'Bootstrap',
+            ]}
+          />
+          <TagComponent
+            title={'Deployment Platform'}
+            labels={['Vercel', 'AWS', 'Digital Ocean', 'Netlify']}
+          />
         </div>
         <p>Please select one of the options to get your quote</p>
         <div>
-            <Link href={'/quotation/next'}><Button variant='filled' label={'Next'}/></Link>
+          <Link href={'/quotation/next'}>
+            <Button variant="filled" label={'Next'} />
+          </Link>
         </div>
       </div>
     </main>
