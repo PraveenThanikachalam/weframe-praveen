@@ -18,7 +18,7 @@ const SuccessStory = () => {
           <Button variant="outline" label="Explore Case Studies" />
         </div>
       </div>
-      <StoryCard />
+      <StoryCard slide={true} />
     </div>
   );
 };

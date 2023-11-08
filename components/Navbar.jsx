@@ -21,7 +21,7 @@ const Navbar = () => {
           >
             Services <i className="ri-arrow-down-s-line"></i>
           </div>
-          <Link href={'/'}>Case Studies</Link>
+          <Link href={'/case-study'}>Case Studies</Link>
           <Link href={'/blogs'}>Blogs</Link>
           <Link href={'/about'}>About Us</Link>
           <Link href={'/contact'}>Contact</Link>

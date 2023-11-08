@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './ui/Button';
+import Link from 'next/link';
 
 const HeroSection = () => {
   return (
@@ -16,7 +17,7 @@ const HeroSection = () => {
         </p>
       </div>
       <div className="gap-5 flex flex-col lg:flex-row">
-        <Button variant="filled" label="Instant Quotation" />
+        <Link href={'/quotation'}><Button variant="filled" label="Instant Quotation" /></Link>
         <Button variant="outline" label="Book a Meeting" />
       </div>
     </div>

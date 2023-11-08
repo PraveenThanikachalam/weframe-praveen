@@ -1,13 +1,13 @@
 import React from 'react';
 
-const StoryCard = () => {
+const StoryCard = ({ slide, video }) => {
   return (
     <div className="lg:w-[80%] w-[85%] borderGrd border border-gray-400 rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
-      <div className="lg:w-[40%] w-full flex lg:p-12 p-6 flex-col items-center justify-center">
-        <h1 className="lg:text-2xl text-xl font-bold text-white">
+      <div className="lg:w-[40%] w-full flex lg:p-10 p-1 flex-col items-center justify-center">
+        <h1 className="lg:text-2xl text-lg font-bold text-white">
           Freemium Blog Platform for Entrepreneurs
         </h1>
-        <div className="flex gap-2 my-3 flex-wrap">
+        <div className="lg:flex md:flex hidden gap-2 my-3 flex-wrap">
           <button className="bg-black border border-white text-white px-4 py-2 rounded-xl">
             Headless CMS
           </button>
@@ -21,7 +21,7 @@ const StoryCard = () => {
             Web App Development
           </button>
         </div>
-        <p className="text-sm text-gray-300">
+        <p className="text-sm mt-2 text-gray-300">
           Explore our real-world achievements, where we turn challenges into
           triumphs. These case studies highlight our track record of delivering
           impactful digital solutions for our clients. Wave farewell to the past
@@ -30,7 +30,7 @@ const StoryCard = () => {
           Get an instant quote for your project
         </p>
         <div className="flex mt-5 items-center justify-between w-full">
-          <div className="flex gap-3 text-white">
+          <div className={` gap-3 ${slide ? 'flex' : 'hidden'} text-white`}>
             <div className="w-12 h-12 rounded-full border flex items-center justify-center border-white">
               <i className="ri-arrow-left-line"></i>
             </div>
@@ -39,12 +39,21 @@ const StoryCard = () => {
             </div>
           </div>
           <button className="w-36 rounded-full px-4 py-3 bg-white  font-medium">
-            Read
+            {
+              video ? 'Play' : 'Read'
+            }
+            
           </button>
         </div>
       </div>
-      <div className="lg:w-[60%] w-full py-3 lg:py-0 flex items-center justify-center">
-        <img className="w-[90%]" src="/assets/img1.png" alt="" />
+      <div className="lg:w-[60%] w-full py-2 lg:py-0 flex items-center justify-center">
+        {video ? (
+          <video width="0" height="0" className='w-[90%]' controls>
+            <source src="/assets/demo.mp4" muted type="video/mp4" />
+          </video>
+        ) : (
+          <img className="w-[95%]" src="/assets/img1.png" alt="" />
+        )}
       </div>
     </div>
   );

@@ -16,6 +16,11 @@
   text-shadow: 0px 0px 15px white;
 }
 
+.cyan-glow{
+  text-shadow: 0px 0px 15px rgba(0, 255, 255, 0.511);
+
+}
+
 body {
   background-color: #020c0d;
   font-family: 'Lexend', sans-serif;
