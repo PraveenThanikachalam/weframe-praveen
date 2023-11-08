@@ -75,7 +75,7 @@ export default function Home() {
         <Services />
       </div>
 
-      <div>
+      <div className='px-4'>
         <NudgeCard
           title={'Book a discovery call to witness speed'}
           label={'Book Now'}

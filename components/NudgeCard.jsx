@@ -1,21 +1,15 @@
 import React from 'react';
+import Button from './ui/Button';
 
 const NudgeCard = ({ title, label }) => {
   return (
-    <div className="w-full  flex items-center justify-center">
-      <div
-        style={{ background: '#041719' }}
-        className="w-[80%]  lg:p-16 p-10 rounded-xl border-2 text-center border-cyan-800 flex flex-col items-center justify-center"
-      >
-        <div className="lg:w-[40%] w-full">
-          <h1 className="lg:text-3xl md:text-3xl text-2xl text-cyan-300 font-bold">
-            {title}
-          </h1>
-        </div>
-        <button className="px-8 mt-8 py-2 rounded-full text-sm font-medium bg-white ">
-          {label}
-        </button>
+    <div className="max-w-screen-xl w-full lg:px-16 px-10 py-10 lg:py-20 mx-auto rounded-3xl text-center border-y-2 border-cyan-800 bg-gradient-to-r from-[#031313] to-[#051A1C] flex flex-col items-center gap-6">
+      <div className="w-full md:w-[29rem]">
+        <h1 className="lg:text-5xl md:text-4xl text-3xl gradient-text font-title-font leading-10">
+          {title}
+        </h1>
       </div>
+      <Button label={label} />
     </div>
   );
 };

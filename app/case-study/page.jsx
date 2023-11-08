@@ -17,17 +17,12 @@ const CaseStudy = () => {
       <div className="w-full lg:h-[60vh] md:h-[60vh] h-[80vh] flex items-center justify-center">
         <div className="lg:w-[70%] w-[90%] flex flex-col items-center justify-center">
           <div className="">
-            <h1 className="lg:text-5xl md:text-5xl text-4xl text-center font-bold text-cyan-200">
+            <h1 className="lg:text-5xl md:text-5xl text-4xl text-center font-title-font gradient-text">
               Discover Success and Excellence
             </h1>
           </div>
           <div className="flex items-center justify-center gap-2 mt-8 w-full p-4 flex-wrap">
-            <button
-              style={{ fontFamily: 'Fira Mono, monospace' }}
-              className="px-4 py-2 rounded-2xl   bg-black text-white border border-cyan-300 shadow-cyan-300 shadow-sm md:text-sm text-xs lg:text-sm"
-            >
-              All Articles
-            </button>
+            <TagButton name={'All Case Studies'} selected />
             <TagButton name={'Headless Commerce Development'} />
             <TagButton name={'MVP & POC Development'} />
             <TagButton name={'Custom Software Development'} />

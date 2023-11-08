@@ -11,11 +11,10 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'nudge-card-gradient':
-          'linear-gradient(262deg, rgba(31, 188, 203, 0.08) 0%, rgba(28, 178, 175, 0.04) 100%), #020C0D',
       },
       fontFamily: {
         'title-font': ['var(--oceanwide-font)'],
+        'fira-code': ['var(--fira-code-font)'],
       },
       colors: {
         'accent-blue': '#1FBCCB',

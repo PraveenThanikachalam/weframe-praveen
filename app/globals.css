@@ -1,7 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&family=Lexend:wght@300&display=swap');
+
+:root,
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #020c0d;
+}
+
 .sec1 {
   background-image: url('/assets/matrix.svg');
   background-size: cover;
@@ -20,11 +30,6 @@
   text-shadow: 0px 0px 15px rgba(0, 255, 255, 0.511);
 }
 
-body {
-  background-color: #020c0d;
-  font-family: 'Lexend', sans-serif;
-}
-
 button {
   z-index: 20;
 }
@@ -36,7 +41,6 @@ Image {
 
 .line {
   box-shadow: -0px -100px 500px 300px rgba(111, 241, 255, 0.477);
-
   background-color: rgba(111, 241, 255, 0.697);
 }
 
@@ -47,6 +51,13 @@ Image {
 .navbar {
   background-color: #020c0d;
   backdrop-filter: blur(32px);
+}
+
+.gradient-text {
+  background: linear-gradient(92deg, #5cd2dd 0.28%, #99ebf2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .borderGrd {
@@ -62,8 +73,6 @@ Image {
   background:
     linear-gradient(#020c0d, #020c0d) padding-box,
     linear-gradient(to bottom, rgb(141, 141, 141), rgb(18, 159, 177)) border-box;
-  border-radius: 15px;
-  border: 2px solid transparent;
 }
 
 .swiper {
@@ -73,5 +82,4 @@ Image {
 
 .blogBtn {
   background-color: #eefeff;
-  font-family: 'Fira Mono', monospace;
 }
