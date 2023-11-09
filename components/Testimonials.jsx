@@ -14,7 +14,7 @@ const Testimonials = () => {
   }, []);
   return (
     <>
-      <div className="w-full mb-12  flex items-center justify-center">
+      <div className="w-full mb-12 mt-32 flex items-center justify-center">
         <div className="w-[80%] flex flex-col lg:flex-row text-center lg:text-left items-center justify-between">
           <div>
             <h1 className="text-4xl text-white font-bold">Hear from Clients</h1>

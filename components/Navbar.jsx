@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
@@ -7,9 +8,9 @@ const Navbar = () => {
   const [visible2, setVisible2] = useState(false);
   const [visible3, setVisible3] = useState(false);
   return (
-    <div className="w-full z-50 navbar flex items-center relative justify-between text-white p-10">
+    <div className="w-full sticky top-0 bg-opacity-25 z-50 bg-[#020c0d] backdrop-blur-md flex items-center justify-between text-white py-6 px-10">
       <div>
-        <img src="/assets/logo.svg" alt="" />
+        <Image width={32} height={32} className=' w-10 h-10' src="/assets/logo.svg" alt="logo" />
       </div>
       <nav className="hidden lg:block">
         <ul className="gap-16 flex text-sm font-medium items-center justify-center">
@@ -130,7 +131,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`absolute w-[70%] right-4 top-20 navbar ${
+        className={`absolute w-[70%] right-4 top-20 bg-[#020c0d] backdrop-blur-md ${
           visible2 ? 'flex' : 'hidden'
         }  flex-col items-center justify-center gap-4`}
       >

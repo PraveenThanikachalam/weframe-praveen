@@ -28,6 +28,15 @@ module.exports = {
       boxShadow: {
         'button-glow': '0px 1px 8px 0px rgba(255, 255, 255, 0.48)',
       },
+      keyframes: {
+        'slide-horizontal': {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        }
+      },
+      animation: {
+        'slidehorizontal': 'slide-horizontal 30s linear infinite',
+      }
     },
   },
   plugins: [],
