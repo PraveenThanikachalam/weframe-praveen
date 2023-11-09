@@ -8,7 +8,7 @@ const Navbar = () => {
   const [visible2, setVisible2] = useState(false);
   const [visible3, setVisible3] = useState(false);
   return (
-    <div className="w-full z-50 navbar flex items-center relative justify-between text-white p-10">
+    <div className="w-full  navbar flex items-center relative justify-between text-white p-10">
       <div>
         <Image
           width={0}
@@ -18,7 +18,7 @@ const Navbar = () => {
           alt=""
         />
       </div>
-      <nav className="hidden lg:block">
+      <nav className="hidden lg:block ">
         <ul className="gap-16 flex text-sm font-medium items-center justify-center">
           <div
             onClick={() => {

@@ -16,9 +16,11 @@ const Testimonials = () => {
   return (
     <>
       <div className="w-full mb-12  flex items-center justify-center">
-        <div className="w-[80%] flex flex-col lg:flex-row text-center lg:text-left items-center justify-between">
+        <div className="w-full flex flex-col lg:flex-row text-center lg:text-left items-center justify-between">
           <div>
-            <h1 className="text-4xl text-white font-bold">Hear from Clients</h1>
+            <h1 className="lg:text-4xl text-2xl md:text-4xl text-white font-bold">
+              Hear from Clients
+            </h1>
           </div>
           <div className="flex gap-3 mt-4 lg:mt-0 text-white ">
             <div
@@ -48,7 +50,7 @@ const Testimonials = () => {
           }}
         >
           <SwiperSlide>
-            <div className="lg:w-[600px] w-[300px] lg:h-80 h-60    relative flex items-center justify-center rounded-xl">
+            <div className="     relative flex items-center justify-center rounded-xl">
               <Image
                 width={400}
                 height={300}
@@ -94,7 +96,7 @@ const Testimonials = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="lg:w-[600px] w-[300px] lg:h-80 h-60  relative flex items-center justify-center rounded-xl">
+            <div className="  relative flex items-center justify-center rounded-xl">
               <Image
                 width={400}
                 height={300}
@@ -163,7 +165,7 @@ const Testimonials = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="lg:w-[600px] w-[300px] lg:h-80 h-60   relative flex items-center justify-center rounded-xl">
+            <div className="  relative flex items-center justify-center rounded-xl">
               {isMobile ? (
                 <div className="w-full h-full bg-black absolute z-10 rounded-xl opacity-90 flex items-center text-xs lg:text-sm justify-center text-white p-6 lg:p-16">
                   Working with WeFrameTech on our Ownerpreneur project has been

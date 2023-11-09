@@ -18,7 +18,7 @@ const Contact = () => {
       <div className="w-full lg:h-[85vh]  flex lg:flex-row  flex-col">
         <div className="left lg:w-[50%] w-full text-center lg:text-left  flex  flex-col items-center justify-around">
           <div className="w-[80%] py-8 lg:py-0">
-            <h1 className=" text-cyan-200 lg:text-5xl text-4xl font-bold">
+            <h1 className=" text-accent-blue lg:text-5xl text-4xl font-bold">
               Get in Touch with our Experts
             </h1>
             <p

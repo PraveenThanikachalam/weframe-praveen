@@ -18,25 +18,8 @@ body {
   background-position: bottom;
 }
 
-.bar {
-  z-index: 90;
-}
-
 .glow {
   text-shadow: 0px 0px 15px white;
-}
-
-.cyan-glow {
-  text-shadow: 0px 0px 15px rgba(0, 255, 255, 0.511);
-}
-
-button {
-  z-index: 20;
-}
-
-Image {
-  width: auto;
-  height: auto;
 }
 
 .line {
@@ -49,15 +32,8 @@ Image {
 }
 
 .navbar {
-  background-color: #020c0d;
+  background-color: transparent;
   backdrop-filter: blur(32px);
-}
-
-.gradient-text {
-  background: linear-gradient(92deg, #5cd2dd 0.28%, #99ebf2 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .borderGrd {
@@ -75,16 +51,11 @@ Image {
     linear-gradient(to bottom, rgb(141, 141, 141), rgb(18, 159, 177)) border-box;
 }
 
-.swiper {
-  width: 600px;
-  height: 300px;
-}
-
 .blogBtn {
   background-color: #eefeff;
 }
 
 .story-card-grd {
   /* background: radial-gradient(169.40% 89.55% at 94.76% 6.29%, #FFFFFF 88%, #404040 100%), */
-  background: radial-gradient(#ffffff, #404040);
+  background: radial-gradient(#151d1f 20%, #020c0d 100%);
 }

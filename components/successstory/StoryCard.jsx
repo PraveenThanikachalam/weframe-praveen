@@ -3,22 +3,22 @@ import Image from 'next/image';
 
 const StoryCard = ({ slide, video }) => {
   return (
-    <div className="lg:w-[80%] w-[85%]   border borderGrd border-gray-400 rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
+    <div className="lg:w-[80%] w-[85%] story-card-grd  border  border-gray-600 rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
       <div className="lg:w-[40%] w-full flex lg:p-6 p-1 flex-col items-center justify-center">
         <h1 className="lg:text-2xl text-lg font-bold text-white">
           Freemium Blog Platform for Entrepreneurs
         </h1>
         <div className="lg:flex md:flex hidden gap-2 my-3 flex-wrap">
-          <button className="bg-black border border-white text-white px-4 py-2 rounded-xl">
+          <button className="navbar borderGrd text-white px-4 py-2 rounded-xl">
             Headless CMS
           </button>
-          <button className="bg-black border border-white text-white px-4 py-2 rounded-xl">
+          <button className="navbar borderGrd text-white px-4 py-2 rounded-xl">
             Jamstack
           </button>
-          <button className="bg-black border border-white text-white px-4 py-2 rounded-xl">
+          <button className="navbar borderGrd text-white px-4 py-2 rounded-xl">
             Blog Platform
           </button>
-          <button className="bg-black border border-white text-white px-4 py-2 rounded-xl">
+          <button className="navbar borderGrd text-white px-4 py-2 rounded-xl">
             Web App Development
           </button>
         </div>
@@ -39,7 +39,13 @@ const StoryCard = ({ slide, video }) => {
               <i className="ri-arrow-right-line"></i>
             </div>
           </div>
-          <button className="w-36 rounded-full px-4 py-3 bg-white  font-medium">
+          <button
+            className={` ${
+              slide
+                ? 'w-36 bg-white hover:text-white hover:bg-transparent border border-gray-500'
+                : 'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent '
+            } rounded-full px-4 py-3 transition-all duration-150  font-medium`}
+          >
             {video ? 'Play' : 'Read'}
           </button>
         </div>

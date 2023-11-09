@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const Blogs = () => {
   return (
-    <main className="relative ">
+    <main className=" relative overflow-hidden flex flex-col items-center justify-center ">
       <div>
         <Image
           width={0}
@@ -16,10 +16,10 @@ const Blogs = () => {
           alt=""
         />
       </div>
-      <div className="w-full min-h-[60vh] flex items-center justify-center">
-        <div className="lg:w-[70%] w-[90%] flex flex-col items-center justify-center">
+      <div className=" max-w-screen-xl  min-h-[60vh] flex items-center justify-center">
+        <div className="lg:w-[70%] w-[90%]  flex flex-col items-center justify-center">
           <div className="">
-            <h1 className="lg:text-5xl md:text-5xl text-4xl text-center gradient-text font-bold text-cyan-200">
+            <h1 className="lg:text-5xl md:text-5xl text-4xl text-center gradient-text font-bold text-accent-blue">
               Stay Ahead with Our Insights
             </h1>
           </div>
@@ -40,7 +40,7 @@ const Blogs = () => {
         </div>
       </div>
 
-      <div className="blogs w-full flex-wrap items-center flex gap-8 justify-center">
+      <div className="blogs max-w-screen-xl  flex-wrap items-center flex gap-8 justify-center">
         <BlogCard
           title="Decoding the Jamstack: A Primer for E-commerce Entrepreneurs"
           image="/assets/blogs/blog1.png"

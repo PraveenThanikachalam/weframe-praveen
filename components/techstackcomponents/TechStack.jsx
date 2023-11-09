@@ -8,9 +8,9 @@ import WebFrameworks from '@/components/techstackcomponents/WebFrameworks';
 const TechStack = () => {
   const [shift, setShift] = useState(false);
   return (
-    <div className="techStack w-full flex flex-col items-center justify-center">
-      <div className="w-[80%] lg:w-full text-center flex flex-col items-center justify-center">
-        <h1 className="text-4xl font-bold text-white">
+    <div className="techStack max-w-screen-xl w-full flex flex-col items-center justify-center">
+      <div className="w-full lg:w-full text-center flex flex-col items-center justify-center">
+        <h1 className="lg:text-4xl text-2xl md:text-4xl font-bold text-white">
           How we <br className="block lg:hidden" /> develop for
         </h1>
         <div className="rounded-xl border w-56 h-12 mt-4 border-gray-400 flex items-center justify-center">
