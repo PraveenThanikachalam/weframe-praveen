@@ -11,11 +11,10 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'nudge-card-gradient':
-          'linear-gradient(262deg, rgba(31, 188, 203, 0.08) 0%, rgba(28, 178, 175, 0.04) 100%), #020C0D',
       },
       fontFamily: {
         'title-font': ['var(--oceanwide-font)'],
+        'fira-code': ['var(--fira-code-font)'],
       },
       colors: {
         'accent-blue': '#1FBCCB',
@@ -39,5 +38,24 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.gradient-text': {
+          background: 'linear-gradient(92deg, #5cd2dd 0.28%, #99ebf2 100%)',
+          WebkitBackgroundClip: 'text',
+          backgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        },
+        '.border-gradient': {
+          border: '2px solid',
+          backgroundImage: 'linear-gradient(to right, #333, #ddd)',
+          backgroundClip: 'padding-box',
+          borderImageSlice: '1',
+        },
+      };
+
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
 };

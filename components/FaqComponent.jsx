@@ -1,11 +1,7 @@
 'use client';
 import React, { useEffect } from 'react';
-import { Collapse, initTE } from 'tw-elements';
-
+import Image from 'next/image';
 const FaqComponent = () => {
-  useEffect(() => {
-    initTE({ Collapse });
-  }, []);
   return (
     <div className="faq w-full flex my-48 items-center text-center justify-center flex-col">
       <div>
@@ -16,9 +12,10 @@ const FaqComponent = () => {
       <div className="lg:w-[70%] w-[80%] mt-16">
         <div id="accordionExample5  ">
           <div className="rounded-xl  borderGrd border text-left relative  overflow-hidden border-gray-500 text-gray-300 font-medium  mb-5">
-            <img
+            <Image
               src="/assets/techstack/effect.svg"
-              className="absolute"
+              fill
+              className=" h-5 absolute"
               alt=""
             />
             <h2 className="mb-0 font-bold glow" id="headingOne5">
@@ -71,9 +68,10 @@ const FaqComponent = () => {
             </div>
           </div>
           <div className="rounded-xl  borderGrd border text-left relative  overflow-hidden border-gray-500 text-gray-300 font-medium  mb-5">
-            <img
+            <Image
               src="/assets/techstack/effect.svg"
-              className="absolute"
+              fill
+              className="h-5 absolute"
               alt=""
             />
             <h2 className="mb-0 font-bold glow" id="headingOne5">
@@ -127,9 +125,10 @@ const FaqComponent = () => {
             </div>
           </div>
           <div className="rounded-xl  borderGrd border text-left relative  overflow-hidden border-gray-500 text-gray-300 font-medium  mb-5">
-            <img
+            <Image
               src="/assets/techstack/effect.svg"
-              className="absolute"
+              fill
+              className="h-5 absolute"
               alt=""
             />
             <h2 className="mb-0 font-bold glow" id="headingOne5">
@@ -183,9 +182,10 @@ const FaqComponent = () => {
             </div>
           </div>
           <div className="rounded-xl  borderGrd border text-left relative  overflow-hidden border-gray-500 text-gray-300 font-medium  mb-5">
-            <img
+            <Image
               src="/assets/techstack/effect.svg"
-              className="absolute"
+              fill
+              className="h-5 absolute"
               alt=""
             />
             <h2 className="mb-0 font-bold glow" id="headingOne5">
@@ -239,9 +239,10 @@ const FaqComponent = () => {
             </div>
           </div>
           <div className="rounded-xl  borderGrd border text-left relative  overflow-hidden border-gray-500 text-gray-300 font-medium  mb-5">
-            <img
+            <Image
               src="/assets/techstack/effect.svg"
-              className="absolute"
+              fill
+              className="h-5 absolute"
               alt=""
             />
             <h2 className="mb-0 font-bold glow" id="headingOne5">
@@ -295,9 +296,10 @@ const FaqComponent = () => {
             </div>
           </div>
           <div className="rounded-xl  borderGrd border text-left relative  overflow-hidden border-gray-500 text-gray-300 font-medium  mb-5">
-            <img
+            <Image
               src="/assets/techstack/effect.svg"
-              className="absolute"
+              fill
+              className="h-5 absolute"
               alt=""
             />
             <h2 className="mb-0 font-bold glow" id="headingOne5">

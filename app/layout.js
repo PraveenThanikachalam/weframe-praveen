@@ -1,5 +1,5 @@
 import { Lexend } from 'next/font/google';
-import { oceanwide } from '@/fonts';
+import { oceanwide, fira_code } from '@/fonts';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={oceanwide.variable}>
+    <html lang="en" className={`${oceanwide.variable} ${fira_code.variable}`}>
       <body className={`${font.className} overflow-y-scroll no-scrollbar`}>
         <link
           href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"

@@ -2,6 +2,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import Image from 'next/image';
 
 const Testimonials = () => {
   const swiperRef = useRef();
@@ -14,10 +15,12 @@ const Testimonials = () => {
   }, []);
   return (
     <>
-      <div className="w-full mb-12 mt-32 flex items-center justify-center">
-        <div className="w-[80%] flex flex-col lg:flex-row text-center lg:text-left items-center justify-between">
+      <div className="w-full mb-12  flex items-center justify-center">
+        <div className="w-full flex flex-col lg:flex-row text-center lg:text-left items-center justify-between">
           <div>
-            <h1 className="text-4xl text-white font-bold">Hear from Clients</h1>
+            <h1 className="lg:text-4xl text-2xl md:text-4xl text-white font-bold">
+              Hear from Clients
+            </h1>
           </div>
           <div className="flex gap-3 mt-4 lg:mt-0 text-white ">
             <div
@@ -47,8 +50,10 @@ const Testimonials = () => {
           }}
         >
           <SwiperSlide>
-            <div className="lg:w-[600px] w-[300px] lg:h-80 h-60    relative flex items-center justify-center rounded-xl">
-              <img
+            <div className="     relative flex items-center justify-center rounded-xl">
+              <Image
+                width={400}
+                height={300}
                 src="/assets/client/client.png"
                 className="h-full w-full rounded-xl"
                 alt=""
@@ -56,7 +61,9 @@ const Testimonials = () => {
               <div className="w-[90%]  absolute bottom-3 flex items-center justify-around lg:justify-between">
                 <div className=" w-56  flex items-center justify-start lg:justify-center">
                   <div>
-                    <img
+                    <Image
+                      width={400}
+                      height={300}
                       className="w-10"
                       src="/assets/client/david.png"
                       alt=""
@@ -72,7 +79,13 @@ const Testimonials = () => {
                   </div>
                 </div>
                 <div>
-                  <img className="w-10" src="/assets/client/pause.svg" alt="" />
+                  <Image
+                    width={400}
+                    height={300}
+                    className="w-10"
+                    src="/assets/client/pause.svg"
+                    alt=""
+                  />
                 </div>
               </div>
               <div>
@@ -83,8 +96,10 @@ const Testimonials = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="lg:w-[600px] w-[300px] lg:h-80 h-60  relative flex items-center justify-center rounded-xl">
-              <img
+            <div className="  relative flex items-center justify-center rounded-xl">
+              <Image
+                width={400}
+                height={300}
                 src="/assets/client/client.png"
                 className="h-full w-full rounded-xl"
                 alt=""
@@ -115,7 +130,9 @@ const Testimonials = () => {
               <div className="w-[90%]  absolute z-20 bottom-3 flex items-center  justify-around lg:justify-between">
                 <div className="  w-56  flex items-center justify-start lg:justify-center">
                   <div>
-                    <img
+                    <Image
+                      width={400}
+                      height={300}
                       className="w-10"
                       src="/assets/client/david.png"
                       alt=""
@@ -131,7 +148,13 @@ const Testimonials = () => {
                   </div>
                 </div>
                 <div>
-                  <img className="w-10" src="/assets/client/play.svg" alt="" />
+                  <Image
+                    width={400}
+                    height={300}
+                    className="w-10"
+                    src="/assets/client/play.svg"
+                    alt=""
+                  />
                 </div>
               </div>
               <div>
@@ -142,7 +165,7 @@ const Testimonials = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="lg:w-[600px] w-[300px] lg:h-80 h-60   relative flex items-center justify-center rounded-xl">
+            <div className="  relative flex items-center justify-center rounded-xl">
               {isMobile ? (
                 <div className="w-full h-full bg-black absolute z-10 rounded-xl opacity-90 flex items-center text-xs lg:text-sm justify-center text-white p-6 lg:p-16">
                   Working with WeFrameTech on our Ownerpreneur project has been
@@ -167,7 +190,9 @@ const Testimonials = () => {
               <div className="lg:w-[90%] w-[90%]  absolute z-20 bottom-3 flex items-center justify-start">
                 <div className="  w-56 flex items-center justify-start lg:justify-center">
                   <div>
-                    <img
+                    <Image
+                      width={400}
+                      height={300}
                       className="w-10"
                       src="/assets/client/david.png"
                       alt=""

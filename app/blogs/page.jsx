@@ -2,17 +2,24 @@ import BlogCard from '@/components/BlogCard';
 import NudgeCard from '@/components/NudgeCard';
 import TagButton from '@/components/ui/TagButton';
 import React from 'react';
+import Image from 'next/image';
 
 const Blogs = () => {
   return (
-    <main className="relative">
+    <main className=" relative overflow-hidden flex flex-col items-center justify-center ">
       <div>
-        <img src="/assets/matrix.svg" className="absolute -z-20 top-0" alt="" />
+        <Image
+          width={0}
+          height={0}
+          src="/assets/matrix.svg"
+          className="absolute -z-20 w-full top-0"
+          alt=""
+        />
       </div>
-      <div className="w-full lg:h-[60vh] md:h-[60vh] h-[80vh] flex items-center justify-center">
-        <div className="lg:w-[70%] w-[90%] flex flex-col items-center justify-center">
+      <div className=" max-w-screen-xl  min-h-[60vh] flex items-center justify-center">
+        <div className="lg:w-[70%] w-[90%]  flex flex-col items-center justify-center">
           <div className="">
-            <h1 className="lg:text-5xl md:text-5xl text-4xl text-center font-bold text-cyan-200">
+            <h1 className="lg:text-5xl md:text-5xl text-4xl text-center gradient-text font-bold text-accent-blue">
               Stay Ahead with Our Insights
             </h1>
           </div>
@@ -29,12 +36,11 @@ const Blogs = () => {
             <TagButton name={'Product Design Services'} />
             <TagButton name={'CTO as a Service'} />
             <TagButton name={'API Development'} />
-            <TagButton name={'Headless Commerce Development'} />
           </div>
         </div>
       </div>
 
-      <div className="blogs w-full flex-wrap items-center flex gap-8 justify-center">
+      <div className="blogs max-w-screen-xl  flex-wrap items-center flex gap-8 justify-center">
         <BlogCard
           title="Decoding the Jamstack: A Primer for E-commerce Entrepreneurs"
           image="/assets/blogs/blog1.png"
@@ -72,14 +78,14 @@ const Blogs = () => {
         />
       </div>
 
-      <div className="min-h-[80vh] w-full flex items-center justify-center">
+      <div className="min-h-[80vh] w-full p-6 flex items-center justify-center">
         <NudgeCard
           title={'Book a discovery call to witness speed'}
           label={'Book Now'}
         />
       </div>
 
-      <div className="w-full mt-16 footer h-[60vh] border-b-2 border-gray-800 flex items-center justify-center">
+      <div className="w-full mt-16 footer p-6 h-[60vh] border-b-2 border-gray-800 flex items-center justify-center">
         <NudgeCard
           title={'This text can be changed on purpose'}
           label={'Also this CTA'}

@@ -1,4 +1,5 @@
 import Button from './ui/Button';
+import Link from 'next/link';
 import BackLightEffect from './ui/BackLightEffect';
 import Image from 'next/image';
 
@@ -35,7 +36,9 @@ const HeroSection = () => {
           </p>
         </div>
         <div className="gap-5 flex flex-col lg:flex-row">
-          <Button variant="filled" label="Instant Quotation" />
+          <Link href={'/quotation'}>
+            <Button variant="filled" label="Instant Quotation" />
+          </Link>
           <Button variant="outline" label="Book a Meeting" />
         </div>
       </div>
