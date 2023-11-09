@@ -32,11 +32,11 @@ module.exports = {
         'slide-horizontal': {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-100%)' },
-        }
+        },
       },
       animation: {
-        'slidehorizontal': 'slide-horizontal 30s linear infinite',
-      }
+        slidehorizontal: 'slide-horizontal 30s linear infinite',
+      },
     },
   },
   plugins: [],

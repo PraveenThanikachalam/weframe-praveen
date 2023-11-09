@@ -29,9 +29,9 @@ const HeroSection = () => {
         <div className="lg:w-[70%] w-[90%]">
           <p className="text-base font-light my-7 text-gray-300">
             We recognize the demand for high-speed, secure, and easily scalable
-            websites. Leveraging the power of Jamstack, we deliver an exceptional
-            web development experience tailored to your specific requirements, Get
-            an instant quote for your project.
+            websites. Leveraging the power of Jamstack, we deliver an
+            exceptional web development experience tailored to your specific
+            requirements, Get an instant quote for your project.
           </p>
         </div>
         <div className="gap-5 flex flex-col lg:flex-row">
@@ -40,7 +40,7 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="absolute h-full w-full z-20 bg-[url('/assets/matrix.svg')] bg-cover bg-bottom"></div>
-      <div className='w-full flex justify-center relative'>
+      <div className="w-full flex justify-center relative">
         <div className="w-full z-30  flex flex-col md:mt-6 items-center justify-end gap-2">
           <p className="md:mb-6 text-xl font-normal">Trusted by</p>
           <div className=" relative mt-5 sm:mt-0 w-full md:w-[60vw] overflow-hidden block [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
@@ -48,15 +48,31 @@ const HeroSection = () => {
               <div className="flex animate-slidehorizontal">
                 {logos.map((logo) => {
                   return (
-                    <div className="relative h-8 md:h-12 w-20  mx-4 " key={logo.id}>
-                      <Image src={logo.image} className="object-contain" alt="samsung" fill />
+                    <div
+                      className="relative h-8 md:h-12 w-20  mx-4 "
+                      key={logo.id}
+                    >
+                      <Image
+                        src={logo.image}
+                        className="object-contain"
+                        alt="samsung"
+                        fill
+                      />
                     </div>
                   );
                 })}
                 {logos.map((logo) => {
                   return (
-                    <div className="relative h-8 md:h-12 w-20  mx-4 " key={logo.id}>
-                      <Image src={logo.image} className="object-contain" alt="samsung" fill />
+                    <div
+                      className="relative h-8 md:h-12 w-20  mx-4 "
+                      key={logo.id}
+                    >
+                      <Image
+                        src={logo.image}
+                        className="object-contain"
+                        alt="samsung"
+                        fill
+                      />
                     </div>
                   );
                 })}
@@ -64,15 +80,31 @@ const HeroSection = () => {
               <div className="flex animate-slidehorizontal">
                 {logos.map((logo) => {
                   return (
-                    <div className="relative h-8 md:h-12 w-20  mx-4 " key={logo.id}>
-                      <Image src={logo.image} className="object-contain" alt="samsung" fill />
+                    <div
+                      className="relative h-8 md:h-12 w-20  mx-4 "
+                      key={logo.id}
+                    >
+                      <Image
+                        src={logo.image}
+                        className="object-contain"
+                        alt="samsung"
+                        fill
+                      />
                     </div>
                   );
                 })}
                 {logos.map((logo) => {
                   return (
-                    <div className="relative h-8 md:h-12 w-20  mx-4 " key={logo.id}>
-                      <Image src={logo.image} className="object-contain" alt="samsung" fill />
+                    <div
+                      className="relative h-8 md:h-12 w-20  mx-4 "
+                      key={logo.id}
+                    >
+                      <Image
+                        src={logo.image}
+                        className="object-contain"
+                        alt="samsung"
+                        fill
+                      />
                     </div>
                   );
                 })}
@@ -80,15 +112,31 @@ const HeroSection = () => {
               <div className="flex animate-slidehorizontal">
                 {logos.map((logo) => {
                   return (
-                    <div className="relative h-8 md:h-12 w-20  mx-4 " key={logo.id}>
-                      <Image src={logo.image} className="object-contain" alt="samsung" fill />
+                    <div
+                      className="relative h-8 md:h-12 w-20  mx-4 "
+                      key={logo.id}
+                    >
+                      <Image
+                        src={logo.image}
+                        className="object-contain"
+                        alt="samsung"
+                        fill
+                      />
                     </div>
                   );
                 })}
                 {logos.map((logo) => {
                   return (
-                    <div className="relative h-8 md:h-12 w-20  mx-4 " key={logo.id}>
-                      <Image src={logo.image} className="object-contain" alt="samsung" fill />
+                    <div
+                      className="relative h-8 md:h-12 w-20  mx-4 "
+                      key={logo.id}
+                    >
+                      <Image
+                        src={logo.image}
+                        className="object-contain"
+                        alt="samsung"
+                        fill
+                      />
                     </div>
                   );
                 })}
@@ -96,7 +144,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        <div className='absolute top-0 min-[450px]:-top-1/2'>
+        <div className="absolute top-0 min-[450px]:-top-1/2">
           <BackLightEffect />
         </div>
       </div>

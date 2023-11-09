@@ -10,7 +10,13 @@ const Navbar = () => {
   return (
     <div className="w-full sticky top-0 bg-opacity-25 z-50 bg-[#020c0d] backdrop-blur-md flex items-center justify-between text-white py-6 px-10">
       <div>
-        <Image width={32} height={32} className=' w-10 h-10' src="/assets/logo.svg" alt="logo" />
+        <Image
+          width={32}
+          height={32}
+          className=" w-10 h-10"
+          src="/assets/logo.svg"
+          alt="logo"
+        />
       </div>
       <nav className="hidden lg:block">
         <ul className="gap-16 flex text-sm font-medium items-center justify-center">
