@@ -29,5 +29,24 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.gradient-text': {
+          background: 'linear-gradient(92deg, #5cd2dd 0.28%, #99ebf2 100%)',
+          WebkitBackgroundClip: 'text',
+          backgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        },
+        '.border-gradient': {
+          border: '2px solid',
+          backgroundImage: 'linear-gradient(to right, #333, #ddd)',
+          backgroundClip: 'padding-box',
+          borderImageSlice: '1',
+        },
+      };
+
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
 };
