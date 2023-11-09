@@ -6,11 +6,11 @@ const TagComponent = ({ title, labels }) => {
     <div className=" w-full mt-6 flex flex-col items-start gap-3 justify-center">
       <p className="text-sm text-cyan-200">{title}</p>
       <div className="flex flex-wrap gap-2">
-        {labels.map((label) => {
+        {labels.map((label, index) => {
           if (labels[0] === label) {
-            return <TagButton name={label} selected={true} />;
+            return <TagButton key={index} name={label} selected={true} />;
           } else {
-            return <TagButton name={label} />;
+            return <TagButton key={index} name={label} />;
           }
         })}
       </div>

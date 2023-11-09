@@ -2,8 +2,8 @@ import React from 'react';
 
 const StoryCard = ({ slide, video }) => {
   return (
-    <div className="lg:w-[80%] w-[85%] borderGrd border border-gray-400 rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
-      <div className="lg:w-[40%] w-full flex lg:p-10 p-1 flex-col items-center justify-center">
+    <div className="lg:w-[75%] w-[85%] borderGrd border bg-gradient-to-br from-[#1FBCCB1F] to-[#020C0D] border-gray-400 rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
+      <div className="lg:w-[40%] w-full flex lg:p-6 p-1 flex-col items-center justify-center">
         <h1 className="lg:text-2xl text-lg font-bold text-white">
           Freemium Blog Platform for Entrepreneurs
         </h1>
@@ -43,13 +43,13 @@ const StoryCard = ({ slide, video }) => {
           </button>
         </div>
       </div>
-      <div className="lg:w-[60%] w-full py-2 lg:py-0 flex items-center justify-center">
+      <div className="lg:w-[60%] w-full py-2  lg:py-0 flex items-center justify-center">
         {video ? (
-          <video width="0" height="0" className="w-[90%]" controls>
-            <source src="/assets/demo.mp4" muted type="video/mp4" />
+          <video width="0" height="0" className="w-[85%] h-[95%]" playsInline>
+            <source src="/assets/demo.mp4" type="video/mp4" />
           </video>
         ) : (
-          <img className="w-[95%]" src="/assets/img1.png" alt="" />
+          <img className=" w-[85%]" src="/assets/img1.png" alt="" />
         )}
       </div>
     </div>
