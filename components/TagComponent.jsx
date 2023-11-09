@@ -7,11 +7,7 @@ const TagComponent = ({ title, labels }) => {
       <p className="text-sm text-cyan-200">{title}</p>
       <div className="flex flex-wrap gap-2">
         {labels.map((label, index) => {
-          if (labels[0] === label) {
-            return <TagButton key={index} name={label} selected={true} />;
-          } else {
-            return <TagButton key={index} name={label} />;
-          }
+          <TagButton key={index} name={label} selected={labels[0] === label} />
         })}
       </div>
     </div>
