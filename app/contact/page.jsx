@@ -7,7 +7,9 @@ const Contact = () => {
   return (
     <main>
       <div>
-        <img
+        <Image
+          width={0}
+          height={0}
           src="/assets/matrix.svg"
           className="absolute -z-20 top-0 w-full"
           alt=""

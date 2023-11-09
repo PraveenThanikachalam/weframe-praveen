@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
@@ -9,7 +10,13 @@ const Navbar = () => {
   return (
     <div className="w-full z-50 navbar flex items-center relative justify-between text-white p-10">
       <div>
-        <img src="/assets/logo.svg" alt="" />
+        <Image
+          width={0}
+          height={0}
+          className="w-auto"
+          src="/assets/logo.svg"
+          alt=""
+        />
       </div>
       <nav className="hidden lg:block">
         <ul className="gap-16 flex text-sm font-medium items-center justify-center">

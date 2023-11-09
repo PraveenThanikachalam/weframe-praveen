@@ -3,12 +3,15 @@ import TagButton from '@/components/ui/TagButton';
 import StoryCard from '@/components/successstory/StoryCard';
 import Button from '@/components/ui/Button';
 import NudgeCard from '@/components/NudgeCard';
+import Image from 'next/image';
 
 const CaseStudy = () => {
   return (
     <main>
       <div>
-        <img
+        <Image
+          width={0}
+          height={0}
           src="/assets/matrix.svg"
           className="absolute -z-20 top-0 left-0 w-full right-0"
           alt=""

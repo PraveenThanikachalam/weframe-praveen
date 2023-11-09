@@ -2,12 +2,15 @@ import BlogCard from '@/components/BlogCard';
 import NudgeCard from '@/components/NudgeCard';
 import TagButton from '@/components/ui/TagButton';
 import React from 'react';
+import Image from 'next/image';
 
 const Blogs = () => {
   return (
     <main className="relative ">
       <div>
-        <img
+        <Image
+          width={0}
+          height={0}
           src="/assets/matrix.svg"
           className="absolute -z-20 w-full top-0"
           alt=""

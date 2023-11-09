@@ -2,13 +2,16 @@ import TagComponent from '@/components/TagComponent';
 import Button from '@/components/ui/Button';
 import SwitchButton from '@/components/ui/SwitchButton';
 import Link from 'next/link';
+import Image from 'next/image';
 import React from 'react';
 
 const Quote = () => {
   return (
     <main>
       <div>
-        <img
+        <Image
+          width={0}
+          height={0}
           src="/assets/matrix.svg"
           className="absolute -z-20 top-0 w-full"
           alt=""

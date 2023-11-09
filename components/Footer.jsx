@@ -14,6 +14,7 @@ const Footer = () => {
                   width={0}
                   height={0}
                   className="h-auto w-7"
+                  alt=""
                 />
               </div>
               <p
@@ -32,18 +33,21 @@ const Footer = () => {
                   width={0}
                   height={0}
                   className="h-auto w-6"
+                  alt=""
                 />
                 <Image
                   src={'/assets/socials/icons/social-icon-2.svg'}
                   width={0}
                   height={0}
                   className="h-auto w-6"
+                  alt=""
                 />
                 <Image
                   src={'/assets/socials/icons/social-icon-3.svg'}
                   width={0}
                   height={0}
                   className="h-auto w-6"
+                  alt=""
                 />
               </div>
             </div>

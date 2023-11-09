@@ -83,3 +83,8 @@ Image {
 .blogBtn {
   background-color: #eefeff;
 }
+
+.story-card-grd {
+  /* background: radial-gradient(169.40% 89.55% at 94.76% 6.29%, #FFFFFF 88%, #404040 100%), */
+  background: radial-gradient(#ffffff, #404040);
+}

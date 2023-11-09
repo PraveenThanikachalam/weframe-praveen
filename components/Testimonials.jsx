@@ -2,6 +2,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import Image from 'next/image';
 
 const Testimonials = () => {
   const swiperRef = useRef();
@@ -48,7 +49,9 @@ const Testimonials = () => {
         >
           <SwiperSlide>
             <div className="lg:w-[600px] w-[300px] lg:h-80 h-60    relative flex items-center justify-center rounded-xl">
-              <img
+              <Image
+                width={400}
+                height={300}
                 src="/assets/client/client.png"
                 className="h-full w-full rounded-xl"
                 alt=""
@@ -56,7 +59,9 @@ const Testimonials = () => {
               <div className="w-[90%]  absolute bottom-3 flex items-center justify-around lg:justify-between">
                 <div className=" w-56  flex items-center justify-start lg:justify-center">
                   <div>
-                    <img
+                    <Image
+                      width={400}
+                      height={300}
                       className="w-10"
                       src="/assets/client/david.png"
                       alt=""
@@ -72,7 +77,13 @@ const Testimonials = () => {
                   </div>
                 </div>
                 <div>
-                  <img className="w-10" src="/assets/client/pause.svg" alt="" />
+                  <Image
+                    width={400}
+                    height={300}
+                    className="w-10"
+                    src="/assets/client/pause.svg"
+                    alt=""
+                  />
                 </div>
               </div>
               <div>
@@ -84,7 +95,9 @@ const Testimonials = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div className="lg:w-[600px] w-[300px] lg:h-80 h-60  relative flex items-center justify-center rounded-xl">
-              <img
+              <Image
+                width={400}
+                height={300}
                 src="/assets/client/client.png"
                 className="h-full w-full rounded-xl"
                 alt=""
@@ -115,7 +128,9 @@ const Testimonials = () => {
               <div className="w-[90%]  absolute z-20 bottom-3 flex items-center  justify-around lg:justify-between">
                 <div className="  w-56  flex items-center justify-start lg:justify-center">
                   <div>
-                    <img
+                    <Image
+                      width={400}
+                      height={300}
                       className="w-10"
                       src="/assets/client/david.png"
                       alt=""
@@ -131,7 +146,13 @@ const Testimonials = () => {
                   </div>
                 </div>
                 <div>
-                  <img className="w-10" src="/assets/client/play.svg" alt="" />
+                  <Image
+                    width={400}
+                    height={300}
+                    className="w-10"
+                    src="/assets/client/play.svg"
+                    alt=""
+                  />
                 </div>
               </div>
               <div>
@@ -167,7 +188,9 @@ const Testimonials = () => {
               <div className="lg:w-[90%] w-[90%]  absolute z-20 bottom-3 flex items-center justify-start">
                 <div className="  w-56 flex items-center justify-start lg:justify-center">
                   <div>
-                    <img
+                    <Image
+                      width={400}
+                      height={300}
                       className="w-10"
                       src="/assets/client/david.png"
                       alt=""

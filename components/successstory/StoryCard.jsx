@@ -1,8 +1,9 @@
 import React from 'react';
+import Image from 'next/image';
 
 const StoryCard = ({ slide, video }) => {
   return (
-    <div className="lg:w-[75%] w-[85%] borderGrd border bg-gradient-to-br from-[#1FBCCB1F] to-[#020C0D] border-gray-400 rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
+    <div className="lg:w-[80%] w-[85%]   border borderGrd border-gray-400 rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
       <div className="lg:w-[40%] w-full flex lg:p-6 p-1 flex-col items-center justify-center">
         <h1 className="lg:text-2xl text-lg font-bold text-white">
           Freemium Blog Platform for Entrepreneurs
@@ -49,7 +50,13 @@ const StoryCard = ({ slide, video }) => {
             <source src="/assets/demo.mp4" type="video/mp4" />
           </video>
         ) : (
-          <img className=" w-[85%]" src="/assets/img1.png" alt="" />
+          <Image
+            width={400}
+            height={300}
+            className=" h-auto w-[85%]"
+            src="/assets/img1.png"
+            alt=""
+          />
         )}
       </div>
     </div>

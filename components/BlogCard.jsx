@@ -1,12 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const BlogCard = ({ title, image, link }) => {
   return (
     <Link href={link} className="flex items-center  justify-center ">
       <div className="blog mt-6 border  border-gray-500 rounded-xl overflow-hidden w-[80%] min-h-[30vw] lg:w-[35vw] ">
         <div className="">
-          <img src={image} className=" w-full" />
+          <Image
+            width={300}
+            quality={100}
+            height={300}
+            src={image}
+            alt="img"
+            className=" h-auto w-full"
+          />
         </div>
         <div className="w-full flex flex-col items-center justify-center p-3 lg:p-5 ">
           <div className="w-full">

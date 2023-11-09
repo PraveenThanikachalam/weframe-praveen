@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const OurClient = () => {
   return (
-    <div className=" clients mt-48 w-full flex flex-col items-center justify-center">
+    <div className=" clients my-48 w-full flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold text-white">Our Clients</h1>
       <div className="lg:w-[70%] w-[80%] mt-20 flex flex-wrap items-center justify-center gap-8 lg:gap-16">
         <div className="w-full flex items-center justify-between">
