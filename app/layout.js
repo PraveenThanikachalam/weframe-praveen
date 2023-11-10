@@ -1,8 +1,8 @@
 import { Lexend } from 'next/font/google';
 import { oceanwide, fira_code } from '@/fonts';
 import './globals.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 
 const font = Lexend({ subsets: ['latin'] });
 

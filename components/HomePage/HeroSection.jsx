@@ -1,6 +1,6 @@
-import Button from './ui/Button';
+import Button from '../ui/Button';
 import Link from 'next/link';
-import BackLightEffect from './ui/BackLightEffect';
+import BackLightEffect from '../ui/BackLightEffect';
 import Image from 'next/image';
 
 const HeroSection = () => {
@@ -22,20 +22,20 @@ const HeroSection = () => {
     { id: 15, image: '/assets/companies/oneplus.svg' },
   ];
   return (
-    <div className="h-[90vh] gap-5 lg:h-[80vh] text-center text-white w-full flex flex-col justify-evenly py-10 items-center relative">
+    <div className="h-[90vh] gap-5 text-center text-white w-full flex flex-col justify-evenly py-10 items-center relative">
       <div className="lg:w-[60%] w-[85%] z-30  flex flex-col items-center justify-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold font-title-font">
           Jamstack & Headless <br /> Commerce Agency
         </h1>
         <div className="lg:w-[70%] w-[90%]">
-          <p className="text-base font-light my-7 text-gray-300">
+          <p className="text-base font-light my-2 md:my-7 text-gray-300">
             We recognize the demand for high-speed, secure, and easily scalable
             websites. Leveraging the power of Jamstack, we deliver an
             exceptional web development experience tailored to your specific
             requirements, Get an instant quote for your project.
           </p>
         </div>
-        <div className="gap-5 flex flex-col lg:flex-row">
+        <div className="gap-2 md:gap-5 flex flex-col lg:flex-row">
           <Link href={'/quotation'}>
             <Button variant="filled" label="Instant Quotation" />
           </Link>

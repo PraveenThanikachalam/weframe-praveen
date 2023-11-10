@@ -4,17 +4,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&family=Lexend:wght@300&display=swap');
 
 @layer utilities {
-  @variants responsive {
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .no-scrollbar {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }
 
@@ -35,14 +33,24 @@ body {
 .bottomLightBg {
   background: conic-gradient(
     from 180deg at 50% 50%,
-    rgba(22, 131, 141, 1) 2deg,
-    rgba(20, 119, 129, 0.4) 75deg,
-    rgba(2, 12, 13, 0.14) 130deg,
-    rgba(7, 22, 18, 0) 300deg,
-    rgba(7, 22, 18, 0) 350deg,
-    /* Set opacity to 0 at 350deg */ rgba(0, 0, 0, 0.02) 357deg,
-    /* Reset opacity to 0 at 357deg */ rgba(20, 119, 129, 0.01) 360deg
+    rgba(22, 131, 141, 1),
+    rgba(20, 119, 129, 0.2),
+    rgba(2, 12, 13, 0.14),
+    rgba(7, 22, 18, 0),
+    rgba(0, 0, 0, 0),
+    rgba(20, 119, 129, 0)
   );
+  @media (min-width: 450px) {
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      rgba(22, 131, 141, 1),
+      rgba(20, 119, 129, 0.4),
+      rgba(2, 12, 13, 0.14),
+      rgba(7, 22, 18, 0),
+      rgba(0, 0, 0, 0),
+      rgba(20, 119, 129, 0.1)
+    );
+  }
 }
 
 body {

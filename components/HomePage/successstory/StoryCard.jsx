@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const StoryCard = ({ slide, video }) => {
   return (
-    <div className="lg:w-[80%] w-[85%] story-card-grd  border  border-gray-600 rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
+    <div className="w-[80vw] max-w-screen-xl story-card-grd  border  border-gray-600 rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
       <div className="lg:w-[40%] w-full flex lg:p-6 p-1 flex-col items-center justify-center">
         <h1 className="lg:text-2xl text-lg font-bold text-white">
           Freemium Blog Platform for Entrepreneurs
@@ -30,7 +30,7 @@ const StoryCard = ({ slide, video }) => {
           we&apos;re here to bring your narrative to life through our expertise.
           Get an instant quote for your project
         </p>
-        <div className="flex mt-5 items-center justify-between w-full">
+        <div className="flex gap-3 mt-5 items-center justify-between w-full">
           <div className={` gap-3 ${slide ? 'flex' : 'hidden'} text-white`}>
             <div className="w-12 h-12 rounded-full border flex items-center justify-center border-white">
               <i className="ri-arrow-left-line"></i>

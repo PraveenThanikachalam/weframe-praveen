@@ -1,9 +1,9 @@
 'use client';
 import React, { useState } from 'react';
-import Deployement from '@/components/techstackcomponents/Deployement';
+import Deployement from '@/components/HomePage/techstackcomponents/Deployement';
 import CmsAndBackend from './CmsAndBackend';
-import MobileFrameworks from '@/components/techstackcomponents/MobileFrameworks';
-import WebFrameworks from '@/components/techstackcomponents/WebFrameworks';
+import MobileFrameworks from '@/components/HomePage/techstackcomponents/MobileFrameworks';
+import WebFrameworks from '@/components/HomePage/techstackcomponents/WebFrameworks';
 
 const TechStack = () => {
   const [shift, setShift] = useState(false);

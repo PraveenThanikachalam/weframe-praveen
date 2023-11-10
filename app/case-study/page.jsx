@@ -1,8 +1,8 @@
 import React from 'react';
 import TagButton from '@/components/ui/TagButton';
-import StoryCard from '@/components/successstory/StoryCard';
+import StoryCard from '@/components/HomePage/successstory/StoryCard';
 import Button from '@/components/ui/Button';
-import NudgeCard from '@/components/NudgeCard';
+import NudgeCard from '@/components/HomePage/NudgeCard';
 import Image from 'next/image';
 
 const CaseStudy = () => {
