@@ -34,7 +34,7 @@ body {
   background: conic-gradient(
     from 180deg at 50% 50%,
     rgba(22, 131, 141, 1),
-    rgba(20, 119, 129, 0.2),
+    rgba(20, 119, 129, 0.6),
     rgba(2, 12, 13, 0.14),
     rgba(7, 22, 18, 0),
     rgba(0, 0, 0, 0),
@@ -44,7 +44,7 @@ body {
     background: conic-gradient(
       from 180deg at 50% 50%,
       rgba(22, 131, 141, 1),
-      rgba(20, 119, 129, 0.4),
+      rgba(20, 119, 129, 0.4) 45deg,
       rgba(2, 12, 13, 0.14),
       rgba(7, 22, 18, 0),
       rgba(0, 0, 0, 0),
