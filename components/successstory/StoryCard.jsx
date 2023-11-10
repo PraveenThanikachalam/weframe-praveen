@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 const StoryCard = ({ slide, video }) => {
   return (
-    <div className="lg:w-[80%] w-[85%] story-card-grd  border  border-gray-600 rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
+    <div className="w-full story-card-grd  border  border-gray-600 rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
       <div className="lg:w-[40%] w-full flex lg:p-6 p-1 flex-col items-center justify-center">
-        <h1 className="lg:text-2xl text-lg font-bold text-white">
+        <h1 className="lg:text-2xl text-lg font-bold font-title-font text-white">
           Freemium Blog Platform for Entrepreneurs
         </h1>
         <div className="lg:flex md:flex hidden gap-2 my-3 flex-wrap">
@@ -59,7 +59,7 @@ const StoryCard = ({ slide, video }) => {
           <Image
             width={400}
             height={300}
-            className=" h-auto w-[85%]"
+            className=" h-auto w-[99%] lg:w-[85%]"
             src="/assets/img1.png"
             alt=""
           />

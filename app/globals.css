@@ -12,11 +12,17 @@ body {
   background-color: #020c0d;
 }
 
-.sec1 {
+/* .matrix {
   background-image: url('/assets/matrix.svg');
   background-size: cover;
-  background-position: bottom;
-}
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -10;
+} */
 
 .glow {
   text-shadow: 0px 0px 15px white;

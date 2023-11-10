@@ -13,7 +13,7 @@ const Jamstack = () => {
       <div className=" max-w-screen-xl  z-20 flex lg:flex-row flex-col items-center justify-center ">
         <div className="left my-16  h-full flex flex-col items-center justify-center w-full lg:w-[50%]">
           <div className="flex flex-col gap-4 lg:items-start items-center  justify-center">
-            <h1 className="lg:text-6xl lg:text-start text-center md:text-6xl font-extrabold text-4xl font-title-font text-accent-blue">
+            <h1 className="lg:text-6xl md:text-6xl text-4xl lg:text-start text-center  font-bold  font-title-font gradient-text">
               Rock Solid. <br /> Lightning Fast. <br /> Infinitely Scalable.
             </h1>
             <p

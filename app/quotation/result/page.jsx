@@ -1,19 +1,12 @@
 import Button from '@/components/ui/Button';
 import React from 'react';
 import Image from 'next/image';
+import Matrix from '@/components/ui/Matrix';
 
 const QuoteResult = () => {
   return (
     <main>
-      <div>
-        <Image
-          width={0}
-          height={0}
-          src="/assets/matrix.svg"
-          className="absolute -z-20 top-0 w-full"
-          alt=""
-        />
-      </div>
+      <Matrix />
       <div className="w-full p-8 min-h-[80vh] flex flex-col items-center justify-evenly">
         <div className="flex flex-col items-center justify-center text-center gap-8">
           <h1 className="text-lg font-semibold text-gray-200">
