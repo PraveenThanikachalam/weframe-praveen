@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <main>
+    <main className='relative bottom-0'>
       <div className="footer w-full relative bottom-0 p-12 flex flex-col items-center justify-center text-white ">
         <div className="lg:w-[90%] w-full lg:flex-row flex-col flex items-center lg:justify-between justify-center">
           <div className="lg:w-[40%] w-[95%] text-center lg:text-left">

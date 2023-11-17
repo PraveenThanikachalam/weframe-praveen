@@ -9,7 +9,7 @@ const SmallBox = ({ title, img }) => {
         height={0}
         className="w-auto"
         alt="img"
-        src={`/assets/jamstack/page1/${img}.svg`}
+        src={`${img}`}
       />
       <p className="font-fira-code text-sm text-gray-400">{title}</p>
     </div>

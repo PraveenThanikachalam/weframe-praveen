@@ -8,12 +8,12 @@ const Navbar = () => {
   const [visible2, setVisible2] = useState(false);
   const [visible3, setVisible3] = useState(false);
   return (
-    <div className="w-full  navbar flex items-center relative justify-between text-white p-10">
-      <div>
+    <div className="w-full z-30 navbar bg-cover bg-center flex items-center relative justify-between text-white p-10">
+      <div >
         <Image
           width={0}
           height={0}
-          className="w-auto"
+          className="w-auto "
           src="/assets/logo.svg"
           alt=""
         />
