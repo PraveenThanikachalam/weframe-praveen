@@ -5,12 +5,12 @@ import SuccessStory from '@/components/HomePage/successstory/SuccessStory';
 import Services from '@/components/HomePage/services/Services';
 import TechStack from '@/components/HomePage/techstackcomponents/TechStack';
 import NudgeCard from '@/components/HomePage/NudgeCard';
-import OurClient from '@/components/OurClient';
+import OurClient from '@/components/HomePage/OurClient';
 import Testimonials from '@/components/HomePage/Testimonials';
 
 export default function Home() {
   return (
-    <main>
+    <main className='flex flex-col items-center w-full'>
       <HeroSection />
       <SuccessStory />
       <TechStack />
