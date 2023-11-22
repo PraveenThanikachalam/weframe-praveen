@@ -5,7 +5,7 @@ import Button from '@/components/ui/Button';
 const Services = () => {
   return (
     <div className="w-full py-16 px-4 md:px-10 flex flex-col gap-5 md:gap-10 items-center justify-center">
-      <div className="w-[80vw] max-w-screen-xl mb-8 flex flex-col lg:flex-row items-center justify-between">
+      <div className="w-[80vw] max-w-screen-xl mb-8 flex flex-col lg:flex-row items-center gap-4 justify-between">
         <div className="lg:w-[35vw] w-full text-center lg:text-left">
           <h1 className="text-4xl font-bold text-white">Services</h1>
           <p className="text-gray-500 text-sm mt-3">

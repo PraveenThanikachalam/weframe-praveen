@@ -58,7 +58,9 @@ const FaqComponent = () => {
                 className="borderGrd px-4 mt-3"
                 key={item.id}
               >
-                <AccordionTrigger>{item.title}</AccordionTrigger>
+                <AccordionTrigger className="hover:no-underline">
+                  {item.title}
+                </AccordionTrigger>
                 <AccordionContent className="text-[#999999] text-left">
                   {item.desc}
                 </AccordionContent>

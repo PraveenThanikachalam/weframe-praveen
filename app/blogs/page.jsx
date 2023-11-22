@@ -1,11 +1,16 @@
 import BlogCard from '@/components/BlogCard';
 import NudgeCard from '@/components/HomePage/NudgeCard';
 import TagButton from '@/components/ui/TagButton';
-import React from 'react';
-import Image from 'next/image';
 import Matrix from '@/components/ui/Matrix';
 
 const Blogs = () => {
+  function convertToSlug(inputString) {
+    return inputString
+      .toLowerCase() // Convert to lowercase
+      .replace(/\s+/g, '-') // Replace spaces with hyphens
+      .replace(/[^\w-]+/g, '') // Remove non-word characters (excluding hyphens)
+      .replace(/--+/g, '-'); // Replace multiple hyphens with a single hyphen
+  }
   return (
     <main className=" max-w-screen-xl mx-auto   px-4 flex flex-col items-center justify-center ">
       <Matrix />
@@ -34,37 +39,51 @@ const Blogs = () => {
         <BlogCard
           title="Decoding the Jamstack: A Primer for E-commerce Entrepreneurs"
           image="/assets/blogs/blog1.png"
-          link=""
+          link={`/blogs/${convertToSlug(
+            'Decoding the Jamstack: A Primer for E-commerce Entrepreneurs'
+          )}`}
         />
         <BlogCard
           title="Revolutionizing E-commerce with Headless Commerce"
           image="/assets/blogs/blog2.png"
-          link=""
+          link={`/blogs/${convertToSlug(
+            'Revolutionizing E-commerce with Headless Commerce'
+          )}`}
         />
         <BlogCard
           title="The Benefits of Serverless E-commerce with Jamstack"
           image="/assets/blogs/blog3.png"
-          link=""
+          link={`/blogs/${convertToSlug(
+            'The Benefits of Serverless E-commerce with Jamstack'
+          )}`}
         />
         <BlogCard
           title="Optimizing E-commerce SEO with Jamstack and Headless Commerce"
           image="/assets/blogs/blog4.png"
-          link=""
+          link={`/blogs/${convertToSlug(
+            'Optimizing E-commerce SEO with Jamstack and Headless Commerce'
+          )}`}
         />
         <BlogCard
           title="Headless Commerce: Unleashing the Power of Customization"
           image="/assets/blogs/blog5.png"
-          link=""
+          link={`/blogs/${convertToSlug(
+            'Headless Commerce: Unleashing the Power of Customization'
+          )}`}
         />
         <BlogCard
           title="Jamstack Security: Safeguarding Your E-commerce Business"
           image="/assets/blogs/blog6.png"
-          link=""
+          link={`/blogs/${convertToSlug(
+            'Jamstack Security: Safeguarding Your E-commerce Business'
+          )}`}
         />
         <BlogCard
           title="The Future of E-commerce: Trends in Jamstack and Headless Commerce"
           image="/assets/blogs/blog7.png"
-          link=""
+          link={`/blogs/${convertToSlug(
+            'The Future of E-commerce: Trends in Jamstack and Headless Commerce'
+          )}`}
         />
       </div>
 

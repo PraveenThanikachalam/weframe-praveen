@@ -143,11 +143,11 @@ const Jamstack = () => {
         </div>
       </div>
 
-      <div className="w-full flex items-center justify-center lg:my-24 my-12">
+      <div className="w-full flex items-center justify-center">
         <TechStack />
       </div>
 
-      <div className="w-full my-24">
+      <div className="w-full my-24 flex justify-center">
         <NudgeCard
           title={'Book a discovery call to witness speed'}
           label={'Book Now'}
@@ -158,7 +158,7 @@ const Jamstack = () => {
         <Testimonials />
       </div>
 
-      <div className="w-[100vw] p-6 mt-24 min-h-[60vh] flex items-center justify-center footer ">
+      <div className="w-screen p-6 mt-24 min-h-[60vh] flex items-center justify-center footer ">
         <NudgeCard
           title={'This text can be changed on purpose'}
           label={'Also this CTA'}

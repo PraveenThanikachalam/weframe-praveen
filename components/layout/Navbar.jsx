@@ -8,7 +8,7 @@ const Navbar = () => {
   const [visible2, setVisible2] = useState(false);
   const [visible3, setVisible3] = useState(false);
   return (
-    <div className="w-full sticky top-0 bg-opacity-25 z-50 bg-[#020c0d] backdrop-blur-md flex items-center justify-between text-white py-6 px-10">
+    <div className="w-full sticky top-0 bg-opacity-25 z-50 bg-[#020c0d] backdrop-blur-md mix-blend-screen flex items-center justify-between text-white py-6 px-10">
       <div>
         <Link href={'/'}>
           <Image
