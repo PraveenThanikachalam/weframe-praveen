@@ -126,7 +126,7 @@ const Contact = () => {
               <TagButton name={'Product Design Services'} />
             </div>
           </div>
-          <div className="my-8 lg:my-0  w-full flex items-end justify-center">
+          <div className="my-8 lg:mt-8  w-full flex items-end justify-center">
             <div className="flex lg:flex-row md:flex-row flex-col   w-full items-center lg:justify-end justify-center lg:gap-2 gap-3 ">
               <Button label={'Book Meeting'} variant="outline" />
               <Button label={'Send Query'} variant="filled" />
