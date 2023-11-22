@@ -1,24 +1,17 @@
 import Button from '@/components/ui/Button';
+import Matrix from '@/components/ui/Matrix';
 import TagButton from '@/components/ui/TagButton';
 import Image from 'next/image';
 import React from 'react';
 
 const Contact = () => {
   return (
-    <main>
-      <div>
-        <Image
-          width={0}
-          height={0}
-          src="/assets/matrix.svg"
-          className="absolute -z-20 top-0 w-full"
-          alt=""
-        />
-      </div>
-      <div className="w-full lg:h-[85vh]  flex lg:flex-row  flex-col">
-        <div className="left lg:w-[50%] w-full text-center lg:text-left  flex  flex-col items-center justify-around">
-          <div className="w-[80%] py-8 lg:py-0">
-            <h1 className=" text-accent-blue lg:text-5xl text-4xl font-bold">
+    <section className=" max-w-screen-xl mx-auto  md:px-4 px-2 lg:px-4">
+      <Matrix />
+      <div className=" w-full  lg:h-[85vh]  flex lg:flex-row  flex-col">
+        <div className="left lg:w-[50%] w-full text-center lg:text-left  flex  flex-col items-center lg:items-left justify-evenly">
+          <div className="w-full px-2 py-8 lg:py-0">
+            <h1 className="  lg:text-5xl md:text-5xl text-4xl font-title-font gradient-text font-bold">
               Get in Touch with our Experts
             </h1>
             <p
@@ -30,7 +23,7 @@ const Contact = () => {
               delivering impactful digital solutions for our clients.
             </p>
           </div>
-          <div className=" w-[80%] flex flex-col gap-4 mt-5 lg:mt-0">
+          <div className=" w-full flex flex-col gap-4 mt-5 lg:mt-0">
             <p className="text-lg font-semibold text-white glow">Socials</p>
             <div className="flex gap-5 items-center lg:justify-start justify-center">
               <Image
@@ -59,7 +52,7 @@ const Contact = () => {
         </div>
         <div className="right lg:p-5 mt-12 lg:mt-0 lg:w-[50%] w-full h-full flex flex-col  lg:items-start items-center justify-evenly">
           <div className="form lg:w-full w-[75%] flex items-center lg:justify-start justify-center">
-            <div className="lg:w-[90%] md:w-[90%] w-full ">
+            <div className="lg:w-full md:w-[90%] w-full ">
               <div className="flex  lg:flex-row md:flex-row flex-col gap-3 lg:gap-0 md:gap-0 flex-wrap -m-2">
                 <div className="lg:p-2 md:p-2 lg:w-1/2 md:w-1/2 w-full">
                   <div className="relative">
@@ -114,7 +107,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-3 item lg:justify-start mt-6 lg:mt-0 justify-center p-5 lg:p-0  items-center lg:items-start">
+          <div className="flex flex-col gap-3  item lg:justify-start mt-6 lg:mt-0 justify-center p-5 lg:p-0  items-center lg:items-start">
             <p className="text-base text-cyan-200">
               Service you want to query for
             </p>
@@ -125,23 +118,23 @@ const Contact = () => {
               >
                 Jamstack Development
               </button>
+              <TagButton name={'CTO as a Service'} />
+              <TagButton name={'API Development'} />
               <TagButton name={'Headless Commerce Development'} />
               <TagButton name={'MVP & POC Development'} />
               <TagButton name={'Custom Software Development'} />
               <TagButton name={'Product Design Services'} />
-              <TagButton name={'CTO as a Service'} />
-              <TagButton name={'API Development'} />
             </div>
           </div>
-          <div className="my-8 lg:my-0">
-            <div className="flex lg:flex-row md:flex-row flex-col  lg:w-[45vw] w-full items-center lg:justify-end justify-center lg:gap-2 gap-3 ">
+          <div className="my-8 lg:mt-8  w-full flex items-end justify-center">
+            <div className="flex lg:flex-row md:flex-row flex-col   w-full items-center lg:justify-end justify-center lg:gap-2 gap-3 ">
               <Button label={'Book Meeting'} variant="outline" />
               <Button label={'Send Query'} variant="filled" />
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 

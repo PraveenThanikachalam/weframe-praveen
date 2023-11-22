@@ -3,23 +3,16 @@ import Button from '@/components/ui/Button';
 import SwitchButton from '@/components/ui/SwitchButton';
 import Link from 'next/link';
 import Image from 'next/image';
+import Matrix from '@/components/ui/Matrix';
 
 const QuoteNext = () => {
   return (
-    <main>
-      <div>
-        <Image
-          width={0}
-          height={0}
-          src="/assets/matrix.svg"
-          className="absolute -z-20 top-0 w-full"
-          alt=""
-        />
-      </div>
+    <main className="max-w-screen-xl mx-auto px-4 flex flex-col items-center justify-center">
+      <Matrix />
 
-      <div className="w-full my-16 flex flex-col items-center gap-10 lg:gap-8 justify-center">
-        <div className="flex flex-col items-center justify-center text-center lg:w-[50%] w-[80%] gap-5">
-          <h1 className="lg:text-5xl md:text-5xl text-3xl text-cyan-200 font-bold font-title-font">
+      <div className="w-full lg:my-28 my-20 flex flex-col items-center gap-10 lg:gap-8 justify-center">
+        <div className="flex flex-col items-center justify-center text-center lg:w-[60%] w-full gap-5">
+          <h1 className="lg:text-5xl md:text-5xl text-3xl gradient-text font-bold font-title-font">
             Get a Quote for Your Development Project
           </h1>
           <SwitchButton
@@ -28,7 +21,7 @@ const QuoteNext = () => {
           />
         </div>
 
-        <div className="lg:w-[50%] w-[75%] mt-6">
+        <div className="lg:w-[60%] md:w-[75%] w-[90%] mt-6">
           <div className="form w-full flex items-center lg:justify-center justify-center">
             <div className="lg:w-full md:w-[90%] w-full ">
               <div className="flex  lg:flex-row md:flex-row flex-col gap-3 lg:gap-0 md:gap-0 flex-wrap -m-2">
@@ -120,7 +113,7 @@ const QuoteNext = () => {
           </div>
         </div>
 
-        <div>
+        <div className="mt-5">
           <Link href={'/quotation/result'}>
             <Button variant="filled" label={'Calculate Quote'} />
           </Link>

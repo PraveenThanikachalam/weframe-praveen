@@ -5,7 +5,7 @@ import Image from 'next/image';
 const BlogCard = ({ title, image, link }) => {
   return (
     <Link href={link} className="flex items-center  justify-center ">
-      <div className="blog mt-6 border navbar hover:shadow-sm hover:shadow-white transition-all duration-200 border-gray-500 rounded-xl overflow-hidden w-[80%] min-h-[30vw] lg:w-[35vw] ">
+      <div className="blog mt-6 border navbar hover:shadow-sm hover:shadow-white transition-all duration-200 border-gray-500 rounded-xl overflow-hidden w-full md:w-[550px]  min-h-[31vw] lg:w-[500px] ">
         <div className="">
           <Image
             width={300}
