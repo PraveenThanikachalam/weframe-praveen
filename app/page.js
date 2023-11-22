@@ -1,28 +1,27 @@
-import Image from 'next/image'
+import FaqComponent from '@/components/HomePage/FaqComponent';
+
+import HeroSection from '@/components/HomePage/HeroSection';
+import SuccessStory from '@/components/HomePage/successstory/SuccessStory';
+import Services from '@/components/HomePage/services/Services';
+import TechStack from '@/components/HomePage/techstackcomponents/TechStack';
+import NudgeCard from '@/components/HomePage/NudgeCard';
+import OurClient from '@/components/HomePage/OurClient';
+import Testimonials from '@/components/HomePage/Testimonials';
 
 export default function Home() {
   return (
-    <main>
-
-   <div className='pattern z-40 text-center text-white w-full min-h-[92vh] flex items-center justify-center'>
-    <div className='w-[60%] flex flex-col items-center justify-center'>
-      <h1 className='text-6xl font-extrabold'>Jamstack & Headless <br /> Commerce Agency</h1>
-      <p className='text-sm my-7 text-gray-300'>We recognize the demand for high-speed, secure, and easily scalable websites. Leveraging the power of Jamstack, we deliver an exceptional web development experience tailored to your specific requirements, Get an instant quote for your project.</p>
-      <div className='gap-5 flex'>
-        <button className=' px-5 w-48 py-3 font-medium text-black bg-white rounded-full'>Instant Quotation</button>
-        <button className='px-5 w-48 py-3 font-medium text-white glow border  bg-transparent rounded-full'>Case Studies</button>
-      </div>
-    </div>
-   </div>
-   {/* <div className='sec2 w-full h-[50vh] flex items-center justify-center bg-black text-white'>
-    <div className='w-[40%] flex flex-col items-center justify-center'>
-      <p>Trusted by</p>
-      <div>
-
-      </div>
-      <div className='line w-[70%] h-[0px] bg-green-600'></div>
-    </div>
-   </div> */}
-   </main>
-  )
+    <main className="flex flex-col items-center w-full">
+      <HeroSection />
+      <SuccessStory />
+      <TechStack />
+      <Services />
+      <NudgeCard
+        title={'Book a discovery call to witness speed'}
+        label={'Book Now'}
+      />
+      <Testimonials />
+      <OurClient />
+      <FaqComponent />
+    </main>
+  );
 }
