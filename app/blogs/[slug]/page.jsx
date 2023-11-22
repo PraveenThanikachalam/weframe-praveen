@@ -1,3 +1,4 @@
+import NudgeCard from '@/components/HomePage/NudgeCard';
 import TagButton from '@/components/ui/TagButton';
 import Image from 'next/image';
 import React from 'react';
@@ -5,16 +6,16 @@ import React from 'react';
 const Page = ({ params }) => {
   return (
     <main className="w-full ">
-      <div className="w-full   flex items-center justify-center relative z-20">
-        <div className="w-full -z-10 lg:h-[60vh] h-screen absolute bottom-0  ">
+      <div className="w-full flex items-center justify-center relative z-20">
+        <div className="w-full -z-10 absolute bottom-0  ">
           <Image
             alt="img"
             src={'/assets/blogs/blog2.png'}
-            className="w-full h-full bg-cover filter blur-sm"
+            className="w-full h-full bg-cover"
             width={200}
             height={200}
           />
-          <div className="w-full absolute top-0  h-full bg-black bg-opacity-30 "></div>
+          <div className="w-full absolute top-0  h-full bg-black bg-opacity-30 backdrop-blur-sm"></div>
         </div>
         <div className="w-[80%] my-16 flex flex-col items-start gap-10 justify-center">
           <div className="flex flex-wrap gap-2">
@@ -30,7 +31,7 @@ const Page = ({ params }) => {
           </h1>
         </div>
       </div>
-      <div className="max-w-screen-xl p-4 flex items-center justify-center mx-auto ">
+      <div className="max-w-screen-lg p-20 flex items-center justify-center mx-auto ">
         <p className="text-white">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae odit
           qui ad blanditiis harum molestias sint officia aperiam! Excepturi
@@ -45,6 +46,12 @@ const Page = ({ params }) => {
           delectus consequatur? Nostrum veniam error enim odit, rem accusantium
           qui debitis eum expedita minima.
         </p>
+      </div>
+      <div className="w-full flex justify-center py-10">
+        <NudgeCard
+          title={'Book a discovery call to witness speed'}
+          label={'Book Now'}
+        />
       </div>
     </main>
   );

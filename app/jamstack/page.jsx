@@ -1,10 +1,10 @@
 import MediumBox from '@/components/jamstackcomponent/MediumBox';
 import SmallBox from '@/components/jamstackcomponent/SmallBox';
-import TechStack from '@/components/techstackcomponents/TechStack';
+import TechStack from '@/components/HomePage/techstackcomponents/TechStack';
 import Button from '@/components/ui/Button';
 import React from 'react';
-import NudgeCard from '@/components/NudgeCard';
-import Testimonials from '@/components/Testimonials';
+import NudgeCard from '@/components/HomePage/NudgeCard';
+import Testimonials from '@/components/HomePage/Testimonials';
 
 const Jamstack = () => {
   return (
@@ -33,12 +33,30 @@ const Jamstack = () => {
         </div>
         <div className="right lg:w-[50%] w-full flex  flex-wrap items-center justify-center">
           <div className="flex w-full h-auto  flex-wrap items-center justify-center gap-3">
-            <SmallBox title={'Enhanced Performance'} img={'/assets/jamstack/jam1.svg'} />
-            <SmallBox title={'Super Flexibility'} img={'/assets/jamstack/jam2.svg'} />
-            <SmallBox title={'Ensured Security'} img={'/assets/jamstack/jam3.svg'} />
-            <SmallBox title={'Infinite Scalability'} img={'/assets/jamstack/jam4.svg'} />
-            <SmallBox title={'Developer Friendly'} img={'/assets/jamstack/jam5.svg'} />
-            <SmallBox title={'Increased Speed'} img={'/assets/jamstack/jam6.svg'} />
+            <SmallBox
+              title={'Enhanced Performance'}
+              img={'/assets/jamstack/jam1.svg'}
+            />
+            <SmallBox
+              title={'Super Flexibility'}
+              img={'/assets/jamstack/jam2.svg'}
+            />
+            <SmallBox
+              title={'Ensured Security'}
+              img={'/assets/jamstack/jam3.svg'}
+            />
+            <SmallBox
+              title={'Infinite Scalability'}
+              img={'/assets/jamstack/jam4.svg'}
+            />
+            <SmallBox
+              title={'Developer Friendly'}
+              img={'/assets/jamstack/jam5.svg'}
+            />
+            <SmallBox
+              title={'Increased Speed'}
+              img={'/assets/jamstack/jam6.svg'}
+            />
           </div>
         </div>
       </div>
@@ -125,11 +143,11 @@ const Jamstack = () => {
         </div>
       </div>
 
-      <div className="w-full flex items-center justify-center lg:my-24 my-12">
+      <div className="w-full flex items-center justify-center">
         <TechStack />
       </div>
 
-      <div className="w-full my-24">
+      <div className="w-full my-24 flex justify-center">
         <NudgeCard
           title={'Book a discovery call to witness speed'}
           label={'Book Now'}
@@ -140,7 +158,7 @@ const Jamstack = () => {
         <Testimonials />
       </div>
 
-      <div className="w-[100vw] p-6 mt-24 min-h-[60vh] flex items-center justify-center footer ">
+      <div className="w-screen p-6 mt-24 min-h-[60vh] flex items-center justify-center footer ">
         <NudgeCard
           title={'This text can be changed on purpose'}
           label={'Also this CTA'}
