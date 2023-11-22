@@ -1,15 +1,23 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const [visible2, setVisible2] = useState(false);
   const [visible3, setVisible3] = useState(false);
+
+  useEffect(() => {
+    const dropElement = document.querySelector('.drop');
+
+    if (dropElement) {
+      dropElement.style.transform = 'rotate(90deg)';
+    }
+  }, []);
   return (
-    <div className="w-full sticky top-0 bg-opacity-25 z-50 bg-[#020c0d] backdrop-blur-md mix-blend-screen flex items-center justify-between text-white py-6 px-10">
-      <div>
+    <div  className="w-full sticky top-0 bg-opacity-25 z-50 bg-[#020c0d]   flex items-center justify-between text-white py-6 px-10">
+      <div >
         <Link href={'/'}>
           <Image
             width={32}
@@ -20,7 +28,7 @@ const Navbar = () => {
           />
         </Link>
       </div>
-      <nav className="hidden lg:block ">
+      <nav className="hidden lg:block  ">
         <ul className="gap-16 flex text-sm font-medium items-center justify-center">
           <div
             onClick={() => {
@@ -28,7 +36,7 @@ const Navbar = () => {
             }}
             className="cursor-pointer"
           >
-            Services <i className="ri-arrow-down-s-line"></i>
+            Services {visible ? <i class="ri-arrow-up-s-line"></i> : <i className="ri-arrow-down-s-line"></i> } 
           </div>
           <Link href={'/case-study'}>Case Studies</Link>
           <Link href={'/blogs'}>Blogs</Link>
@@ -43,7 +51,7 @@ const Navbar = () => {
             setVisible3(!visible3);
           }}
         >
-          Services <i className="ri-arrow-down-s-line"></i>
+          Services <i className="ri-arrow-down-s-line "></i>
         </Link>
 
         <i
@@ -54,12 +62,15 @@ const Navbar = () => {
         ></i>
       </div>
       <div
-        className={`absolute laptop w-[95%]  p-5 navbar gap-5 ${
-          visible ? 'flex' : 'hidden'
-        } flex-wrap items-start justify-center top-20 `}
+     
+        className={`absolute laptop w-[95%] drop animate-fade-in-down z-50  backdrop-blur-md border-b border-gray-500 p-5 navbar gap-5 ${
+          visible ? 'flex ' : 'hidden'
+        } flex-wrap items-start justify-center top-24 `}
       >
-        <div className=" rounded-xl w-[45%] borderGrd p-8 relative  flex items-center justify-center">
+        <div  style={{zIndex:'200'}} className=" rounded-xl w-[45%] borderGrd p-8 relative  flex items-center justify-center">
           <i className="ri-arrow-right-line absolute text-xl top-4 right-5"></i>
+          <Link href={'/jamstack'}>
+          
           <div>
             <h1 className="text-xl font-semibold text-white">
               Jamstack Development
@@ -70,6 +81,7 @@ const Navbar = () => {
               delivering impactful digital solutions for our clients.
             </p>
           </div>
+          </Link>
         </div>
         <div className="rounded-xl w-[45%] borderGrd border-2 p-8 relative border-gray-500 flex items-center justify-center">
           <i className="ri-arrow-right-line absolute text-xl top-4 right-5"></i>
@@ -86,6 +98,7 @@ const Navbar = () => {
         </div>
         <div className="rounded-xl w-[45%]  borderGrd border-2 p-8 relative border-gray-500 flex items-center justify-center">
           <i className="ri-arrow-right-line absolute text-xl top-4 right-5"></i>
+          <Link href={'/headless'}>
           <div>
             <h1 className="text-xl font-semibold text-white">
               Headless Commerce
@@ -96,6 +109,7 @@ const Navbar = () => {
               delivering impactful digital solutions for our clients.
             </p>
           </div>
+          </Link>
         </div>
         <div className="rounded-xl w-[45%] borderGrd border-2 p-8 relative border-gray-500 flex items-center justify-center">
           <i className="ri-arrow-right-line absolute text-xl top-4 right-5"></i>
