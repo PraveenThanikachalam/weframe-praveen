@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const ServiceCard = ({ title, img }) => { 
+const ServiceCard = ({ title, img }) => {
   return (
     <div className="serviceCard borderGrd w-72 md:w-[30%] max-w-xs h-32 rounded-xl flex items-center justify-start relative border overflow-hidden border-gray-600">
       {img && (

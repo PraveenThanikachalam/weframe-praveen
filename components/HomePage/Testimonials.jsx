@@ -16,6 +16,15 @@ const testimonialData = [
   },
   {
     id: 2,
+    type: 'video',
+    source: '/assets/demo.mp4',
+    desc: '',
+    authorName: 'David Goggins',
+    authorDesc: 'CEO, Fit India Movement',
+    authorPhoto: '/assets/client/david.png',
+  },
+  {
+    id: 3,
     type: 'text',
     source: '/assets/client/client.png',
     desc: 'Working with WeFrameTech on our Ownerpreneur project has been nothing short of exceptional. Their innovative design and flawless development not only met but exceeded our expectations. The result is a cutting-edge platform that beautifully encapsulates our vision. Their commitment to excellence and dedication to our success made this collaboration truly transformative. We highly recommend WeFrameTech to anyone looking to turn their entrepreneurial dreams into reality.',
@@ -24,7 +33,7 @@ const testimonialData = [
     authorPhoto: '/assets/client/david.png',
   },
   {
-    id: 2,
+    id: 4,
     type: 'text',
     source: '/assets/client/client.png',
     desc: null,
@@ -37,19 +46,6 @@ const testimonialData = [
 const Testimonials = () => {
   const swiperRef = useRef();
   const [isMobile, setIsMobile] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const videoRef = useRef();
-
-  const handlePlay = () => {
-    videoRef.current.play();
-    setIsPlaying(true);
-  };
-
-  const handlePause = () => {
-    videoRef.current.pause();
-    setIsPlaying(false);
-  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -107,13 +103,7 @@ const Testimonials = () => {
         >
           {testimonialData.map((item) => (
             <SwiperSlide key={item.id} className="!h-full max-h-[480px]">
-              <TestimonialCard
-                {...item}
-                handlePause={handlePause}
-                handlePlay={handlePlay}
-                isPlaying={isPlaying}
-                videoRef={videoRef}
-              />
+              <TestimonialCard {...item} />
             </SwiperSlide>
           ))}
         </Swiper>

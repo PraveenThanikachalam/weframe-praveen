@@ -4,97 +4,122 @@ import TechStackCard from '@/components/HomePage/techstackcomponents/TechStackCa
 
 const TechStack = () => {
   const [shift, setShift] = useState(false);
-  const webframeworks = [{
-    id: 1,
-    tech: 'Astro',
-    image: '/assets/techstack/web/astro.svg',
-  },{
-    id: 2,
-    tech: 'Nuxt',
-    image: '/assets/techstack/web/nuxt.svg',
-  },{
-    id: 3,
-    tech: 'Svelte',
-    image: '/assets/techstack/web/swelte.svg',
-  },{
-    id: 4,
-    tech: 'NextJS',
-    image: '/assets/techstack/web/nextjs.svg',
-  },{
-    id: 5,
-    tech: 'Gatsby',
-    image: '/assets/techstack/web/gatsby.svg',
-  },{
-    id: 6,
-    tech: 'React',
-    image: '/assets/techstack/web/react.svg',
-  }];
+  const webframeworks = [
+    {
+      id: 1,
+      tech: 'Astro',
+      image: '/assets/techstack/web/astro.svg',
+    },
+    {
+      id: 2,
+      tech: 'Nuxt',
+      image: '/assets/techstack/web/nuxt.svg',
+    },
+    {
+      id: 3,
+      tech: 'Svelte',
+      image: '/assets/techstack/web/swelte.svg',
+    },
+    {
+      id: 4,
+      tech: 'NextJS',
+      image: '/assets/techstack/web/nextjs.svg',
+    },
+    {
+      id: 5,
+      tech: 'Gatsby',
+      image: '/assets/techstack/web/gatsby.svg',
+    },
+    {
+      id: 6,
+      tech: 'React',
+      image: '/assets/techstack/web/react.svg',
+    },
+  ];
 
-  const mobileFrameworks = [{
-    id: 1,
-    tech: 'Flutter',
-    image: '/assets/techstack/mobile/flutter.svg',
-  },{
-    id: 2,
-    tech: 'React',
-    image: '/assets/techstack/web/react.svg',
-  }];
+  const mobileFrameworks = [
+    {
+      id: 1,
+      tech: 'Flutter',
+      image: '/assets/techstack/mobile/flutter.svg',
+    },
+    {
+      id: 2,
+      tech: 'React',
+      image: '/assets/techstack/web/react.svg',
+    },
+  ];
 
-  const cmsBackendFrameworks = [{
-    id: 1,
-    tech: 'Strapi',
-    image: '/assets/techstack/cmsBackend/strapi.svg',
-  },{
-    id: 2,
-    tech: 'Sanity',
-    image: '/assets/techstack/cmsBackend/sanity.svg',
-  },{
-    id: 3,
-    tech: 'Dato CMS',
-    image: '/assets/techstack/cmsBackend/dato.svg',
-  },{
-    id: 4,
-    tech: 'Prismic',
-    image: '/assets/techstack/cmsBackend/prismic.svg',
-  },{
-    id: 5,
-    tech: 'Directus',
-    image: '/assets/techstack/cmsBackend/directus.svg',
-  },{
-    id: 6,
-    tech: 'Node JS',
-    image: '/assets/techstack/cmsBackend/nodejs.svg',
-  },{
-    id: 7,
-    tech: 'Supabase',
-    image: '/assets/techstack/cmsBackend/supabase.svg',
-  },{
-    id: 8,
-    tech: 'Golang',
-    image: '/assets/techstack/cmsBackend/golang.svg',
-  }];
+  const cmsBackendFrameworks = [
+    {
+      id: 1,
+      tech: 'Strapi',
+      image: '/assets/techstack/cmsBackend/strapi.svg',
+    },
+    {
+      id: 2,
+      tech: 'Sanity',
+      image: '/assets/techstack/cmsBackend/sanity.svg',
+    },
+    {
+      id: 3,
+      tech: 'Dato CMS',
+      image: '/assets/techstack/cmsBackend/dato.svg',
+    },
+    {
+      id: 4,
+      tech: 'Prismic',
+      image: '/assets/techstack/cmsBackend/prismic.svg',
+    },
+    {
+      id: 5,
+      tech: 'Directus',
+      image: '/assets/techstack/cmsBackend/directus.svg',
+    },
+    {
+      id: 6,
+      tech: 'Node JS',
+      image: '/assets/techstack/cmsBackend/nodejs.svg',
+    },
+    {
+      id: 7,
+      tech: 'Supabase',
+      image: '/assets/techstack/cmsBackend/supabase.svg',
+    },
+    {
+      id: 8,
+      tech: 'Golang',
+      image: '/assets/techstack/cmsBackend/golang.svg',
+    },
+  ];
 
-  const deploymentFrameworks = [{
-    id: 1,
-    tech: 'Netlify',
-    image: '/assets/techstack/deployment/netlify.svg',
-  },{
-    id: 2,
-    tech: 'Vercel',
-    image: '/assets/techstack/deployment/vercel.svg',
-  },{
-    id: 3,
-    tech: 'Digital Ocean',
-    image: '/assets/techstack/deployment/digitalocean.svg',
-  },{
-    id: 4,
-    tech: 'AWS',
-    image: '/assets/techstack/deployment/aws.svg',
-  },{
-    id: 5,
-    tech: 'Firebase',
-    image: '/assets/techstack/deployment/firebase.svg',
-  }]
+  const deploymentFrameworks = [
+    {
+      id: 1,
+      tech: 'Netlify',
+      image: '/assets/techstack/deployment/netlify.svg',
+    },
+    {
+      id: 2,
+      tech: 'Vercel',
+      image: '/assets/techstack/deployment/vercel.svg',
+    },
+    {
+      id: 3,
+      tech: 'Digital Ocean',
+      image: '/assets/techstack/deployment/digitalocean.svg',
+    },
+    {
+      id: 4,
+      tech: 'AWS',
+      image: '/assets/techstack/deployment/aws.svg',
+    },
+    {
+      id: 5,
+      tech: 'Firebase',
+      image: '/assets/techstack/deployment/firebase.svg',
+    },
+  ];
 
   return (
     <div className="techStack w-full py-16 px-4 md:px-10 flex flex-col gap-5 md:gap-10 items-center justify-center">
@@ -126,9 +151,25 @@ const TechStack = () => {
         </div>
       </div>
       <div className="techstackComponents max-w-screen-xl w-[80vw] flex flex-col items-center justify-center lg:gap-12 gap-8">
-        {shift ? <TechStackCard framework={webframeworks} title={'FRONTEND FRAMEWORKS'}/> : <TechStackCard framework={mobileFrameworks} title={'MOBILE FRAMEWORKS'}/>}
-        <TechStackCard framework={cmsBackendFrameworks} title={'HEADLESS CMS AND BACKEND FRAMEWORKS'} />
-        <TechStackCard framework={deploymentFrameworks} title={'DEPLOYMENT FRAMEWORKS'} />
+        {shift ? (
+          <TechStackCard
+            framework={webframeworks}
+            title={'FRONTEND FRAMEWORKS'}
+          />
+        ) : (
+          <TechStackCard
+            framework={mobileFrameworks}
+            title={'MOBILE FRAMEWORKS'}
+          />
+        )}
+        <TechStackCard
+          framework={cmsBackendFrameworks}
+          title={'HEADLESS CMS AND BACKEND FRAMEWORKS'}
+        />
+        <TechStackCard
+          framework={deploymentFrameworks}
+          title={'DEPLOYMENT FRAMEWORKS'}
+        />
       </div>
     </div>
   );
