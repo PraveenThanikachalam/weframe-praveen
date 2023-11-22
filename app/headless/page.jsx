@@ -2,9 +2,9 @@ import React from 'react';
 import Button from '@/components/ui/Button';
 import SmallBox from '@/components/jamstackcomponent/SmallBox';
 import MediumBox from '@/components/jamstackcomponent/MediumBox';
-import TechStack from '@/components/techstackcomponents/TechStack';
+import TechStack from '@/components/HomePage/techstackcomponents/TechStack';
 import NudgeCard from '@/components/NudgeCard';
-import Testimonials from '@/components/Testimonials';
+import Testimonials from '@/components/HomePage/Testimonials';
 
 const Headless = () => {
   return (
@@ -33,12 +33,30 @@ const Headless = () => {
         </div>
         <div className="right lg:w-[50%] w-full flex  flex-wrap items-center justify-center">
           <div className="flex w-full h-auto  flex-wrap items-center justify-center gap-3">
-            <SmallBox title={'Global Collaboration'} img={'/assets/headless/h2.svg'} />
-            <SmallBox title={'Content Authority'} img={'/assets/headless/h4.svg'} />
-            <SmallBox title={'Analytics & Insights'} img={'/assets/headless/h6.svg'} />
-            <SmallBox title={'Multilingual Support'} img={'/assets/headless/h1.svg'} />
-            <SmallBox title={'Content Reusability'} img={'/assets/headless/h3.svg'} />
-            <SmallBox title={'Easy Integration'} img={'/assets/headless/h5.svg'} />
+            <SmallBox
+              title={'Global Collaboration'}
+              img={'/assets/headless/h2.svg'}
+            />
+            <SmallBox
+              title={'Content Authority'}
+              img={'/assets/headless/h4.svg'}
+            />
+            <SmallBox
+              title={'Analytics & Insights'}
+              img={'/assets/headless/h6.svg'}
+            />
+            <SmallBox
+              title={'Multilingual Support'}
+              img={'/assets/headless/h1.svg'}
+            />
+            <SmallBox
+              title={'Content Reusability'}
+              img={'/assets/headless/h3.svg'}
+            />
+            <SmallBox
+              title={'Easy Integration'}
+              img={'/assets/headless/h5.svg'}
+            />
           </div>
         </div>
       </div>
@@ -80,16 +98,50 @@ const Headless = () => {
           <Button variant="outline" label={'Learn More'} />
         </div>
         <div className="w-full flex flex-wrap items-center justify-center gap-5">
-          <MediumBox title={'Content Authority'} img={'/assets/headless/h4.svg'} desc={'Headless CMS systems provide an intuitive and user-friendly content creation and editing experience.'} />
-          <MediumBox title={'Content Reusability'} img={'/assets/headless/h3.svg'} desc={'Content can be easily reused across various platforms, enhancing consistency and saving time.'} />
-          <MediumBox title={'Easy Integration'} img={'/assets/headless/h5.svg'} desc={'Jamstack allows you to mix and match various tools and services to build custom solutions.'} />
-          <MediumBox title={'Multilingual Support'} img={'/assets/headless/h1.svg'} desc={'Headless CMS solutions often offers robust and varied support for multilingual content management.'} />
-          <MediumBox title={'Analytics & Insights'} img={'/assets/headless/h6.svg'} desc={'Headless CMS platforms come with built-in analytics, helping product owners understand their audience.'} />
-          <MediumBox title={'Global Collaboration'} img={'/assets/headless/h2.svg'} desc={'Headless CMS systems facilitate collaborative content creation, allowing teams to work together across geographic boundaries.'} />
+          <MediumBox
+            title={'Content Authority'}
+            img={'/assets/headless/h4.svg'}
+            desc={
+              'Headless CMS systems provide an intuitive and user-friendly content creation and editing experience.'
+            }
+          />
+          <MediumBox
+            title={'Content Reusability'}
+            img={'/assets/headless/h3.svg'}
+            desc={
+              'Content can be easily reused across various platforms, enhancing consistency and saving time.'
+            }
+          />
+          <MediumBox
+            title={'Easy Integration'}
+            img={'/assets/headless/h5.svg'}
+            desc={
+              'Jamstack allows you to mix and match various tools and services to build custom solutions.'
+            }
+          />
+          <MediumBox
+            title={'Multilingual Support'}
+            img={'/assets/headless/h1.svg'}
+            desc={
+              'Headless CMS solutions often offers robust and varied support for multilingual content management.'
+            }
+          />
+          <MediumBox
+            title={'Analytics & Insights'}
+            img={'/assets/headless/h6.svg'}
+            desc={
+              'Headless CMS platforms come with built-in analytics, helping product owners understand their audience.'
+            }
+          />
+          <MediumBox
+            title={'Global Collaboration'}
+            img={'/assets/headless/h2.svg'}
+            desc={
+              'Headless CMS systems facilitate collaborative content creation, allowing teams to work together across geographic boundaries.'
+            }
+          />
         </div>
       </div>
-
-    
 
       <div className="w-full flex items-center justify-center lg:my-24 my-12">
         <TechStack />

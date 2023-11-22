@@ -33,12 +33,30 @@ const Jamstack = () => {
         </div>
         <div className="right lg:w-[50%] w-full flex  flex-wrap items-center justify-center">
           <div className="flex w-full h-auto  flex-wrap items-center justify-center gap-3">
-            <SmallBox title={'Enhanced Performance'} img={'/assets/jamstack/jam1.svg'} />
-            <SmallBox title={'Super Flexibility'} img={'/assets/jamstack/jam2.svg'} />
-            <SmallBox title={'Ensured Security'} img={'/assets/jamstack/jam3.svg'} />
-            <SmallBox title={'Infinite Scalability'} img={'/assets/jamstack/jam4.svg'} />
-            <SmallBox title={'Developer Friendly'} img={'/assets/jamstack/jam5.svg'} />
-            <SmallBox title={'Increased Speed'} img={'/assets/jamstack/jam6.svg'} />
+            <SmallBox
+              title={'Enhanced Performance'}
+              img={'/assets/jamstack/jam1.svg'}
+            />
+            <SmallBox
+              title={'Super Flexibility'}
+              img={'/assets/jamstack/jam2.svg'}
+            />
+            <SmallBox
+              title={'Ensured Security'}
+              img={'/assets/jamstack/jam3.svg'}
+            />
+            <SmallBox
+              title={'Infinite Scalability'}
+              img={'/assets/jamstack/jam4.svg'}
+            />
+            <SmallBox
+              title={'Developer Friendly'}
+              img={'/assets/jamstack/jam5.svg'}
+            />
+            <SmallBox
+              title={'Increased Speed'}
+              img={'/assets/jamstack/jam6.svg'}
+            />
           </div>
         </div>
       </div>

@@ -33,24 +33,24 @@ module.exports = {
           '100%': { transform: 'translateX(-100%)' },
         },
         'flare-horizontal': {
-          '0%': { transform: 'translate(-50%, -25%) rotate(-45deg)'},
-          '50%': { transform: 'translate(0%, -25%) rotate(-45deg)'},
-          '100%': { transform: 'translate(50%, -25%) rotate(-45deg)'}
+          '0%': { transform: 'translate(-50%, -25%) rotate(-45deg)' },
+          '50%': { transform: 'translate(0%, -25%) rotate(-45deg)' },
+          '100%': { transform: 'translate(50%, -25%) rotate(-45deg)' },
         },
-        "accordion-down": {
+        'accordion-down': {
           from: { height: 0 },
-          to: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 'var(--radix-accordion-content-height)' },
         },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: 0 },
         },
       },
       animation: {
         slidehorizontal: 'slide-horizontal 30s linear infinite',
-        flare : 'flare-horizontal 3s linear infinite',
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        flare: 'flare-horizontal 3s linear infinite',
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
   },
@@ -76,6 +76,4 @@ module.exports = {
   ],
 };
 
-
-
-// 
+//
