@@ -1,5 +1,5 @@
 import BlogCard from '@/components/BlogCard';
-import NudgeCard from '@/components/NudgeCard';
+import NudgeCard from '@/components/HomePage/NudgeCard';
 import TagButton from '@/components/ui/TagButton';
 import React from 'react';
 import Image from 'next/image';

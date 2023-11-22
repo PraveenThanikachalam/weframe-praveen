@@ -15,3 +15,4 @@ const NudgeCard = ({ title, label }) => {
 };
 
 export default NudgeCard;
+

@@ -1,4 +1,4 @@
-import NudgeCard from '@/components/NudgeCard';
+import NudgeCard from '@/components/HomePage/NudgeCard';
 import React from 'react';
 
 const layout = ({ children }) => {

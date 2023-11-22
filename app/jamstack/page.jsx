@@ -1,10 +1,10 @@
 import MediumBox from '@/components/jamstackcomponent/MediumBox';
 import SmallBox from '@/components/jamstackcomponent/SmallBox';
-import TechStack from '@/components/techstackcomponents/TechStack';
+import TechStack from '@/components/HomePage/techstackcomponents/TechStack';
 import Button from '@/components/ui/Button';
 import React from 'react';
-import NudgeCard from '@/components/NudgeCard';
-import Testimonials from '@/components/Testimonials';
+import NudgeCard from '@/components/HomePage/NudgeCard';
+import Testimonials from '@/components/HomePage/Testimonials';
 
 const Jamstack = () => {
   return (

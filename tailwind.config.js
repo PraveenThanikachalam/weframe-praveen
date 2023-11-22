@@ -27,6 +27,21 @@ module.exports = {
       boxShadow: {
         'button-glow': '0px 1px 8px 0px rgba(255, 255, 255, 0.48)',
       },
+      keyframes: {
+        'slide-horizontal': {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        'flare-horizontal': {
+          '0%': { transform: 'translate(-50%, -25%) rotate(-45deg)'},
+          '50%': { transform: 'translate(0%, -25%) rotate(-45deg)'},
+          '100%': { transform: 'translate(50%, -25%) rotate(-45deg)'}
+        }
+      },
+      animation: {
+        slidehorizontal: 'slide-horizontal 30s linear infinite',
+        flare : 'flare-horizontal 3s linear infinite',
+      },
     },
   },
   plugins: [
