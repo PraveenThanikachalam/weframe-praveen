@@ -6,6 +6,11 @@ export const oceanwide = localFont({
   variable: '--oceanwide-font',
 });
 
+export const nt_adventure = localFont({
+  src: '../fonts/nt_adventure/ntadventure.woff',
+  variable: '--ntadventure-font',
+});
+
 export const fira_code = Fira_Code({
   subsets: ['latin'],
   variable: '--fira-code-font',
