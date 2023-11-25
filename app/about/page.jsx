@@ -1,7 +1,32 @@
 import NudgeCard from '@/components/HomePage/NudgeCard';
+import ProgressFlow from '@/components/ProgressFlow';
 import ImageGrid from '@/components/about-image-grid/ImageGrid';
 import Image from 'next/image';
 import React from 'react';
+
+const arr = [
+  {
+    title: 'Vision',
+    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
+    select:true
+  },
+  {
+    title: 'Process',
+    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
+  },
+  {
+    title: 'Partnerships',
+    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
+  },
+  {
+    title: 'Partnerships',
+    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
+  },
+  {
+    title: 'Partnerships',
+    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
+  },
+];
 
 const AboutPage = () => {
   return (
@@ -32,6 +57,9 @@ const AboutPage = () => {
         </div>
 
         <ImageGrid />
+      </div>
+      <div>
+        <ProgressFlow title={'About Us'} arr={arr}/>
       </div>
       <div className="w-[100vw] bg-[#031416] mt-16 footer p-6 h-[60vh] border-b-2 border-gray-800 flex items-center justify-center">
         <NudgeCard
