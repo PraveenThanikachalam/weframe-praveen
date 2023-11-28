@@ -124,10 +124,10 @@ const TechStack = () => {
   return (
     <div className="techStack w-full py-16 px-4 md:px-10 flex flex-col gap-5 md:gap-10 items-center justify-center">
       <div className="w-full max-w-screen-xl text-center flex flex-col gap-5 md:gap-10 items-center justify-center">
-        <h1 className="lg:text-4xl text-2xl md:text-4xl font-bold text-white">
+        <h1 className="lg:text-4xl text-3xl md:text-4xl font-bold text-white">
           How we <br className="block lg:hidden" /> develop for
         </h1>
-        <div className="rounded-xl border w-56 h-12 border-gray-400 flex items-center justify-center">
+        <div className="rounded-xl border w-64 h-12 border-gray-400 flex items-center justify-center">
           <div
             onClick={() => {
               setShift(!shift);
@@ -150,7 +150,7 @@ const TechStack = () => {
           </div>
         </div>
       </div>
-      <div className="techstackComponents max-w-screen-xl w-[80vw] flex flex-col items-center justify-center lg:gap-12 gap-8">
+      <div className="techstackComponents max-w-screen-xl w-full flex flex-col items-center justify-center lg:gap-12 gap-8">
         {shift ? (
           <TechStackCard
             framework={webframeworks}

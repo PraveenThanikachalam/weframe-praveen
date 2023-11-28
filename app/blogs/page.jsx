@@ -17,7 +17,7 @@ const Blogs = () => {
       <div className=" w-full  lg:my-28 my-16 flex items-center justify-center">
         <div className="lg:w-[80%] w-full  flex flex-col items-center justify-center">
           <div className="">
-            <h1 className="lg:text-5xl md:text-5xl text-3xl text-center gradient-text font-bold text-accent-blue">
+            <h1 className="text-4xl md:text-5xl lg:text-5xl text-center gradient-text font-bold text-accent-blue">
               Stay Ahead with Our Insights
             </h1>
           </div>

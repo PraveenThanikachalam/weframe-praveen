@@ -16,7 +16,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${oceanwide.variable} ${fira_code.variable} ${nt_adventure}`}>
+    <html lang="en" className={`${oceanwide.variable} ${fira_code.variable} ${nt_adventure.variable}`}>
       <body className={`${font.className} overflow-y-scroll no-scrollbar`}>
         <link
           href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"

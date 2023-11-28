@@ -1,9 +1,23 @@
-import React from 'react';
+'use client';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 
 const StoryCard = ({ slide, video }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const videoRef = useRef();
+
+  const handlePlay = () => {
+    videoRef.current.play();
+    setIsPlaying(true);
+  };
+
+  const handlePause = () => {
+    videoRef.current.pause();
+    setIsPlaying(false);
+  };
   return (
-    <div className="w-[80vw] max-w-screen-xl story-card-grd  border  border-gray-600 rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
+    <div className="lg:w-[80vw] w-full max-w-screen-xl story-card-grd  border  border-gray-600 rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
       <div className="lg:w-[40%] w-full flex lg:p-6 p-1 flex-col items-center justify-center">
         <h1 className="lg:text-2xl text-lg font-bold text-white">
           Freemium Blog Platform for Entrepreneurs
@@ -39,27 +53,64 @@ const StoryCard = ({ slide, video }) => {
               <i className="ri-arrow-right-line"></i>
             </div>
           </div>
-          <button
-            className={` ${
-              slide
-                ? 'w-36 bg-white hover:text-white hover:bg-transparent border border-gray-500'
-                : 'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent '
-            } rounded-full px-4 py-3 transition-all duration-150  font-medium`}
-          >
-            {video ? 'Play' : 'Read'}
-          </button>
+
+          {video ? (
+            <>
+              {isPlaying ? (
+                <button onClick={handlePause}
+                  className={` ${
+                    slide
+                      ? 'w-36 bg-white hover:text-white hover:bg-transparent border border-gray-500'
+                      : 'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent '
+                  } rounded-full px-4 py-3 transition-all duration-150  font-medium`}
+                >
+                  {' '}
+                  Pause
+                </button>
+              ) : (
+                <button
+                onClick={handlePlay}
+                  className={` ${
+                    slide
+                      ? 'w-36 bg-white hover:text-white hover:bg-transparent border border-gray-500'
+                      : 'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent '
+                  } rounded-full px-4 py-3 transition-all duration-150  font-medium`}
+                >
+                  {' '}
+                  Play
+                </button>
+              )}
+            </>
+          ) : (
+            <button
+              className={` ${
+                slide
+                  ? 'w-36 bg-white hover:text-white hover:bg-transparent border border-gray-500'
+                  : 'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent '
+              } rounded-full px-4 py-3 transition-all duration-150  font-medium`}
+            >
+              {' '}
+              Read
+            </button>
+          )}
         </div>
       </div>
       <div className="lg:w-[60%] w-full py-2  lg:py-0 flex items-center justify-center">
         {video ? (
-          <video width="0" height="0" className="w-[85%] h-[95%]" playsInline>
+          <video
+            ref={videoRef}
+            width="0"
+            height="0"
+            className="lg:w-[85%] w-full h-[95%] "
+            playsInline
+          >
             <source src="/assets/demo.mp4" type="video/mp4" />
           </video>
         ) : (
           <Image
             width={400}
             height={300}
-            className=" h-auto w-[85%]"
+            className=" h-auto lg:w-[85%] w-full"
             src="/assets/img1.png"
             alt=""
           />
