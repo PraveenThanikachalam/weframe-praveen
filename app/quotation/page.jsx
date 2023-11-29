@@ -118,10 +118,7 @@ const Quote = () => {
               { label: 'Supabase', url: '/' },
             ]}
           />
-          <TagComponent
-            title={'Third-party Integration'}
-            labels={tags}
-          />
+          <TagComponent title={'Third-party Integration'} labels={tags} />
           <TagComponent
             title={'Deployment Platform'}
             labels={[

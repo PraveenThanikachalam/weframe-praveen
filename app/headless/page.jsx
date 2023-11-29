@@ -3,7 +3,7 @@ import Button from '@/components/ui/Button';
 import SmallBox from '@/components/jamstackcomponent/SmallBox';
 import MediumBox from '@/components/jamstackcomponent/MediumBox';
 import TechStack from '@/components/HomePage/techstackcomponents/TechStack';
-import NudgeCard from '@/components/NudgeCard';
+import NudgeCard from '@/components/ui/NudgeCard';
 import Testimonials from '@/components/HomePage/Testimonials';
 import ProgressFlow from '@/components/ProgressFlow';
 
@@ -176,7 +176,7 @@ const Headless = () => {
         <TechStack />
       </div>
 
-      <div className="w-full lg:my-10">
+      <div className="w-full flex justify-center lg:my-10">
         <NudgeCard
           title={'Book a discovery call to witness speed'}
           label={'Book Now'}
