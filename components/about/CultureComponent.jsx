@@ -79,9 +79,20 @@ const CultureComponent = () => {
         >
           {imgs.map((item) => {
             return (
-              <SwiperSlide key={item.id} className="!h-full  max-h-[400px] lg:max-h-[500px]">
-                <div className='w-full rounded-xl overflow-hidden h-full'>
-                  <Image alt="img" src={item.image} quality={100} loading='lazy' width={1000} height={500} className='w-full h-full object-cover' />
+              <SwiperSlide
+                key={item.id}
+                className="!h-full  max-h-[400px] lg:max-h-[500px]"
+              >
+                <div className="w-full rounded-xl overflow-hidden h-full">
+                  <Image
+                    alt="img"
+                    src={item.image}
+                    quality={100}
+                    loading="lazy"
+                    width={1000}
+                    height={500}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </SwiperSlide>
             );

@@ -1,6 +1,19 @@
 import StoryCard from './StoryCard';
 import Button from '../../ui/Button';
 
+const cardData = {
+  title: 'Freemium Blog Platform for Entrepreneurs',
+  desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients. Wave farewell to the past and step confidently into the future with Jamstack. Beyond websites, we are here to bring your narrative to life through our expertise. Get an instant quote for your project',
+  tags: [
+    { label: 'Headless CMS', url: '/' },
+    { label: 'Jamstack', url: '/' },
+    { label: 'Blog Platform', url: '/' },
+    { label: 'Web App Development', url: '/' },
+  ],
+  slide: true,
+  video: false,
+};
+
 const SuccessStory = () => {
   return (
     <div className="successStory my-24 z-10 mx-4 md:mx-10 flex flex-col items-center justify-center">
@@ -17,7 +30,7 @@ const SuccessStory = () => {
           <Button variant="outline" label="Explore Case Studies" />
         </div>
       </div>
-      <StoryCard slide={true} />
+      <StoryCard data={cardData} />
     </div>
   );
 };

@@ -15,7 +15,7 @@ module.exports = {
       fontFamily: {
         'title-font': ['var(--oceanwide-font)'],
         'fira-code': ['var(--fira-code-font)'],
-        'nt-adventure':['var(--ntadventure-font)']
+        'nt-adventure': ['var(--ntadventure-font)'],
       },
       colors: {
         'accent-blue': '#1FBCCB',
@@ -46,7 +46,7 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: 0 },
         },
-        'fadeInDown': {
+        fadeInDown: {
           '0%': {
             opacity: 0,
             transform: 'translateY(-30px)',
