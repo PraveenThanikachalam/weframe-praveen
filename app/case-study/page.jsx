@@ -13,7 +13,7 @@ const CaseStudy = () => {
       <div className="w-full lg:my-28 my-20  flex items-center justify-center">
         <div className="lg:w-[80%] w-[90%] flex flex-col items-center justify-center">
           <div className="">
-            <h1 className="lg:text-5xl md:text-5xl text-3xl font-bold text-center font-title-font gradient-text ">
+            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-center font-title-font gradient-text ">
               Discover Success and Excellence
             </h1>
           </div>

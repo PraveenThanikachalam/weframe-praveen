@@ -4,9 +4,9 @@ import React from 'react';
 const Footer = () => {
   return (
     <main>
-      <div className="bg-[#031416] w-full relative bottom-0 p-12 flex flex-col items-center justify-center text-white ">
+      <div className="bg-[#031416] w-full relative bottom-0 p-6 flex flex-col items-center justify-center text-white ">
         <div className="lg:w-[90%] w-full lg:flex-row flex-col flex items-center lg:justify-between justify-center">
-          <div className="lg:w-[40%] w-[95%] text-center lg:text-left">
+          <div className="lg:w-[40%] w-full text-center lg:text-left">
             <div className="flex flex-col lg:items-start items-center lg:justify-start justify-center">
               <div>
                 <Image

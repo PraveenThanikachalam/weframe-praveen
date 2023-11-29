@@ -8,11 +8,11 @@ import Testimonials from '@/components/HomePage/Testimonials';
 
 const Jamstack = () => {
   return (
-    <div className=" w-full lg:px-8 px-6 min-h-screen flex flex-col items-center ">
+    <div className=" w-full lg:px-8 px-3 min-h-screen flex flex-col items-center ">
       <div className="w-full z-10  h-[50%] bg-gradient-to-b from-[#1996a291] to-[#020C0D] absolute top-0"></div>
       <div className=" max-w-screen-xl  z-20 flex lg:flex-row flex-col items-center justify-center ">
         <div className="left my-16  h-full flex flex-col items-center justify-center w-full lg:w-[50%]">
-          <div className="flex flex-col gap-4 lg:items-start items-center  justify-center">
+          <div className="flex flex-col gap-2 lg:items-start items-center  justify-center">
             <h1 className="lg:text-6xl md:text-6xl text-4xl lg:text-start text-center  font-bold  font-title-font gradient-text">
               Rock Solid. <br /> Lightning Fast. <br /> Infinitely Scalable.
             </h1>
@@ -90,9 +90,9 @@ const Jamstack = () => {
         </div>
       </div>
 
-      <div className="max-w-screen-xl lg:my-24 my-12 flex flex-col gap-16">
-        <div className="w-full flex lg:flex-row flex-col gap-5 lg:gap-0 items-center justify-between">
-          <h1 className="lg:text-4xl text-2xl md:text-4xl font-title-font text-white font-semibold">
+      <div className="max-w-screen-xl lg:my-16 my-12 flex flex-col gap-16">
+        <div className="w-full flex lg:flex-row flex-col gap-5  lg:gap-0 items-center justify-between">
+          <h1 className="lg:text-4xl text-3xl md:text-4xl font-title-font text-white font-semibold">
             Why Jamstack?
           </h1>
           <Button variant="outline" label={'Learn More'} />
@@ -147,18 +147,18 @@ const Jamstack = () => {
         <TechStack />
       </div>
 
-      <div className="w-full my-24 flex justify-center">
+      <div className="w-full my-6 flex justify-center">
         <NudgeCard
           title={'Book a discovery call to witness speed'}
           label={'Book Now'}
         />
       </div>
 
-      <div className="max-w-screen-xl lg:my-24 my-12">
+      <div className="max-w-screen-xl lg:my-16 ">
         <Testimonials />
       </div>
 
-      <div className="w-screen p-6 mt-24 min-h-[60vh] flex items-center justify-center footer ">
+      <div className="w-screen p-6 bg-[#031416] border-b border-slate-800  min-h-[60vh] flex items-center justify-center footer ">
         <NudgeCard
           title={'This text can be changed on purpose'}
           label={'Also this CTA'}

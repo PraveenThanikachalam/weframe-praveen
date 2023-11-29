@@ -15,6 +15,7 @@ module.exports = {
       fontFamily: {
         'title-font': ['var(--oceanwide-font)'],
         'fira-code': ['var(--fira-code-font)'],
+        'nt-adventure':['var(--ntadventure-font)']
       },
       colors: {
         'accent-blue': '#1FBCCB',

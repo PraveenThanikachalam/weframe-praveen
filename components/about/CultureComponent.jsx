@@ -2,48 +2,24 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import TestimonialCard from './TestimonialCard';
+import Image from 'next/image';
 
-const testimonialData = [
+const imgs = [
   {
     id: 1,
-    type: 'video',
-    source: '/assets/demo.mp4',
-    desc: '',
-    authorName: 'David Goggins',
-    authorDesc: 'CEO, Fit India Movement',
-    authorPhoto: '/assets/client/david.png',
+    image: '/assets/about/slide/bg1.jpg',
   },
   {
     id: 2,
-    type: 'video',
-    source: '/assets/demo.mp4',
-    desc: '',
-    authorName: 'David Goggins',
-    authorDesc: 'CEO, Fit India Movement',
-    authorPhoto: '/assets/client/david.png',
+    image: '/assets/about/slide/bg1.jpg',
   },
   {
     id: 3,
-    type: 'text',
-    source: '/assets/client/client.png',
-    desc: 'Working with WeFrameTech on our Ownerpreneur project has been nothing short of exceptional. Their innovative design and flawless development not only met but exceeded our expectations. The result is a cutting-edge platform that beautifully encapsulates our vision. Their commitment to excellence and dedication to our success made this collaboration truly transformative. We highly recommend WeFrameTech to anyone looking to turn their entrepreneurial dreams into reality.',
-    authorName: 'David Goggins',
-    authorDesc: 'CEO, Fit India Movement',
-    authorPhoto: '/assets/client/david.png',
-  },
-  {
-    id: 4,
-    type: 'text',
-    source: '/assets/client/client.png',
-    desc: null,
-    authorName: 'David Goggins',
-    authorDesc: 'CEO, Fit India Movement',
-    authorPhoto: '/assets/client/david.png',
+    image: '/assets/about/slide/bg1.jpg',
   },
 ];
 
-const Testimonials = () => {
+const CultureComponent = () => {
   const swiperRef = useRef();
   const [isMobile, setIsMobile] = useState(false);
 
@@ -62,11 +38,11 @@ const Testimonials = () => {
 
   return (
     <>
-      <div className=" w-full md:w-4/5 max-w-screen-xl my-16  flex items-center justify-center">
-        <div className="w-full flex flex-col lg:flex-row text-center lg:text-left items-center justify-between">
+      <div className=" lg:w-full px-3 mx-auto md:w-4/5 max-w-screen-xl my-12  flex items-center justify-center">
+        <div className="w-full  flex flex-col lg:flex-row text-center lg:text-left items-center justify-between">
           <div>
             <h1 className="lg:text-4xl text-2xl md:text-4xl text-white font-bold">
-              Hear from Clients
+              Our Culture
             </h1>
           </div>
           <div className="flex gap-3 mt-4 lg:mt-0 text-white ">
@@ -96,20 +72,24 @@ const Testimonials = () => {
           }}
           className="text-white "
           spaceBetween={40}
-          slidesPerView={isMobile ? 1 : 1.2}
+          slidesPerView={isMobile ? 1 : 1}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
         >
-          {testimonialData.map((item) => (
-            <SwiperSlide key={item.id} className="!h-full max-h-[480px]">
-              <TestimonialCard {...item} />
-            </SwiperSlide>
-          ))}
+          {imgs.map((item) => {
+            return (
+              <SwiperSlide key={item.id} className="!h-full  max-h-[400px] lg:max-h-[500px]">
+                <div className='w-full rounded-xl overflow-hidden h-full'>
+                  <Image alt="img" src={item.image} quality={100} loading='lazy' width={1000} height={500} className='w-full h-full object-cover' />
+                </div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </>
   );
 };
 
-export default Testimonials;
+export default CultureComponent;

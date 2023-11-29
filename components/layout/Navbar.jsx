@@ -3,20 +3,54 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
+const services = [
+  {
+    title:'Jamstack Development',
+    desc:'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
+    link:'/jamstack'
+  },
+  {
+    title:'MVP & POC Development',
+    desc:'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
+    link:'/'
+
+  },
+  {
+    title:'Headless Commerce',
+    desc:'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
+    link:'/headless'
+
+  },
+  {
+    title:'UI/UX Designing',
+    desc:'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
+    link:'/'
+
+  },
+  {
+    title:'Custom Software Development',
+    desc:'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
+    link:'/'
+
+  },
+  {
+    title:'CTO as a Service',
+    desc:'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
+    link:'/'
+
+  },
+]
+
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const [visible2, setVisible2] = useState(false);
   const [visible3, setVisible3] = useState(false);
 
-  useEffect(() => {
-    const dropElement = document.querySelector('.drop');
-
-    if (dropElement) {
-      dropElement.style.transform = 'rotate(90deg)';
-    }
-  }, []);
+ 
   return (
-    <div  className="w-full sticky top-0 bg-opacity-25 z-50 bg-[#020c0d]   flex items-center justify-between text-white py-6 px-10">
+    <>
+   
+    <div  className="w-full sticky top-0 bg-opacity-25 z-50 bg-[#020c0d] mix-blend-screen bg-transparent   flex items-center justify-between text-white py-6 px-10">
       <div >
         <Link href={'/'}>
           <Image
@@ -48,7 +82,9 @@ const Navbar = () => {
         <Link
           href={'/'}
           onClick={() => {
+            setVisible2(false);
             setVisible3(!visible3);
+
           }}
         >
           Services <i className="ri-arrow-down-s-line "></i>
@@ -56,180 +92,89 @@ const Navbar = () => {
 
         <i
           onClick={() => {
+            setVisible3(false);
             setVisible2(!visible2);
           }}
           className="ri-menu-4-line text-3xl"
         ></i>
       </div>
-      <div
+    
      
-        className={`absolute laptop w-[95%] drop animate-fade-in-down z-50  backdrop-blur-md border-b border-gray-500 p-5 navbar gap-5 ${
-          visible ? 'flex ' : 'hidden'
-        } flex-wrap items-start justify-center top-24 `}
-      >
-        <div  style={{zIndex:'200'}} className=" rounded-xl w-[45%] borderGrd p-8 relative  flex items-center justify-center">
-          <i className="ri-arrow-right-line absolute text-xl top-4 right-5"></i>
-          <Link href={'/jamstack'}>
-          
-          <div>
-            <h1 className="text-xl font-semibold text-white">
-              Jamstack Development
-            </h1>
-            <p className="text-sm font-light text-gray-300 mt-1 ">
-              Explore our real-world achievements, where we turn challenges into
-              triumphs. These case studies highlight our track record of
-              delivering impactful digital solutions for our clients.
-            </p>
-          </div>
-          </Link>
-        </div>
-        <div className="rounded-xl w-[45%] borderGrd border-2 p-8 relative border-gray-500 flex items-center justify-center">
-          <i className="ri-arrow-right-line absolute text-xl top-4 right-5"></i>
-          <div>
-            <h1 className="text-xl font-semibold text-white">
-              MVP & POC Development
-            </h1>
-            <p className="text-sm font-light text-gray-300 mt-1 ">
-              Explore our real-world achievements, where we turn challenges into
-              triumphs. These case studies highlight our track record of
-              delivering impactful digital solutions for our clients.
-            </p>
-          </div>
-        </div>
-        <div className="rounded-xl w-[45%]  borderGrd border-2 p-8 relative border-gray-500 flex items-center justify-center">
-          <i className="ri-arrow-right-line absolute text-xl top-4 right-5"></i>
-          <Link href={'/headless'}>
-          <div>
-            <h1 className="text-xl font-semibold text-white">
-              Headless Commerce
-            </h1>
-            <p className="text-sm font-light text-gray-300 mt-1 ">
-              Explore our real-world achievements, where we turn challenges into
-              triumphs. These case studies highlight our track record of
-              delivering impactful digital solutions for our clients.
-            </p>
-          </div>
-          </Link>
-        </div>
-        <div className="rounded-xl w-[45%] borderGrd border-2 p-8 relative border-gray-500 flex items-center justify-center">
-          <i className="ri-arrow-right-line absolute text-xl top-4 right-5"></i>
-          <div>
-            <h1 className="text-xl font-semibold text-white">
-              UI/UX Designing
-            </h1>
-            <p className="text-sm font-light text-gray-300 mt-1 ">
-              Explore our real-world achievements, where we turn challenges into
-              triumphs. These case studies highlight our track record of
-              delivering impactful digital solutions for our clients.
-            </p>
-          </div>
-        </div>
-        <div className="rounded-xl w-[45%]  borderGrd border-2 p-8 relative border-gray-500 flex items-center justify-center">
-          <i className="ri-arrow-right-line absolute text-xl top-4 right-5"></i>
-          <div>
-            <h1 className="text-xl font-semibold text-white">
-              Custom Software Development
-            </h1>
-            <p className="text-sm font-light text-gray-300 mt-1 ">
-              Explore our real-world achievements, where we turn challenges into
-              triumphs. These case studies highlight our track record of
-              delivering impactful digital solutions for our clients.
-            </p>
-          </div>
-        </div>
-        <div className="rounded-xl w-[45%]  borderGrd border-2 p-8 relative border-gray-500 flex items-center justify-center">
-          <i className="ri-arrow-right-line absolute text-xl top-4 right-5"></i>
-          <div>
-            <h1 className="text-xl font-semibold text-white">
-              CTO as a Service
-            </h1>
-            <p className="text-sm font-light text-gray-300 mt-1 ">
-              Explore our real-world achievements, where we turn challenges into
-              triumphs. These case studies highlight our track record of
-              delivering impactful digital solutions for our clients.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div
-        className={`absolute w-[70%] right-4 top-20 bg-[#020c0d] backdrop-blur-md ${
-          visible2 ? 'flex' : 'hidden'
-        }  flex-col items-center justify-center gap-4`}
-      >
-        <nav>
-          <ul className="gap-8 p-6 rounded-xl glow flex flex-col text-sm font-medium items-center justify-center">
-            <Link className="underline" href={'/'}>
-              Case Studies
-            </Link>
-            <Link className="underline" href={'/blogs'}>
-              Blogs
-            </Link>
-            <Link className="underline" href={'/'}>
-              About Us
-            </Link>
-            <Link className="underline" href={'/'}>
-              Contact
-            </Link>
-          </ul>
-        </nav>
-      </div>
-
-      <div
-        className={`absolute mobile w-full   navbar gap-2 p-5 ${
-          visible3 ? 'flex' : 'hidden'
-        } flex-wrap items-start justify-center left-0 top-20 `}
-      >
-        <div className="rounded-xl w-full border-2 p-4 relative border-gray-500 flex items-center justify-start">
-          <i className="ri-arrow-right-line absolute text-xl top-4 right-5"></i>
-          <div>
-            <h1 className="text-md font-semibold text-white">
-              Jamstack Development
-            </h1>
-          </div>
-        </div>
-        <div className="rounded-xl w-full border-2 p-4 relative border-gray-500 flex items-center justify-start">
-          <i className="ri-arrow-right-line absolute text-xl top-4 right-5"></i>
-          <div>
-            <h1 className="text-md font-semibold text-white">
-              MVP & POC Development
-            </h1>
-          </div>
-        </div>
-        <div className="rounded-xl w-full border-2 p-4 relative border-gray-500 flex items-center justify-start">
-          <i className="ri-arrow-right-line absolute text-xl top-4 right-5"></i>
-          <div>
-            <h1 className="text-md font-semibold text-white">
-              Headless Commerce
-            </h1>
-          </div>
-        </div>
-        <div className="rounded-xl w-full border-2 p-4 relative border-gray-500 flex items-center justify-start">
-          <i className="ri-arrow-right-line absolute text-xl top-4 right-5"></i>
-          <div>
-            <h1 className="text-md font-semibold text-white">
-              UI/UX Designing
-            </h1>
-          </div>
-        </div>
-        <div className="rounded-xl w-full border-2 p-4 relative border-gray-500 flex items-center justify-start">
-          <i className="ri-arrow-right-line absolute text-xl top-4 right-5"></i>
-          <div>
-            <h1 className="text-md font-semibold text-white">
-              Custom Software Development
-            </h1>
-          </div>
-        </div>
-        <div className="rounded-xl w-full border-2 p-4 relative border-gray-500 flex items-center justify-start">
-          <i className="ri-arrow-right-line absolute text-xl top-4 right-5"></i>
-          <div>
-            <h1 className="text-md font-semibold text-white">
-              CTO as a Service
-            </h1>
-          </div>
-        </div>
-      </div>
     </div>
+     <div
+     
+     className={`absolute laptop w-[95%]  animate-fade-in-down z-50  backdrop-blur-md border-b border-gray-500 p-5 navbar gap-5 ${
+       visible ? 'flex ' : 'hidden'
+     } flex-wrap items-start justify-center top-24 `}
+   >
+    {
+      services.map((item,index)=>{
+        return  <div  key={index} style={{zIndex:'200'}} className=" rounded-xl w-[45%] borderGrd p-8 relative  flex items-center justify-center">
+          <Image alt='img' src={'/assets/arrow.svg'} width={200} height={300} className='w-4 absolute top-4 right-4'/>
+        <Link href={item.link}>
+        
+        <div>
+          <h1 className="text-xl font-semibold text-white">
+            {item.title}
+          </h1>
+          <p className="text-sm font-light text-gray-300 mt-1 ">
+            {item.desc}
+          </p>
+        </div>
+        </Link>
+      </div>
+      })
+    }
+    
+     
+   </div>
+
+   <div
+     className={`absolute z-50 w-full h-96 animate-fade-in-down  top-0 bg-[#020c0d]  ${
+       visible2 ? 'flex' : 'hidden'
+     }  flex-col items-center justify-center gap-4`}
+   >
+    <Image onClick={()=>{setVisible2(!visible2)}} alt='img' src={'/icons/close.svg'} width={200} height={300} className='w-6 absolute top-5 right-5'/>
+
+     <nav >
+       <ul className="gap-8 p-6 rounded-xl glow flex flex-col text-white  text-sm font-medium items-center justify-center">
+         <Link className="underline" href={'/case-studies'}>
+           Case Studies
+         </Link>
+         <Link className="underline" href={'/blogs'}>
+           Blogs
+         </Link>
+         <Link className="underline" href={'/about'}>
+           About Us
+         </Link>
+         <Link className="underline" href={'/contact'}>
+           Contact
+         </Link>
+       </ul>
+     </nav>
+   </div>
+   <div
+        className={`absolute mobile w-full bg-[#020C0D] animate-fade-in-down z-50  navbar gap-2 p-5 ${
+          visible3 ? 'flex' : 'hidden'
+        } flex-wrap items-start justify-center left-0 top-16 `}
+      >
+
+        {
+          services.map((item,index)=>{
+            return   <Link className='w-full' href={item.link} key={index}><div  className="rounded-xl w-full border-2 p-4 relative border-gray-500 flex items-center justify-between">
+            <div>
+              <h1 className="text-md font-semibold text-white">
+                {item.title}
+              </h1>
+            </div>
+          <Image alt='img' src={'/assets/arrow.svg'} width={200} height={300} className='w-4 '/>
+          </div></Link> 
+          })
+        }
+     
+      
+      </div>
+   </>
   );
 };
 

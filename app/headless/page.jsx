@@ -5,10 +5,35 @@ import MediumBox from '@/components/jamstackcomponent/MediumBox';
 import TechStack from '@/components/HomePage/techstackcomponents/TechStack';
 import NudgeCard from '@/components/NudgeCard';
 import Testimonials from '@/components/HomePage/Testimonials';
+import ProgressFlow from '@/components/ProgressFlow';
+
+const arr = [
+  {
+    title: 'Kickoff',
+    desc: 'Initiating a Discovery Call to Understand Your Business.',
+    select:true
+  },
+  {
+    title: 'Ideation',
+    desc:'We craft a customized plan aligned with your business objectives, followed by the submission of a comprehensive proposal.'
+  },
+  {
+    title: 'Design',
+    desc:'We design the Idea in Figma (if the design is not available), and seek approval. We offer 2 free design iterations.'
+  },
+  {
+    title: 'Development',
+    desc:'Agile Development: Sprints, Milestones, and Bi-weekly Progress Tracking.'
+  },
+  {
+    title: 'Delivery',
+    desc:'Complete Product Delivery with Complimentary One Month Maintenance.'
+  },
+];
 
 const Headless = () => {
   return (
-    <div className=" w-full lg:px-8 px-6 min-h-screen flex flex-col items-center ">
+    <div className=" w-full lg:px-8 px-3 min-h-screen flex flex-col items-center ">
       <div className="w-full z-10  h-[50%] bg-gradient-to-b from-[#1996a291] to-[#020C0D] absolute top-0"></div>
       <div className=" max-w-screen-xl  z-20 flex lg:flex-row flex-col items-center justify-center ">
         <div className="left my-16  h-full flex flex-col items-center justify-center w-full lg:w-[50%]">
@@ -90,8 +115,8 @@ const Headless = () => {
         </div>
       </div>
 
-      <div className="max-w-screen-xl lg:my-24 my-12 flex flex-col gap-16">
-        <div className="w-full flex lg:flex-row flex-col  lg:gap-0 items-center justify-between">
+      <div className="max-w-screen-xl lg:my-10  flex flex-col gap-16">
+        <div className="w-full flex lg:flex-row flex-col gap-y-3  lg:gap-0 items-center justify-between">
           <h1 className="lg:text-4xl text-2xl md:text-4xl font-title-font text-white font-semibold">
             Why Jamstack?
           </h1>
@@ -143,22 +168,26 @@ const Headless = () => {
         </div>
       </div>
 
-      <div className="w-full flex items-center justify-center lg:my-24 my-12">
+      <div className='lg:my-20 mt-28'>
+        <ProgressFlow title={'Our Process'} arr={arr}/>
+      </div>
+
+      <div className="w-full flex items-center justify-center lg:my-10 my-6">
         <TechStack />
       </div>
 
-      <div className="w-full my-24">
+      <div className="w-full lg:my-10">
         <NudgeCard
           title={'Book a discovery call to witness speed'}
           label={'Book Now'}
         />
       </div>
 
-      <div className="max-w-screen-xl lg:my-24 my-12">
+      <div className="max-w-screen-xl lg:my-14 my-12">
         <Testimonials />
       </div>
 
-      <div className="w-[100vw] p-6 mt-24 min-h-[60vh] flex items-center justify-center footer ">
+      <div className="w-[100vw] p-6 bg-[#031416] min-h-[60vh] flex items-center justify-center footer ">
         <NudgeCard
           title={'This text can be changed on purpose'}
           label={'Also this CTA'}
