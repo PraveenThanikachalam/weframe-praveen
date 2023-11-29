@@ -50,7 +50,7 @@ const Navbar = () => {
   return (
     <>
    
-    <div  className="w-full sticky top-0 bg-opacity-25 z-50 bg-[#020c0d] mix-blend-screen bg-transparent   flex items-center justify-between text-white py-6 px-10">
+    <div  className="w-full sticky top-0 bg-opacity-25 z-50 bg-[#020c0d] mix-blend-screen bg-transparent backdrop-blur-sm flex items-center justify-between text-white py-6 px-10">
       <div >
         <Link href={'/'}>
           <Image
@@ -103,7 +103,7 @@ const Navbar = () => {
     </div>
      <div
      
-     className={`absolute laptop w-[95%]  animate-fade-in-down z-50  backdrop-blur-md border-b border-gray-500 p-5 navbar gap-5 ${
+     className={`absolute laptop w-full animate-fade-in-down z-50  backdrop-blur-sm border-b border-gray-500 p-5 navbar gap-5 ${
        visible ? 'flex ' : 'hidden'
      } flex-wrap items-start justify-center top-24 `}
    >
