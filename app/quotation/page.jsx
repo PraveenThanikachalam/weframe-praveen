@@ -6,6 +6,50 @@ import Image from 'next/image';
 import React from 'react';
 import Matrix from '@/components/ui/Matrix';
 
+const tags = [
+  {
+    label: 'Nextjs',
+    url: '/',
+    selected: true,
+  },
+  {
+    label: 'Gatsby',
+    url: '/',
+  },
+  {
+    label: 'Nuxtjs',
+    url: '/',
+  },
+  {
+    label: 'Astrojs',
+    url: '/',
+  },
+  {
+    label: 'React Native',
+    url: '/',
+  },
+  {
+    label: 'Expressjs',
+    url: '/',
+  },
+  {
+    label: 'Vuejs',
+    url: '/',
+  },
+  {
+    label: 'Angularjs',
+    url: '/',
+  },
+  {
+    label: 'Svelte',
+    url: '/',
+  },
+  {
+    label: 'Bootstrap',
+    url: '/',
+  },
+];
+
 const Quote = () => {
   return (
     <main className="max-w-screen-xl mx-auto px-4 flex flex-col items-center justify-center">
@@ -64,43 +108,28 @@ const Quote = () => {
         </div>
 
         <div className="flex lg:w-[60%] md:w-[60%] w-full flex-col items-center justify-center">
-          <TagComponent
-            title={'Frontend Technology'}
-            labels={[
-              'Nextjs',
-              'Gatsby',
-              'Nuxtjs',
-              'Astrojs',
-              'React Native',
-              'Expressjs',
-              'Vuejs',
-              'Angularjs',
-              'Svelte',
-              'Bootstrap',
-            ]}
-          />
+          <TagComponent title={'Frontend Technology'} labels={tags} />
           <TagComponent
             title={'Backend Technology'}
-            labels={['Firebase', 'Nodejs', 'Go', 'Supabase']}
+            labels={[
+              { label: 'Firebase', url: '/', selected: true },
+              { label: 'Nodejs', url: '/' },
+              { label: 'Go', url: '/' },
+              { label: 'Supabase', url: '/' },
+            ]}
           />
           <TagComponent
             title={'Third-party Integration'}
-            labels={[
-              'Nextjs',
-              'Gatsby',
-              'Nuxtjs',
-              'Astrojs',
-              'React Native',
-              'Expressjs',
-              'Vuejs',
-              'Angularjs',
-              'Svelte',
-              'Bootstrap',
-            ]}
+            labels={tags}
           />
           <TagComponent
             title={'Deployment Platform'}
-            labels={['Vercel', 'AWS', 'Digital Ocean', 'Netlify']}
+            labels={[
+              { label: 'Vercel', url: '/', selected: true },
+              { label: 'AWS', url: '/' },
+              { label: 'Digital Ocean', url: '/' },
+              { label: 'Netlify', url: '/' },
+            ]}
           />
         </div>
         <div className="lg:w-[60%] w-full flex items-start justify-start">
