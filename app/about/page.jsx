@@ -6,12 +6,11 @@ import BackLightEffect from '@/components/ui/BackLightEffect';
 import Image from 'next/image';
 import React from 'react';
 
-
 const arr = [
   {
     title: 'Vision',
     desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-    select:true
+    select: true,
   },
   {
     title: 'Process',
@@ -58,9 +57,8 @@ const AboutPage = () => {
             impactful digital solutions for our clients.
           </p>
         </div>
-        <div className='lg:w-[450px] md:w-[450px] w-80'>
-
-        <ImageGrid />
+        <div className="lg:w-[450px] md:w-[450px] w-80">
+          <ImageGrid />
         </div>
       </div>
       <div className="w-full  flex justify-center relative">
@@ -69,20 +67,26 @@ const AboutPage = () => {
           <div className=" relative mt-5 flex items-center justify-center sm:mt-0 w-full md:w-[60vw] overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
             <div className="flex glow">
               <div className="flex flex-col items-center gap-1 justify-center">
-               <h1 className='lg:text-5xl text-xl font-bold text-white'>100+</h1>
-               <p className='text-white'>Clients</p>
+                <h1 className="lg:text-5xl text-xl font-bold text-white">
+                  100+
+                </h1>
+                <p className="text-white">Clients</p>
               </div>
               <div className="flex lg:mx-20 mx-10 glow">
-              <div className="flex flex-col items-center gap-1 justify-center">
-               <h1 className='lg:text-5xl text-xl font-bold text-white '>100+</h1>
-               <p className='text-white'>Clients</p>
-              </div>
+                <div className="flex flex-col items-center gap-1 justify-center">
+                  <h1 className="lg:text-5xl text-xl font-bold text-white ">
+                    100+
+                  </h1>
+                  <p className="text-white">Clients</p>
+                </div>
               </div>
               <div className="flex glow">
-              <div className="flex flex-col gap-1 items-center justify-center">
-               <h1 className='lg:text-5xl text-xl font-bold text-white'>100+</h1>
-               <p className='text-white'>Clients</p>
-              </div>
+                <div className="flex flex-col gap-1 items-center justify-center">
+                  <h1 className="lg:text-5xl text-xl font-bold text-white">
+                    100+
+                  </h1>
+                  <p className="text-white">Clients</p>
+                </div>
               </div>
             </div>
           </div>
@@ -91,11 +95,11 @@ const AboutPage = () => {
           <BackLightEffect />
         </div>
       </div>
-      <div className='lg:my-56 mt-28'>
-        <ProgressFlow title={'About Us'} arr={arr}/>
+      <div className="lg:my-56 mt-28">
+        <ProgressFlow title={'About Us'} arr={arr} />
       </div>
-      <div className='w-full'>
-        <CultureComponent/>
+      <div className="w-full">
+        <CultureComponent />
       </div>
       <div className="w-[100vw] mt-16 bg-[#031416] footer p-6 h-[60vh] border-b-2 border-gray-800 flex items-center justify-center">
         <NudgeCard

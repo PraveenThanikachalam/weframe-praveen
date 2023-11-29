@@ -11,23 +11,23 @@ const arr = [
   {
     title: 'Kickoff',
     desc: 'Initiating a Discovery Call to Understand Your Business.',
-    select:true
+    select: true,
   },
   {
     title: 'Ideation',
-    desc:'We craft a customized plan aligned with your business objectives, followed by the submission of a comprehensive proposal.'
+    desc: 'We craft a customized plan aligned with your business objectives, followed by the submission of a comprehensive proposal.',
   },
   {
     title: 'Design',
-    desc:'We design the Idea in Figma (if the design is not available), and seek approval. We offer 2 free design iterations.'
+    desc: 'We design the Idea in Figma (if the design is not available), and seek approval. We offer 2 free design iterations.',
   },
   {
     title: 'Development',
-    desc:'Agile Development: Sprints, Milestones, and Bi-weekly Progress Tracking.'
+    desc: 'Agile Development: Sprints, Milestones, and Bi-weekly Progress Tracking.',
   },
   {
     title: 'Delivery',
-    desc:'Complete Product Delivery with Complimentary One Month Maintenance.'
+    desc: 'Complete Product Delivery with Complimentary One Month Maintenance.',
   },
 ];
 
@@ -168,8 +168,8 @@ const Headless = () => {
         </div>
       </div>
 
-      <div className='lg:my-20 mt-28'>
-        <ProgressFlow title={'Our Process'} arr={arr}/>
+      <div className="lg:my-20 mt-28">
+        <ProgressFlow title={'Our Process'} arr={arr} />
       </div>
 
       <div className="w-full flex items-center justify-center lg:my-10 my-6">

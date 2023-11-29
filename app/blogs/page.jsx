@@ -3,6 +3,38 @@ import NudgeCard from '@/components/HomePage/NudgeCard';
 import TagButton from '@/components/ui/TagButton';
 import Matrix from '@/components/ui/Matrix';
 
+const tags = [
+  {
+    label: 'All Case Studies',
+    url: '/',
+    selected: true,
+  },
+  {
+    label: 'Headless Commerce Development',
+    url: '/',
+  },
+  {
+    label: 'MVP & POC Development',
+    url: '/',
+  },
+  {
+    label: 'Custom Software Development',
+    url: '/',
+  },
+  {
+    label: 'Product Design Services',
+    url: '/',
+  },
+  {
+    label: 'CTO as a Service',
+    url: '/',
+  },
+  {
+    label: 'API Development',
+    url: '/',
+  },
+];
+
 const Blogs = () => {
   function convertToSlug(inputString) {
     return inputString
@@ -22,15 +54,9 @@ const Blogs = () => {
             </h1>
           </div>
           <div className="flex items-center justify-center gap-2 mt-4 w-full p-4 flex-wrap">
-            <TagButton name={'All Articles'} selected />
-            <TagButton name={'Headless Commerce Development'} />
-            <TagButton name={'MVP & POC Development'} />
-            <div className="lg:flex md:flex hidden items-center justify-center gap-2 w-full  flex-wrap">
-              <TagButton name={'Custom Software Development'} />
-              <TagButton name={'Product Design Services'} />
-              <TagButton name={'CTO as a Service'} />
-              <TagButton name={'API Development'} />
-            </div>
+            {tags.map((tag, index) => {
+              return <TagButton key={index} tag={tag} />;
+            })}
           </div>
         </div>
       </div>

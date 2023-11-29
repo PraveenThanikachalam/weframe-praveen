@@ -4,6 +4,38 @@ import TagButton from '@/components/ui/TagButton';
 import Image from 'next/image';
 import React from 'react';
 
+const tags = [
+  {
+    label: 'All Case Studies',
+    url: '/',
+    selected: true,
+  },
+  {
+    label: 'Headless Commerce Development',
+    url: '/',
+  },
+  {
+    label: 'MVP & POC Development',
+    url: '/',
+  },
+  {
+    label: 'Custom Software Development',
+    url: '/',
+  },
+  {
+    label: 'Product Design Services',
+    url: '/',
+  },
+  {
+    label: 'CTO as a Service',
+    url: '/',
+  },
+  {
+    label: 'API Development',
+    url: '/',
+  },
+];
+
 const Contact = () => {
   return (
     <section className=" max-w-screen-xl mx-auto  md:px-4 px-2 lg:px-4">
@@ -112,18 +144,9 @@ const Contact = () => {
               Service you want to query for
             </p>
             <div className="flex flex-wrap gap-2 items-center lg:justify-start justify-center">
-              <button
-                style={{ fontFamily: 'Fira Mono, monospace' }}
-                className="px-4 py-2 rounded-2xl   bg-black text-white border border-cyan-300 shadow-cyan-300 shadow-sm md:text-sm text-xs lg:text-sm"
-              >
-                Jamstack Development
-              </button>
-              <TagButton name={'CTO as a Service'} />
-              <TagButton name={'API Development'} />
-              <TagButton name={'Headless Commerce Development'} />
-              <TagButton name={'MVP & POC Development'} />
-              <TagButton name={'Custom Software Development'} />
-              <TagButton name={'Product Design Services'} />
+              {tags.map((tag, index) => {
+                return <TagButton key={index} tag={tag} />;
+              })}
             </div>
           </div>
           <div className="my-8 lg:mt-8  w-full flex items-end justify-center">

@@ -3,15 +3,31 @@ import TagButton from '@/components/ui/TagButton';
 import Image from 'next/image';
 import React from 'react';
 
+const tags = [
+  {
+    label: 'All Case Studies',
+    url: '/',
+    selected: true,
+  },
+  {
+    label: 'Headless Commerce Development',
+    url: '/',
+  },
+  {
+    label: 'MVP & POC Development',
+    url: '/',
+  },
+];
+
 const Page = ({ params }) => {
   return (
     <main className="w-full ">
       <div className="w-full flex items-center justify-center relative z-20">
-        <div className="w-full -z-10 absolute bottom-0  ">
+        <div className="w-full -z-10 absolute h-screen  bottom-0  ">
           <Image
             alt="img"
             src={'/assets/blogs/blog2.png'}
-            className="w-full h-full bg-cover"
+            className="w-full h-full object-cover"
             width={200}
             height={200}
           />
@@ -19,19 +35,16 @@ const Page = ({ params }) => {
         </div>
         <div className="w-[80%] my-16 flex flex-col items-start gap-10 justify-center">
           <div className="flex flex-wrap gap-2">
-            <TagButton
-              name={'Headless Commerce Development'}
-              color={'text-white'}
-            />
-            <TagButton name={'MVP & POC Development'} color={'text-white'} />
-            <TagButton name={'Product Design Services'} color={'text-white'} />
+            {tags.map((tag, index) => {
+              return <TagButton key={index} tag={tag} />;
+            })}
           </div>
           <h1 className="lg:text-5xl md:text-4xl text-4xl font-bold text-white font-title-font">
             Revolutionizing E-commerce with Headless Commerce
           </h1>
         </div>
       </div>
-      <div className="max-w-screen-lg p-20 flex items-center justify-center mx-auto ">
+      <div className="max-w-screen-lg  md:p-20 p-6  flex items-center justify-center mx-auto ">
         <p className="text-white">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae odit
           qui ad blanditiis harum molestias sint officia aperiam! Excepturi

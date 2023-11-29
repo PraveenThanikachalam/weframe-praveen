@@ -6,6 +6,77 @@ import NudgeCard from '@/components/HomePage/NudgeCard';
 import Image from 'next/image';
 import Matrix from '@/components/ui/Matrix';
 
+const cardData = [
+  {
+    title: 'Freemium Blog Platform for Entrepreneurs',
+    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients. Wave farewell to the past and step confidently into the future with Jamstack. Beyond websites, we are here to bring your narrative to life through our expertise. Get an instant quote for your project',
+    tags: [
+      { label: 'Headless CMS', url: '/' },
+      { label: 'Jamstack', url: '/' },
+      { label: 'Blog Platform', url: '/' },
+      { label: 'Web App Development', url: '/' },
+    ],
+    slide: false,
+    video: true,
+  },
+  {
+    title: 'Freemium Blog Platform for Entrepreneurs',
+    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients. Wave farewell to the past and step confidently into the future with Jamstack. Beyond websites, we are here to bring your narrative to life through our expertise. Get an instant quote for your project',
+    tags: [
+      { label: 'Headless CMS', url: '/' },
+      { label: 'Jamstack', url: '/' },
+      { label: 'Blog Platform', url: '/' },
+      { label: 'Web App Development', url: '/' },
+    ],
+    slide: false,
+    video: false,
+  },
+  {
+    title: 'Freemium Blog Platform for Entrepreneurs',
+    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients. Wave farewell to the past and step confidently into the future with Jamstack. Beyond websites, we are here to bring your narrative to life through our expertise. Get an instant quote for your project',
+    tags: [
+      { label: 'Headless CMS', url: '/' },
+      { label: 'Jamstack', url: '/' },
+      { label: 'Blog Platform', url: '/' },
+      { label: 'Web App Development', url: '/' },
+    ],
+    slide: false,
+    video: false,
+  },
+];
+
+const tags = [
+  {
+    label: 'All Case Studies',
+    url: '/',
+    selected: true,
+  },
+  {
+    label: 'Headless Commerce Development',
+    url: '/',
+  },
+  {
+    label: 'MVP & POC Development',
+    url: '/',
+  },
+  {
+    label: 'Custom Software Development',
+    url: '/',
+  },
+  {
+    label: 'Product Design Services',
+    url: '/',
+  },
+  {
+    label: 'CTO as a Service',
+    url: '/',
+  },
+  {
+    label: 'API Development',
+    url: '/',
+  },
+];
+
 const CaseStudy = () => {
   return (
     <main className="max-w-screen-xl mx-auto px-4 flex flex-col items-center justify-center">
@@ -18,22 +89,16 @@ const CaseStudy = () => {
             </h1>
           </div>
           <div className="flex items-center justify-center gap-2 mt-4 w-full p-4 flex-wrap">
-            <TagButton name={'All Case Studies'} selected />
-            <TagButton name={'Headless Commerce Development'} />
-            <TagButton name={'MVP & POC Development'} />
-            <div className="lg:flex md:flex hidden items-center justify-center gap-2 w-full  flex-wrap">
-              <TagButton name={'Custom Software Development'} />
-              <TagButton name={'Product Design Services'} />
-              <TagButton name={'CTO as a Service'} />
-              <TagButton name={'API Development'} />
-            </div>
+            {tags.map((tag, index) => {
+              return <TagButton key={index} tag={tag} />;
+            })}
           </div>
         </div>
       </div>
       <div className="w-full flex flex-col gap-14 items-center justify-center">
-        <StoryCard slide={false} video={true} />
-        <StoryCard slide={false} />
-        <StoryCard slide={false} />
+        {cardData.map((item, index) => {
+          return <StoryCard key={index} data={item} />;
+        })}
       </div>
       <div className="w-full flex items-center justify-center my-16">
         <Button variant="outline" label={'See More Case Studies'} />

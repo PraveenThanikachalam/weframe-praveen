@@ -3,7 +3,9 @@ import React from 'react';
 const ProgressFlow = ({ title, arr }) => {
   return (
     <div className="w-full  flex items-center flex-col gap-5  justify-center ">
-      <h1 className='lg:text-5xl md:text-5xl text-4xl  font-bold text-white font-title-font'>{title}</h1>
+      <h1 className="lg:text-5xl md:text-5xl text-4xl  font-bold text-white font-title-font">
+        {title}
+      </h1>
       <div class="-my-6 flex flex-col items-center justify-center ">
         {arr.map((item, index) => {
           return (
@@ -18,7 +20,15 @@ const ProgressFlow = ({ title, arr }) => {
               >
                 {item.title}
               </time>
-              <div class={`flex flex-col sm:flex-row items-start mb-1  group-last:before:hidden before:absolute before:left-2 sm:before:left-0 ${arr[4] === item ? 'before:h-[0vh]' : 'before:h-[21vh]'}  before:px-px ${item.select ? 'before:bg-[#1FBCCB] after:bg-[#9bf7ff] after:border-[#1FBCCB]' : 'before:bg-[#999999] after:bg-[#a7a7a7] after:border-[#676767] '  }   before:ml-[50vw] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-4 after:h-4  after:border-4 after:box-content after:rounded-full after:ml-[50vw] hidden lg:block  after:-translate-x-1/2 after:translate-y-1.5`}></div>
+              <div
+                class={`flex flex-col sm:flex-row items-start mb-1  group-last:before:hidden before:absolute before:left-2 sm:before:left-0 ${
+                  arr[4] === item ? 'before:h-[0vh]' : 'before:h-[25vh]'
+                }  before:px-px ${
+                  item.select
+                    ? 'before:bg-[#1FBCCB] after:bg-[#9bf7ff] after:border-[#1FBCCB]'
+                    : 'before:bg-[#999999] after:bg-[#a7a7a7] after:border-[#676767] '
+                }   before:ml-[50vw] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-4 after:h-4  after:border-4 after:box-content after:rounded-full after:ml-[50vw] hidden lg:block  after:-translate-x-1/2 after:translate-y-1.5`}
+              ></div>
 
               <div
                 class={`${
