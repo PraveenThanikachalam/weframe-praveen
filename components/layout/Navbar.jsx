@@ -12,7 +12,7 @@ const Navbar = () => {
   const [visible3, setVisible3] = useState(false);
 
   return (
-    <div className='w-full sticky top-0 bg-opacity-25 z-50 bg-[#020c0d] mix-blend-screen bg-transparent backdrop-blur-sm'>
+    <div className="w-full sticky top-0 bg-opacity-25 z-50 bg-[#020c0d] mix-blend-screen bg-transparent backdrop-blur-sm">
       <div className="w-full flex items-center justify-between text-white py-6 px-10">
         <div>
           <Link href={'/'}>
@@ -68,8 +68,8 @@ const Navbar = () => {
       </div>
 
       <MobileNav visible2={visible2} setVisible2={setVisible2} />
-      <DropDownBig visible={visible} />
-      <DropDownSmall visible3={visible3} />
+      <DropDownBig visible={visible} setVisible={setVisible} />
+      <DropDownSmall visible3={visible3} setVisible3={setVisible3} />
     </div>
   );
 };

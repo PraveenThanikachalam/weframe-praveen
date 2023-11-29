@@ -35,7 +35,7 @@ const services = [
   },
 ];
 
-const DropDownBig = ({ visible }) => {
+const DropDownBig = ({ visible, setVisible }) => {
   return (
     <div
       className={`absolute laptop w-full animate-fade-in-down z-50  backdrop-blur-sm border-b border-gray-500 p-5 navbar gap-5 ${
@@ -56,7 +56,7 @@ const DropDownBig = ({ visible }) => {
               height={300}
               className="w-4 absolute top-4 right-4"
             />
-            <Link href={item.link}>
+            <Link href={item.link} onClick={() => setVisible(!visible)}>
               <div>
                 <h1 className="text-xl font-semibold text-white">
                   {item.title}

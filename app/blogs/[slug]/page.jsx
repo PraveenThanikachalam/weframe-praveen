@@ -1,4 +1,4 @@
-import NudgeCard from '@/components/HomePage/NudgeCard';
+import NudgeCard from '@/components/ui/NudgeCard';
 import TagButton from '@/components/ui/TagButton';
 import Image from 'next/image';
 import React from 'react';
