@@ -6,22 +6,22 @@ const ProgressFlow = ({ title, arr }) => {
       <h1 className="lg:text-5xl md:text-5xl text-4xl  font-bold text-white font-title-font">
         {title}
       </h1>
-      <div class="-my-6 flex flex-col items-center justify-center ">
+      <div className="-my-6 flex flex-col items-center justify-center ">
         {arr.map((item, index) => {
           return (
             <div
               key={index}
-              class=" lg:pl-32 py-12 w-full items-center lg:justify-between    lg:flex-row flex-col  flex lg:gap-56 gap-5 lg:text-left text-center"
+              className=" lg:pl-32 py-12 w-full items-center lg:justify-between    lg:flex-row flex-col  flex lg:gap-56 gap-5 lg:text-left text-center"
             >
               <time
-                class={` font-nt-adventure  translate-y-0.5 inline-flex items-center justify-center lg:text-5xl md:text-5xl text-3xl font-semibold uppercase  h-6 mb-3 sm:mb-0 ${
+                className={` font-nt-adventure  translate-y-0.5 inline-flex items-center justify-center lg:text-5xl md:text-5xl text-3xl font-semibold uppercase  h-6 mb-3 sm:mb-0 ${
                   item.select ? 'text-[#1FBCCB]' : 'text-[#999999]'
                 }    rounded-full`}
               >
                 {item.title}
               </time>
               <div
-                class={`flex flex-col sm:flex-row items-start mb-1  group-last:before:hidden before:absolute before:left-2 sm:before:left-0 ${
+                className={`flex flex-col sm:flex-row items-start mb-1  group-last:before:hidden before:absolute before:left-2 sm:before:left-0 ${
                   arr[4] === item ? 'before:h-[0vh]' : 'before:h-[25vh]'
                 }  before:px-px ${
                   item.select
@@ -31,7 +31,7 @@ const ProgressFlow = ({ title, arr }) => {
               ></div>
 
               <div
-                class={`${
+                className={`${
                   item.select ? 'text-[#1FBCCB]' : 'text-[#999999]'
                 } text-sm lg:w-96 md:w-[80%] w-full `}
               >

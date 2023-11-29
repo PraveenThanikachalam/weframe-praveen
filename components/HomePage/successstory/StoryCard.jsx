@@ -26,9 +26,8 @@ const StoryCard = ({ data }) => {
         <div className="lg:flex md:flex hidden gap-2 my-3 flex-wrap">
           {data.tags.map((tag, index) => {
             return (
-              <Link href={tag.url}>
+              <Link key={index} href={tag.url}>
                 <button
-                  key={index}
                   className="navbar borderGrd text-white px-4 py-2 rounded-xl"
                 >
                   {tag.label}
