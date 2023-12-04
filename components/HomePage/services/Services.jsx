@@ -20,10 +20,10 @@ const Services = () => {
       </div>
       <div className="flex w-[80vw] max-w-screen-xl flex-wrap items-center justify-center lg:justify-between gap-5">
         <ServiceCard title="Jamstack Development" img="spider.svg" />
-        <ServiceCard title="Headless Commerce" />
+        <ServiceCard title="Headless Commerce" img="headless.svg" />
         <ServiceCard title="Custom Software Development" img="circle.svg" />
         <ServiceCard title="MVP & POC Development" img="diamond.svg" />
-        <ServiceCard title="UI/UX Designing" />
+        <ServiceCard title="UI/UX Designing" img="ui.svg" />
         <ServiceCard title="CTO as a Service" img="crown.svg" />
       </div>
       <div></div>

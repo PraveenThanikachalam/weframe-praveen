@@ -6,7 +6,7 @@ const ServiceCard = ({ title, img }) => {
       {img && (
         <Image
           src={`/assets/services/${img}`}
-          className="absolute right-0 h-auto w-16"
+          className="absolute right-0 w-auto h-[80%]"
           width={0}
           height={0}
           alt="img"

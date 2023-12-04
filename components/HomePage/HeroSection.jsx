@@ -46,7 +46,7 @@ const HeroSection = () => {
       <div className="w-full flex justify-center relative">
         <div className="w-full z-30  flex flex-col md:mt-6 items-center justify-end gap-2">
           <p className="md:mb-6 text-base glow font-semibold">Trusted by</p>
-          <div className=" relative mt-5 sm:mt-0 w-full md:w-[60vw] overflow-hidden block [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+          <div className=" relative mt-5 sm:mt-0 w-full md:w-[45vw] overflow-hidden block [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
             <div className="flex">
               <div className="flex animate-slidehorizontal">
                 {logos.map((logo) => {

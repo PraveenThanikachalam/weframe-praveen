@@ -28,7 +28,7 @@ const StoryCard = ({ data }) => {
             return (
               <Link key={index} href={tag.url}>
                 <button
-                  className="navbar borderGrd text-white px-4 py-2 rounded-xl"
+                  className="navbar borderGrd text-gray-300 px-4 py-1 text-sm rounded-xl"
                 >
                   {tag.label}
                 </button>
@@ -98,7 +98,7 @@ const StoryCard = ({ data }) => {
             width="0"
             height="0"
             className="lg:w-[85%] w-full h-[95%] "
-            playsInline
+            controls={isPlaying ? true:false}
           >
             <source src="/assets/demo.mp4" type="video/mp4" />
           </video>

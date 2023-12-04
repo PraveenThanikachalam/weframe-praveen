@@ -22,7 +22,7 @@ const MobileNav = ({ visible2, setVisible2 }) => {
 
       <nav>
         <ul className="gap-8 p-6 rounded-xl glow flex flex-col text-white  text-sm font-medium items-center justify-center">
-          <Link className="underline" href={'/case-studies'}>
+          <Link className="underline" href={'/case-study'}>
             Case Studies
           </Link>
           <Link className="underline" href={'/blogs'}>
