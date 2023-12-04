@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import data from '@/data/clients';
 
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, Autoplay } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -11,21 +11,23 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay'
 
 const OurClient = () => {
 
   return (
-    <div className=" clients my-16 max-w-screen-2xl w-full flex flex-col gap-14 items-center justify-center">
+    <div className=" clients mt-28 max-w-screen-2xl w-full flex flex-col gap-14 items-center justify-center">
       <h1 className="text-4xl font-bold text-white">Our Clients</h1>
       <div className="w-[80vw] flex flex-wrap items-center justify-center gap-8 lg:gap-16">
         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 items-center justify-center gap-4 lg:gap-10">
           <Swiper
             // install Swiper modules
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            modules={[Navigation, Pagination, Scrollbar, Autoplay]}
             spaceBetween={30}
             slidesPerView={ 1}
             pagination={{ clickable: true }}
-            style={{ width: '80vw', padding:'0px 0px 70px 0px', minHeight:'50vh' }}
+          
+            style={{ width: '80vw', padding:'0px 0px 70px 0px', minHeight:'50vh', cursor:'grabbing' }}
           >
             {Object.keys(data).map((item, index) => {
               return (
