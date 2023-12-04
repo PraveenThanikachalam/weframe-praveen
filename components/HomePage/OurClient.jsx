@@ -1,5 +1,4 @@
 'use client';
-import React from 'react';
 import Image from 'next/image';
 import data from '@/data/clients';
 
@@ -14,6 +13,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 const OurClient = () => {
+
   return (
     <div className=" clients my-16 max-w-screen-2xl w-full flex flex-col gap-14 items-center justify-center">
       <h1 className="text-4xl font-bold text-white">Our Clients</h1>
@@ -23,9 +23,9 @@ const OurClient = () => {
             // install Swiper modules
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={30}
-            slidesPerView={1}
+            slidesPerView={ 1}
             pagination={{ clickable: true }}
-            style={{ width: '80vw', height:'50vh' }}
+            style={{ width: '80vw', padding:'0px 0px 70px 0px', minHeight:'50vh' }}
           >
             {Object.keys(data).map((item, index) => {
               return (
@@ -45,7 +45,7 @@ const OurClient = () => {
                     return (
                       <div
                         key={client.id}
-                        className=" h-28 flex flex-col gap-2 justify-between items-center"
+                        className=" lg:h-28 h-24 flex flex-col gap-2 justify-between items-center"
                       >
                         <Image
                           src={client.image}
@@ -54,7 +54,7 @@ const OurClient = () => {
                           height={0}
                           alt="img"
                         />
-                        <p className="text-[#999999] text-sm">{client.name}</p>
+                        <p className="text-[#999999] lg:text-sm md:text-sm text-xs">{client.name}</p>
                       </div>
                     );
                   })}
