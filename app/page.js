@@ -4,7 +4,7 @@ import HeroSection from '@/components/HomePage/HeroSection';
 import SuccessStory from '@/components/HomePage/successstory/SuccessStory';
 import Services from '@/components/HomePage/services/Services';
 import TechStack from '@/components/HomePage/techstackcomponents/TechStack';
-import NudgeCard from '@/components/HomePage/NudgeCard';
+import NudgeCard from '@/components/ui/NudgeCard';
 import OurClient from '@/components/HomePage/OurClient';
 import Testimonials from '@/components/HomePage/Testimonials';
 

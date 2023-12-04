@@ -3,7 +3,7 @@ import SmallBox from '@/components/jamstackcomponent/SmallBox';
 import TechStack from '@/components/HomePage/techstackcomponents/TechStack';
 import Button from '@/components/ui/Button';
 import React from 'react';
-import NudgeCard from '@/components/HomePage/NudgeCard';
+import NudgeCard from '@/components/ui/NudgeCard';
 import Testimonials from '@/components/HomePage/Testimonials';
 
 const Jamstack = () => {

@@ -1,4 +1,4 @@
-import NudgeCard from '@/components/HomePage/NudgeCard';
+import NudgeCard from '@/components/ui/NudgeCard';
 import ProgressFlow from '@/components/ProgressFlow';
 import ImageGrid from '@/components/about-image-grid/ImageGrid';
 import CultureComponent from '@/components/about/CultureComponent';

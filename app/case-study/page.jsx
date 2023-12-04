@@ -2,7 +2,7 @@ import React from 'react';
 import TagButton from '@/components/ui/TagButton';
 import StoryCard from '@/components/HomePage/successstory/StoryCard';
 import Button from '@/components/ui/Button';
-import NudgeCard from '@/components/HomePage/NudgeCard';
+import NudgeCard from '@/components/ui/NudgeCard';
 import Image from 'next/image';
 import Matrix from '@/components/ui/Matrix';
 
