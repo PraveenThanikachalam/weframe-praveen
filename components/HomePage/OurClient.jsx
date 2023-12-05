@@ -11,10 +11,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import 'swiper/css/autoplay'
+import 'swiper/css/autoplay';
 
 const OurClient = () => {
-
   return (
     <div className=" clients mt-28 max-w-screen-2xl w-full flex flex-col gap-14 items-center justify-center">
       <h1 className="text-4xl font-bold text-white">Our Clients</h1>
@@ -24,10 +23,14 @@ const OurClient = () => {
             // install Swiper modules
             modules={[Navigation, Pagination, Scrollbar, Autoplay]}
             spaceBetween={30}
-            slidesPerView={ 1}
+            slidesPerView={1}
             pagination={{ clickable: true }}
-          
-            style={{ width: '80vw', padding:'0px 0px 70px 0px', minHeight:'50vh', cursor:'grabbing' }}
+            style={{
+              width: '80vw',
+              padding: '0px 0px 70px 0px',
+              minHeight: '50vh',
+              cursor: 'grabbing',
+            }}
           >
             {Object.keys(data).map((item, index) => {
               return (
@@ -56,7 +59,9 @@ const OurClient = () => {
                           height={0}
                           alt="img"
                         />
-                        <p className="text-[#999999] lg:text-sm md:text-sm text-xs">{client.name}</p>
+                        <p className="text-[#999999] lg:text-sm md:text-sm text-xs">
+                          {client.name}
+                        </p>
                       </div>
                     );
                   })}

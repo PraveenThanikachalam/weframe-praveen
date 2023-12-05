@@ -12,7 +12,7 @@ const cardData = [
       { label: 'Blog Platform', url: '/' },
       { label: 'Web App Development', url: '/' },
     ],
-    img:'/assets/img1.png'
+    img: '/assets/img1.png',
   },
   {
     title: 'Jamstack and Headless Commerce Agency',
@@ -23,8 +23,7 @@ const cardData = [
       { label: 'Blog Platform', url: '/' },
       { label: 'Web App Development', url: '/' },
     ],
-    img:'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-
+    img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
     title: 'Custom Software Solution for Development',
@@ -35,10 +34,9 @@ const cardData = [
       { label: 'Blog Platform', url: '/' },
       { label: 'Web App Development', url: '/' },
     ],
-    img:'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-
+    img: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
-] 
+];
 
 const SuccessStory = () => {
   return (
@@ -57,7 +55,7 @@ const SuccessStory = () => {
         </div>
       </div>
       {/* <StoryCard data={cardData} /> */}
-      <SlideCard data={cardData}/>
+      <SlideCard data={cardData} />
     </div>
   );
 };

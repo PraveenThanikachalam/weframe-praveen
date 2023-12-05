@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import './ServiceCard.css'
+import './ServiceCard.css';
 
 const ServiceCard = ({ title, img, cardId }) => {
   const handleMove = () => {
@@ -15,7 +15,10 @@ const ServiceCard = ({ title, img, cardId }) => {
     });
   };
   return (
-    <div onMouseMove={handleMove} className={`serviceCard shiny-${cardId} shiny w-72 md:w-[30%] hover:shadow-sm hover:shadow-cyan-500 text-gray-300 hover:text-gray-100 transition-all duration-200 max-w-xs h-32 rounded-xl flex items-center justify-start relative border overflow-hidden border-gray-600`}>
+    <div
+      onMouseMove={handleMove}
+      className={`serviceCard shiny-${cardId} shiny w-72 md:w-[30%] hover:shadow-sm hover:shadow-cyan-500 text-gray-300 hover:text-gray-100 transition-all duration-200 max-w-xs h-32 rounded-xl flex items-center justify-start relative border overflow-hidden border-gray-600`}
+    >
       {img && (
         <Image
           src={`/assets/services/${img}`}

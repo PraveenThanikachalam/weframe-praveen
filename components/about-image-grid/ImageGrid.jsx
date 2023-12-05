@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import '../ui/NudgeCard.css'
+import '../ui/NudgeCard.css';
 
 const ImageGrid = () => {
   return (
@@ -17,7 +17,7 @@ const ImageGrid = () => {
           <Image src="/assets/image-grid/grid-3.jpg" alt="image3" fill />
         </div>
       </div>
-      <div className='flair z-10'></div>
+      <div className="flair z-10"></div>
     </div>
   );
 };

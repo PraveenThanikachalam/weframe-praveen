@@ -41,7 +41,6 @@ const Navbar = () => {
               >
                 <i className={`ri-arrow-down-s-line`}></i>
               </div>
-          
             </div>
             <Link href={'/case-study'}>Case Studies</Link>
             <Link href={'/blogs'}>Blogs</Link>

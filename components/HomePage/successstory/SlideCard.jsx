@@ -41,12 +41,12 @@ const SlideCard = ({ data }) => {
         }}
         loop={true}
         style={{
-          width: `${isMobile ? '95vw': '80vw'}`,
+          width: `${isMobile ? '95vw' : '80vw'}`,
           position: 'relative',
-          display:'flex',
-          alignItems:'center',
-          justifyContent:'center',
-        //   background:'white'
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          //   background:'white'
         }}
       >
         {data.map((slide, index) => {
@@ -71,9 +71,7 @@ const SlideCard = ({ data }) => {
 
                   <p className="text-sm mt-2 text-gray-300">{slide.desc}</p>
                   <div className="flex gap-3 mt-5 relative items-center justify-between w-full">
-                    <div
-                      className={` gap-3 flex z-50 text-white`}
-                    >
+                    <div className={` gap-3 flex z-50 text-white`}>
                       <div
                         onClick={() => swiperRef.current.slidePrev()}
                         className="w-12 h-12 rounded-full border flex items-center transition-all duration-200 hover:bg-white hover:text-black cursor-pointer justify-center border-white"
