@@ -49,6 +49,7 @@ const AboutPage = () => {
             <br />
             Crafting Future Solutions
           </h1>
+          
           <p className="text-gray-300 font-light text-center lg:text-left">
             Explore our real-world achievements, where we turn challenges into
             triumphs.
