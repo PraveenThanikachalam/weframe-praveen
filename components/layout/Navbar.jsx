@@ -12,7 +12,7 @@ const Navbar = () => {
   const [visible3, setVisible3] = useState(false);
 
   return (
-    <div className="w-full sticky top-0 bg-opacity-25 z-50 bg-[#020c0d] mix-blend-screen bg-transparent backdrop-blur-sm">
+    <div className="w-full sticky top-0 bg-opacity-25 z-40 bg-[#020c0d]  bg-transparent backdrop-blur-sm">
       <div className="w-full flex items-center justify-between text-white py-6 px-10">
         <div>
           <Link href={'/'}>
@@ -31,14 +31,16 @@ const Navbar = () => {
               onClick={() => {
                 setVisible(!visible);
               }}
-              className="cursor-pointer"
+              className="cursor-pointer flex gap-1"
             >
               Services{' '}
-              {visible ? (
-                <i className="ri-arrow-up-s-line"></i>
-              ) : (
-                <i className="ri-arrow-down-s-line"></i>
-              )}
+              <div
+                className={`transition-all duration-300 ${
+                  visible ? 'rotate-180' : ''
+                }`}
+              >
+                <i className={`ri-arrow-down-s-line`}></i>
+              </div>
             </div>
             <Link href={'/case-study'}>Case Studies</Link>
             <Link href={'/blogs'}>Blogs</Link>

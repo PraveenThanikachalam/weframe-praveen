@@ -1,8 +1,9 @@
+'use client';
 import Button from '@/components/ui/Button';
 import Matrix from '@/components/ui/Matrix';
 import TagButton from '@/components/ui/TagButton';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 
 const tags = [
   {
@@ -37,8 +38,16 @@ const tags = [
 ];
 
 const Contact = () => {
+  const [show, setShow] = useState(false);
+
+  const sendQuery = () => {
+    setShow(true);
+    setTimeout(() => {
+      setShow(false);
+    }, 3000);
+  };
   return (
-    <section className=" max-w-screen-xl mx-auto  md:px-4 px-2 lg:px-4">
+    <section className=" max-w-screen-xl mx-auto flex flex-col items-center justify-center  md:px-4 px-2 lg:px-4">
       <Matrix />
       <div className=" w-full  lg:h-[85vh]  flex lg:flex-row  flex-col">
         <div className="left lg:w-[50%] w-full text-center lg:text-left  flex  flex-col items-center lg:items-left justify-evenly">
@@ -152,9 +161,36 @@ const Contact = () => {
           <div className="my-8 lg:mt-8  w-full flex items-end justify-center">
             <div className="flex lg:flex-row md:flex-row flex-col   w-full items-center lg:justify-end justify-center lg:gap-2 gap-3 ">
               <Button label={'Book Meeting'} variant="outline" />
-              <Button label={'Send Query'} variant="filled" />
+              <Button
+                onClick={sendQuery}
+                label={'Send Query'}
+                variant="filled"
+              />
             </div>
           </div>
+        </div>
+      </div>
+
+      <div
+        className={`w-[40vw] shadow-sm shadow-cyan-200 absolute bottom-5 z-50 ${
+          show ? '' : 'opacity-0'
+        } my-8 h-24 transition-all duration-300 rounded-xl flex items-center justify-center gap-3 bg-gradient-to-b from-[#0e292c] to-[#020C0D] border-2 border-cyan-400`}
+      >
+        <div>
+          <Image
+            alt="img"
+            src={'/assets/contact/sent.svg'}
+            width={300}
+            height={200}
+            className="h-8 w-auto"
+          />
+        </div>
+        <div className="flex flex-col gap-1">
+          <p className="text-cyan-400 font-semibold text-sm">Message Sent</p>
+          <p className="text-sm font-light text-white">
+            Your message has been sent to the team. They will get back to you
+            soon.
+          </p>
         </div>
       </div>
     </section>

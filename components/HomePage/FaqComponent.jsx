@@ -43,7 +43,7 @@ const arr = [
 ];
 const FaqComponent = () => {
   return (
-    <div className="faq w-full flex my-16 items-center text-center justify-center flex-col">
+    <div className="faq w-full flex my-20 items-center text-center justify-center flex-col">
       <div>
         <h1 className="text-4xl font-bold text-white">
           Got questions? <br /> We got answers

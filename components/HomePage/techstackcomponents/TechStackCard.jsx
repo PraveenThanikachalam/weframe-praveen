@@ -8,7 +8,7 @@ const TechStackCard = ({ framework, title }) => {
       </div>
       <div className="flex w-full  flex-col items-center justify-center">
         <div className="flex w-full flex-wrap items-center gap-20 justify-center ">
-          <div className="flex flex-wrap items-center lg:w-[90%] w-full gap-5 ">
+          <div className="flex flex-wrap items-center justify-center lg:w-[90%] w-full gap-5 ">
             {framework?.map((item) => {
               return (
                 <div

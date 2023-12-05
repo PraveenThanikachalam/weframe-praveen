@@ -127,26 +127,31 @@ const TechStack = () => {
         <h1 className="lg:text-4xl text-3xl md:text-4xl font-bold text-white">
           How we <br className="block lg:hidden" /> develop for
         </h1>
-        <div className="rounded-xl border w-64 h-12 border-gray-400 flex items-center justify-center">
+        <div className="rounded-xl relative border overflow-hidden w-64 h-12 border-gray-400 flex items-center justify-center">
+          <div
+            className={`w-[50%] h-full absolute right-0 slide z-10 bg-white ${
+              shift ? 'translate-x-0' : '-translate-x-full'
+            } transition-transform duration-200`}
+          ></div>
           <div
             onClick={() => {
               setShift(!shift);
             }}
-            className={`flex items-center justify-center font-semibold cursor-pointer text-md w-[50%] h-full rounded-l-xl ${
-              shift ? 'bg-white text-black' : 'text-gray-300 '
+            className={`flex items-center justify-center transition-all duration-200 z-20 font-semibold cursor-pointer text-md w-[50%] h-full rounded-l-xl ${
+              shift ? ' text-white' : 'text-black '
             } `}
           >
-            Web
+            Mobile
           </div>
           <div
             onClick={() => {
               setShift(!shift);
             }}
-            className={`flex items-center justify-center font-semibold cursor-pointer text-md w-[50%] h-full rounded-r-xl ${
-              shift ? 'text-gray-300 ' : 'bg-white text-black'
+            className={`flex items-center z-20 justify-center transition-all duration-200  font-semibold cursor-pointer text-md w-[50%] h-full rounded-r-xl ${
+              shift ? 'text-black ' : ' text-white'
             } `}
           >
-            Mobile
+            Web
           </div>
         </div>
       </div>

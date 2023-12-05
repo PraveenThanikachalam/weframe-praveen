@@ -5,6 +5,7 @@ import CultureComponent from '@/components/about/CultureComponent';
 import BackLightEffect from '@/components/ui/BackLightEffect';
 import Image from 'next/image';
 import React from 'react';
+import Matrix from '@/components/ui/Matrix';
 
 const arr = [
   {
@@ -33,15 +34,7 @@ const arr = [
 const AboutPage = () => {
   return (
     <section className="flex flex-col justify-center items-center w-full max-w-screen-xl mx-auto px-3">
-      <div>
-        <Image
-          width={100}
-          height={100}
-          src="/assets/matrix.svg"
-          className="absolute -z-20 top-0 left-0 right-0 w-full"
-          alt=""
-        />
-      </div>
+      <Matrix />
       <div className="py-16 w-full lg:flex-row flex-col z-10 flex items-center justify-center lg:justify-between">
         <div className="flex-1 flex flex-col items-center w-full  lg:items-start gap-4 ">
           <h1 className="lg:text-5xl lg:leading-snug font-bold md:text-5xl md:leading-snug text-4xl leading-snug text-center lg:text-left font-title-font gradient-text  ">
@@ -49,6 +42,7 @@ const AboutPage = () => {
             <br />
             Crafting Future Solutions
           </h1>
+
           <p className="text-gray-300 font-light text-center lg:text-left">
             Explore our real-world achievements, where we turn challenges into
             triumphs.
