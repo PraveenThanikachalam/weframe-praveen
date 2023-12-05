@@ -38,7 +38,7 @@ const services = [
 const DropDownSmall = ({ visible3, setVisible3 }) => {
   return (
     <div
-      className={`absolute mobile w-full bg-[#020C0D] animate-fade-in-down z-50  navbar gap-2 p-5 ${
+      className={`absolute mobile w-full  animate-fade-in-down z-50  navbar gap-2 p-5 ${
         visible3 ? 'flex' : 'hidden'
       } flex-wrap items-start justify-center left-0 top-16 `}
     >
@@ -50,7 +50,7 @@ const DropDownSmall = ({ visible3, setVisible3 }) => {
             key={index}
             onClick={() => setVisible3(!visible3)}
           >
-            <div className="rounded-xl w-full border-2 p-4 relative border-gray-500 flex items-center justify-between">
+            <div className="rounded-xl w-full bg-[#020C0D] border-2 p-4 relative border-gray-500 flex items-center justify-between">
               <div>
                 <h1 className="text-md font-semibold text-white">
                   {item.title}
