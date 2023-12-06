@@ -1,9 +1,24 @@
+'use client'
 import Image from 'next/image';
+import { useEffect, useRef, useState } from "react";
+import { useInView } from 'react-intersection-observer';
+
+
 
 const TechStackCard = ({ framework, title }) => {
+  
+  const { ref, inView, entry } = useInView({
+    rootMargin:'-50% 0px'
+  });
+
+  useEffect(()=>{
+    console.log(inView)
+  },[inView])
+
+
   return (
-    <div className="w-full bg-gradient-to-br from-[#1FBCCB1F] via-[#020C0D] to-transparent  rounded-xl p-6 md:p-12 border relative border-gray-500 flex flex-col gap-10 overflow-hidden justify-start">
-      <div className="w-full text-white font-medium glow text-lg md:text-xl">
+    <div ref={ref} className={`w-full ${inView ? 'tech-stack ' : ''} transition-all duration-200  bg-gradient-to-br from-[#1FBCCB1F] via-[#020C0D] to-transparent  rounded-xl p-6 md:p-12 border relative border-gray-500 flex flex-col gap-10 overflow-hidden justify-start`}>
+      <div className="w-full text-white font-medium glow  text-lg md:text-xl">
         <h2>{title}</h2>
       </div>
       <div className="flex w-full  flex-col items-center justify-center">
@@ -29,6 +44,7 @@ const TechStackCard = ({ framework, title }) => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };

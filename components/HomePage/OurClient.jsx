@@ -12,8 +12,23 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
+import { useEffect, useState } from 'react';
 
 const OurClient = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      setIsMobile(screenWidth <= 900);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
     <div className=" clients mt-28 max-w-screen-2xl w-full flex flex-col gap-14 items-center justify-center">
       <h1 className="text-4xl font-bold text-white">Our Clients</h1>
@@ -24,6 +39,7 @@ const OurClient = () => {
             modules={[Navigation, Pagination, Scrollbar, Autoplay]}
             spaceBetween={30}
             slidesPerView={1}
+            navigation={isMobile ? false:true}
             pagination={{ clickable: true }}
             style={{
               width: '80vw',

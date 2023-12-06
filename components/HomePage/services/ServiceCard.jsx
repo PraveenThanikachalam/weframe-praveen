@@ -1,23 +1,10 @@
-'use client';
 import Image from 'next/image';
-import './ServiceCard.css';
 
 const ServiceCard = ({ title, img, cardId }) => {
-  const handleMove = () => {
-    const elem = document.querySelector(`.shiny-${cardId}`);
-
-    const readout = document.querySelector('p');
-
-    elem.addEventListener('mousemove', (e) => {
-      const { x, y } = elem.getBoundingClientRect();
-      elem.style.setProperty('--x', e.clientX - x);
-      elem.style.setProperty('--y', e.clientY - y);
-    });
-  };
+ 
   return (
     <div
-      onMouseMove={handleMove}
-      className={`serviceCard shiny-${cardId} shiny w-72 md:w-[30%] hover:shadow-sm hover:shadow-cyan-500 text-gray-300 hover:text-gray-100 transition-all duration-200 max-w-xs h-32 rounded-xl flex items-center justify-start relative border overflow-hidden border-gray-600`}
+      className={`serviceCard cursor-pointer w-72 md:w-[30%] hover:shadow-sm hover:shadow-cyan-500 text-gray-300 hover:text-gray-100 transition-all duration-200 max-w-xs h-32 rounded-xl flex items-center justify-start relative border overflow-hidden border-gray-600`}
     >
       {img && (
         <Image

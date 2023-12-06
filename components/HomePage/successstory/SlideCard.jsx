@@ -74,15 +74,27 @@ const SlideCard = ({ data }) => {
                     <div className={` gap-3 flex z-50 text-white`}>
                       <div
                         onClick={() => swiperRef.current.slidePrev()}
-                        className="w-12 h-12 rounded-full border flex items-center transition-all duration-200 hover:bg-white hover:text-black cursor-pointer justify-center border-white"
+                        className="w-12 h-12 rounded-full border flex items-center transition-all duration-200 hover:shadow-button-glow  hover:text-black cursor-pointer justify-center border-white"
                       >
-                        <i className="ri-arrow-left-line"></i>
+                        <Image
+                          alt="img"
+                          src={'/icons/arrow-left.svg'}
+                          width={200}
+                          height={300}
+                          className="w-4 h-auto"
+                        />
                       </div>
                       <div
                         onClick={() => swiperRef.current.slideNext()}
-                        className="w-12 h-12 hover:bg-white transition-all duration-200 hover:text-black rounded-full border flex items-center cursor-pointer justify-center border-white"
+                        className="w-12 h-12 hover:shadow-button-glow transition-all duration-200 hover:text-black rounded-full border flex items-center cursor-pointer justify-center border-white"
                       >
-                        <i className="ri-arrow-right-line"></i>
+                        <Image
+                          alt="img"
+                          src={'/icons/arrow-right.svg'}
+                          width={200}
+                          height={300}
+                          className="w-4 h-auto"
+                        />
                       </div>
                     </div>
                     <button

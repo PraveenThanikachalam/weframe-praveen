@@ -10,6 +10,10 @@ export const nt_adventure = localFont({
   src: '../fonts/nt_adventure/ntadventure.woff',
   variable: '--ntadventure-font',
 });
+export const lexend = localFont({
+  src: '../fonts/lexend/lexend.woff',
+  variable: '--lexend-font',
+});
 
 export const fira_code = Fira_Code({
   subsets: ['latin'],

@@ -44,7 +44,7 @@ const Blogs = () => {
       .replace(/--+/g, '-'); // Replace multiple hyphens with a single hyphen
   }
   return (
-    <main className=" max-w-screen-xl mx-auto   px-4 flex flex-col items-center justify-center ">
+    <main className=" max-w-screen-xl mx-auto font-lexend   px-4 flex flex-col items-center justify-center ">
       <Matrix />
       <div className=" w-full  lg:my-28 my-16 flex items-center justify-center">
         <div className="lg:w-[80%] w-full  flex flex-col items-center justify-center">

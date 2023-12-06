@@ -50,13 +50,13 @@ const CultureComponent = () => {
               onClick={() => swiperRef.current.slidePrev()}
               className="w-12 h-12 hover:bg-white hover:text-black cursor-pointer rounded-full  flex items-center justify-center border border-white"
             >
-              <i className="ri-arrow-left-line  "></i>{' '}
+                <Image alt='img' src={'/icons/arrow-left.svg'} width={200} height={300} className='w-4 h-auto'/>
             </div>
             <div
               onClick={() => swiperRef.current.slideNext()}
               className="w-12 h-12 hover:bg-white hover:text-black cursor-pointer rounded-full  flex items-center justify-center border border-white"
             >
-              <i className="ri-arrow-right-line "></i>{' '}
+                <Image alt='img' src={'/icons/arrow-right.svg'} width={200} height={300} className='w-4 h-auto'/>
             </div>
           </div>
         </div>
