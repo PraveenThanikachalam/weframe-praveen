@@ -31,7 +31,7 @@ const Navbar = () => {
               onClick={() => {
                 setVisible(!visible);
               }}
-              className="cursor-pointer flex gap-1"
+              className="cursor-pointer flex gap-1 items-center justify-center"
             >
               Services{' '}
               <div
@@ -39,7 +39,7 @@ const Navbar = () => {
                   visible ? 'rotate-180' : ''
                 }`}
               >
-                <i className={`ri-arrow-down-s-line`}></i>
+                <Image alt='img' src={'/icons/dropdown.svg'} width={200} height={300} className='w-3 h-auto'/>
               </div>
             </div>
             <Link href={'/case-study'}>Case Studies</Link>
@@ -56,16 +56,14 @@ const Navbar = () => {
             }}
             className="flex items-center justify-center gap-1"
           >
-            Services <i className="ri-arrow-down-s-line "></i>
+            Services <Image alt='img' src={'/icons/dropdown.svg'} width={200} height={300} className='w-3 h-auto'/>
+
           </div>
 
-          <i
-            onClick={() => {
+          <Image  onClick={() => {
               setVisible3(false);
               setVisible2(!visible2);
-            }}
-            className="ri-menu-4-line text-3xl"
-          ></i>
+            }} alt='img' src={'/icons/menu.svg'} width={200} height={300} className='h-8 w-auto cursor-pointer'/>
         </div>
       </div>
 

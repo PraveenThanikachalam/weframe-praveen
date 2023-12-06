@@ -33,7 +33,7 @@ const arr = [
 
 const AboutPage = () => {
   return (
-    <section className="flex flex-col justify-center items-center w-full max-w-screen-xl mx-auto px-3">
+    <section className="flex flex-col font-lexend justify-center items-center w-full max-w-screen-xl mx-auto px-3">
       <Matrix />
       <div className="py-16 w-full lg:flex-row flex-col z-10 flex items-center justify-center lg:justify-between">
         <div className="flex-1 flex flex-col items-center w-full  lg:items-start gap-4 ">

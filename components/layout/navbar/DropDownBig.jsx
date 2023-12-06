@@ -38,9 +38,9 @@ const services = [
 const DropDownBig = ({ visible, setVisible }) => {
   return (
     <div
-      className={`absolute laptop w-full animate-fade-in-down z-50  backdrop-blur-sm border-b border-gray-500 p-5 navbar gap-5 ${
+      className={`absolute laptop w-full animate-fade-in-down z-50 bg-gradient-to-br from-[#0b191a] to-[#020c0d]   border-b border-gray-700 p-5  gap-5 ${
         visible ? 'flex ' : 'hidden'
-      } flex-wrap items-start justify-center top-24 `}
+      } flex-wrap items-start justify-center top-20 `}
     >
       {services.map((item, index) => {
         return (

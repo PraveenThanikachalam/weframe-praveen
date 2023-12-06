@@ -38,7 +38,7 @@ const services = [
 const DropDownSmall = ({ visible3, setVisible3 }) => {
   return (
     <div
-      className={`absolute mobile w-full  animate-fade-in-down z-50  navbar gap-2 p-5 ${
+      className={`absolute mobile w-full bg-[#020C0D]  animate-fade-in-down z-50  navbar gap-2 p-5 ${
         visible3 ? 'flex' : 'hidden'
       } flex-wrap items-start justify-center left-0 top-16 `}
     >
