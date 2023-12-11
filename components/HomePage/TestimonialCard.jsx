@@ -32,6 +32,7 @@ const TestimonialCard = ({
             alt=""
             fill
             className={`object-cover -z-[1] ${desc && 'brightness-[10%]'}`}
+            loading="lazy"
           />
           <p className="absolute inset-0 w-full px-7 py-4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm md:text-base lg:text-lg xl:text-xl">
             {desc}
@@ -43,6 +44,8 @@ const TestimonialCard = ({
           ref={videoRef}
           className="w-full h-full object-cover rounded-xl absolute inset-0 -z-[1]"
           loop
+          preload="none"
+          poster="/assets/poster.webp"
         >
           <source src="/assets/demo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -61,6 +64,7 @@ const TestimonialCard = ({
               height={300}
               className="w-10 h-10 rounded-full"
               src={authorPhoto}
+              loading="lazy"
               alt=""
             />
             <div className="flex flex-col gap-1">
@@ -79,6 +83,7 @@ const TestimonialCard = ({
                     height={300}
                     className="w-10"
                     src="/assets/client/pause.svg"
+                    loading="lazy"
                     alt=""
                   />
                 </button>
@@ -89,6 +94,7 @@ const TestimonialCard = ({
                     height={300}
                     className="w-10"
                     src="/assets/client/play.svg"
+                    loading="lazy"
                     alt=""
                   />
                 </button>

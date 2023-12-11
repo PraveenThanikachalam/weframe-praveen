@@ -1,4 +1,3 @@
-import React from 'react';
 import Button from '@/components/ui/Button';
 import SmallBox from '@/components/jamstackcomponent/SmallBox';
 import MediumBox from '@/components/jamstackcomponent/MediumBox';
@@ -109,6 +108,8 @@ const Headless = () => {
             height="0"
             className="w-full  rounded-xl border border-gray-600"
             controls
+            preload="none"
+            poster="/assets/poster.webp"
           >
             <source src="/assets/demo.mp4" type="video/mp4" />
           </video>
@@ -183,11 +184,9 @@ const Headless = () => {
         />
       </div>
 
-      <div className="max-w-screen-xl lg:my-14 my-12">
-        <Testimonials />
-      </div>
+      <Testimonials />
 
-      <div className="w-[100vw] p-6 bg-[#031416] min-h-[60vh] flex items-center justify-center footer ">
+      <div className="w-[100vw] mt-20 p-6 bg-[#031416] min-h-[60vh] flex items-center justify-center footer ">
         <NudgeCard
           title={'This text can be changed on purpose'}
           label={'Also this CTA'}

@@ -1,7 +1,6 @@
 import NudgeCard from '@/components/ui/NudgeCard';
 import TagButton from '@/components/ui/TagButton';
 import Image from 'next/image';
-import React from 'react';
 
 const tags = [
   {
@@ -30,6 +29,7 @@ const Page = ({ params }) => {
             className="w-full h-full object-cover"
             width={200}
             height={200}
+            loading="lazy"
           />
           <div className="w-full absolute top-0  h-full bg-black bg-opacity-30 backdrop-blur-sm"></div>
         </div>
