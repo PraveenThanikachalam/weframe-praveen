@@ -2,16 +2,13 @@
 import Image from 'next/image';
 import data from '@/data/clients';
 
-import { Navigation, Pagination, Scrollbar, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/autoplay';
 import { useEffect, useState } from 'react';
 
 const OurClient = () => {
@@ -36,10 +33,10 @@ const OurClient = () => {
         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 items-center justify-center gap-4 lg:gap-10">
           <Swiper
             // install Swiper modules
-            modules={[Navigation, Pagination, Scrollbar, Autoplay]}
+            modules={[Navigation, Pagination]}
             spaceBetween={30}
             slidesPerView={1}
-            navigation={isMobile ? false:true}
+            navigation={isMobile ? false : true}
             pagination={{ clickable: true }}
             style={{
               width: '80vw',
@@ -74,6 +71,7 @@ const OurClient = () => {
                           width={0}
                           height={0}
                           alt="img"
+                          loading="lazy"
                         />
                         <p className="text-[#999999] lg:text-sm md:text-sm text-xs">
                           {client.name}

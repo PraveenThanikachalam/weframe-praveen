@@ -1,4 +1,3 @@
-import React from 'react';
 import ServiceCard from './ServiceCard';
 import Button from '@/components/ui/Button';
 
@@ -19,28 +18,12 @@ const Services = () => {
         </div>
       </div>
       <div className="flex w-[80vw] max-w-screen-xl flex-wrap items-center justify-center lg:justify-between gap-5">
-        <ServiceCard
-          cardId={'1'}
-          title="Jamstack Development"
-          img="spider.svg"
-        />
-        <ServiceCard
-          cardId={'2'}
-          title="Headless Commerce"
-          img="headless.svg"
-        />
-        <ServiceCard
-          cardId={'3'}
-          title="Custom Software Development"
-          img="circle.svg"
-        />
-        <ServiceCard
-          cardId={'4'}
-          title="MVP & POC Development"
-          img="diamond.svg"
-        />
-        <ServiceCard cardId={'5'} title="UI/UX Designing" img="ui.svg" />
-        <ServiceCard cardId={'6'} title="CTO as a Service" img="crown.svg" />
+        <ServiceCard title="Jamstack Development" img="spider.svg" />
+        <ServiceCard title="Headless Commerce" img="headless.svg" />
+        <ServiceCard title="Custom Software Development" img="circle.svg" />
+        <ServiceCard title="MVP & POC Development" img="diamond.svg" />
+        <ServiceCard title="UI/UX Designing" img="ui.svg" />
+        <ServiceCard title="CTO as a Service" img="crown.svg" />
       </div>
       <div></div>
     </div>

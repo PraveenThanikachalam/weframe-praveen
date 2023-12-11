@@ -42,7 +42,6 @@ const HeroSection = () => {
           <Button variant="outline" label="Book a Meeting" />
         </div>
       </div>
-      <div className="absolute h-full w-full z-20 bg-[url('/assets/matrix.svg')] bg-cover bg-bottom"></div>
       <div className="w-full flex justify-center relative">
         <div className="w-full z-30  flex flex-col md:mt-6 items-center justify-end gap-2">
           <p className="md:mb-6 text-base glow font-semibold">Trusted by</p>
@@ -60,6 +59,7 @@ const HeroSection = () => {
                         className="object-contain"
                         alt="samsung"
                         fill
+                        loading="eager"
                       />
                     </div>
                   );
@@ -75,38 +75,7 @@ const HeroSection = () => {
                         className="object-contain"
                         alt="samsung"
                         fill
-                      />
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="flex animate-slidehorizontal">
-                {logos.map((logo) => {
-                  return (
-                    <div
-                      className="relative h-8 md:h-12 w-20  mx-4 "
-                      key={logo.id}
-                    >
-                      <Image
-                        src={logo.image}
-                        className="object-contain"
-                        alt="samsung"
-                        fill
-                      />
-                    </div>
-                  );
-                })}
-                {logos.map((logo) => {
-                  return (
-                    <div
-                      className="relative h-8 md:h-12 w-20  mx-4 "
-                      key={logo.id}
-                    >
-                      <Image
-                        src={logo.image}
-                        className="object-contain"
-                        alt="samsung"
-                        fill
+                        loading="eager"
                       />
                     </div>
                   );
@@ -124,6 +93,7 @@ const HeroSection = () => {
                         className="object-contain"
                         alt="samsung"
                         fill
+                        loading="eager"
                       />
                     </div>
                   );
@@ -139,6 +109,41 @@ const HeroSection = () => {
                         className="object-contain"
                         alt="samsung"
                         fill
+                        loading="eager"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="flex animate-slidehorizontal">
+                {logos.map((logo) => {
+                  return (
+                    <div
+                      className="relative h-8 md:h-12 w-20  mx-4 "
+                      key={logo.id}
+                    >
+                      <Image
+                        src={logo.image}
+                        className="object-contain"
+                        alt="samsung"
+                        fill
+                        loading="eager"
+                      />
+                    </div>
+                  );
+                })}
+                {logos.map((logo) => {
+                  return (
+                    <div
+                      className="relative h-8 md:h-12 w-20  mx-4 "
+                      key={logo.id}
+                    >
+                      <Image
+                        src={logo.image}
+                        className="object-contain"
+                        alt="samsung"
+                        fill
+                        loading="eager"
                       />
                     </div>
                   );

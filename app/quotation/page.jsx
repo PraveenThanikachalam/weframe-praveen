@@ -2,9 +2,6 @@ import TagComponent from '@/components/TagComponent';
 import Button from '@/components/ui/Button';
 import SwitchButton from '@/components/ui/SwitchButton';
 import Link from 'next/link';
-import Image from 'next/image';
-import React from 'react';
-import Matrix from '@/components/ui/Matrix';
 
 const tags = [
   {
@@ -53,8 +50,6 @@ const tags = [
 const Quote = () => {
   return (
     <main className="max-w-screen-xl mx-auto px-4 flex flex-col items-center justify-center">
-      <Matrix />
-
       <div className="w-full lg:my-28 my-20 flex flex-col items-center gap-10 lg:gap-8 justify-center">
         <div className="flex flex-col items-center justify-center text-center lg:w-[60%] w-full gap-5">
           <h1 className="lg:text-5xl md:text-5xl text-3xl gradient-text font-bold font-title-font">

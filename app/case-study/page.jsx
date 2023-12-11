@@ -1,10 +1,7 @@
-import React from 'react';
 import TagButton from '@/components/ui/TagButton';
 import StoryCard from '@/components/HomePage/successstory/StoryCard';
 import Button from '@/components/ui/Button';
 import NudgeCard from '@/components/ui/NudgeCard';
-import Image from 'next/image';
-import Matrix from '@/components/ui/Matrix';
 
 const cardData = [
   {
@@ -80,7 +77,6 @@ const tags = [
 const CaseStudy = () => {
   return (
     <main className="max-w-screen-xl mx-auto px-4 flex flex-col items-center justify-center">
-      <Matrix />
       <div className="w-full lg:my-28 my-20  flex items-center justify-center">
         <div className="lg:w-[80%] w-[90%] flex flex-col items-center justify-center">
           <div className="">

@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Image from 'next/image';
@@ -48,15 +48,27 @@ const CultureComponent = () => {
           <div className="flex gap-3 mt-4 lg:mt-0 text-white ">
             <div
               onClick={() => swiperRef.current.slidePrev()}
-              className="w-12 h-12 hover:bg-white hover:text-black cursor-pointer rounded-full  flex items-center justify-center border border-white"
+              className="w-12 h-12 hover:shadow-button-glow hover:text-black cursor-pointer rounded-full  flex items-center justify-center border border-white"
             >
-                <Image alt='img' src={'/icons/arrow-left.svg'} width={200} height={300} className='w-4 h-auto'/>
+              <Image
+                alt="img"
+                src={'/icons/arrow-left.svg'}
+                width={200}
+                height={300}
+                className="w-4 h-auto"
+              />
             </div>
             <div
               onClick={() => swiperRef.current.slideNext()}
-              className="w-12 h-12 hover:bg-white hover:text-black cursor-pointer rounded-full  flex items-center justify-center border border-white"
+              className="w-12 h-12 hover:shadow-button-glow hover:text-black cursor-pointer rounded-full  flex items-center justify-center border border-white"
             >
-                <Image alt='img' src={'/icons/arrow-right.svg'} width={200} height={300} className='w-4 h-auto'/>
+              <Image
+                alt="img"
+                src={'/icons/arrow-right.svg'}
+                width={200}
+                height={300}
+                className="w-4 h-auto"
+              />
             </div>
           </div>
         </div>

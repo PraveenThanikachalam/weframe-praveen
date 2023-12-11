@@ -11,6 +11,7 @@ const BlogCard = ({ title, image, link }) => {
             width={300}
             quality={100}
             height={300}
+            loading="lazy"
             src={image}
             alt="img"
             className=" h-auto w-full"

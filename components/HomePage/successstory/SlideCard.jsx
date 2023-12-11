@@ -2,15 +2,11 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 
 const SlideCard = ({ data }) => {
   const swiperRef = useRef();
@@ -33,7 +29,6 @@ const SlideCard = ({ data }) => {
     <div className="w-full max-w-screen-xl mx-auto items-center justify-center flex">
       <Swiper
         // install Swiper modules
-        modules={[Navigation, Pagination, Scrollbar]}
         spaceBetween={20}
         slidesPerView={1}
         onSwiper={(swiper) => {
@@ -78,6 +73,7 @@ const SlideCard = ({ data }) => {
                       >
                         <Image
                           alt="img"
+                          loading="lazy"
                           src={'/icons/arrow-left.svg'}
                           width={200}
                           height={300}

@@ -1,5 +1,4 @@
 'use client';
-import React from 'react';
 import TagButton from './ui/TagButton';
 const TagComponent = ({ title, labels }) => {
   console.log(labels);

@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
-const ServiceCard = ({ title, img, cardId }) => {
- 
+const ServiceCard = ({ title, img }) => {
   return (
     <div
       className={`serviceCard cursor-pointer w-72 md:w-[30%] hover:shadow-sm hover:shadow-cyan-500 text-gray-300 hover:text-gray-100 transition-all duration-200 max-w-xs h-32 rounded-xl flex items-center justify-start relative border overflow-hidden border-gray-600`}
@@ -9,7 +8,8 @@ const ServiceCard = ({ title, img, cardId }) => {
       {img && (
         <Image
           src={`/assets/services/${img}`}
-          className="absolute right-0 w-auto h-[80%]"
+          loading="lazy"
+          className="absolute right-0 w-auto h-[80%] "
           width={0}
           height={0}
           alt="img"
