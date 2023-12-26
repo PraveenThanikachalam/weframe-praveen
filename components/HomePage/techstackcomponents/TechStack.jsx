@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import TechStackCard from '@/components/HomePage/techstackcomponents/TechStackCard';
 
-const TechStack = () => {
+const TechStack = ({ techData }) => {
   const [shift, setShift] = useState(false);
   const webframeworks = [
     {
@@ -125,7 +125,7 @@ const TechStack = () => {
     <div className="techStack w-full py-16 px-4 md:px-10 flex flex-col gap-5 md:gap-10 items-center justify-center">
       <div className="w-full max-w-screen-xl text-center flex flex-col gap-5 md:gap-10 items-center justify-center">
         <h1 className="lg:text-4xl text-3xl md:text-4xl font-bold text-white">
-          How we <br className="block lg:hidden" /> develop for
+          {techData?.section2_heading}
         </h1>
         <div className="rounded-xl relative border overflow-hidden w-64 h-12 border-gray-400 flex items-center justify-center">
           <div
