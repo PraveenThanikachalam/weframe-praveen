@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const SwitchButton = ({ label1, label2 }) => {
   const [shift, setShift] = useState(false);

@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import TechStackCard from '@/components/HomePage/techstackcomponents/TechStackCard';
 
 const TechStack = ({ techData }) => {

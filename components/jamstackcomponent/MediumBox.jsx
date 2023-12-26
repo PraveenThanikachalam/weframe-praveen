@@ -1,16 +1,16 @@
 import Image from 'next/image';
-import React from 'react';
 
 const MediumBox = ({ title, desc, img }) => {
   return (
-    <div className="lg:w-[32%] md:w-[30%] w-[320px] border border-gray-600  p-4 flex flex-col items-center justify-center rounded-xl bg-gradient-to-br from-[#1FBCCB1F] to-[#020C0D]">
+    <div className="lg:w-[32%] md:w-[30%] w-[320px] border border-gray-600 hover:shadow-sm hover:shadow-white transition-all duration-200 cursor-default  p-4 flex flex-col items-center justify-center rounded-xl bg-gradient-to-br from-[#1FBCCB1F] to-[#020C0D]">
       <div className="p-6">
         <Image
           src={`${img}`}
           width={0}
           height={0}
           alt="img"
-          className="h-16 opacity-60 w-auto"
+          className="h-16 animate-pulse  w-auto"
+          loading="lazy"
         />
       </div>
       <div className="flex flex-col gap-2">

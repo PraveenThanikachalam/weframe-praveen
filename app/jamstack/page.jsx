@@ -2,7 +2,6 @@ import MediumBox from '@/components/jamstackcomponent/MediumBox';
 import SmallBox from '@/components/jamstackcomponent/SmallBox';
 import TechStack from '@/components/HomePage/techstackcomponents/TechStack';
 import Button from '@/components/ui/Button';
-import React from 'react';
 import NudgeCard from '@/components/ui/NudgeCard';
 import Testimonials from '@/components/HomePage/Testimonials';
 
@@ -32,7 +31,9 @@ const Jamstack = () => {
           </div>
         </div>
         <div className="right lg:w-[50%] w-full flex  flex-wrap items-center justify-center">
-          <div className="flex w-full h-auto  flex-wrap items-center justify-center gap-3">
+          <div
+            className={`flex w-full h-auto flex-wrap items-center justify-center gap-3`}
+          >
             <SmallBox
               title={'Enhanced Performance'}
               img={'/assets/jamstack/jam1.svg'}
@@ -84,6 +85,8 @@ const Jamstack = () => {
             height="0"
             className="w-full  rounded-xl border border-gray-600"
             controls
+            preload="none"
+            poster="/assets/poster.webp"
           >
             <source src="/assets/demo.mp4" type="video/mp4" />
           </video>
@@ -154,11 +157,8 @@ const Jamstack = () => {
         />
       </div>
 
-      <div className="max-w-screen-xl lg:my-16 ">
-        <Testimonials />
-      </div>
-
-      <div className="w-screen p-6 bg-[#031416] border-b border-slate-800  min-h-[60vh] flex items-center justify-center footer ">
+      <Testimonials />
+      <div className="w-screen p-6 mt-20 bg-[#031416] border-b border-slate-800  min-h-[60vh] flex items-center justify-center footer ">
         <NudgeCard
           title={'This text can be changed on purpose'}
           label={'Also this CTA'}

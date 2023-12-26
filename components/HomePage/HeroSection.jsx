@@ -24,7 +24,6 @@ const HeroSection = ({ heroData }) => {
           </Link>
         </div>
       </div>
-      <div className="absolute h-full w-full z-20 bg-[url('/assets/matrix.svg')] bg-cover bg-bottom"></div>
       <div className="w-full flex justify-center relative">
         <div className="w-full z-30  flex flex-col md:mt-6 items-center justify-end gap-2">
           <p className="md:mb-6 text-base glow font-semibold">

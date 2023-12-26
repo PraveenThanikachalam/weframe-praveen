@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ProgressFlow = ({ title, arr }) => {
   return (
     <div className="w-full  flex items-center flex-col gap-5  justify-center ">

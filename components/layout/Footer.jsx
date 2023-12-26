@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react';
 
 const Footer = () => {
   return (
@@ -15,6 +14,7 @@ const Footer = () => {
                   height={0}
                   className="h-auto w-7"
                   alt=""
+                  loading="lazy"
                 />
               </div>
               <p
@@ -34,6 +34,7 @@ const Footer = () => {
                   height={0}
                   className="h-auto w-6"
                   alt=""
+                  loading="lazy"
                 />
                 <Image
                   src={'/assets/socials/icons/social-icon-2.svg'}
@@ -41,6 +42,7 @@ const Footer = () => {
                   height={0}
                   className="h-auto w-6"
                   alt=""
+                  loading="lazy"
                 />
                 <Image
                   src={'/assets/socials/icons/social-icon-3.svg'}
@@ -48,6 +50,7 @@ const Footer = () => {
                   height={0}
                   className="h-auto w-6"
                   alt=""
+                  loading="lazy"
                 />
               </div>
             </div>

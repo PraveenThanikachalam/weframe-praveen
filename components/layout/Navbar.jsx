@@ -15,7 +15,7 @@ const Navbar = () => {
     <div className="w-full sticky top-0 bg-opacity-25 z-40 bg-[#020c0d]  bg-transparent backdrop-blur-sm">
       <div className="w-full flex items-center justify-between text-white py-6 px-10">
         <div>
-          <Link href={'/'}>
+          <Link href={'/'} aria-label="Website logo">
             <Image
               width={32}
               height={32}
@@ -31,7 +31,7 @@ const Navbar = () => {
               onClick={() => {
                 setVisible(!visible);
               }}
-              className="cursor-pointer flex gap-1"
+              className="cursor-pointer flex gap-1 items-center justify-center"
             >
               Services{' '}
               <div
@@ -39,13 +39,27 @@ const Navbar = () => {
                   visible ? 'rotate-180' : ''
                 }`}
               >
-                <i className={`ri-arrow-down-s-line`}></i>
+                <Image
+                  alt="img"
+                  src={'/icons/dropdown.svg'}
+                  width={200}
+                  height={300}
+                  className="w-3 h-auto"
+                />
               </div>
             </div>
-            <Link href={'/case-study'}>Case Studies</Link>
-            <Link href={'/blogs'}>Blogs</Link>
-            <Link href={'/about'}>About Us</Link>
-            <Link href={'/contact'}>Contact</Link>
+            <Link href={'/case-study'} aria-label="case studies">
+              Case Studies
+            </Link>
+            <Link href={'/blogs'} aria-label="Blogs">
+              Blogs
+            </Link>
+            <Link href={'/about'} aria-label="About Us">
+              About Us
+            </Link>
+            <Link href={'/contact'} aria-label="Contact">
+              Contact
+            </Link>
           </ul>
         </nav>
         <div className="flex items-center justify-center gap-5 lg:hidden">
@@ -56,16 +70,27 @@ const Navbar = () => {
             }}
             className="flex items-center justify-center gap-1"
           >
-            Services <i className="ri-arrow-down-s-line "></i>
+            Services{' '}
+            <Image
+              alt="img"
+              src={'/icons/dropdown.svg'}
+              width={200}
+              height={300}
+              className="w-3 h-auto"
+            />
           </div>
 
-          <i
+          <Image
             onClick={() => {
               setVisible3(false);
               setVisible2(!visible2);
             }}
-            className="ri-menu-4-line text-3xl"
-          ></i>
+            alt="img"
+            src={'/icons/menu.svg'}
+            width={200}
+            height={300}
+            className="h-8 w-auto cursor-pointer"
+          />
         </div>
       </div>
 

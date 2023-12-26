@@ -1,9 +1,8 @@
 'use client';
 import Button from '@/components/ui/Button';
-import Matrix from '@/components/ui/Matrix';
 import TagButton from '@/components/ui/TagButton';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const tags = [
   {
@@ -48,7 +47,6 @@ const Contact = () => {
   };
   return (
     <section className=" max-w-screen-xl mx-auto flex flex-col items-center justify-center  md:px-4 px-2 lg:px-4">
-      <Matrix />
       <div className=" w-full  lg:h-[85vh]  flex lg:flex-row  flex-col">
         <div className="left lg:w-[50%] w-full text-center lg:text-left  flex  flex-col items-center lg:items-left justify-evenly">
           <div className="w-full px-2 py-8 lg:py-0">
@@ -73,6 +71,7 @@ const Contact = () => {
                 height={0}
                 className="w-auto h-7"
                 alt=""
+                loading="lazy"
               />
               <Image
                 src={'/assets/socials/social2.svg'}
@@ -80,6 +79,7 @@ const Contact = () => {
                 height={0}
                 className="w-auto h-7"
                 alt=""
+                loading="lazy"
               />
               <Image
                 src={'/assets/socials/social3.svg'}
@@ -87,6 +87,7 @@ const Contact = () => {
                 height={0}
                 className="w-auto h-7"
                 alt=""
+                loading="lazy"
               />
             </div>
           </div>
@@ -172,17 +173,18 @@ const Contact = () => {
       </div>
 
       <div
-        className={`w-[40vw] shadow-sm shadow-cyan-200 absolute bottom-5 z-50 ${
+        className={`md:w-[40vw] w-[95%] shadow-sm shadow-cyan-200 fixed bottom-5 z-50 ${
           show ? '' : 'opacity-0'
-        } my-8 h-24 transition-all duration-300 rounded-xl flex items-center justify-center gap-3 bg-gradient-to-b from-[#0e292c] to-[#020C0D] border-2 border-cyan-400`}
+        } my-8 p-5 transition-all duration-300 rounded-xl flex items-center justify-center gap-3 bg-gradient-to-b from-[#0e292c] to-[#020C0D] border-2 border-cyan-400`}
       >
-        <div>
+        <div className="p-2">
           <Image
             alt="img"
             src={'/assets/contact/sent.svg'}
             width={300}
             height={200}
-            className="h-8 w-auto"
+            className="h-10 w-auto"
+            loading="lazy"
           />
         </div>
         <div className="flex flex-col gap-1">

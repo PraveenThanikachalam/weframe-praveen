@@ -1,5 +1,4 @@
 import NudgeCard from '@/components/ui/NudgeCard';
-import React from 'react';
 
 const layout = ({ children }) => {
   return (

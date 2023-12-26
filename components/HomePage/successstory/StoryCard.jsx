@@ -97,6 +97,8 @@ const StoryCard = ({ data }) => {
             height="0"
             className="lg:w-[85%] w-full h-[95%] "
             controls={isPlaying ? true : false}
+            preload="none"
+            poster="/assets/poster.webp"
           >
             <source src="/assets/demo.mp4" type="video/mp4" />
           </video>
@@ -104,6 +106,7 @@ const StoryCard = ({ data }) => {
           <Image
             width={400}
             height={300}
+            loading="lazy"
             className=" h-auto lg:w-[85%] w-full"
             src="/assets/img1.png"
             alt=""
