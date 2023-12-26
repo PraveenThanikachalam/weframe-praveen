@@ -85,8 +85,6 @@ const Jamstack = () => {
             height="0"
             className="w-full  rounded-xl border border-gray-600"
             controls
-            preload="none"
-            poster="/assets/poster.webp"
           >
             <source src="/assets/demo.mp4" type="video/mp4" />
           </video>
