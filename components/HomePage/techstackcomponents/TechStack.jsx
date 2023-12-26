@@ -5,12 +5,12 @@ import TechStackCard from '@/components/HomePage/techstackcomponents/TechStackCa
 const TechStack = ({ techData }) => {
   const [shift, setShift] = useState(false);
 
-  const webFrameworks = techData.section2_contents?.filter(
+  const webFrameworks = techData?.section2_contents?.filter(
     (tech) => tech.development_platform_id.key === 'Web'
-  );
-  const mobileFrameworks = techData.section2_contents?.filter(
+  ) ?? [[]];
+  const mobileFrameworks = techData?.section2_contents?.filter(
     (tech) => tech.development_platform_id.key === 'Mobile'
-  );
+  ) ?? [[]];
 
   return (
     <div className="techStack w-full py-16 px-4 md:px-10 flex flex-col gap-5 md:gap-10 items-center justify-center">
@@ -49,7 +49,7 @@ const TechStack = ({ techData }) => {
       <div className="techstackComponents max-w-screen-xl w-full flex flex-col items-center justify-center lg:gap-12 gap-8">
         {shift ? (
           <>
-            {webFrameworks[0].development_platform_id?.sections?.map(
+            {webFrameworks[0]?.development_platform_id?.sections?.map(
               (plat, index) => {
                 return (
                   <TechStackCard
@@ -63,7 +63,7 @@ const TechStack = ({ techData }) => {
           </>
         ) : (
           <>
-            {mobileFrameworks[0].development_platform_id?.sections?.map(
+            {mobileFrameworks[0]?.development_platform_id?.sections?.map(
               (plat, index) => {
                 return (
                   <TechStackCard
