@@ -38,7 +38,6 @@ const HeroSection = ({ heroData }) => {
                       <SvgRenderer
                         svgText={logo.svg}
                         className={'object-contain'}
-                        color="white"
                       />
                     </div>
                   );
@@ -49,7 +48,6 @@ const HeroSection = ({ heroData }) => {
                       <SvgRenderer
                         svgText={logo.svg}
                         className={'object-contain'}
-                        color="white"
                       />
                     </div>
                   );
@@ -62,7 +60,6 @@ const HeroSection = ({ heroData }) => {
                       <SvgRenderer
                         svgText={logo.svg}
                         className={'object-contain'}
-                        color="white"
                       />
                     </div>
                   );
@@ -73,7 +70,6 @@ const HeroSection = ({ heroData }) => {
                       <SvgRenderer
                         svgText={logo.svg}
                         className={'object-contain'}
-                        color="white"
                       />
                     </div>
                   );

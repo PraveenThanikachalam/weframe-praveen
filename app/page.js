@@ -46,12 +46,28 @@ export default async function Home() {
         }}
       />
       <NudgeCard
-        title={'Book a discovery call to witness speed'}
-        label={'Book Now'}
+        title={data?.section4_heading}
+        label={data?.section4_button_text}
+        url={data?.section4_button_url}
       />
-      <Testimonials />
-      <OurClient />
-      <FaqComponent />
+      <Testimonials
+        testData={{
+          testimonial_heading: data?.testimonials?.testimonial_heading,
+          testimonial_cards: data?.testimonials?.testimonial_cards,
+        }}
+      />
+      <OurClient
+        clientsData={{
+          client_section_heading: data?.client_section_heading,
+          clients: data?.clients,
+        }}
+      />
+      <FaqComponent
+        faq={{
+          faq_heading: data?.faq_heading,
+          faq_list: data?.faq_list,
+        }}
+      />
     </main>
   );
 }
