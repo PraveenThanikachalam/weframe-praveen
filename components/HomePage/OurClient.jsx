@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-import data from '@/data/clients';
 
 import { Navigation, Pagination } from 'swiper/modules';
 
@@ -11,7 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { useEffect, useState } from 'react';
 
-const OurClient = () => {
+const OurClient = ({ clientsData }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -26,9 +25,37 @@ const OurClient = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  //function to divide the clients array into subArrays
+  function createSlidesArr(clients) {
+    const slidesArr = [];
+    const maxItemsPerSlide = 12;
+
+    const numSlides = Math.ceil(clients.length / maxItemsPerSlide);
+
+    const targetItemsPerSlide = Math.ceil(clients.length / numSlides);
+
+    for (let i = 0; i < numSlides; i++) {
+      const startIndex = i * targetItemsPerSlide;
+      const endIndex = startIndex + targetItemsPerSlide;
+      const slide = clients.slice(startIndex, endIndex);
+      slidesArr.push(slide);
+    }
+
+    if (slidesArr.length === 1) {
+      slidesArr.push(slidesArr[0]);
+    }
+
+    return slidesArr;
+  }
+
+  const slidesArr = createSlidesArr([...clientsData.clients]);
+
   return (
     <div className=" clients mt-28 max-w-screen-2xl w-full flex flex-col gap-14 items-center justify-center">
-      <h1 className="text-4xl font-bold text-white">Our Clients</h1>
+      <h1 className="text-4xl font-bold text-white">
+        {clientsData?.client_section_heading}
+      </h1>
       <div className="w-[80vw] flex flex-wrap items-center justify-center gap-8 lg:gap-16">
         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 items-center justify-center gap-4 lg:gap-10">
           <Swiper
@@ -42,10 +69,11 @@ const OurClient = () => {
               width: '80vw',
               padding: '0px 0px 70px 0px',
               minHeight: '50vh',
-              cursor: 'grabbing',
+              display: 'flex',
+              alignItems: 'center',
             }}
           >
-            {Object.keys(data).map((item, index) => {
+            {slidesArr?.map((item, index) => {
               return (
                 <SwiperSlide
                   key={index}
@@ -59,22 +87,22 @@ const OurClient = () => {
                     justifyContent: 'center',
                   }}
                 >
-                  {data[item].map((client) => {
+                  {item?.map((client) => {
                     return (
                       <div
-                        key={client.id}
+                        key={client?.client_logo?.key}
                         className=" lg:h-28 h-24 flex flex-col gap-2 justify-between items-center"
                       >
                         <Image
-                          src={client.image}
-                          className="h-auto w-10 md:w-14 lg:w-14 items-center flex-grow"
+                          src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${client?.client_logo?.key}`}
+                          className="h-auto w-10 md:w-14 lg:w-14 items-center flex-grow object-contain"
                           width={0}
                           height={0}
                           alt="img"
                           loading="lazy"
                         />
                         <p className="text-[#999999] lg:text-sm md:text-sm text-xs">
-                          {client.name}
+                          {client?.client_name}
                         </p>
                       </div>
                     );

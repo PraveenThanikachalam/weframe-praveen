@@ -1,16 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
-   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'cms.weframetech.com',
-        port: '',
-        // pathname: '/account123/**',
+    images: {
+        remotePatterns: [
+          {
+            hostname:'images.unsplash.com'
+          },{
+            hostname: 'cms.weframetech.com'
+          }
+        ],
       },
-    ],
-  },
 }
 
 module.exports = nextConfig
