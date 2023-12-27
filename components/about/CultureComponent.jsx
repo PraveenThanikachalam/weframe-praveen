@@ -4,21 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Image from 'next/image';
 
-const imgs = [
-  {
-    id: 1,
-    image: '/assets/about/slide/bg1.jpg',
-  },
-  {
-    id: 2,
-    image: '/assets/about/slide/bg1.jpg',
-  },
-  {
-    id: 3,
-    image: '/assets/about/slide/bg1.jpg',
-  },
-];
-
 const CultureComponent = ({ title, arr }) => {
   const swiperRef = useRef();
   const [isMobile, setIsMobile] = useState(false);
