@@ -19,7 +19,7 @@ const imgs = [
   },
 ];
 
-const CultureComponent = () => {
+const CultureComponent = ({ title, arr }) => {
   const swiperRef = useRef();
   const [isMobile, setIsMobile] = useState(false);
 
@@ -42,7 +42,7 @@ const CultureComponent = () => {
         <div className="w-full  flex flex-col lg:flex-row text-center lg:text-left items-center justify-between">
           <div>
             <h1 className="lg:text-4xl text-2xl md:text-4xl text-white font-bold">
-              Our Culture
+              {title}
             </h1>
           </div>
           <div className="flex gap-3 mt-4 lg:mt-0 text-white ">
@@ -89,7 +89,7 @@ const CultureComponent = () => {
             swiperRef.current = swiper;
           }}
         >
-          {imgs.map((item) => {
+          {arr.map((item) => {
             return (
               <SwiperSlide
                 key={item.id}
@@ -98,7 +98,7 @@ const CultureComponent = () => {
                 <div className="w-full rounded-xl overflow-hidden h-full">
                   <Image
                     alt="img"
-                    src={item.image}
+                    src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${item.directus_files_id}`}
                     quality={100}
                     loading="lazy"
                     width={1000}

@@ -1,102 +1,95 @@
-import Image from 'next/image';
+import SvgRenderer from '@/lib/svg_renderer';
+import { getFooter } from '@/utils/getFooter';
+import Link from 'next/link';
+import NudgeCard from '../ui/NudgeCard';
 
-const Footer = () => {
+const Footer = async () => {
+  const data = await getFooter();
+  if (!data) return;
+
   return (
     <main>
+      <div className="w-[100vw] mt-16 bg-[#031416] footer p-6 h-[60vh] border-b-2 border-gray-800 flex items-center justify-center">
+        <NudgeCard
+          title={data?.cta_heading}
+          label={data?.cta_button_text}
+          url={data?.cta_button_url}
+        />
+      </div>
       <div className="bg-[#031416] w-full relative bottom-0 p-6 flex flex-col items-center justify-center text-white ">
         <div className="lg:w-[90%] w-full lg:flex-row flex-col flex items-center lg:justify-between justify-center">
           <div className="lg:w-[40%] w-full text-center lg:text-left">
             <div className="flex flex-col lg:items-start items-center lg:justify-start justify-center">
               <div>
-                <Image
-                  src={'/assets/logo.svg'}
-                  width={0}
-                  height={0}
-                  className="h-auto w-7"
-                  alt=""
-                  loading="lazy"
-                />
+                <SvgRenderer svgText={data?.logo} />
               </div>
               <p
                 style={{ color: 'rgba(153, 153, 153, 1)' }}
                 className="font-light mt-4"
               >
-                At WeFrame Tech, we are dedicated to empowering
-                Direct-to-Consumer (D2C) brands with cutting-edge headless
-                commerce solutions. Our expertise lies in crafting seamless,
-                high-performance e-commerce experiences that enhance customer
-                engagement and drive growth.
+                {data?.footer_desc}
               </p>
               <div className="flex gap-3 mt-5">
-                <Image
-                  src={'/assets/socials/icons/social-icon-1.svg'}
-                  width={0}
-                  height={0}
-                  className="h-auto w-6"
-                  alt=""
-                  loading="lazy"
-                />
-                <Image
-                  src={'/assets/socials/icons/social-icon-2.svg'}
-                  width={0}
-                  height={0}
-                  className="h-auto w-6"
-                  alt=""
-                  loading="lazy"
-                />
-                <Image
-                  src={'/assets/socials/icons/social-icon-3.svg'}
-                  width={0}
-                  height={0}
-                  className="h-auto w-6"
-                  alt=""
-                  loading="lazy"
-                />
+                {data?.footer_links.map((link, index) => {
+                  return (
+                    <Link key={index} href={link.url}>
+                      <SvgRenderer svgText={link.icon} />
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>
           <div className="flex lg:gap-3 mt-8 lg:mt-0 gap-10 font-light  text-gray-300">
             <div className="flex flex-col  gap-6">
               <p style={{ color: '#062528' }} className="text-lg font-medium">
-                Services
+                {data?.section[0].heading}
               </p>
               <ul className=" text-white text-sm lg:text-base  flex flex-col gap-3">
-                <li>Headless Ecom</li>
-                <li>UI/UX Designing</li>
-                <li>CTO as a Service</li>
-                <li>Jamstack Development</li>
-                <li>MVP & POC Development</li>
-                <li>Custom Software Development</li>
+                {data?.section[0].links.map((item, index) => {
+                  return (
+                    <Link key={index} href={item.url}>
+                      {item.name}
+                    </Link>
+                  );
+                })}
               </ul>
             </div>
             <div className="flex flex-col gap-6">
               <p style={{ color: '#062528' }} className="text-lg font-medium">
-                About
+                {data?.section[1].heading}
               </p>
               <ul className=" text-white flex flex-col gap-3">
-                <li>Blogs</li>
-                <li>About us</li>
-                <li>Case Studies</li>
-                <li>Get Instant Quotation</li>
+                {data?.section[1].links.map((item, index) => {
+                  return (
+                    <Link key={index} href={item.url}>
+                      {item.name}
+                    </Link>
+                  );
+                })}
               </ul>
             </div>
 
             <div className="flex flex-col gap-6">
               <p style={{ color: '#062528' }} className="text-lg font-medium">
-                Help
+                {data?.section[2].heading}
               </p>
 
               <ul className=" text-white flex flex-col gap-3">
-                <li>Careers</li>
-                <li>Contact Us</li>
-                <li>Book a Call</li>
+                {data?.section[2].links.map((item, index) => {
+                  return (
+                    <Link key={index} href={item.url}>
+                      {item.name}
+                    </Link>
+                  );
+                })}
               </ul>
             </div>
           </div>
         </div>
         <div className="h-[1px] bg-gray-500 w-[90%] lg:mt-10 mt-6"></div>
         <div className="text-gray-500  lg:mt-10 mt-5 flex flex-col lg:flex-row items-center justify-between w-[90%]">
-          <p className="lg:text-sm text-xs">&#169; 2023 All rights reserved.</p>
+          <p className="lg:text-sm text-xs">{data?.copyright_text}</p>
         </div>
       </div>
     </main>
