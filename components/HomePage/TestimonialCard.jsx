@@ -9,6 +9,7 @@ const TestimonialCard = ({
   authorName,
   authorDesc,
   authorPhoto,
+  viewBtn,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -25,11 +26,11 @@ const TestimonialCard = ({
   };
   return (
     <div className="relative h-full bg-cover flex items-center justify-center rounded-xl overflow-hidden">
-      {type === 'text' && (
+      {type === 'image' && (
         <>
           <Image
-            src={source}
-            alt=""
+            src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${source}`}
+            alt="bgImage"
             fill
             className={`object-cover -z-[1] ${desc && 'brightness-[10%]'}`}
             loading="lazy"
@@ -44,17 +45,18 @@ const TestimonialCard = ({
           ref={videoRef}
           className="w-full h-full object-cover rounded-xl absolute inset-0 -z-[1]"
           loop
-          preload="none"
-          poster="/assets/poster.webp"
         >
-          <source src="/assets/demo.mp4" type="video/mp4" />
+          <source
+            src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${source}`}
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
       )}
       <div className="w-full h-full flex flex-col justify-between gap-3 rounded-xl">
         <div className="flex justify-end">
           <p className="text-white text-xs font-bold cursor-pointer px-7 py-5">
-            View Project <i className="ri-arrow-right-line"></i>{' '}
+            {viewBtn}
           </p>
         </div>
         <div className="w-full h-1/2 bg-gradient-to-t from-black/80 to-black/0 px-7 py-5 items-end flex justify-between">
@@ -62,10 +64,10 @@ const TestimonialCard = ({
             <Image
               width={400}
               height={300}
-              className="w-10 h-10 rounded-full"
-              src={authorPhoto}
+              className="w-10 h-10 rounded-full object-contain"
+              src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${authorPhoto}`}
               loading="lazy"
-              alt=""
+              alt="authorPhoto"
             />
             <div className="flex flex-col gap-1">
               <p className=" text-white text-sm font-semibold font-title-font">
@@ -84,7 +86,7 @@ const TestimonialCard = ({
                     className="w-10"
                     src="/assets/client/pause.svg"
                     loading="lazy"
-                    alt=""
+                    alt="pause"
                   />
                 </button>
               ) : (
@@ -95,7 +97,7 @@ const TestimonialCard = ({
                     className="w-10"
                     src="/assets/client/play.svg"
                     loading="lazy"
-                    alt=""
+                    alt="play"
                   />
                 </button>
               )}

@@ -44,7 +44,7 @@ const testimonialData = [
   },
 ];
 
-const Testimonials = () => {
+const Testimonials = ({ testData }) => {
   const swiperRef = useRef();
   const [isMobile, setIsMobile] = useState(false);
 
@@ -67,7 +67,7 @@ const Testimonials = () => {
         <div className="w-full flex flex-col lg:flex-row text-center lg:text-left items-center justify-between">
           <div>
             <h1 className="lg:text-4xl text-2xl md:text-4xl text-white font-bold">
-              Hear from Clients
+              {testData?.testimonial_heading}
             </h1>
           </div>
           <div className="flex gap-3 mt-4 lg:mt-0 text-white ">
@@ -114,9 +114,17 @@ const Testimonials = () => {
             swiperRef.current = swiper;
           }}
         >
-          {testimonialData.map((item) => (
-            <SwiperSlide key={item.id} className="!h-full max-h-[480px]">
-              <TestimonialCard {...item} />
+          {testData?.testimonial_cards?.map((item, index) => (
+            <SwiperSlide key={index} className="!h-full max-h-[480px]">
+              <TestimonialCard
+                type={item?.background_type}
+                source={item?.background?.key}
+                desc={item?.description}
+                authorName={item?.user_name}
+                authorDesc={item?.user_profession}
+                authorPhoto={item?.user_avatar?.key}
+                viewBtn={item?.project_button_name}
+              />
             </SwiperSlide>
           ))}
         </Swiper>

@@ -5,32 +5,16 @@ import TechStack from '@/components/HomePage/techstackcomponents/TechStack';
 import NudgeCard from '@/components/ui/NudgeCard';
 import Testimonials from '@/components/HomePage/Testimonials';
 import ProgressFlow from '@/components/ProgressFlow';
+import { getHeadlessPage } from '@/utils/getHeadlessPage';
+import Link from 'next/link';
 
-const arr = [
-  {
-    title: 'Kickoff',
-    desc: 'Initiating a Discovery Call to Understand Your Business.',
-    select: true,
-  },
-  {
-    title: 'Ideation',
-    desc: 'We craft a customized plan aligned with your business objectives, followed by the submission of a comprehensive proposal.',
-  },
-  {
-    title: 'Design',
-    desc: 'We design the Idea in Figma (if the design is not available), and seek approval. We offer 2 free design iterations.',
-  },
-  {
-    title: 'Development',
-    desc: 'Agile Development: Sprints, Milestones, and Bi-weekly Progress Tracking.',
-  },
-  {
-    title: 'Delivery',
-    desc: 'Complete Product Delivery with Complimentary One Month Maintenance.',
-  },
-];
+const Headless = async () => {
+  const data = await getHeadlessPage();
+  if (!data) return;
 
-const Headless = () => {
+  const techstack = {
+    section2_contents: data?.section4_contents,
+  };
   return (
     <div className=" w-full lg:px-8 px-3 min-h-screen flex flex-col items-center ">
       <div className="w-full z-10  h-[50%] bg-gradient-to-b from-[#1996a291] to-[#020C0D] absolute top-0"></div>
@@ -38,49 +22,31 @@ const Headless = () => {
         <div className="left my-16  h-full flex flex-col items-center justify-center w-full lg:w-[50%]">
           <div className="flex flex-col gap-4 lg:items-start items-center  justify-center">
             <h1 className="lg:text-6xl md:text-6xl text-4xl lg:text-start text-center  font-bold  font-title-font gradient-text">
-              Elevate Ecom with Headless Commerce
+              {data?.heading}
             </h1>
             <p
               style={{ color: 'rgba(153, 153, 153, 1)' }}
               className="font-light mt-4 lg:text-left text-center"
             >
-              Experience e-commerce without constraints. Our headless commerce
-              solution offers lightning-fast performance, unmatched
-              customization, and seamless integrations. Elevate your online
-              store to new heights and explore limitless possibilities with us.
+              {data?.description}
             </p>
             <div className="flex gap-3 lg:flex-row flex-col">
-              <Button label={'Move to Jamstack'} variant="filled" />
-              <Button label={'Book a Call'} variant="outline" />
+              <Link href={`${data?.button1_url}`}>
+                <Button label={data?.button1_text} variant="filled" />
+              </Link>
+              <Link href={`${data?.button2_url}`}>
+                <Button label={data?.button2_text} variant="outline" />
+              </Link>
             </div>
           </div>
         </div>
         <div className="right lg:w-[50%] w-full flex  flex-wrap items-center justify-center">
           <div className="flex w-full h-auto  flex-wrap items-center justify-center gap-3">
-            <SmallBox
-              title={'Global Collaboration'}
-              img={'/assets/headless/h2.svg'}
-            />
-            <SmallBox
-              title={'Content Authority'}
-              img={'/assets/headless/h4.svg'}
-            />
-            <SmallBox
-              title={'Analytics & Insights'}
-              img={'/assets/headless/h6.svg'}
-            />
-            <SmallBox
-              title={'Multilingual Support'}
-              img={'/assets/headless/h1.svg'}
-            />
-            <SmallBox
-              title={'Content Reusability'}
-              img={'/assets/headless/h3.svg'}
-            />
-            <SmallBox
-              title={'Easy Integration'}
-              img={'/assets/headless/h5.svg'}
-            />
+            {data?.hero_cards.map((item, index) => {
+              return (
+                <SmallBox key={index} label={item.label} icon={item.icon} />
+              );
+            })}
           </div>
         </div>
       </div>
@@ -89,16 +55,14 @@ const Headless = () => {
         <div className="w-full flex items-center justify-start">
           <div className="lg:w-[50%] w-full text-center lg:text-left">
             <h1 className="lg:text-4xl text-2xl md:text-4xl text-white font-title-font font-bold">
-              Video Title Can Be Written Here
+              {data?.section1_heading}
             </h1>
             <p
               style={{ color: 'rgba(153, 153, 153, 1)' }}
               className="font-light mt-4"
             >
-              We recognize the demand for high-speed, secure, and easily
-              scalable websites. Leveraging the power of Jamstack, we deliver an
-              exceptional web development experience tailored to your specific
-              requirements. Get an instant quote for your project
+              {' '}
+              {data?.section1_description}
             </p>
           </div>
         </div>
@@ -108,90 +72,58 @@ const Headless = () => {
             height="0"
             className="w-full  rounded-xl border border-gray-600"
             controls
-            preload="none"
-            poster="/assets/poster.webp"
           >
-            <source src="/assets/demo.mp4" type="video/mp4" />
+            <source
+              src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.section1_media}`}
+              type="video/ogg"
+            />
           </video>
         </div>
       </div>
 
-      <div className="max-w-screen-xl lg:my-10  flex flex-col gap-16">
-        <div className="w-full flex lg:flex-row flex-col gap-y-3  lg:gap-0 items-center justify-between">
-          <h1 className="lg:text-4xl text-2xl md:text-4xl font-title-font text-white font-semibold">
-            Why Jamstack?
+      <div className="max-w-screen-xl w-full lg:my-16 my-12 flex flex-col gap-16">
+        <div className="w-full flex lg:flex-row flex-col gap-5  lg:gap-0 items-center justify-between">
+          <h1 className="lg:text-4xl text-3xl md:text-4xl font-title-font text-white font-semibold">
+            {data?.section2_heading}
           </h1>
-          <Button variant="outline" label={'Learn More'} />
+          <Link href={`${data?.section2_btn_url}`}>
+            <Button variant="outline" label={data?.section2_btn_text} />
+          </Link>
         </div>
         <div className="w-full flex flex-wrap items-center justify-center gap-5">
-          <MediumBox
-            title={'Content Authority'}
-            img={'/assets/headless/h4.svg'}
-            desc={
-              'Headless CMS systems provide an intuitive and user-friendly content creation and editing experience.'
-            }
-          />
-          <MediumBox
-            title={'Content Reusability'}
-            img={'/assets/headless/h3.svg'}
-            desc={
-              'Content can be easily reused across various platforms, enhancing consistency and saving time.'
-            }
-          />
-          <MediumBox
-            title={'Easy Integration'}
-            img={'/assets/headless/h5.svg'}
-            desc={
-              'Jamstack allows you to mix and match various tools and services to build custom solutions.'
-            }
-          />
-          <MediumBox
-            title={'Multilingual Support'}
-            img={'/assets/headless/h1.svg'}
-            desc={
-              'Headless CMS solutions often offers robust and varied support for multilingual content management.'
-            }
-          />
-          <MediumBox
-            title={'Analytics & Insights'}
-            img={'/assets/headless/h6.svg'}
-            desc={
-              'Headless CMS platforms come with built-in analytics, helping product owners understand their audience.'
-            }
-          />
-          <MediumBox
-            title={'Global Collaboration'}
-            img={'/assets/headless/h2.svg'}
-            desc={
-              'Headless CMS systems facilitate collaborative content creation, allowing teams to work together across geographic boundaries.'
-            }
-          />
+          {data?.section2_cards.map((item, index) => {
+            return (
+              <MediumBox
+                key={index}
+                title={item.title}
+                desc={item.description}
+                icon={item.icon}
+              />
+            );
+          })}
         </div>
       </div>
 
       <div className="lg:my-20 mt-28">
-        <ProgressFlow title={'Our Process'} arr={arr} />
+        <ProgressFlow
+          title={data?.section3_heading}
+          arr={data?.section3_points}
+        />
       </div>
 
       <div className="w-full flex items-center justify-center lg:my-10 my-6">
-        <TechStack />
+        <TechStack techData={techstack} />
       </div>
 
       <div className="w-full flex justify-center lg:my-10">
         <NudgeCard
-          title={'Book a discovery call to witness speed'}
-          label={'Book Now'}
+          title={data?.section5_heading}
+          label={data?.section5_button_text}
+          url={data?.section5_button_url}
         />
       </div>
 
-      <Testimonials />
-
-      <div className="w-[100vw] mt-20 p-6 bg-[#031416] min-h-[60vh] flex items-center justify-center footer ">
-        <NudgeCard
-          title={'This text can be changed on purpose'}
-          label={'Also this CTA'}
-        />
-      </div>
+      <Testimonials testData={data?.testimonials} />
     </div>
   );
 };

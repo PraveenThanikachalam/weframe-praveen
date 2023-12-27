@@ -1,10 +1,8 @@
 'use client';
-import { useState } from 'react';
 
-const SwitchButton = ({ label1, label2 }) => {
-  const [shift, setShift] = useState(false);
+const SwitchButton = ({ label1, label2, setShift, shift }) => {
   return (
-    <div className="rounded-2xl  h-14 mt-4 border-gray-500 overflow-hidden flex relative items-center justify-center">
+    <div className="rounded-2xl  h-14 mt-4 overflow-hidden flex relative items-center justify-center border-[1px] border-white shadow-sm shadow-white">
       <div
         className={`w-[50%] h-full absolute right-0 slide z-10 bg-white ${
           shift ? 'translate-x-0' : '-translate-x-full'

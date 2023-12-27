@@ -1,5 +1,5 @@
 'use client';
-import Image from 'next/image';
+import SvgRenderer from '@/lib/svg_renderer';
 import { useInView } from 'react-intersection-observer';
 
 const TechStackCard = ({ framework, title }) => {
@@ -20,21 +20,17 @@ const TechStackCard = ({ framework, title }) => {
       <div className="flex w-full  flex-col items-center justify-center">
         <div className="flex w-full flex-wrap items-center gap-20 justify-center ">
           <div className="flex flex-wrap items-center justify-center lg:w-[90%] w-full gap-5 ">
-            {framework?.map((item) => {
+            {framework?.map((item, index) => {
               return (
                 <div
-                  key={item.id}
+                  key={index}
                   className="flex flex-col lg:h-24 hover:animate-pulse h-20 md:my-3 2xl:my-7 md:mx-6 2xl:mx-12  items-center justify-between grayscale hover:grayscale-0 transition-all duration-300"
                 >
-                  <Image
-                    width={0}
-                    height={0}
-                    loading="lazy"
+                  <SvgRenderer
+                    svgText={item.logo}
                     className="lg:h-20 md:h-16 h-10 lg:w-12 md:w-12 w-10"
-                    src={item.image}
-                    alt={item.tech}
                   />
-                  <p className="text-sm text-[#1FBCCB]">{item.tech}</p>
+                  <p className="text-sm text-[#1FBCCB]">{item.name}</p>
                 </div>
               );
             })}
