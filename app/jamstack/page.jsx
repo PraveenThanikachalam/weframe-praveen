@@ -11,6 +11,10 @@ const Jamstack = async () => {
   const data = await getJamstackPage();
   if (!data) return;
 
+  const techstack = {
+    section2_contents: data?.section3_contents,
+  };
+
   return (
     <div className=" w-full lg:px-8 px-3 min-h-screen flex flex-col items-center ">
       <div className="w-full z-10  h-[50%] bg-gradient-to-b from-[#1996a291] to-[#020C0D] absolute top-0"></div>
@@ -73,7 +77,7 @@ const Jamstack = async () => {
             controls
           >
             <source
-              src={`${process.env.NEXT_PUBLIC_BASE_URL}/assets/${data?.section1_media}`}
+              src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.section1_media}`}
               type="video/ogg"
             />
           </video>
@@ -104,23 +108,18 @@ const Jamstack = async () => {
       </div>
 
       <div className="w-full flex items-center justify-center">
-        <TechStack />
+        <TechStack techData={techstack} />
       </div>
 
       <div className="w-full my-6 flex justify-center">
         <NudgeCard
-          title={'Book a discovery call to witness speed'}
-          label={'Book Now'}
+          title={data?.section4_heading}
+          label={data?.section4_button_text}
+          url={data?.section4_button_url}
         />
       </div>
 
-      <Testimonials />
-      <div className="w-screen p-6 mt-20 bg-[#031416] border-b border-slate-800  min-h-[60vh] flex items-center justify-center footer ">
-        <NudgeCard
-          title={'This text can be changed on purpose'}
-          label={'Also this CTA'}
-        />
-      </div>
+      <Testimonials testData={data?.testimonials} />
     </div>
   );
 };

@@ -19,7 +19,7 @@ const imgs = [
   },
 ];
 
-const CultureComponent = ({title,arr}) => {
+const CultureComponent = ({ title, arr }) => {
   const swiperRef = useRef();
   const [isMobile, setIsMobile] = useState(false);
 
@@ -98,7 +98,7 @@ const CultureComponent = ({title,arr}) => {
                 <div className="w-full rounded-xl overflow-hidden h-full">
                   <Image
                     alt="img"
-                    src={`${process.env.NEXT_PUBLIC_BASE_URL}/assets/${item.directus_files_id}`}
+                    src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${item.directus_files_id}`}
                     quality={100}
                     loading="lazy"
                     width={1000}

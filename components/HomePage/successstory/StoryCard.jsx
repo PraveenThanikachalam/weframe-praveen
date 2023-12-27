@@ -26,23 +26,25 @@ const StoryCard = ({ data }) => {
         <div className="lg:flex md:flex hidden gap-2 my-3 flex-wrap">
           {data?.tags.map((tag, index) => {
             return (
-              <Link key={index} href={'/'}>
-                <button className="navbar borderGrd text-gray-300 px-4 py-1 text-sm rounded-xl">
-                  {tag}
-                </button>
-              </Link>
+              <button
+                key={index}
+                className="navbar borderGrd cursor-default text-gray-300 px-4 py-1 text-sm rounded-xl"
+              >
+                {tag}
+              </button>
             );
           })}
         </div>
         <p className="text-sm mt-2 text-gray-300">{data?.description}</p>
         <div className="flex gap-3 mt-5 items-center justify-between w-full">
-
           {!data?.button_url ? (
             <>
               {isPlaying ? (
                 <button
                   onClick={handlePause}
-                  className={'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent rounded-full px-4 py-3 transition-all duration-150  font-medium'}
+                  className={
+                    'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent rounded-full px-4 py-3 transition-all duration-150  font-medium'
+                  }
                 >
                   {' '}
                   Pause
@@ -50,7 +52,9 @@ const StoryCard = ({ data }) => {
               ) : (
                 <button
                   onClick={handlePlay}
-                  className={'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent rounded-full px-4 py-3 transition-all duration-150  font-medium'}
+                  className={
+                    'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent rounded-full px-4 py-3 transition-all duration-150  font-medium'
+                  }
                 >
                   {' '}
                   Play
@@ -58,12 +62,16 @@ const StoryCard = ({ data }) => {
               )}
             </>
           ) : (
-            <button
-              className={'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent rounded-full px-4 py-3 transition-all duration-150  font-medium'}
-            >
-              {' '}
-              Read
-            </button>
+            <Link className="w-full" href={data?.button_url}>
+              <button
+                className={
+                  'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent rounded-full px-4 py-3 transition-all duration-150  font-medium'
+                }
+              >
+                {' '}
+                Read
+              </button>
+            </Link>
           )}
         </div>
       </div>
@@ -79,7 +87,7 @@ const StoryCard = ({ data }) => {
             poster="/assets/poster.webp"
           >
             <source
-              src={`${process.env.NEXT_PUBLIC_BASE_URL}/assets/${data?.file}`}
+              src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.file}`}
               type="video/ogg"
             />
           </video>
@@ -89,7 +97,7 @@ const StoryCard = ({ data }) => {
             height={300}
             loading="lazy"
             className=" h-auto lg:w-[85%] w-full"
-            src={`${process.env.NEXT_PUBLIC_BASE_URL}/assets/${data?.file}`}
+            src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.file}`}
             alt=""
           />
         )}

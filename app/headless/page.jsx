@@ -8,34 +8,14 @@ import ProgressFlow from '@/components/ProgressFlow';
 import { getHeadlessPage } from '@/utils/getHeadlessPage';
 import Link from 'next/link';
 
-const arr = [
-  {
-    title: 'Kickoff',
-    desc: 'Initiating a Discovery Call to Understand Your Business.',
-    select: true,
-  },
-  {
-    title: 'Ideation',
-    desc: 'We craft a customized plan aligned with your business objectives, followed by the submission of a comprehensive proposal.',
-  },
-  {
-    title: 'Design',
-    desc: 'We design the Idea in Figma (if the design is not available), and seek approval. We offer 2 free design iterations.',
-  },
-  {
-    title: 'Development',
-    desc: 'Agile Development: Sprints, Milestones, and Bi-weekly Progress Tracking.',
-  },
-  {
-    title: 'Delivery',
-    desc: 'Complete Product Delivery with Complimentary One Month Maintenance.',
-  },
-];
-
 const Headless = async () => {
   const data = await getHeadlessPage();
   console.log(data);
   if (!data) return;
+
+  const techstack = {
+    section2_contents: data?.section4_contents,
+  };
   return (
     <div className=" w-full lg:px-8 px-3 min-h-screen flex flex-col items-center ">
       <div className="w-full z-10  h-[50%] bg-gradient-to-b from-[#1996a291] to-[#020C0D] absolute top-0"></div>
@@ -95,7 +75,7 @@ const Headless = async () => {
             controls
           >
             <source
-              src={`${process.env.NEXT_PUBLIC_BASE_URL}/assets/${data?.section1_media}`}
+              src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.section1_media}`}
               type="video/ogg"
             />
           </video>
@@ -126,28 +106,25 @@ const Headless = async () => {
       </div>
 
       <div className="lg:my-20 mt-28">
-        <ProgressFlow title={data?.section3_heading} arr={data?.section3_points} />
+        <ProgressFlow
+          title={data?.section3_heading}
+          arr={data?.section3_points}
+        />
       </div>
 
       <div className="w-full flex items-center justify-center lg:my-10 my-6">
-        <TechStack />
+        <TechStack techData={techstack} />
       </div>
 
       <div className="w-full flex justify-center lg:my-10">
         <NudgeCard
-          title={'Book a discovery call to witness speed'}
-          label={'Book Now'}
+          title={data?.section5_heading}
+          label={data?.section5_button_text}
+          url={data?.section5_button_url}
         />
       </div>
 
-      <Testimonials />
-
-      <div className="w-[100vw] mt-20 p-6 bg-[#031416] min-h-[60vh] flex items-center justify-center footer ">
-        <NudgeCard
-          title={'This text can be changed on purpose'}
-          label={'Also this CTA'}
-        />
-      </div>
+      <Testimonials testData={data?.testimonials} />
     </div>
   );
 };

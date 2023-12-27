@@ -24,7 +24,7 @@ const Page = async ({ params }) => {
         <div className="w-full -z-10 absolute h-screen  bottom-0  ">
           <Image
             alt="img"
-            src={`${process.env.NEXT_PUBLIC_BASE_URL}/assets/${data?.banner}`}
+            src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.banner}`}
             className="w-full h-full object-cover"
             width={200}
             height={200}
@@ -35,7 +35,14 @@ const Page = async ({ params }) => {
         <div className="w-[80%] my-16 flex flex-col items-start gap-10 justify-center">
           <div className="flex flex-wrap gap-2">
             {data?.tags.map((tag, index) => {
-              return <TagButton key={index} tag={tag} />;
+              return (
+                <button
+                  key={index}
+                  className="navbar borderGrd cursor-default text-gray-300 px-4 py-1 text-sm rounded-xl"
+                >
+                  {tag}
+                </button>
+              );
             })}
           </div>
           <h1 className="lg:text-5xl md:text-4xl text-4xl font-bold text-white font-title-font">
@@ -50,13 +57,6 @@ const Page = async ({ params }) => {
         <NudgeCard
           title={'Book a discovery call to witness speed'}
           label={'Book Now'}
-        />
-      </div>
-
-      <div className="w-[100vw] bg-[#031416] mt-16 footer p-6 h-[60vh] border-b-2 border-gray-800 flex items-center justify-center">
-        <NudgeCard
-          title={'This text can be changed on purpose'}
-          label={'Also this CTA'}
         />
       </div>
     </main>

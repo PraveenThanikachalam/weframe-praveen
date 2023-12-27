@@ -1,5 +1,5 @@
 const ProgressFlow = ({ title, arr }) => {
-  const select = arr[0]
+  const select = arr[0];
   return (
     <div className="w-full  flex items-center flex-col gap-5  justify-center ">
       <h1 className="lg:text-5xl md:text-5xl text-4xl  font-bold text-white font-title-font">

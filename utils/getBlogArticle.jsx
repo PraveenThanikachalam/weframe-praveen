@@ -1,13 +1,14 @@
 export const getBlogArticle = async (slug) => {
-    try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/items/article?filter={"title": {"_icontains": "${slug}"}}`);
-      if (response.ok) {
-        const data = await response.json();
-        return data.data[0];
-      }
-      return null;
-    } catch (error) {
-      console.log(error);
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/items/article?filter={"title": {"_icontains": "${slug}"}}`
+    );
+    if (response.ok) {
+      const data = await response.json();
+      return data.data[0];
     }
-  };
-  
+    return null;
+  } catch (error) {
+    console.log(error);
+  }
+};
