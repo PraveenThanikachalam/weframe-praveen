@@ -6,7 +6,6 @@ export const getJamstackPage = async () => {
         headers: {
           Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
         },
-        cache: 'no-store',
       }
     );
     if (response.ok) {

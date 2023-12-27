@@ -45,7 +45,7 @@ const Footer = async () => {
               <p style={{ color: '#062528' }} className="text-lg font-medium">
                 {data?.section[0].heading}
               </p>
-              <ul className=" text-white text-sm lg:text-base  flex flex-col gap-3">
+              <div className=" text-white text-sm lg:text-base  flex flex-col gap-3">
                 {data?.section[0].links.map((item, index) => {
                   return (
                     <Link key={index} href={item.url}>
@@ -53,13 +53,13 @@ const Footer = async () => {
                     </Link>
                   );
                 })}
-              </ul>
+              </div>
             </div>
             <div className="flex flex-col gap-6">
               <p style={{ color: '#062528' }} className="text-lg font-medium">
                 {data?.section[1].heading}
               </p>
-              <ul className=" text-white flex flex-col gap-3">
+              <div className=" text-white flex flex-col gap-3">
                 {data?.section[1].links.map((item, index) => {
                   return (
                     <Link key={index} href={item.url}>
@@ -67,7 +67,7 @@ const Footer = async () => {
                     </Link>
                   );
                 })}
-              </ul>
+              </div>
             </div>
 
             <div className="flex flex-col gap-6">
@@ -75,7 +75,7 @@ const Footer = async () => {
                 {data?.section[2].heading}
               </p>
 
-              <ul className=" text-white flex flex-col gap-3">
+              <div className=" text-white flex flex-col gap-3">
                 {data?.section[2].links.map((item, index) => {
                   return (
                     <Link key={index} href={item.url}>
@@ -83,7 +83,7 @@ const Footer = async () => {
                     </Link>
                   );
                 })}
-              </ul>
+              </div>
             </div>
           </div>
         </div>

@@ -8,7 +8,6 @@ export const getFilterArticles = async (filter) => {
         headers: {
           Authorization: `Bearer U7yJWzq0QYFGpxnPSbXyZVqbailrMoqm`,
         },
-        cache: 'no-store',
       }
     );
 
