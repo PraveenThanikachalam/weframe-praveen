@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const TagButton = ({ tag }) => {
   return (
-    <Link href={tag.url} aria-label="Tag Button">
+    <Link href={"/"} aria-label="Tag Button">
       <button
         className={`px-4 py-2  ${
           tag.selected
@@ -10,7 +10,7 @@ const TagButton = ({ tag }) => {
             : 'borderGrd text-[#999999]'
         } rounded-2xl  text-xs font-fira-code`}
       >
-        {tag.label}
+        {tag}
       </button>
     </Link>
   );

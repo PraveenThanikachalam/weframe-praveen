@@ -4,37 +4,7 @@ import TagButton from '@/components/ui/TagButton';
 import Image from 'next/image';
 import { useState } from 'react';
 
-const tags = [
-  {
-    label: 'All Case Studies',
-    url: '/',
-    selected: true,
-  },
-  {
-    label: 'Headless Commerce Development',
-    url: '/',
-  },
-  {
-    label: 'MVP & POC Development',
-    url: '/',
-  },
-  {
-    label: 'Custom Software Development',
-    url: '/',
-  },
-  {
-    label: 'Product Design Services',
-    url: '/',
-  },
-  {
-    label: 'CTO as a Service',
-    url: '/',
-  },
-  {
-    label: 'API Development',
-    url: '/',
-  },
-];
+const tags = ["All Case Studies","Headless Commerce Development", "MVP & POC Development","Custom Software Development","Product Design Services","CTO as a Service","API Development"]
 
 const Contact = () => {
   const [show, setShow] = useState(false);
