@@ -3,7 +3,7 @@ import getQuotationData from '@/data/getQuotationData';
 
 const Quote = async () => {
   const data = await getQuotationData();
-
+  if (!data) return null;
   return (
     <main className="max-w-screen-xl mx-auto px-4 flex flex-col items-center justify-center">
       <Quotation quotationData={data} />

@@ -1,5 +1,4 @@
 const TagButton = ({ tag }) => {
-  console.log(tag);
   return (
     <button
       className={`px-4 py-2  ${

@@ -2,7 +2,7 @@
 
 import Button from '../ui/Button';
 
-export default function CompanyForm({ setPage }) {
+export default function CompanyForm({ setPage, setCompanyFormSubmitted }) {
   return (
     <>
       <div className="lg:w-[60%] md:w-[75%] w-[90%] mt-6">
@@ -101,6 +101,7 @@ export default function CompanyForm({ setPage }) {
         label={'Calculate Quote'}
         onClick={() => {
           setPage((prev) => prev + 1);
+          setCompanyFormSubmitted((prev) => !prev);
         }}
       />
     </>

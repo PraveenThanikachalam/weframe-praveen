@@ -8,9 +8,9 @@ import QuotationResult from './QuotationResult';
 
 export default function Quotation({ quotationData }) {
   const [page, setPage] = useState(0);
-  const [type, setType] = useState([quotationData.quote[0] ?? []]);
   const [shift, setShift] = useState(false);
-  const [quoteCost, setQuoteCost] = useState(0);
+  const [quoteCost, setQuoteCost] = useState({ totalCost: 0, totalTime: 0 });
+  const [companyFormSubmitted, setCompanyFormSubmitted] = useState(false);
 
   return (
     <>
@@ -43,9 +43,16 @@ export default function Quotation({ quotationData }) {
                   : quotationData?.quote[0]?.quotes_id?.categories,
               }}
               setPage={setPage}
+              companyFormSubmitted={companyFormSubmitted}
+              setQuoteCost={setQuoteCost}
             />
           )}
-          {page === 1 && <CompanyForm setPage={setPage} />}
+          {page === 1 && (
+            <CompanyForm
+              setPage={setPage}
+              setCompanyFormSubmitted={setCompanyFormSubmitted}
+            />
+          )}
 
           <div className="md:min-h-[60vh] w-screen p-6 md:mb-20  flex items-center justify-center">
             <NudgeCard
@@ -60,6 +67,7 @@ export default function Quotation({ quotationData }) {
         <QuotationResult
           bookUrl={quotationData?.section1_button_url}
           setPage={setPage}
+          result={quoteCost}
         />
       )}
     </>

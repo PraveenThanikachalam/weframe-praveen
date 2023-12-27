@@ -8,7 +8,6 @@ const CaseStudy = async () => {
   const data = await getCaseStudyPage();
   if (!data) return;
 
-  console.log(data);
   return (
     <main className="max-w-screen-xl mx-auto px-4 flex flex-col items-center justify-center">
       <div className="w-full lg:my-28 my-20  flex items-center justify-center">
