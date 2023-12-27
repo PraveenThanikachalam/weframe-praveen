@@ -10,7 +10,7 @@ const NudgeCard = ({ title, label, url }) => {
           {title}
         </h1>
       </div>
-      <Link href={url ?? '/contact'}>
+      <Link href={url ?? '/contact'} target="_blank">
         <Button label={label} />
       </Link>
       <div className="flair"></div>
