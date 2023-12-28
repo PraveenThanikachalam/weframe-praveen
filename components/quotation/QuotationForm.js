@@ -190,7 +190,7 @@ export default function QuotationForm({
                     />
                     <label
                       htmlFor={`${category.heading}-${option.name}`}
-                      className={`px-4 py-2 cursor-pointer rounded-2xl text-xs font-fira-code border border-gray-300 hover:shadow-lg ${
+                      className={`px-4 py-2 cursor-pointer rounded-2xl text-xs transform duration-100 font-fira-code border border-gray-300 ${
                         category.choice === 'multiple'
                           ? watch(category.heading)?.includes(option.name)
                             ? 'bg-black text-white border border-cyan-300 shadow-sm shadow-cyan-300'
