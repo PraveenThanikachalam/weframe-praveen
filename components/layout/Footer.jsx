@@ -41,54 +41,26 @@ const Footer = async () => {
             </div>
           </div>
           <div className="flex lg:gap-3 mt-8 lg:mt-0 gap-10 font-light  text-gray-300">
-            <div className="flex flex-col  gap-6">
-              <p style={{ color: '#062528' }} className="text-lg font-medium">
-                {data?.section[0].heading}
-              </p>
-              <div className=" text-white text-sm lg:text-base  flex flex-col gap-3">
-                {data?.section[0].links.map((item, index) => {
-                  return (
-                    <Link key={index} href={item.url}>
-                      {item.name}
-                    </Link>
-                  );
-                })}
+            {data?.section?.map((sec, index) => (
+              <div key={index} className="flex flex-col  gap-3">
+                <p className="text-lg lg:text-2xl font-medium text-white">
+                  {sec?.heading}
+                </p>
+                <div className=" text-white text-sm lg:text-base  flex flex-col gap-3">
+                  {sec?.links.map((item, index) => {
+                    return (
+                      <Link key={index} href={item.url ?? '/'}>
+                        {item.name}
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col gap-6">
-              <p style={{ color: '#062528' }} className="text-lg font-medium">
-                {data?.section[1].heading}
-              </p>
-              <div className=" text-white flex flex-col gap-3">
-                {data?.section[1].links.map((item, index) => {
-                  return (
-                    <Link key={index} href={item.url}>
-                      {item.name}
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-6">
-              <p style={{ color: '#062528' }} className="text-lg font-medium">
-                {data?.section[2].heading}
-              </p>
-
-              <div className=" text-white flex flex-col gap-3">
-                {data?.section[2].links.map((item, index) => {
-                  return (
-                    <Link key={index} href={item.url}>
-                      {item.name}
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
         <div className="h-[1px] bg-gray-500 w-[90%] lg:mt-10 mt-6"></div>
-        <div className="text-gray-500  lg:mt-10 mt-5 flex flex-col lg:flex-row items-center justify-between w-[90%]">
+        <div className="text-white lg:mt-10 mt-5 flex flex-col lg:flex-row items-center justify-between w-[90%]">
           <p className="lg:text-sm text-xs">{data?.copyright_text}</p>
         </div>
       </div>

@@ -8,6 +8,9 @@ export const getFilterArticles = async (filter) => {
         headers: {
           Authorization: `Bearer U7yJWzq0QYFGpxnPSbXyZVqbailrMoqm`,
         },
+        next: {
+          revalidate: 60,
+        },
       }
     );
 

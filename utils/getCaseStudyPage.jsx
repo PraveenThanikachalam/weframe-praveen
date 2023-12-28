@@ -6,6 +6,9 @@ export const getCaseStudyPage = async () => {
         headers: {
           Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
         },
+        next: {
+          revalidate: 60,
+        },
       }
     );
     if (response.ok) {

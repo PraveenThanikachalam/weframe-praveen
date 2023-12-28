@@ -24,11 +24,11 @@ const TechStackCard = ({ framework, title }) => {
               return (
                 <div
                   key={index}
-                  className="flex flex-col lg:h-24 hover:animate-pulse h-20 md:my-3 2xl:my-7 md:mx-6 2xl:mx-12  items-center justify-between grayscale hover:grayscale-0 transition-all duration-300"
+                  className="flex flex-col lg:h-24 h-20 md:my-3 2xl:my-7 md:mx-6 2xl:mx-12  items-center justify-between grayscale hover:grayscale-0 transition-all duration-300"
                 >
                   <SvgRenderer
                     svgText={item.logo}
-                    className="lg:h-20 md:h-16 h-10 lg:w-12 md:w-12 w-10"
+                    className="lg:h-20 md:h-16 h-10 lg:w-12 md:w-12  w-10"
                   />
                   <p className="text-sm text-[#1FBCCB]">{item.name}</p>
                 </div>
