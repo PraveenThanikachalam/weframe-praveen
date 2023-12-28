@@ -10,7 +10,7 @@ const ProgressFlow = ({ title, arr }) => {
           return (
             <div
               key={index}
-              className=" lg:pl-32 py-12 w-full items-center lg:justify-between    lg:flex-row flex-col  flex lg:gap-56 gap-5 lg:text-left text-center"
+              className=" lg:pl-32 py-12 w-full items-center lg:justify-between lg:flex-row flex-col  flex lg:gap-56 gap-5 lg:text-left text-center"
             >
               <time
                 className={` font-nt-adventure  translate-y-0.5 inline-flex items-center justify-center lg:text-5xl md:text-5xl text-3xl font-semibold uppercase  h-6 mb-3 sm:mb-0 ${
@@ -21,7 +21,7 @@ const ProgressFlow = ({ title, arr }) => {
               </time>
               <div
                 className={`flex flex-col sm:flex-row items-start mb-1  group-last:before:hidden before:absolute before:left-2 sm:before:left-0 ${
-                  arr[4] === item ? 'before:h-[0vh]' : 'before:h-[25vh]'
+                  index === arr.length - 1 ? 'before:h-[0vh]' : 'before:h-[25vh]'
                 }  before:px-px ${
                   select === item
                     ? 'before:bg-[#1FBCCB] after:bg-[#9bf7ff] after:border-[#1FBCCB]'

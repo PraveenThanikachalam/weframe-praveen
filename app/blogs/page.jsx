@@ -1,7 +1,4 @@
-import BlogCard from '@/components/BlogCard';
 import BlogPage from '@/components/blog/BlogPage';
-import NudgeCard from '@/components/ui/NudgeCard';
-import TagButton from '@/components/ui/TagButton';
 import { getBlogPage } from '@/utils/getBlogPage';
 
 const Blogs = async () => {
