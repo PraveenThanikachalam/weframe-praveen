@@ -26,7 +26,7 @@ const Navbar = () => {
           </Link>
         </div>
         <nav className="hidden lg:block  ">
-          <ul className="gap-16 flex text-sm font-medium items-center justify-center">
+          <div className="gap-16 flex text-sm font-medium items-center justify-center">
             <div
               onClick={() => {
                 setVisible(!visible);
@@ -60,7 +60,7 @@ const Navbar = () => {
             <Link href={'/contact'} aria-label="Contact">
               Contact
             </Link>
-          </ul>
+          </div>
         </nav>
         <div className="flex items-center justify-center gap-5 lg:hidden">
           <div

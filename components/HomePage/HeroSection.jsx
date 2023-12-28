@@ -5,13 +5,13 @@ import SvgRenderer from '@/lib/svg_renderer';
 
 const HeroSection = ({ heroData }) => {
   return (
-    <div className="h-[90vh]   gap-5 text-center text-white w-full flex flex-col justify-evenly py-10 px-4 items-center relative">
+    <div className="h-[90vh] gap-10 text-center text-white w-full flex flex-col justify-evenly py-10 px-4 items-center relative">
       <div className="lg:w-[60%] w-full z-30  flex flex-col items-center justify-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold font-title-font">
           {heroData.hero_title}
         </h1>
         <div className="lg:w-[70%] w-full">
-          <p className="text-base font-light my-2 md:my-7 text-gray-300">
+          <p className="text-base font-light my-2 md:my-7 text-white">
             {heroData.hero_desc}
           </p>
         </div>
@@ -25,8 +25,8 @@ const HeroSection = ({ heroData }) => {
         </div>
       </div>
       <div className="w-full flex justify-center relative">
-        <div className="w-full z-30  flex flex-col md:mt-6 items-center justify-end gap-2">
-          <p className="md:mb-6 text-base glow font-semibold">
+        <div className="w-full z-30  flex flex-col md:mt-6 items-center justify-end gap-2 lg:gap-4">
+          <p className="md:mb-6 text-lg md:text-2xl font-semibold">
             {heroData?.icons_heading}
           </p>
           <div className=" relative mt-5 sm:mt-0 w-full md:w-[45vw] overflow-hidden block [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">

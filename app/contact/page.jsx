@@ -45,7 +45,6 @@ const Contact = () => {
         reset();
         setServices([]);
         const responseData = await response.json();
-        console.log(responseData.data);
       } else {
         console.error('Error submitting the form');
       }

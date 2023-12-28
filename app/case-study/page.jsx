@@ -5,7 +5,6 @@ const CaseStudyPage = async () => {
   const data = await getCaseStudyPage();
   if (!data) return;
 
-  console.log(data);
   return (
    <CaseStudy pageData={data}/>
   );

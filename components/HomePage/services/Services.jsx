@@ -10,7 +10,7 @@ const Services = ({ servicesData }) => {
           <h1 className="text-4xl font-bold text-white">
             {servicesData?.section3_heading}
           </h1>
-          <p className="text-gray-500 text-sm mt-3">
+          <p className="text-white text-sm mt-3">
             {servicesData?.section3_description}
           </p>
         </div>

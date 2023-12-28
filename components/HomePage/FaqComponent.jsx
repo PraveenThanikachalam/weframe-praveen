@@ -9,7 +9,7 @@ const FaqComponent = ({ faq }) => {
   return (
     <div className="faq w-full flex my-20 items-center text-center justify-center flex-col">
       <div>
-        <h1 className="text-4xl font-bold text-white">{faq?.faq_heading}</h1>
+        <h2 className="text-4xl font-bold text-white">{faq?.faq_heading}</h2>
       </div>
       <div className="lg:w-[70%] w-[80%] mt-16">
         <Accordion type="single" collapsible className="w-full text-[#ebebeb]">

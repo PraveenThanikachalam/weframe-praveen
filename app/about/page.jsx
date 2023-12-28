@@ -8,7 +8,6 @@ import { getAboutPage } from '@/utils/getAboutPage';
 const AboutPage = async () => {
   const data = await getAboutPage();
   if (!data) return;
-  
   return (
     <section className="flex flex-col justify-center items-center w-full max-w-screen-xl mx-auto px-3">
       <div className="py-16 w-full lg:flex-row flex-col z-10 flex items-center justify-center lg:justify-between">

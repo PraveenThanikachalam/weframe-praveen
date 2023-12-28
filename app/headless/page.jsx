@@ -10,7 +10,6 @@ import Link from 'next/link';
 
 const Headless = async () => {
   const data = await getHeadlessPage();
-  console.log(data);
   if (!data) return;
 
   const techstack = {
