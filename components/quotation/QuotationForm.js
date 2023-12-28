@@ -137,7 +137,7 @@ export default function QuotationForm({
                     className="w-full navbar bg-opacity-50 font-light rounded-lg border border-gray-300 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 h-10 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     {...register('no_of_pages', { required: true })}
                   />
-                  {errors.name && (
+                  {errors.no_of_pages && (
                     <span className="text-xs text-cyan-500">
                       This field is required!
                     </span>

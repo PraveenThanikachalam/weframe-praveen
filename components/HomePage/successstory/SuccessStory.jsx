@@ -10,9 +10,7 @@ const SuccessStory = ({ successData }) => {
           <h1 className="text-4xl font-bold text-white">
             {successData?.heading}
           </h1>
-          <p className="text-gray-500 text-sm mt-3">
-            {successData?.description}
-          </p>
+          <p className="text-white text-sm mt-3">{successData?.description}</p>
         </div>
         <div>
           <Link href={successData.link ?? '/'}>
