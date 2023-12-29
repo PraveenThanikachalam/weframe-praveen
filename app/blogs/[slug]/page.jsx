@@ -2,15 +2,25 @@ import NudgeCard from '@/components/ui/NudgeCard';
 import { getBlogArticle } from '@/utils/getBlogArticle';
 import Image from 'next/image';
 
-const Page = async ({ params }) => {
-  function slugToTitle(slug) {
-    const word = slug
-      .split('-') // Split the slug into an array of words
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize the first letter of each word
-      .join(' '); // Join the words with a space
+function slugToTitle(slug) {
+  const word = slug
+    .split('-') // Split the slug into an array of words
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize the first letter of each word
+    .join(' '); // Join the words with a space
 
-    return word.replace('@', '-');
+  return word.replace('@', '-');
+}
+
+export async function generateMetadata({ params }) {
+  const data = await getBlogArticle(
+    slugToTitle(decodeURIComponent(params.slug))
+  );
+  return {
+    title: "WeframeTech: " + data?.title,
   }
+}
+
+const Page = async ({ params }) => {
 
   const data = await getBlogArticle(
     slugToTitle(decodeURIComponent(params.slug))

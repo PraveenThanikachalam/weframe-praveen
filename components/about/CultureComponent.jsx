@@ -23,7 +23,7 @@ const CultureComponent = ({ title, arr }) => {
 
   return (
     <>
-      <div className=" lg:w-full px-3 mx-auto md:w-4/5 max-w-screen-xl my-12  flex items-center justify-center">
+      <div className=" lg:w-full px-3 mx-auto md:w-4/5 max-w-screen-xl mb-12  flex items-center justify-center">
         <div className="w-full  flex flex-col lg:flex-row text-center lg:text-left items-center justify-between">
           <div>
             <h1 className="lg:text-4xl text-2xl md:text-4xl text-white font-bold">

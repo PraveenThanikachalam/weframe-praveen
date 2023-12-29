@@ -1,33 +1,9 @@
-import NudgeCard from '@/components/ui/NudgeCard';
 import ProgressFlow from '@/components/ProgressFlow';
 import ImageGrid from '@/components/about-image-grid/ImageGrid';
 import CultureComponent from '@/components/about/CultureComponent';
 import BackLightEffect from '@/components/ui/BackLightEffect';
 import { getAboutPage } from '@/utils/getAboutPage';
 
-const arr = [
-  {
-    title: 'Vision',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-    select: true,
-  },
-  {
-    title: 'Process',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-  },
-  {
-    title: 'Partnerships',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-  },
-  {
-    title: 'Partnerships',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-  },
-  {
-    title: 'Partnerships',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-  },
-];
 
 const AboutPage = async () => {
   const data = await getAboutPage();

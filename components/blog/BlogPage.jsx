@@ -8,6 +8,7 @@ const BlogPage = ({ pageData }) => {
   const [data, setData] = useState(pageData);
   const [selectedFilters, setSelectedFilters] = useState([]);
   const [filtered, setFiltered] = useState();
+  const [allTags, setAllTags] = useState([]);
 
   function convertToSlug(inputString) {
     return (
@@ -19,6 +20,27 @@ const BlogPage = ({ pageData }) => {
         .replace(/--+/g, '-')
     ); // Replace multiple hyphens with a single hyphen
   }
+
+  useEffect(() => {
+    // Extract tags from the 'data' object
+    let tagsFromData = data?.tags?.map((tag) => tag.name) || [];
+
+    // Extract unique tags from the 'case_studies' array
+    let uniqueTagsFromCaseStudies = Array.from(
+      new Set(
+        data?.articles?.flatMap((caseStudy) => caseStudy.article_id.tags || [])
+      )
+    );
+    // Combine both sets of tags
+    let combinedTags = [...tagsFromData, ...uniqueTagsFromCaseStudies];
+
+    // Remove duplicates by creating a Set
+    let uniqueCombinedTags = Array.from(new Set(combinedTags));
+
+    // Set the 'allTags' state
+    setAllTags(uniqueCombinedTags);
+  }, [data]);
+
   useEffect(() => {
     const fetchFilteredArticle = async () => {
       try {
@@ -47,9 +69,9 @@ const BlogPage = ({ pageData }) => {
   }, [selectedFilters]);
 
   return (
-    <main className=" max-w-screen-xl mx-auto px-4 flex flex-col items-center justify-center ">
-      <div className=" w-full  lg:my-28 my-16 flex items-center justify-center">
-        <div className="lg:w-[80%] w-full  flex flex-col items-center justify-center">
+    <main className="max-w-screen-xl mx-auto px-4 flex flex-col items-center justify-center">
+      <div className="w-full lg:my-28 my-16 flex items-center justify-center">
+        <div className="lg:w-[80%] w-full flex flex-col items-center justify-center">
           <div className="">
             <h1 className="text-4xl md:text-5xl lg:text-5xl text-center gradient-text font-bold text-accent-blue">
               {data?.heading}
@@ -68,23 +90,23 @@ const BlogPage = ({ pageData }) => {
             >
               All Articles
             </button>
-            {data?.tags?.map((tag, index) => {
-              if (tag.name === 'All Articles') {
+            {allTags?.map((tag, index) => {
+              if (tag === 'All Articles') {
                 // Skip rendering the button for "All Articles"
                 return null;
               }
 
-              const isTagSelected = selectedFilters.includes(tag.name);
+              const isTagSelected = selectedFilters.includes(tag);
 
               return (
                 <button
                   onClick={(e) => {
                     if (isTagSelected) {
                       setSelectedFilters(
-                        selectedFilters.filter((name) => name !== tag.name)
+                        selectedFilters.filter((name) => name !== tag)
                       );
                     } else {
-                      setSelectedFilters([...selectedFilters, tag.name]);
+                      setSelectedFilters([...selectedFilters, tag]);
                     }
                   }}
                   key={index}
@@ -94,7 +116,7 @@ const BlogPage = ({ pageData }) => {
                       : 'borderGrd text-[#999999]'
                   } rounded-2xl  text-xs font-fira-code`}
                 >
-                  {tag.name}
+                  {tag}
                 </button>
               );
             })}
@@ -102,33 +124,39 @@ const BlogPage = ({ pageData }) => {
         </div>
       </div>
 
-      <div className="blogs w-full  flex-wrap items-center flex gap-8 justify-center">
-        {filtered
-          ? filtered?.map((blog, index) => {
-              return (
-                <BlogCard
-                  key={index}
-                  title={blog?.title}
-                  image={blog?.banner}
-                  tags={blog?.tags}
-                  link={`/blogs/${convertToSlug(blog?.title)}`}
-                />
-              );
-            })
-          : data?.articles?.map((blog, index) => {
-              return (
-                <BlogCard
-                  key={index}
-                  title={blog?.article_id.title}
-                  image={blog?.article_id.banner}
-                  tags={blog?.article_id.tags}
-                  link={`/blogs/${convertToSlug(blog?.article_id.title)}`}
-                />
-              );
-            })}
+      <div className="blogs w-full flex-wrap items-center flex gap-8 justify-center">
+        {selectedFilters.length > 0 && filtered && filtered.length === 0 ? (
+          <p className="font-title-font text-gray-300 text-sm">
+            No Blog Found.
+          </p>
+        ) : filtered ? (
+          filtered?.map((blog, index) => {
+            return (
+              <BlogCard
+                key={index}
+                title={blog?.title}
+                image={blog?.banner}
+                tags={blog?.tags}
+                link={`/blogs/${convertToSlug(blog?.title)}`}
+              />
+            );
+          })
+        ) : (
+          data?.articles?.map((blog, index) => {
+            return (
+              <BlogCard
+                key={index}
+                title={blog?.article_id.title}
+                image={blog?.article_id.banner}
+                tags={blog?.article_id.tags}
+                link={`/blogs/${convertToSlug(blog?.article_id.title)}`}
+              />
+            );
+          })
+        )}
       </div>
 
-      <div className="min-h-[60vh] w-screen p-6  flex items-center justify-center">
+      <div className="min-h-[60vh] w-screen p-6 flex items-center justify-center">
         <NudgeCard
           title={data?.section1_heading}
           label={data?.section1_button_text}
