@@ -3,13 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import DropDownBig from './navbar/DropDownBig';
-import DropDownSmall from './navbar/DropDownSmall';
 import MobileNav from './navbar/MobileNav';
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const [visible2, setVisible2] = useState(false);
-  const [visible3, setVisible3] = useState(false);
 
   return (
     <div className="w-full sticky top-0 bg-opacity-25 z-40 bg-[#020c0d]  bg-transparent backdrop-blur-sm">
@@ -63,26 +61,9 @@ const Navbar = () => {
           </div>
         </nav>
         <div className="flex items-center justify-center gap-5 lg:hidden">
-          <div
-            onClick={() => {
-              setVisible2(false);
-              setVisible3(!visible3);
-            }}
-            className="flex items-center justify-center gap-1"
-          >
-            Services{' '}
-            <Image
-              alt="img"
-              src={'/icons/dropdown.svg'}
-              width={200}
-              height={300}
-              className="w-3 h-auto"
-            />
-          </div>
-
+         
           <Image
             onClick={() => {
-              setVisible3(false);
               setVisible2(!visible2);
             }}
             alt="img"
@@ -96,7 +77,6 @@ const Navbar = () => {
 
       <MobileNav visible2={visible2} setVisible2={setVisible2} />
       <DropDownBig visible={visible} setVisible={setVisible} />
-      <DropDownSmall visible3={visible3} setVisible3={setVisible3} />
     </div>
   );
 };
