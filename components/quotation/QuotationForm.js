@@ -178,7 +178,7 @@ export default function QuotationForm({
               <p className="text-sm text-cyan-200">{category.heading}</p>
               <div className="flex flex-wrap gap-2">
                 {category.options.map((option, idx) => (
-                  <div key={idx} className="relative">
+                  <div key={idx} className="relative mt-2">
                     <input
                       type={
                         category.choice === 'multiple' ? 'checkbox' : 'radio'
