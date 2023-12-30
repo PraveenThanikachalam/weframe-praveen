@@ -43,6 +43,8 @@ const TestimonialCard = ({
       {type === 'video' && (
         <video
           ref={videoRef}
+          preload='none'
+          poster='/assets/poster.webp'
           className="w-full h-full object-cover rounded-xl absolute inset-0 -z-[1]"
           loop
         >
