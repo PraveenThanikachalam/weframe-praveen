@@ -4,40 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
-const services = [
-  {
-    title: 'Jamstack Development',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-    link: '/jamstack',
-  },
-  {
-    title: 'MVP & POC Development',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-    link: '/',
-  },
-  {
-    title: 'Headless Commerce',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-    link: '/headless',
-  },
-  {
-    title: 'UI/UX Designing',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-    link: '/',
-  },
-  {
-    title: 'Custom Software Development',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-    link: '/',
-  },
-  {
-    title: 'CTO as a Service',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-    link: '/',
-  },
-];
-
-const MobileNav = ({ visible2, setVisible2 }) => {
+const MobileNav = ({ visible2, setVisible2, navItems }) => {
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const pathname = usePathname();
 
@@ -71,56 +38,50 @@ const MobileNav = ({ visible2, setVisible2 }) => {
 
       <nav>
         <ul className="gap-8 p-6 rounded-xl glow flex flex-col text-white text-sm font-medium items-center justify-center">
-          <div className="group">
-            <div
-              onClick={toggleServicesDropdown}
-              className="cursor-pointer flex text-cyan-500 items-center justify-center gap-1"
-            >
-              Services{' '}
+          {
+            navItems?.map((item,index)=>{
+              return item.links? <>  <div className="group">
               <div
-                className={`transition-all duration-300 ${
-                  servicesDropdownOpen ? 'rotate-0' : '-rotate-90'
-                }`}
+                onClick={toggleServicesDropdown}
+                className="cursor-pointer flex text-cyan-500 items-center justify-center gap-1"
               >
-                <Image
-                  alt="img"
-                  src={'/icons/dropdown.svg'}
-                  width={200}
-                  height={300}
-                  className="w-3 h-auto"
-                />
+                {item?.label}
+                <div
+                  className={`transition-all duration-300 ${
+                    servicesDropdownOpen ? 'rotate-0' : '-rotate-90'
+                  }`}
+                >
+                  <Image
+                    alt="img"
+                    src={'/icons/dropdown.svg'}
+                    width={200}
+                    height={300}
+                    className="w-3 h-auto"
+                  />
+                </div>
               </div>
-            </div>
-            <ul
-              className={`${
-                servicesDropdownOpen ? 'max-h-96 mt-3' : 'max-h-0'
-              } space-y-2 text-white flex items-center transition-all duration-500 justify-center flex-col rounded-md w-[90vw] px-4 shadow-lg overflow-hidden`}
-            >
-              {services.map((item, index) => (
-                <Link className="w-full" href={item.link} key={index}>
-                  <div className=" w-full bg-[#020C0D] py-1 border-b border-gray-800 px-5 relative flex items-center justify-center">
-                    <div >
-                      <h1 className="text-md font-semibold text-white">
-                        {item.title}
-                      </h1>
+              <ul
+                className={`${
+                  servicesDropdownOpen ? 'max-h-96 mt-3' : 'max-h-0'
+                } space-y-2 text-white flex items-center transition-all duration-500 justify-center flex-col rounded-md w-[90vw] px-4 shadow-lg overflow-hidden`}
+              >
+                {item.links?.map((val, index) => (
+                  <Link className="w-full" href={val?.link_url} key={index}>
+                    <div className=" w-full bg-[#020C0D] py-1 border-b border-gray-800 px-5 relative flex items-center justify-center">
+                      <div >
+                        <h1 className="text-md font-semibold text-white">
+                          {val?.link_heading}
+                        </h1>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
-            </ul>
-          </div>
-          <Link className="underline" href={'/case-study'}>
-            Case Studies
-          </Link>
-          <Link className="underline" href={'/blogs'}>
-            Blogs
-          </Link>
-          <Link className="underline" href={'/about'}>
-            About Us
-          </Link>
-          <Link className="underline" href={'/contact'}>
-            Contact
-          </Link>
+                  </Link>
+                ))}
+              </ul>
+            </div> </> : <>  <Link className="underline" href={item?.url}>
+            {item?.label}
+          </Link></>
+            })
+          }
         </ul>
       </nav>
     </div>

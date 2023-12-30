@@ -1,47 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const services = [
-  {
-    title: 'Jamstack Development',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-    link: '/jamstack',
-  },
-  {
-    title: 'MVP & POC Development',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-    link: '/',
-  },
-  {
-    title: 'Headless Commerce',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-    link: '/headless',
-  },
-  {
-    title: 'UI/UX Designing',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-    link: '/',
-  },
-  {
-    title: 'Custom Software Development',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-    link: '/',
-  },
-  {
-    title: 'CTO as a Service',
-    desc: 'Explore our real-world achievements, where we turn challenges into triumphs. These case studies highlight our track record of delivering impactful digital solutions for our clients.',
-    link: '/',
-  },
-];
-
-const DropDownBig = ({ visible, setVisible }) => {
+const DropDownBig = ({ visible, setVisible,navlist }) => {
   return (
     <div
       className={`absolute laptop w-full animate-fade-in-down z-50 bg-gradient-to-br from-[#0b191a] to-[#020c0d]   border-b border-gray-700 p-5  gap-5 ${
         visible ? 'flex ' : 'hidden'
-      } flex-wrap items-start justify-center top-20 `}
+      } flex-wrap items-start justify-center left-0 right-0 top-20 `}
     >
-      {services.map((item, index) => {
+      {navlist?.map((item, index) => {
         return (
           <div
             key={index}
@@ -55,13 +22,13 @@ const DropDownBig = ({ visible, setVisible }) => {
               height={300}
               className="w-4 absolute top-4 right-4"
             />
-            <Link href={item.link} onClick={() => setVisible(!visible)}>
+            <Link href={item?.link_url} onClick={() => setVisible(!visible)}>
               <div>
                 <h1 className="text-xl font-semibold text-white">
-                  {item.title}
+                  {item?.link_heading}
                 </h1>
                 <p className="text-sm font-light text-gray-300 mt-1 ">
-                  {item.desc}
+                  {item?.link_description}
                 </p>
               </div>
             </Link>
