@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
@@ -9,14 +9,14 @@ const Contact = () => {
   const [show, setShow] = useState(false);
   const [services, setServices] = useState([]);
   const [data, setData] = useState('');
-
+  
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
-
+  
   // Handle form submission
   const onSubmit = async (formData) => {
     try {
@@ -35,13 +35,13 @@ const Contact = () => {
           }),
         }
       );
-
+  
       if (response.ok) {
         setShow(true);
         setTimeout(() => {
           setShow(false);
         }, 3000);
-
+  
         reset();
         setServices([]);
         const responseData = await response.json();
@@ -52,8 +52,9 @@ const Contact = () => {
       console.log(error);
     }
   };
-
-  const fetchPage = async () => {
+  
+  // Memoize fetchPage function
+  const fetchPage = useCallback(async () => {
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/items/contact_us`
@@ -67,14 +68,14 @@ const Contact = () => {
     } catch (error) {
       console.log(error);
     }
-  };
-
+  }, []); // empty dependency array since fetchPage does not depend on any external variable
+  
   useEffect(() => {
     fetchPage();
-  }, []);
+  }, [fetchPage]);
 
   return (
-    <section className="max-w-screen-xl mx-auto h-screen flex flex-col items-center justify-center md:px-4 px-2 lg:px-4 ">
+    <section className="max-w-screen-xl mx-auto lg:h-screen flex flex-col items-center justify-center md:px-4 px-2 lg:px-4 ">
       <div className="w-full lg:h-[85vh] flex lg:flex-row flex-col">
         <div className="left lg:w-[50%] w-full text-center lg:text-left flex flex-col items-center lg:items-left justify-evenly">
           <div className="w-full px-2 py-8 lg:py-0">
@@ -108,7 +109,7 @@ const Contact = () => {
           {/* Form */}
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="form lg:w-full w-[75%] flex items-center lg:justify-start justify-center"
+            className="form lg:w-full w-[90%] flex items-center lg:justify-start justify-center"
           >
             <div className="lg:w-full md:w-[90%] w-full ">
               <div className="flex lg:flex-row md:flex-row flex-col gap-3 lg:gap-0 md:gap-0 flex-wrap -m-2">

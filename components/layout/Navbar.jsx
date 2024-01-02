@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import DropDownBig from './navbar/DropDownBig';
 import MobileNav from './navbar/MobileNav';
 import SvgRenderer from '@/lib/svg_renderer';
@@ -11,7 +11,8 @@ const Navbar = () => {
   const [visible2, setVisible2] = useState(false);
   const [data, setData] = useState('');
 
-  const fetchNav = async () => {
+  // useCallback to memoize the fetchNav function
+  const fetchNav = useCallback(async () => {
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/items/header`,
@@ -25,18 +26,20 @@ const Navbar = () => {
         }
       );
       if (response.ok) {
-        const data = await response.json();
-        setData(data.data);
+        const fetchedData = await response.json();
+        setData(fetchedData.data);
       }
-      return null;
     } catch (error) {
       console.log(error);
     }
-  };
+  }, []); // empty dependency array since fetchNav does not depend on any external variable
+
+  // useMemo to memoize the result of data.nav_items
+  const navItems = useMemo(() => data?.nav_items || [], [data?.nav_items]);
 
   useEffect(() => {
     fetchNav();
-  }, []);
+  }, [fetchNav]);
 
   return (
     <div className="w-full sticky top-0 bg-opacity-25 z-40 bg-[#020c0d]  bg-transparent backdrop-blur-sm">
@@ -102,7 +105,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <MobileNav visible2={visible2} setVisible2={setVisible2} navItems={data?.nav_items} />
+      <MobileNav visible2={visible2} setVisible2={setVisible2} navItems={navItems} />
     </div>
   );
 };
