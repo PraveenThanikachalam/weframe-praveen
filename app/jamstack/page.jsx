@@ -75,6 +75,8 @@ const Jamstack = async () => {
             height="0"
             className="w-full  rounded-xl border border-gray-600"
             controls
+            preload='none'
+            poster='/assets/poster.webp'
           >
             <source
               src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.section1_media}`}

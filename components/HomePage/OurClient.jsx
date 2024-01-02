@@ -6,10 +6,9 @@ import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
+import { useEffect, useState } from 'react';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { useEffect, useState } from 'react';
-
 const OurClient = ({ clientsData }) => {
   const [isMobile, setIsMobile] = useState(false);
 

@@ -70,6 +70,8 @@ const Headless = async () => {
           <video
             width="0"
             height="0"
+            preload='none'
+            poster='/assets/poster.webp'
             className="w-full  rounded-xl border border-gray-600"
             controls
           >

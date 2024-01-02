@@ -1,7 +1,6 @@
 'use client';
 import { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 import Image from 'next/image';
 
 const CultureComponent = ({ title, arr }) => {
@@ -23,7 +22,7 @@ const CultureComponent = ({ title, arr }) => {
 
   return (
     <>
-      <div className=" lg:w-full px-3 mx-auto md:w-4/5 max-w-screen-xl mb-12  flex items-center justify-center">
+      <div className=" w-full mx-auto max-w-screen-xl mb-12  flex items-center justify-center">
         <div className="w-full  flex flex-col lg:flex-row text-center lg:text-left items-center justify-between">
           <div>
             <h1 className="lg:text-4xl text-2xl md:text-4xl text-white font-bold">
@@ -62,7 +61,7 @@ const CultureComponent = ({ title, arr }) => {
       <div className="w-full overflow-hidden flex items-center justify-end">
         <Swiper
           style={{
-            width: `${isMobile ? '85vw' : '80vw'}`,
+            width: `${isMobile ? '90vw' : '80vw'}`,
             maxWidth: '1280px',
             height: '480px',
             overflow: 'visible',

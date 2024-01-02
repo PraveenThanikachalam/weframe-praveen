@@ -63,7 +63,7 @@ const Testimonials = ({ testData }) => {
       <div className="w-full overflow-hidden flex items-center justify-end">
         <Swiper
           style={{
-            width: `${isMobile ? '85vw' : '80vw'}`,
+            width: `${isMobile ? '90vw' : '80vw'}`,
             maxWidth: '1280px',
             height: '480px',
             overflow: 'visible',

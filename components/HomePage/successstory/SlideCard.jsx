@@ -6,10 +6,7 @@ import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+
 import { convertToSlug } from '@/lib/utils';
 
 const SlideCard = ({ data }) => {
@@ -40,7 +37,7 @@ const SlideCard = ({ data }) => {
         }}
         loop={true}
         style={{
-          width: `${isMobile ? '95vw' : '80vw'}`,
+          width: `${isMobile ? '92vw' : '80vw'}`,
           position: 'relative',
           display: 'flex',
           alignItems: 'center',
