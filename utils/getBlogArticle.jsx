@@ -1,8 +1,11 @@
 export const getBlogArticle = async (slug) => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/items/article?filter={"title": {"_icontains": "${slug}"}}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/items/article?filter={"title": {"_icontains": "${slug}"}}&fields=*,SEO.*`,
       {
+        headers: {
+          Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
+        },
         next: {
           revalidate: 60,
         },

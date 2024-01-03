@@ -1,7 +1,7 @@
 export const getJamstackPage = async () => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/items/jamstack_page?fields=*,testimonials.*,section3_contents.development_platform_id.*`,
+      `${process.env.NEXT_PUBLIC_API_URL}/items/jamstack_page?fields=*,testimonials.*,section3_contents.development_platform_id.*,SEO.*`,
       {
         headers: {
           Authorization: `Bearer ${process.env.BEARER_TOKEN}`,

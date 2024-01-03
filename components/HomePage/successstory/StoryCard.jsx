@@ -24,7 +24,7 @@ const StoryCard = ({ data }) => {
           {data?.heading}
         </h1>
         <div className="lg:flex md:flex hidden gap-2 my-3 flex-wrap">
-          {data?.tags.map((tag, index) => {
+          {data?.tags?.map((tag, index) => {
             return (
               <button
                 key={index}

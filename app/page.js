@@ -8,6 +8,39 @@ import OurClient from '@/components/HomePage/OurClient';
 import Testimonials from '@/components/HomePage/Testimonials';
 import getHomeData from '@/data/getHomeData';
 
+export async function generateMetadata(
+ 
+  parent
+) {
+    const seoData = await getHomeData()
+  if (seoData?.SEO) {
+    const previousImages = (await parent).openGraph?.images || [];
+    return {
+      title: seoData?.SEO?.meta_title,
+      description: seoData?.SEO?.meta_description,
+      alternates: {
+        canonical: seoData?.SEO?.canonical_url,
+      },
+      keywords:seoData?.SEO?.meta_keywords,
+      robots: {
+        index: !seoData?.SEO?.no_follow,
+        follow: !seoData?.SEO?.no_index,
+        nocache: true,
+      },
+      openGraph: {
+        images: [
+          `${process.env.NEXT_PUBLIC_BASE_URL}/assets/${seoData?.SEO?.og_image}`,
+          ...previousImages,
+        ],
+      },
+    };
+  }
+  return {
+    title: 'Article not found!',
+    description: 'Article not found!',
+  };
+}
+
 export default async function Home() {
   const data = await getHomeData();
   if (!data) return null;
