@@ -26,8 +26,8 @@ const Services = ({ servicesData }) => {
             <ServiceCard
               key={index}
               title={service?.title}
-              img={service?.bg_image}
-              url={service?.url}
+              img={service.bg_image}
+              url={service.url}
             />
           );
         })}

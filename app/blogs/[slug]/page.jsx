@@ -41,15 +41,12 @@ export async function generateMetadata(
     };
   }
   return {
-    title: `WeframeTech: ${seoData?.title}`,
-    description: seoData?.content,
-    keywords:seoData?.tags
+    title: 'WeframeTech: ' + data?.title,
   };
 }
 
 
 const Page = async ({ params }) => {
-
   const data = await getBlogArticle(
     slugToTitle(decodeURIComponent(params.slug))
   );

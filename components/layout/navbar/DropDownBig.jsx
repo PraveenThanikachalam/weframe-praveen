@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const DropDownBig = ({ visible, setVisible,navlist }) => {
+const DropDownBig = ({ visible, setVisible, navlist }) => {
   return (
     <div
       className={`absolute laptop w-full animate-fade-in-down z-50 bg-gradient-to-br from-[#0b191a] to-[#020c0d]   border-b border-gray-700 p-5  gap-5 ${
