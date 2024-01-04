@@ -142,5 +142,5 @@ const CaseStudy = ({pageData}) => {
     />
   </div>
 </main>
-
+)}
 export default CaseStudy;
