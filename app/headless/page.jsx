@@ -8,6 +8,39 @@ import ProgressFlow from '@/components/ProgressFlow';
 import { getHeadlessPage } from '@/utils/getHeadlessPage';
 import Link from 'next/link';
 
+export async function generateMetadata(
+ 
+  parent
+) {
+    const seoData = await getHeadlessPage()
+  if (seoData.SEO) {
+    const previousImages = (await parent).openGraph?.images || [];
+    return {
+      title: seoData?.SEO?.meta_title,
+      description: seoData?.SEO?.meta_description,
+      alternates: {
+        canonical: seoData?.SEO?.canonical_url,
+      },
+      keywords:seoData?.SEO?.meta_keywords,
+      robots: {
+        index: !seoData?.SEO?.no_follow,
+        follow: !seoData?.SEO?.no_index,
+        nocache: true,
+      },
+      openGraph: {
+        images: [
+          `${process.env.NEXT_PUBLIC_BASE_URL}/assets/${seoData?.SEO?.og_image}`,
+          ...previousImages,
+        ],
+      },
+    };
+  }
+  return {
+    title: 'WeframeTech',
+    description: 'Jamstack & Headless Commerce Agency, We recognize the demand for high-speed, secure, and easily scalable websites. Leveraging the power of Jamstack, we deliver an exceptional web development experience tailored to your specific requirements, Get an instant quote for your project.'
+  };
+}
+
 const Headless = async () => {
   const data = await getHeadlessPage();
   if (!data) return;
@@ -71,7 +104,7 @@ const Headless = async () => {
             width="0"
             height="0"
             preload='none'
-            poster='/assets/poster.webp'
+            poster={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.section1_thumbnail}`}
             className="w-full  rounded-xl border border-gray-600"
             controls
           >
@@ -85,7 +118,7 @@ const Headless = async () => {
 
       <div className="max-w-screen-xl w-full lg:my-16 my-12 flex flex-col gap-16">
         <div className="w-full flex lg:flex-row flex-col gap-5  lg:gap-0 items-center justify-between">
-          <h1 className="lg:text-4xl text-3xl md:text-4xl font-title-font text-white font-semibold">
+          <h1 className="lg:text-4xl text-3xl md:text-4xl md:text-left text-center font-title-font text-white font-semibold">
             {data?.section2_heading}
           </h1>
           <Link href={`${data?.section2_btn_url}`}>

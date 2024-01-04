@@ -56,7 +56,7 @@ const OurClient = ({ clientsData }) => {
         {clientsData?.client_section_heading}
       </h1>
       <div className="w-[80vw] flex flex-wrap items-center justify-center gap-8 lg:gap-16">
-        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 items-center justify-center gap-4 lg:gap-10">
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 items-center cursor-grab justify-center gap-4 lg:gap-10">
           <Swiper
             // install Swiper modules
             modules={[Navigation, Pagination]}
@@ -81,7 +81,7 @@ const OurClient = ({ clientsData }) => {
                     height: '80%',
                     display: 'flex',
                     flexWrap: 'wrap',
-                    gap: '50px',
+                    gap: `${isMobile ? "30px 50px" : "50px 100px"}`,
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}
@@ -90,13 +90,13 @@ const OurClient = ({ clientsData }) => {
                     return (
                       <div
                         key={client?.client_logo?.key}
-                        className=" lg:h-28 h-24 flex flex-col gap-2 justify-between items-center"
+                        className=" lg:h-28 h-24 flex flex-wrap flex-col gap-2 justify-end items-center"
                       >
                         <Image
                           src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${client?.client_logo?.key}`}
-                          className="h-auto w-10 md:w-14 lg:w-14 items-center flex-grow object-contain"
-                          width={0}
-                          height={0}
+                          className="h-8 w-auto object-contain  items-center "
+                          width={500}
+                          height={500}
                           alt="img"
                           loading="lazy"
                         />

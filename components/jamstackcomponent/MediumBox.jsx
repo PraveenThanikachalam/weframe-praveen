@@ -9,7 +9,7 @@ const MediumBox = ({ title, desc, icon }) => {
         <h1 className="text-white text-xl font-medium">{title}</h1>
         <p
           style={{ color: 'rgba(153, 153, 153, 1)' }}
-          className="font-light text-sm"
+          className="font-light text-sm line-clamp-6"
         >
           {desc}
         </p>

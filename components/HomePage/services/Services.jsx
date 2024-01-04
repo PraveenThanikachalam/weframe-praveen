@@ -21,12 +21,13 @@ const Services = ({ servicesData }) => {
         </div>
       </div>
       <div className="flex w-[80vw] max-w-screen-xl flex-wrap items-center justify-center lg:justify-between gap-5">
-        {servicesData?.services?.map((service, index) => {
+        {servicesData?.services.map((service, index) => {
           return (
             <ServiceCard
               key={index}
               title={service?.title}
               img={service.bg_image}
+              url={service.url}
             />
           );
         })}

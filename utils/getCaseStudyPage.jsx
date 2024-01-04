@@ -1,7 +1,7 @@
 export const getCaseStudyPage = async () => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/items/case_studies_page?fields=*, case_studies.case_studies_id.*`,
+      `${process.env.NEXT_PUBLIC_API_URL}/items/case_studies_page?fields=*, case_studies.case_studies_id.*, SEO.*`,
       {
         headers: {
           Authorization: `Bearer ${process.env.BEARER_TOKEN}`,

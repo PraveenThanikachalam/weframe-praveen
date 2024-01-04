@@ -7,6 +7,39 @@ import Testimonials from '@/components/HomePage/Testimonials';
 import { getJamstackPage } from '@/utils/getJamstackPage';
 import Link from 'next/link';
 
+export async function generateMetadata(
+ 
+  parent
+) {
+    const seoData = await getJamstackPage()
+  if (seoData.SEO) {
+    const previousImages = (await parent).openGraph?.images || [];
+    return {
+      title: seoData?.SEO?.meta_title,
+      description: seoData?.SEO?.meta_description,
+      alternates: {
+        canonical: seoData?.SEO?.canonical_url,
+      },
+      keywords:seoData?.SEO?.meta_keywords,
+      robots: {
+        index: !seoData?.SEO?.no_follow,
+        follow: !seoData?.SEO?.no_index,
+        nocache: true,
+      },
+      openGraph: {
+        images: [
+          `${process.env.NEXT_PUBLIC_BASE_URL}/assets/${seoData?.SEO?.og_image}`,
+          ...previousImages,
+        ],
+      },
+    };
+  }
+  return {
+    title: 'WeframeTech',
+    description: 'Jamstack & Headless Commerce Agency, We recognize the demand for high-speed, secure, and easily scalable websites. Leveraging the power of Jamstack, we deliver an exceptional web development experience tailored to your specific requirements, Get an instant quote for your project.'
+  };
+}
+
 const Jamstack = async () => {
   const data = await getJamstackPage();
   if (!data) return;
@@ -69,14 +102,14 @@ const Jamstack = async () => {
             </p>
           </div>
         </div>
-        <div className="w-full">
+        <div className="w-full ">
           <video
             width="0"
             height="0"
-            className="w-full  rounded-xl border border-gray-600"
+            className="w-full rounded-xl border border-gray-600"
             controls
             preload='none'
-            poster='/assets/poster.webp'
+            poster={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.section1_thumbnail}`}
           >
             <source
               src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.section1_media}`}

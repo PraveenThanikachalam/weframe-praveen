@@ -105,7 +105,11 @@ const Navbar = () => {
         </div>
       </div>
 
-      <MobileNav visible2={visible2} setVisible2={setVisible2} navItems={navItems} />
+      <MobileNav
+        visible2={visible2}
+        setVisible2={setVisible2}
+        navItems={navItems}
+      />
     </div>
   );
 };

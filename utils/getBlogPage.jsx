@@ -1,8 +1,11 @@
 export const getBlogPage = async () => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/items/blogpage?fields=*, articles.article_id.banner, articles.article_id.title, articles.article_id.tags`,
+      `${process.env.NEXT_PUBLIC_API_URL}/items/blogpage?fields=*, articles.article_id.banner, articles.article_id.title, articles.article_id.tags, SEO.*`,
       {
+        headers: {
+          Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
+        },
         next: {
           revalidate: 60,
         },

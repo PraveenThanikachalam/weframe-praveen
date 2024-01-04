@@ -24,7 +24,7 @@ const StoryCard = ({ data }) => {
           {data?.heading}
         </h1>
         <div className="lg:flex md:flex hidden gap-2 my-3 flex-wrap">
-          {data?.tags.map((tag, index) => {
+          {data?.tags?.map((tag, index) => {
             return (
               <button
                 key={index}
@@ -84,7 +84,7 @@ const StoryCard = ({ data }) => {
             className="lg:w-[85%] w-full h-[95%] "
             controls={isPlaying ? true : false}
             preload="none"
-            poster="/assets/poster.webp"
+            poster={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.thumbnail}`}
           >
             <source
               src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.file}`}

@@ -8,7 +8,6 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const pathname = usePathname();
 
-
   const toggleServicesDropdown = () => {
     setServicesDropdownOpen(!servicesDropdownOpen);
   };
@@ -16,7 +15,6 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
   useEffect(() => {
     setVisible2(false);
   }, [pathname]);
-
 
   return (
     <div
@@ -26,7 +24,7 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
     >
       <Image
         onClick={() => {
-          setServicesDropdownOpen(false)
+          setServicesDropdownOpen(false);
           setVisible2(!visible2);
         }}
         alt="img"
@@ -38,50 +36,59 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
 
       <nav>
         <ul className="gap-8 p-6 rounded-xl glow flex flex-col text-white text-sm font-medium items-center justify-center">
-          {
-            navItems?.map((item,index)=>{
-              return item.links? <div key={item.label} className="group">
-              <div
-                onClick={toggleServicesDropdown}
-                className="cursor-pointer flex text-cyan-500 items-center justify-center gap-1"
-              >
-                {item?.label}
+          {navItems?.map((item, index) => {
+            return item.links ? (
+              <div key={item.label} className="group">
                 <div
-                  className={`transition-all duration-300 ${
-                    servicesDropdownOpen ? 'rotate-0' : '-rotate-90'
-                  }`}
+                  onClick={toggleServicesDropdown}
+                  className="cursor-pointer flex text-cyan-500 items-center justify-center gap-1"
                 >
-                  <Image
-                    alt="img"
-                    src={'/icons/dropdown.svg'}
-                    width={200}
-                    height={300}
-                    className="w-3 h-auto"
-                  />
+                  {item?.label}
+                  <div
+                    className={`transition-all duration-300 ${
+                      servicesDropdownOpen ? 'rotate-0' : '-rotate-90'
+                    }`}
+                  >
+                    <Image
+                      alt="img"
+                      src={'/icons/dropdown.svg'}
+                      width={200}
+                      height={300}
+                      className="w-3 h-auto"
+                    />
+                  </div>
                 </div>
-              </div>
-              <ul
-                className={`${
-                  servicesDropdownOpen ? 'max-h-96 mt-3' : 'max-h-0'
-                } space-y-2 text-white flex items-center transition-all duration-500 justify-center flex-col rounded-md w-[90vw] px-4 shadow-lg overflow-hidden`}
-              >
-                {item.links?.map((val, index2) => (
-                  <Link className="w-full" href={val?.link_url} key={val?.link_heading}>
-                    <div className=" w-full bg-[#020C0D] py-1 border-b border-gray-800 px-5 relative flex items-center justify-center">
-                      <div >
-                        <h1 className="text-md font-semibold text-white">
-                          {val?.link_heading}
-                        </h1>
+                <ul
+                  className={`${
+                    servicesDropdownOpen ? 'max-h-96 mt-3' : 'max-h-0'
+                  } space-y-2 text-white flex items-center transition-all duration-500 justify-center flex-col rounded-md w-[90vw] px-4 shadow-lg overflow-hidden`}
+                >
+                  {item.links?.map((val, index2) => (
+                    <Link
+                      className="w-full"
+                      href={val?.link_url}
+                      key={val?.link_heading}
+                    >
+                      <div className=" w-full bg-[#020C0D] py-1 border-b border-gray-800 px-5 relative flex items-center justify-center">
+                        <div>
+                          <h1 className="text-md font-semibold text-white">
+                            {val?.link_heading}
+                          </h1>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                ))}
-              </ul>
-            </div> : <>  <Link key={item?.label} className="underline" href={item?.url}>
-            {item?.label}
-          </Link></>
-            })
-          }
+                    </Link>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <>
+                {' '}
+                <Link key={item?.label} className="underline" href={item?.url}>
+                  {item?.label}
+                </Link>
+              </>
+            );
+          })}
         </ul>
       </nav>
     </div>

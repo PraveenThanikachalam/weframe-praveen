@@ -21,7 +21,9 @@ const ProgressFlow = ({ title, arr }) => {
               </time>
               <div
                 className={`flex flex-col sm:flex-row items-start mb-1  group-last:before:hidden before:absolute before:left-2 sm:before:left-0 ${
-                  index === arr.length - 1 ? 'before:h-[0vh]' : 'before:h-[25vh]'
+                  index === arr.length - 1
+                    ? 'before:h-[0vh]'
+                    : 'before:h-[25vh]'
                 }  before:px-px ${
                   select === item
                     ? 'before:bg-[#1FBCCB] after:bg-[#9bf7ff] after:border-[#1FBCCB]'

@@ -1,7 +1,9 @@
-'use client'
+'use client';
 import React, { useState, lazy, Suspense } from 'react';
 
-const TechStackCard = lazy(() => import('@/components/HomePage/techstackcomponents/TechStackCard'));
+const TechStackCard = lazy(() =>
+  import('@/components/HomePage/techstackcomponents/TechStackCard')
+);
 
 const TechStack = ({ techData }) => {
   const [shift, setShift] = useState(false);
@@ -51,15 +53,27 @@ const TechStack = ({ techData }) => {
         <div className="techstackComponents max-w-screen-xl w-full flex flex-col items-center justify-center lg:gap-12 gap-8">
           {shift ? (
             <>
-              {webFrameworks[0]?.development_platform_id?.sections?.map((plat, index) => (
-                <TechStackCard key={index} framework={plat.technologies} title={plat.heading} />
-              ))}
+              {webFrameworks[0]?.development_platform_id?.sections?.map(
+                (plat, index) => (
+                  <TechStackCard
+                    key={index}
+                    framework={plat.technologies}
+                    title={plat.heading}
+                  />
+                )
+              )}
             </>
           ) : (
             <>
-              {mobileFrameworks[0]?.development_platform_id?.sections?.map((plat, index) => (
-                <TechStackCard key={index} framework={plat.technologies} title={plat.heading} />
-              ))}
+              {mobileFrameworks[0]?.development_platform_id?.sections?.map(
+                (plat, index) => (
+                  <TechStackCard
+                    key={index}
+                    framework={plat.technologies}
+                    title={plat.heading}
+                  />
+                )
+              )}
             </>
           )}
         </div>

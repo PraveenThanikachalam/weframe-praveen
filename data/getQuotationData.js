@@ -1,7 +1,10 @@
 export default async function getQuotationData() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/items/quote_page?fields=*,quote.quotes_id.*`,
+    `${process.env.NEXT_PUBLIC_API_URL}/items/quote_page?fields=*,quote.quotes_id.*,SEO.*`,
     {
+      headers: {
+        Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
+      },
       next: {
         revalidate: 60,
       },

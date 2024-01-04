@@ -16,11 +16,11 @@ const HeroSection = ({ heroData }) => {
           </p>
         </div>
         <div className="gap-2 md:gap-5 flex flex-col lg:flex-row">
-          <Link href={'/quotation'}>
-            <Button variant="filled" label="Instant Quotation" />
+          <Link href={`${heroData?.button1_url}`}>
+            <Button variant="filled" label={heroData?.button1_text} />
           </Link>
-          <Link href={'/contact'}>
-            <Button variant="outline" label="Book a Meeting" />
+          <Link href={`${heroData?.button2_url}`}>
+            <Button variant="outline" label={heroData?.button2_text} />
           </Link>
         </div>
       </div>
