@@ -99,13 +99,13 @@ const Headless = async () => {
             </p>
           </div>
         </div>
-        <div className="w-full h-screen">
+        <div className="w-full">
           <video
             width="0"
             height="0"
             preload='none'
             poster={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.section1_thumbnail}`}
-            className="w-full h-full rounded-xl border border-gray-600"
+            className="w-full  rounded-xl border border-gray-600"
             controls
           >
             <source
@@ -118,7 +118,7 @@ const Headless = async () => {
 
       <div className="max-w-screen-xl w-full lg:my-16 my-12 flex flex-col gap-16">
         <div className="w-full flex lg:flex-row flex-col gap-5  lg:gap-0 items-center justify-between">
-          <h1 className="lg:text-4xl text-3xl md:text-4xl font-title-font text-white font-semibold">
+          <h1 className="lg:text-4xl text-3xl md:text-4xl md:text-left text-center font-title-font text-white font-semibold">
             {data?.section2_heading}
           </h1>
           <Link href={`${data?.section2_btn_url}`}>

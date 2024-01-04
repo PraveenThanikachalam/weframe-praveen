@@ -7,7 +7,6 @@ const CultureComponent = ({ title, arr }) => {
   const swiperRef = useRef();
   const [isMobile, setIsMobile] = useState(false);
 
-  console.log(arr)
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,7 +26,7 @@ const CultureComponent = ({ title, arr }) => {
       <div className=" w-full mx-auto max-w-screen-xl mb-12 z-50 flex items-center justify-center">
         <div className="w-full  flex flex-col lg:flex-row text-center lg:text-left items-center justify-between">
           <div>
-            <h1 className="lg:text-4xl text-2xl md:text-4xl text-white font-bold">
+            <h1 className="lg:text-4xl text-3xl md:text-4xl text-white font-bold">
               {title}
             </h1>
           </div>

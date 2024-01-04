@@ -102,11 +102,11 @@ const Jamstack = async () => {
             </p>
           </div>
         </div>
-        <div className="w-full h-screen">
+        <div className="w-full ">
           <video
             width="0"
             height="0"
-            className="w-full h-full rounded-xl border border-gray-600"
+            className="w-full rounded-xl border border-gray-600"
             controls
             preload='none'
             poster={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.section1_thumbnail}`}

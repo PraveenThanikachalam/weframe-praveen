@@ -13,7 +13,6 @@ const CaseStudy = ({pageData}) => {
     const [filtered, setFiltered] = useState();
     const [allTags, setAllTags] = useState([]);
 
-    console.log(data)
 
     useEffect(() => {
       // Extract tags from the 'data' object

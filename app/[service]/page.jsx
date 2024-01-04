@@ -4,6 +4,40 @@ import { getDynamicPage } from '@/utils/getDynamicPage';
 import Image from 'next/image';
 import React from 'react';
 
+export async function generateMetadata(
+  {params},
+   parent
+ ) {
+   const seoData = await getDynamicPage(params.service)
+   if (seoData && seoData.SEO) {
+     const previousImages = (await parent).openGraph?.images || [];
+     return {
+       title: seoData?.SEO?.meta_title,
+       description: seoData?.SEO?.meta_description,
+       alternates: {
+         canonical: seoData?.SEO?.canonical_url,
+       },
+       keywords:seoData?.SEO?.meta_keywords,
+       robots: {
+         index: !seoData?.SEO?.no_follow,
+         follow: !seoData?.SEO?.no_index,
+         nocache: true,
+       },
+       openGraph: {
+         images: [
+           `${process.env.NEXT_PUBLIC_BASE_URL}/assets/${seoData?.SEO?.og_image}`,
+           ...previousImages,
+         ],
+       },
+     };
+   }
+   return {
+     title: `WeframeTech: ${seoData?.heading}`,
+     description: seoData?.content,
+     keywords:seoData?.tags
+   };
+ }
+
 const Service = async ({ params }) => {
   const data = await getDynamicPage(params.service)
   if (!data) return;
