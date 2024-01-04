@@ -95,8 +95,8 @@ const OurClient = ({ clientsData }) => {
                         <Image
                           src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${client?.client_logo?.key}`}
                           className="h-auto w-10 md:w-14 lg:w-14 items-center flex-grow object-contain"
-                          width={0}
-                          height={0}
+                          width={100}
+                          height={100}
                           alt="img"
                           loading="lazy"
                         />
