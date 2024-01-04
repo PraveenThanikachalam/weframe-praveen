@@ -4,7 +4,6 @@ import CultureComponent from '@/components/about/CultureComponent';
 import BackLightEffect from '@/components/ui/BackLightEffect';
 import { getAboutPage } from '@/utils/getAboutPage';
 
-
 const AboutPage = async () => {
   const data = await getAboutPage();
   if (!data) return;

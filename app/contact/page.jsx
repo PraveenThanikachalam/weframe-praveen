@@ -9,14 +9,14 @@ const Contact = () => {
   const [show, setShow] = useState(false);
   const [services, setServices] = useState([]);
   const [data, setData] = useState('');
-  
+
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
-  
+
   // Handle form submission
   const onSubmit = async (formData) => {
     try {
@@ -35,13 +35,13 @@ const Contact = () => {
           }),
         }
       );
-  
+
       if (response.ok) {
         setShow(true);
         setTimeout(() => {
           setShow(false);
         }, 3000);
-  
+
         reset();
         setServices([]);
         const responseData = await response.json();
@@ -52,7 +52,7 @@ const Contact = () => {
       console.log(error);
     }
   };
-  
+
   // Memoize fetchPage function
   const fetchPage = useCallback(async () => {
     try {
@@ -69,7 +69,7 @@ const Contact = () => {
       console.log(error);
     }
   }, []); // empty dependency array since fetchPage does not depend on any external variable
-  
+
   useEffect(() => {
     fetchPage();
   }, [fetchPage]);

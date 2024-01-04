@@ -27,6 +27,7 @@ const Services = ({ servicesData }) => {
               key={index}
               title={service?.title}
               img={service.bg_image}
+              url={service.url}
             />
           );
         })}

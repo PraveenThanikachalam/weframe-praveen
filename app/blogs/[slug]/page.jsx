@@ -16,12 +16,11 @@ export async function generateMetadata({ params }) {
     slugToTitle(decodeURIComponent(params.slug))
   );
   return {
-    title: "WeframeTech: " + data?.title,
-  }
+    title: 'WeframeTech: ' + data?.title,
+  };
 }
 
 const Page = async ({ params }) => {
-
   const data = await getBlogArticle(
     slugToTitle(decodeURIComponent(params.slug))
   );
