@@ -5,12 +5,15 @@ import StoryCard from '@/components/HomePage/successstory/StoryCard';
 import Button from '@/components/ui/Button';
 import NudgeCard from '@/components/ui/NudgeCard';
 import { getFilterCaseStudies } from '@/utils/getFilterCaseStudies';
+import Link from 'next/link';
 
 const CaseStudy = ({pageData}) => {
     const [data, setData] = useState(pageData);
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [filtered, setFiltered] = useState();
     const [allTags, setAllTags] = useState([]);
+
+    console.log(data)
 
     useEffect(() => {
       // Extract tags from the 'data' object
@@ -129,7 +132,9 @@ const CaseStudy = ({pageData}) => {
     )}
   </div>
   <div className="w-full flex items-center justify-center my-16">
-    <Button variant="outline" label={'See More Case Studies'} />
+    <Link href={`${data?.button_url}`}>
+    <Button variant="outline" label={data?.button_text} />
+    </Link>
   </div>
   <div className="min-h-[60vh] w-screen p-6 flex items-center justify-center">
     <NudgeCard

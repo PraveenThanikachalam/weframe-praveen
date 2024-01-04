@@ -53,6 +53,10 @@ export default async function Home() {
           section1_description: data?.section1_description,
           icons_heading: data?.icons_heading,
           icons: data?.icons,
+          button1_url:data?.button1_url,
+          button1_text:data?.button1_text,
+          button2_url:data?.button2_url,
+          button2_text:data?.button2_text
         }}
       />
       <SuccessStory

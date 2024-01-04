@@ -1,67 +1,23 @@
+import TechStack from '@/components/HomePage/techstackcomponents/TechStack';
 import NudgeCard from '@/components/ui/NudgeCard';
-import { getBlogArticle } from '@/utils/getBlogArticle';
+import { getDynamicPage } from '@/utils/getDynamicPage';
 import Image from 'next/image';
+import React from 'react';
 
-function slugToTitle(slug) {
-  const word = slug
-    .split('-') // Split the slug into an array of words
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize the first letter of each word
-    .join(' '); // Join the words with a space
-
-  return word.replace('@', '-');
-}
-
-export async function generateMetadata(
- {params},
-  parent
-) {
-  const seoData = await getBlogArticle(
-    slugToTitle(decodeURIComponent(params.slug))
-  ); 
-  if (seoData && seoData.SEO) {
-    const previousImages = (await parent).openGraph?.images || [];
-    return {
-      title: seoData?.SEO?.meta_title,
-      description: seoData?.SEO?.meta_description,
-      alternates: {
-        canonical: seoData?.SEO?.canonical_url,
-      },
-      keywords:seoData?.SEO?.meta_keywords,
-      robots: {
-        index: !seoData?.SEO?.no_follow,
-        follow: !seoData?.SEO?.no_index,
-        nocache: true,
-      },
-      openGraph: {
-        images: [
-          `${process.env.NEXT_PUBLIC_BASE_URL}/assets/${seoData?.SEO?.og_image}`,
-          ...previousImages,
-        ],
-      },
-    };
-  }
-  return {
-    title: `WeframeTech: ${seoData?.title}`,
-    description: seoData?.content,
-    keywords:seoData?.tags
-  };
-}
-
-
-const Page = async ({ params }) => {
-
-  const data = await getBlogArticle(
-    slugToTitle(decodeURIComponent(params.slug))
-  );
+const Service = async ({ params }) => {
+  const data = await getDynamicPage(params.service)
   if (!data) return;
 
+  const techstack = {
+    section2_contents: data?.section1_content,
+  };
   return (
     <main className="w-full ">
       <div className="w-full flex items-center justify-center relative z-20">
         <div className="w-full -z-10 absolute h-screen  bottom-0  ">
           <Image
             alt="img"
-            src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.banner}`}
+            src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.background}`}
             className="w-full h-full object-cover"
             width={200}
             height={200}
@@ -83,13 +39,15 @@ const Page = async ({ params }) => {
             })}
           </div>
           <h1 className="lg:text-5xl md:text-4xl text-4xl font-bold text-white font-title-font">
-            {data?.title}
+            {data?.heading}
           </h1>
         </div>
       </div>
       <div className="max-w-screen-lg  md:p-20 p-6  flex items-center justify-center mx-auto text-white ">
         <div dangerouslySetInnerHTML={{ __html: data?.content }}></div>
       </div>
+
+      <TechStack techData={techstack}/>
       <div className="min-h-[60vh] w-screen p-6  flex items-center justify-center">
         <NudgeCard
           title={'Book a discovery call to witness speed'}
@@ -100,4 +58,4 @@ const Page = async ({ params }) => {
   );
 };
 
-export default Page;
+export default Service;

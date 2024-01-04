@@ -1,9 +1,11 @@
 import SvgRenderer from '@/lib/svg_renderer';
+import Link from 'next/link';
 
-const ServiceCard = ({ title, img }) => {
+const ServiceCard = ({ title, img ,url }) => {
   return (
+    <Link className='w-72 md:w-[30%]' href={`${url}`}>
     <div
-      className={`serviceCard cursor-pointer w-72 md:w-[30%] hover:shadow-sm hover:shadow-cyan-500 text-gray-300 hover:text-gray-100 transition-all duration-200 max-w-xs h-32 rounded-xl flex items-center justify-start relative border overflow-hidden border-gray-600`}
+      className={`serviceCard cursor-pointer  hover:shadow-sm hover:shadow-cyan-500 text-gray-300 hover:text-gray-100 transition-all duration-200 max-w-xs h-32 rounded-xl flex items-center justify-start relative border overflow-hidden border-gray-600`}
     >
       {img && (
         <SvgRenderer
@@ -17,7 +19,7 @@ const ServiceCard = ({ title, img }) => {
           {title}
         </h2>
       </div>
-    </div>
+    </div></Link>
   );
 };
 

@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 
 const TestimonialCard = ({
@@ -10,6 +11,8 @@ const TestimonialCard = ({
   authorDesc,
   authorPhoto,
   viewBtn,
+  viewUrl,
+  thumbnail
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -44,7 +47,7 @@ const TestimonialCard = ({
         <video
           ref={videoRef}
           preload='none'
-          poster='/assets/poster.webp'
+          poster={`${process.env.NEXT_PUBLIC_API_URL}/assets/${thumbnail}`}
           className="w-full h-full object-cover rounded-xl absolute inset-0 -z-[1]"
           loop
         >
@@ -57,9 +60,9 @@ const TestimonialCard = ({
       )}
       <div className="w-full h-full flex flex-col justify-between gap-3 rounded-xl">
         <div className="flex justify-end">
-          <p className="text-white text-xs font-bold cursor-pointer px-7 py-5">
+          <Link href={`${viewUrl}`}><p className="text-white text-xs font-bold cursor-pointer px-7 py-5">
             {viewBtn}
-          </p>
+          </p></Link>
         </div>
         <div className="w-full h-1/2 bg-gradient-to-t from-black/80 to-black/0 px-7 py-5 items-end flex justify-between">
           <div className="flex gap-2">

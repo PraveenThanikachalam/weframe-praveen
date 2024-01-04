@@ -1,5 +1,5 @@
 import { Lexend } from 'next/font/google';
-import { oceanwide, nt_adventure } from '@/fonts';
+import { oceanwide, nt_adventure } from '../fonts/index';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';

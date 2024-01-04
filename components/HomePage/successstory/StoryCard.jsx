@@ -84,7 +84,7 @@ const StoryCard = ({ data }) => {
             className="lg:w-[85%] w-full h-[95%] "
             controls={isPlaying ? true : false}
             preload="none"
-            poster="/assets/poster.webp"
+            poster={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.thumbnail}`}
           >
             <source
               src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.file}`}

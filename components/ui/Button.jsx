@@ -10,7 +10,7 @@ const Button = ({
   let style;
   if (variant === 'outline') {
     style =
-      'border-button-border glow text-white hover:shadow-button-glow transition-all duration-150';
+      'border-button-border glow text-white backdrop-blur-xl hover:shadow-button-glow transition-all duration-150';
   } else if (variant === 'filled') {
     style = 'border-white bg-white text-black shadow-button-glow';
   }

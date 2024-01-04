@@ -99,13 +99,13 @@ const Headless = async () => {
             </p>
           </div>
         </div>
-        <div className="w-full">
+        <div className="w-full h-screen">
           <video
             width="0"
             height="0"
             preload='none'
-            poster='/assets/poster.webp'
-            className="w-full  rounded-xl border border-gray-600"
+            poster={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.section1_thumbnail}`}
+            className="w-full h-full rounded-xl border border-gray-600"
             controls
           >
             <source
