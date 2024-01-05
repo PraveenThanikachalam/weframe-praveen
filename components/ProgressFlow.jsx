@@ -1,4 +1,4 @@
-import ProgressFlowCard from './ui/progressFlowCard';
+import ProgressFlowCard from './ui/ProgressFlowCard';
 
 const ProgressFlow = ({ title, arr }) => {
   return (
