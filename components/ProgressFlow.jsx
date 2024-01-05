@@ -7,10 +7,10 @@ const ProgressFlow = ({ title, arr }) => {
         {title}{' '}
       </h1>
 
-      <div class={`  mx-auto max-w-screen-xl h-full`}>
-        <div class="relative wrap overflow-hidden p-2 h-full">
+      <div className={`  mx-auto max-w-screen-xl h-full`}>
+        <div className="relative wrap overflow-hidden p-2 h-full">
           <div
-            class="border-2-2 absolute border-opacity-20 hidden md:block border-gray-700 h-full border"
+            className="border-2-2 absolute border-opacity-20 hidden md:block border-gray-700 h-full border"
             style={{ left: '50%' }}
           ></div>
 

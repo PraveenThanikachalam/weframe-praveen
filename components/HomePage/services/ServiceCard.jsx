@@ -23,7 +23,7 @@ const ServiceCard = ({ title, img ,url }) => {
         />
       )}
 
-      <div className="w-[70%] h-full bg-[url('/assets/services/unionbackground.svg')] bg-cover relative">
+      <div className="w-[70%] h-full bg-cover relative">
         <h2 className="text-xl font-bold   absolute bottom-6 left-6">
           {title}
         </h2>
