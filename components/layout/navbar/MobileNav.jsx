@@ -14,7 +14,7 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
 
   useEffect(() => {
     setVisible2(false);
-  }, [pathname]);
+  }, [pathname,setVisible2]);
 
   return (
     <div
