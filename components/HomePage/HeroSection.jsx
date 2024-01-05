@@ -2,10 +2,11 @@ import Button from '../ui/Button';
 import Link from 'next/link';
 import BackLightEffect from '../ui/BackLightEffect';
 import SvgRenderer from '@/lib/svg_renderer';
+import Image from 'next/image';
 
 const HeroSection = ({ heroData }) => {
   return (
-    <div className="h-[90vh] gap-10 text-center text-white w-full flex flex-col justify-evenly py-10 px-4 items-center relative">
+    <div className="h-[90vh]  gap-10 text-center  text-white w-full flex flex-col justify-evenly py-10 px-4 items-center relative">
       <div className="lg:w-[60%] w-full z-30  flex flex-col items-center justify-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold font-title-font">
           {heroData.hero_title}
@@ -78,10 +79,13 @@ const HeroSection = ({ heroData }) => {
             </div>
           </div>
         </div>
+
         <div className="absolute top-0 min-[450px]:-top-1/2">
           <BackLightEffect />
         </div>
       </div>
+      {/* <div className="w-52 sm:w-[300px] lg:w-[490px] h-[3px] blur-[0.8px] bg-[#42efff] absolute bottom-0   rounded-full"></div> */}
+
     </div>
   );
 };

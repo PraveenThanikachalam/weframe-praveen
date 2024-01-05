@@ -14,7 +14,7 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
 
   useEffect(() => {
     setVisible2(false);
-  }, [pathname]);
+  }, [pathname,setVisible2]);
 
   return (
     <div
@@ -38,7 +38,7 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
         <ul className="gap-8 p-6 rounded-xl glow flex flex-col text-white text-sm font-medium items-center justify-center">
           {navItems?.map((item, index) => {
             return item.links ? (
-              <div key={item.label} className="group">
+              <div key={item?.label} className="group">
                 <div
                   onClick={toggleServicesDropdown}
                   className="cursor-pointer flex text-cyan-500 items-center justify-center gap-1"
@@ -68,6 +68,7 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
                       className="w-full"
                       href={val?.link_url}
                       key={val?.link_heading}
+                      
                     >
                       <div className=" w-full bg-[#020C0D] py-1 border-b border-gray-800 px-5 relative flex items-center justify-center">
                         <div>
@@ -81,12 +82,11 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
                 </ul>
               </div>
             ) : (
-              <>
-                {' '}
-                <Link key={item?.label} className="underline" href={item?.url}>
+             
+                <Link key={index+100} className="underline" href={item?.url}>
                   {item?.label}
                 </Link>
-              </>
+             
             );
           })}
         </ul>

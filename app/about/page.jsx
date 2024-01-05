@@ -12,6 +12,7 @@ export async function generateMetadata(
   if (seoData.SEO) {
     const previousImages = (await parent).openGraph?.images || [];
     return {
+      metadataBase: new URL(seoData?.SEO?.canonical_url),
       title: seoData?.SEO?.meta_title,
       description: seoData?.SEO?.meta_description,
       alternates: {
@@ -80,6 +81,7 @@ const AboutPage = async () => {
         </div>
         <div className="absolute lg:-top-16 top-5 ">
           <BackLightEffect />
+
         </div>
       </div>
       <div className="lg:my-56 mt-28">

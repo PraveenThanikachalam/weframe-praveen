@@ -21,6 +21,7 @@ export async function generateMetadata(
   if (seoData && seoData.SEO) {
     const previousImages = (await parent).openGraph?.images || [];
     return {
+      metadataBase: new URL(seoData?.SEO?.canonical_url),
       title: seoData?.SEO?.meta_title,
       description: seoData?.SEO?.meta_description,
       alternates: {
@@ -41,7 +42,7 @@ export async function generateMetadata(
     };
   }
   return {
-    title: 'WeframeTech: ' + data?.title,
+    title: `WeframeTech: ${slugToTitle(decodeURIComponent(params.slug))}`,
   };
 }
 

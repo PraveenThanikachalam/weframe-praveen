@@ -16,6 +16,7 @@ export async function generateMetadata(
   if (seoData.SEO) {
     const previousImages = (await parent).openGraph?.images || [];
     return {
+      metadataBase: new URL(seoData?.SEO?.canonical_url),
       title: seoData?.SEO?.meta_title,
       description: seoData?.SEO?.meta_description,
       alternates: {
@@ -139,7 +140,7 @@ const Headless = async () => {
         </div>
       </div>
 
-      <div className="lg:my-20 mt-28">
+      <div className="mt-24">
         <ProgressFlow
           title={data?.section3_heading}
           arr={data?.section3_points}
