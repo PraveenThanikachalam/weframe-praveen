@@ -1,10 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useInView } from 'react-intersection-observer';
+
 
 const BlogCard = ({ title, image, link, tags }) => {
+  const { ref, inView } = useInView({
+    triggerOnce:true
+  });
   return (
-    <Link href={`${link}`} className="flex items-center  justify-center ">
+    <Link ref={ref} href={`${link}`} className={`flex items-center ${inView ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'} transition-all duration-500  justify-center `}>
       <div className="blog mt-6 border navbar hover:shadow-sm hover:shadow-white transition-all duration-200 border-gray-500 rounded-xl overflow-hidden w-full md:w-[550px]  min-h-[31vw] lg:w-[500px] ">
         <div className="">
           <Image

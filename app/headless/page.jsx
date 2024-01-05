@@ -139,7 +139,7 @@ const Headless = async () => {
         </div>
       </div>
 
-      <div className="lg:my-20 mt-28">
+      <div className="mt-24">
         <ProgressFlow
           title={data?.section3_heading}
           arr={data?.section3_points}

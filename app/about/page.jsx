@@ -80,6 +80,7 @@ const AboutPage = async () => {
         </div>
         <div className="absolute lg:-top-16 top-5 ">
           <BackLightEffect />
+
         </div>
       </div>
       <div className="lg:my-56 mt-28">

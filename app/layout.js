@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Matrix from '@/components/ui/Matrix';
+import NextTopLoader from 'nextjs-toploader';
 
 const font = Lexend({ subsets: ['latin'] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
       className={`${oceanwide.variable} ${nt_adventure.variable}`}
     >
       <body className={`${font.className} overflow-y-scroll no-scrollbar`}>
+      <NextTopLoader color="#00e6e6" showSpinner={false} easing="ease" height={2} />
         <Navbar />
         <Matrix />
         {children}
