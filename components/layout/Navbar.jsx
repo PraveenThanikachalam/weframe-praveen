@@ -53,9 +53,7 @@ const Navbar = () => {
           <div className="gap-16 flex text-sm font-medium items-center justify-center">
             {data?.nav_items?.map((item, index) => {
               return item?.links ? (
-                <div key={(index+4)*208}>
-
-              
+                <div key={(index + 4) * 208}>
                   {' '}
                   <div
                     onClick={() => {
@@ -83,7 +81,7 @@ const Navbar = () => {
                     setVisible={setVisible}
                     navlist={item?.links}
                   />{' '}
-                 </div>
+                </div>
               ) : (
                 <Link key={index} href={item?.url} aria-label="Blogs">
                   {item?.label}

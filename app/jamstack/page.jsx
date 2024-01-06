@@ -7,11 +7,8 @@ import Testimonials from '@/components/HomePage/Testimonials';
 import { getJamstackPage } from '@/utils/getJamstackPage';
 import Link from 'next/link';
 
-export async function generateMetadata(
- 
-  parent
-) {
-    const seoData = await getJamstackPage()
+export async function generateMetadata(parent) {
+  const seoData = await getJamstackPage();
   if (seoData.SEO) {
     const previousImages = (await parent).openGraph?.images || [];
     return {
@@ -21,7 +18,7 @@ export async function generateMetadata(
       alternates: {
         canonical: seoData?.SEO?.canonical_url,
       },
-      keywords:seoData?.SEO?.meta_keywords,
+      keywords: seoData?.SEO?.meta_keywords,
       robots: {
         index: !seoData?.SEO?.no_follow,
         follow: !seoData?.SEO?.no_index,
@@ -37,7 +34,8 @@ export async function generateMetadata(
   }
   return {
     title: 'WeframeTech',
-    description: 'Jamstack & Headless Commerce Agency, We recognize the demand for high-speed, secure, and easily scalable websites. Leveraging the power of Jamstack, we deliver an exceptional web development experience tailored to your specific requirements, Get an instant quote for your project.'
+    description:
+      'Jamstack & Headless Commerce Agency, We recognize the demand for high-speed, secure, and easily scalable websites. Leveraging the power of Jamstack, we deliver an exceptional web development experience tailored to your specific requirements, Get an instant quote for your project.',
   };
 }
 
@@ -109,7 +107,7 @@ const Jamstack = async () => {
             height="0"
             className="w-full rounded-xl border border-gray-600"
             controls
-            preload='none'
+            preload="none"
             poster={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.section1_thumbnail}`}
           >
             <source

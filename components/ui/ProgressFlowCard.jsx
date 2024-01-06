@@ -1,10 +1,10 @@
-'use client'
+'use client';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const ProgressFlowCard = ({ title, desc, index }) => {
   const { ref, inView } = useInView({
-    triggerOnce:true
+    triggerOnce: true,
   });
 
   return (

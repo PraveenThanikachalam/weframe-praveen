@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer';
 
 const StoryCard = ({ data }) => {
   const { ref, inView } = useInView({
-    triggerOnce:true
+    triggerOnce: true,
   });
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -22,7 +22,12 @@ const StoryCard = ({ data }) => {
     setIsPlaying(false);
   };
   return (
-    <div ref={ref} className={`lg:w-[80vw] ${inView ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'} transition-all duration-500 w-full max-w-screen-xl story-card-grd  border  border-gray-600 rounded-xl flex flex-col-reverse lg:flex-row p-5 `}>
+    <div
+      ref={ref}
+      className={`lg:w-[80vw] ${
+        inView ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+      } transition-all duration-500 w-full max-w-screen-xl story-card-grd  border  border-gray-600 rounded-xl flex flex-col-reverse lg:flex-row p-5 `}
+    >
       <div className="lg:w-[40%] w-full flex lg:p-6 p-1 flex-col items-center justify-center">
         <h1 className="lg:text-2xl text-lg font-bold text-white">
           {data?.heading}

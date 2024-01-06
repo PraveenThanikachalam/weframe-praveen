@@ -12,7 +12,7 @@ const TestimonialCard = ({
   authorPhoto,
   viewBtn,
   viewUrl,
-  thumbnail
+  thumbnail,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -46,7 +46,7 @@ const TestimonialCard = ({
       {type === 'video' && (
         <video
           ref={videoRef}
-          preload='none'
+          preload="none"
           poster={`${process.env.NEXT_PUBLIC_API_URL}/assets/${thumbnail}`}
           className="w-full h-full object-cover rounded-xl absolute inset-0 -z-[1]"
           loop
@@ -60,9 +60,11 @@ const TestimonialCard = ({
       )}
       <div className="w-full h-full flex flex-col justify-between gap-3 rounded-xl">
         <div className="flex justify-end">
-          <Link href={`${viewUrl}`}><p className="text-white text-xs font-bold cursor-pointer px-7 py-5">
-            {viewBtn}
-          </p></Link>
+          <Link href={`${viewUrl}`}>
+            <p className="text-white text-xs font-bold cursor-pointer px-7 py-5">
+              {viewBtn}
+            </p>
+          </Link>
         </div>
         <div className="w-full h-1/2 bg-gradient-to-t from-black/80 to-black/0 px-7 py-5 items-end flex justify-between">
           <div className="flex gap-2">
