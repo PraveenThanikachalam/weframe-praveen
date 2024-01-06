@@ -85,7 +85,7 @@ const Testimonials = ({ testData }) => {
                 authorDesc={item?.user_profession}
                 authorPhoto={item?.user_avatar?.key}
                 viewBtn={item?.project_button_name}
-                viewUrl = {item?.project_url}
+                viewUrl={item?.project_url}
                 thumbnail={item?.thumbnail?.key}
               />
             </SwiperSlide>

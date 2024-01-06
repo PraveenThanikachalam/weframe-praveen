@@ -9,7 +9,7 @@ import NextTopLoader from 'nextjs-toploader';
 const font = Lexend({ subsets: ['latin'] });
 
 export const metadata = {
-  title: "WeframeTech",
+  title: 'WeframeTech',
   description:
     'Jamstack & Headless Commerce Agency, We recognize the demand for high-speed, secure, and easily scalable websites. Leveraging the power of Jamstack, we deliver an exceptional web development experience tailored to your specific requirements, Get an instant quote for your project.',
   icons: {
@@ -24,7 +24,12 @@ export default function RootLayout({ children }) {
       className={`${oceanwide.variable} ${nt_adventure.variable}`}
     >
       <body className={`${font.className} overflow-y-scroll no-scrollbar`}>
-      <NextTopLoader color="#00e6e6" showSpinner={false} easing="ease" height={2} />
+        <NextTopLoader
+          color="#00e6e6"
+          showSpinner={false}
+          easing="ease"
+          height={2}
+        />
         <Navbar />
         <Matrix />
         {children}

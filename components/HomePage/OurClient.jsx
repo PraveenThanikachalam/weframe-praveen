@@ -81,7 +81,7 @@ const OurClient = ({ clientsData }) => {
                     height: '80%',
                     display: 'flex',
                     flexWrap: 'wrap',
-                    gap: `${isMobile ? "30px 50px" : "50px 100px"}`,
+                    gap: `${isMobile ? '30px 50px' : '50px 100px'}`,
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}

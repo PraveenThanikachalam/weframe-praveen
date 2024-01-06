@@ -15,7 +15,7 @@ const ProgressFlow = ({ title, arr }) => {
           ></div>
 
           {arr?.map((item, index) => (
-             <ProgressFlowCard
+            <ProgressFlowCard
               key={index}
               index={index}
               title={item.label}

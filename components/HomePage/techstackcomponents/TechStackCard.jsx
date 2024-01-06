@@ -14,9 +14,7 @@ const TechStackCard = ({ framework, title }) => {
         inView ? 'tech-stack  ' : ''
       }  transition-all duration-200   bg-gradient-to-br from-[#1FBCCB1F] via-[#020C0D] to-transparent  rounded-xl p-6 md:p-12 border relative border-gray-500 flex flex-col gap-10 overflow-hidden justify-start`}
     >
-      {
-        inView &&  <div className="flair"></div>
-      }
+      {inView && <div className="flair"></div>}
       <div className="w-full text-white font-medium glow  text-lg md:text-xl">
         <h2>{title}</h2>
       </div>
@@ -29,7 +27,6 @@ const TechStackCard = ({ framework, title }) => {
                   key={index}
                   className="flex flex-col lg:h-24 h-20 md:my-3 2xl:my-7 md:mx-6 2xl:mx-12  items-center grayscale hover:grayscale-0 justify-between transition-all duration-300"
                 >
-
                   <SvgRenderer
                     svgText={item.logo}
                     color="#1FBCCB"

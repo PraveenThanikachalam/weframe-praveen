@@ -11,13 +11,10 @@ function slugToTitle(slug) {
   return word.replace('@', '-');
 }
 
-export async function generateMetadata(
- {params},
-  parent
-) {
+export async function generateMetadata({ params }, parent) {
   const seoData = await getBlogArticle(
     slugToTitle(decodeURIComponent(params.slug))
-  ); 
+  );
   if (seoData && seoData.SEO) {
     const previousImages = (await parent).openGraph?.images || [];
     return {
@@ -27,7 +24,7 @@ export async function generateMetadata(
       alternates: {
         canonical: seoData?.SEO?.canonical_url,
       },
-      keywords:seoData?.SEO?.meta_keywords,
+      keywords: seoData?.SEO?.meta_keywords,
       robots: {
         index: !seoData?.SEO?.no_follow,
         follow: !seoData?.SEO?.no_index,
@@ -45,7 +42,6 @@ export async function generateMetadata(
     title: `WeframeTech: ${slugToTitle(decodeURIComponent(params.slug))}`,
   };
 }
-
 
 const Page = async ({ params }) => {
   const data = await getBlogArticle(
@@ -86,7 +82,10 @@ const Page = async ({ params }) => {
         </div>
       </div>
       <div className="max-w-screen-lg  md:p-20 p-6  flex items-center justify-center mx-auto text-white ">
-        <div dangerouslySetInnerHTML={{ __html: data?.content }}></div>
+        <div
+          className="article-section"
+          dangerouslySetInnerHTML={{ __html: data?.content }}
+        ></div>
       </div>
       <div className="min-h-[60vh] w-screen p-6  flex items-center justify-center">
         <NudgeCard
