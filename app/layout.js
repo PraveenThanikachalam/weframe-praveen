@@ -1,5 +1,5 @@
 import { Lexend } from 'next/font/google';
-import { oceanwide, nt_adventure } from '../fonts/index';
+import { oceanwide} from '../fonts/index';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${oceanwide.variable} ${nt_adventure.variable}`}
+      className={`${oceanwide.variable}`}
     >
       <body className={`${font.className} overflow-y-scroll no-scrollbar`}>
         <NextTopLoader

@@ -1,0 +1,51 @@
+/* Page.module.css */
+.articleSection blockquote,
+.articleSection dl,
+.articleSection dd,
+.articleSection h1,
+.articleSection h2,
+.articleSection h3,
+.articleSection h4,
+.articleSection h5,
+.articleSection h6,
+.articleSection hr,
+.articleSection figure,
+.articleSection p,
+.articleSection pre {
+  margin: 2rem 0;
+}
+
+.articleSection a {
+  color: #0070f3; /* Update with your desired color */
+}
+
+.articleSection strong {
+  font-weight: bold;
+}
+
+.articleSection em {
+  color: #fff; /* Update with your desired color */
+}
+
+.articleSection img {
+  width: 100%;
+}
+
+.articleSection p {
+  font-size: 1.1rem; /* Update with your desired font size */
+  color: #d6d6d6;
+}
+
+.articleSection h1 {
+  font-size: 2rem; /* Update with your desired font size */
+  font-weight: 600;
+}
+
+.articleSection h2,
+.articleSection h3,
+.articleSection h4,
+.articleSection h5,
+.articleSection h6 {
+  font-size: 1.5rem; /* Update with your desired font size */
+  font-weight: 600;
+}

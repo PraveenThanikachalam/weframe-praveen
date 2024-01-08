@@ -1,6 +1,7 @@
 import NudgeCard from '@/components/ui/NudgeCard';
 import { getBlogArticle } from '@/utils/getBlogArticle';
 import Image from 'next/image';
+import styles from './Article.module.css'
 
 function slugToTitle(slug) {
   const word = slug
@@ -83,7 +84,7 @@ const Page = async ({ params }) => {
       </div>
       <div className="max-w-screen-lg  md:p-20 p-6  flex items-center justify-center mx-auto text-white ">
         <div
-          className="article-section"
+          className={styles.articleSection}
           dangerouslySetInnerHTML={{ __html: data?.content }}
         ></div>
       </div>

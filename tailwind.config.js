@@ -13,8 +13,7 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily: {
-        'title-font': ['var(--oceanwide-font)'],
-        'nt-adventure': ['var(--ntadventure-font)'],
+        'title-font': ['var(--oceanwide-font)']
       },
       colors: {
         'accent-blue': '#1FBCCB',

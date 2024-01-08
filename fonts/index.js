@@ -5,7 +5,3 @@ export const oceanwide = localFont({
   variable: '--oceanwide-font',
 });
 
-export const nt_adventure = localFont({
-  src: '../fonts/nt_adventure/ntadventure.woff2',
-  variable: '--ntadventure-font',
-});
