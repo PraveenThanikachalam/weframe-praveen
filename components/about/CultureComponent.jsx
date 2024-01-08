@@ -84,10 +84,8 @@ const CultureComponent = ({ title, arr }) => {
                   <Image
                     alt="img"
                     src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${item?.directus_files_id}`}
-                    quality={100}
-                    loading="lazy"
                     width={1000}
-                    height={500}
+                    height={1000}
                     className="w-full h-full object-cover"
                   />
                 </div>

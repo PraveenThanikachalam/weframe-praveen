@@ -11,14 +11,16 @@ const BlogPage = ({ pageData }) => {
   const [allTags, setAllTags] = useState([]);
 
   function convertToSlug(inputString) {
-    return (
-      inputString
-        .toLowerCase() // Convert to lowercase
-        .replace('-', '@') // Replace spaces with hyphens
-        .replace(/\s+/g, '-') // Replace spaces with hyphens
-        // .replace(/[^\w-]+/g, '') // Remove non-word characters (excluding hyphens)
-        .replace(/--+/g, '-')
-    ); // Replace multiple hyphens with a single hyphen
+    if (inputString) {
+      return (
+        inputString
+          .toLowerCase() // Convert to lowercase
+          .replace('-', '@') // Replace spaces with hyphens
+          .replace(/\s+/g, '-') // Replace spaces with hyphens
+          // .replace(/[^\w-]+/g, '') // Remove non-word characters (excluding hyphens)
+          .replace(/--+/g, '-')
+      ); // Replace multiple hyphens with a single hyphen
+    }
   }
 
   useEffect(() => {
@@ -28,7 +30,7 @@ const BlogPage = ({ pageData }) => {
     // Extract unique tags from the 'case_studies' array
     let uniqueTagsFromCaseStudies = Array.from(
       new Set(
-        data?.articles?.flatMap((caseStudy) => caseStudy.article_id.tags || [])
+        data?.articles?.flatMap((caseStudy) => caseStudy.article_id?.tags || [])
       )
     );
     // Combine both sets of tags
@@ -146,10 +148,10 @@ const BlogPage = ({ pageData }) => {
             return (
               <BlogCard
                 key={index}
-                title={blog?.article_id.title}
-                image={blog?.article_id.banner}
-                tags={blog?.article_id.tags}
-                link={`/blogs/${convertToSlug(blog?.article_id.title)}`}
+                title={blog?.article_id?.title}
+                image={blog?.article_id?.banner}
+                tags={blog?.article_id?.tags}
+                link={`/blogs/${convertToSlug(blog?.article_id?.title)}`}
               />
             );
           })
