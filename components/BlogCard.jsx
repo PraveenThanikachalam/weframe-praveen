@@ -15,8 +15,8 @@ const BlogCard = ({ title, image, link, tags }) => {
         inView ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
       } transition-all duration-500  justify-center `}
     >
-      <div className="blog mt-6 border navbar hover:shadow-sm hover:shadow-white transition-all duration-200 border-gray-500 rounded-xl overflow-hidden w-full md:w-[550px]  min-h-[31vw] lg:w-[500px] ">
-        <div className="">
+      <div className="blog md:h-[520px] mt-6 border navbar hover:shadow-sm hover:shadow-white transition-all duration-200 border-gray-500 rounded-xl overflow-hidden w-full md:w-[550px] ">
+        <div className="h-72">
           <Image
             width={300}
             quality={100}
@@ -24,12 +24,12 @@ const BlogCard = ({ title, image, link, tags }) => {
             loading="lazy"
             src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${image}`}
             alt="img"
-            className=" h-auto w-full"
+            className=" h-full w-full object-cover"
           />
         </div>
-        <div className="w-full flex flex-col items-center justify-center p-3 lg:p-5 ">
+        <div className="w-full flex flex-col items-center justify-center p-5 lg:p-5 ">
           <div className="w-full">
-            <p className="lg:text-xl text-lg md:text-xl font-semibold text-white font-title-font">
+            <p className="lg:text-xl text-lg md:text-xl font-semibold text-white font-title-font line-clamp-3">
               {title}
             </p>
             <div className="w-full mt-4 flex flex-wrap items-center justify-start gap-2">

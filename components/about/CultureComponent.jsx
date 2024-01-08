@@ -2,6 +2,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
+import 'swiper/css';
 
 const CultureComponent = ({ title, arr }) => {
   const swiperRef = useRef();
@@ -79,13 +80,25 @@ const CultureComponent = ({ title, arr }) => {
                 key={item.id}
                 className="!h-full max-h-[400px] lg:max-h-[500px]"
               >
-                <div className="w-full rounded-xl overflow-hidden h-full">
+                <div className="w-full rounded-xl relative overflow-hidden h-full">
+                  <div className="absolute top-0 bottom-0 blur-sm left-0 right-0 -z-10">
+                    {' '}
+                    <Image
+                      alt="img"
+                      src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${item?.directus_files_id}`}
+                      width={1000}
+                      height={1000}
+                      loading="eager"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <Image
                     alt="img"
                     src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${item?.directus_files_id}`}
                     width={1000}
                     height={1000}
-                    className="w-full h-full object-cover"
+                    loading="eager"
+                    className="w-full h-full z-30 object-contain"
                   />
                 </div>
               </SwiperSlide>
