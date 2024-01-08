@@ -87,10 +87,9 @@ const SlideCard = ({ data }) => {
                       >
                         <Image
                           alt="img"
-                          loading="lazy"
                           src={'/icons/arrow-left.svg'}
-                          width={200}
-                          height={300}
+                          width={0}
+                          height={0}
                           className="w-4 h-auto"
                         />
                       </div>
@@ -101,8 +100,8 @@ const SlideCard = ({ data }) => {
                         <Image
                           alt="img"
                           src={'/icons/arrow-right.svg'}
-                          width={200}
-                          height={300}
+                          width={0}
+                          height={0}
                           className="w-4 h-auto"
                         />
                       </div>

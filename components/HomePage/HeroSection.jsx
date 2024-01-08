@@ -11,7 +11,7 @@ const HeroSection = ({ heroData }) => {
           {heroData.hero_title}
         </h1>
         <div className="lg:w-[70%] w-full">
-          <p className="text-base font-light my-2 md:my-7 text-white">
+          <p className="text-base font-light my-2 md:my-7 text-gray-200">
             {heroData.hero_desc}
           </p>
         </div>

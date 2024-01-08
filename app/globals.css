@@ -166,7 +166,7 @@ body {
   scale: 0.4;
 }
 
-.sr-only {
+/* .sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -224,4 +224,4 @@ input::-webkit-inner-spin-button {
   h6 {
     @apply lg:text-xl text-lg font-semibold;
   }
-}
+} */
