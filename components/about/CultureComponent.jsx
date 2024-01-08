@@ -7,7 +7,6 @@ const CultureComponent = ({ title, arr }) => {
   const swiperRef = useRef();
   const [isMobile, setIsMobile] = useState(false);
 
-
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;

@@ -8,11 +8,8 @@ import ProgressFlow from '@/components/ProgressFlow';
 import { getHeadlessPage } from '@/utils/getHeadlessPage';
 import Link from 'next/link';
 
-export async function generateMetadata(
- 
-  parent
-) {
-    const seoData = await getHeadlessPage()
+export async function generateMetadata(parent) {
+  const seoData = await getHeadlessPage();
   if (seoData.SEO) {
     const previousImages = (await parent).openGraph?.images || [];
     return {
@@ -22,7 +19,7 @@ export async function generateMetadata(
       alternates: {
         canonical: seoData?.SEO?.canonical_url,
       },
-      keywords:seoData?.SEO?.meta_keywords,
+      keywords: seoData?.SEO?.meta_keywords,
       robots: {
         index: !seoData?.SEO?.no_follow,
         follow: !seoData?.SEO?.no_index,
@@ -38,7 +35,8 @@ export async function generateMetadata(
   }
   return {
     title: 'WeframeTech',
-    description: 'Jamstack & Headless Commerce Agency, We recognize the demand for high-speed, secure, and easily scalable websites. Leveraging the power of Jamstack, we deliver an exceptional web development experience tailored to your specific requirements, Get an instant quote for your project.'
+    description:
+      'Jamstack & Headless Commerce Agency, We recognize the demand for high-speed, secure, and easily scalable websites. Leveraging the power of Jamstack, we deliver an exceptional web development experience tailored to your specific requirements, Get an instant quote for your project.',
   };
 }
 
@@ -104,7 +102,7 @@ const Headless = async () => {
           <video
             width="0"
             height="0"
-            preload='none'
+            preload="none"
             poster={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.section1_thumbnail}`}
             className="w-full  rounded-xl border border-gray-600"
             controls

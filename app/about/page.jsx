@@ -4,11 +4,8 @@ import CultureComponent from '@/components/about/CultureComponent';
 import BackLightEffect from '@/components/ui/BackLightEffect';
 import { getAboutPage } from '@/utils/getAboutPage';
 
-export async function generateMetadata(
- 
-  parent
-) {
-    const seoData = await getAboutPage()
+export async function generateMetadata(parent) {
+  const seoData = await getAboutPage();
   if (seoData.SEO) {
     const previousImages = (await parent).openGraph?.images || [];
     return {
@@ -18,7 +15,7 @@ export async function generateMetadata(
       alternates: {
         canonical: seoData?.SEO?.canonical_url,
       },
-      keywords:seoData?.SEO?.meta_keywords,
+      keywords: seoData?.SEO?.meta_keywords,
       robots: {
         index: !seoData?.SEO?.no_follow,
         follow: !seoData?.SEO?.no_index,
@@ -34,10 +31,10 @@ export async function generateMetadata(
   }
   return {
     title: 'WeframeTech',
-    description: 'Jamstack & Headless Commerce Agency, We recognize the demand for high-speed, secure, and easily scalable websites. Leveraging the power of Jamstack, we deliver an exceptional web development experience tailored to your specific requirements, Get an instant quote for your project.'
+    description:
+      'Jamstack & Headless Commerce Agency, We recognize the demand for high-speed, secure, and easily scalable websites. Leveraging the power of Jamstack, we deliver an exceptional web development experience tailored to your specific requirements, Get an instant quote for your project.',
   };
 }
-
 
 const AboutPage = async () => {
   const data = await getAboutPage();
@@ -81,7 +78,6 @@ const AboutPage = async () => {
         </div>
         <div className="absolute lg:-top-16 top-5 ">
           <BackLightEffect />
-
         </div>
       </div>
       <div className="lg:my-56 mt-28">

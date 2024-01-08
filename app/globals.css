@@ -183,4 +183,45 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-
+@layer utilities {
+  .article-section blockquote,
+  dl,
+  dd,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hr,
+  figure,
+  p,
+  pre {
+    @apply my-3 lg:my-5;
+  }
+  .article-section a {
+    @apply text-accent-blue;
+  }
+  .article-section strong {
+    @apply font-bold;
+  }
+  .article-section em {
+    @apply text-white;
+  }
+  .article-section img {
+    @apply w-full;
+  }
+  .article-section p {
+    @apply lg:text-lg font-light text-[#d6d6d6];
+  }
+  .article-section h1 {
+    @apply lg:text-3xl text-2xl font-semibold;
+  }
+  .article-section h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply lg:text-xl text-lg font-semibold;
+  }
+}

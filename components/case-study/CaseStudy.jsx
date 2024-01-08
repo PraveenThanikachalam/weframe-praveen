@@ -7,12 +7,11 @@ import NudgeCard from '@/components/ui/NudgeCard';
 import { getFilterCaseStudies } from '@/utils/getFilterCaseStudies';
 import Link from 'next/link';
 
-const CaseStudy = ({pageData}) => {
-    const [data, setData] = useState(pageData);
-    const [selectedFilters, setSelectedFilters] = useState([]);
-    const [filtered, setFiltered] = useState();
-    const [allTags, setAllTags] = useState([]);
-
+const CaseStudy = ({ pageData }) => {
+  const [data, setData] = useState(pageData);
+  const [selectedFilters, setSelectedFilters] = useState([]);
+  const [filtered, setFiltered] = useState();
+  const [allTags, setAllTags] = useState([]);
 
   useEffect(() => {
     // Extract tags from the 'data' object
@@ -95,52 +94,58 @@ const CaseStudy = ({pageData}) => {
 
               const isTagSelected = selectedFilters.includes(tag);
 
-          return (
-            <button
-              onClick={(e) => {
-                if (isTagSelected) {
-                  setSelectedFilters(
-                    selectedFilters.filter((name) => name !== tag)
-                  );
-                } else {
-                  setSelectedFilters([...selectedFilters, tag]);
-                }
-              }}
-              key={index}
-              className={`px-4 py-2  ${
-                isTagSelected
-                  ? 'bg-black text-white border border-cyan-300 shadow-sm shadow-cyan-300'
-                  : 'borderGrd text-[#999999]'
-              } rounded-2xl  text-xs font-fira-code`}
-            >
-              {tag}
-            </button>
-          );
-        })}
+              return (
+                <button
+                  onClick={(e) => {
+                    if (isTagSelected) {
+                      setSelectedFilters(
+                        selectedFilters.filter((name) => name !== tag)
+                      );
+                    } else {
+                      setSelectedFilters([...selectedFilters, tag]);
+                    }
+                  }}
+                  key={index}
+                  className={`px-4 py-2  ${
+                    isTagSelected
+                      ? 'bg-black text-white border border-cyan-300 shadow-sm shadow-cyan-300'
+                      : 'borderGrd text-[#999999]'
+                  } rounded-2xl  text-xs font-fira-code`}
+                >
+                  {tag}
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div className="w-full flex flex-col gap-14 items-center justify-center">
-    {selectedFilters.length > 0 && filtered && filtered.length === 0 ? (
-      <p className='font-title-font text-gray-300 text-sm'>No Case Studies Found.</p>
-    ) : (
-      (filtered ? filtered : data?.case_studies)?.map((item, index) => (
-        <StoryCard key={index} data={filtered ? item : item.case_studies_id} />
-      ))
-    )}
-  </div>
-  <div className="w-full flex items-center justify-center my-16">
-    <Link href={`${data?.button_url}`}>
-    <Button variant="outline" label={data?.button_text} />
-    </Link>
-  </div>
-  <div className="min-h-[60vh] w-screen p-6 flex items-center justify-center">
-    <NudgeCard
-      title={data?.last_section_heading}
-      label={data?.last_section_button_text}
-      url={data?.last_section_button_url}
-    />
-  </div>
-</main>
-)}
+      <div className="w-full flex flex-col gap-14 items-center justify-center">
+        {selectedFilters.length > 0 && filtered && filtered.length === 0 ? (
+          <p className="font-title-font text-gray-300 text-sm">
+            No Case Studies Found.
+          </p>
+        ) : (
+          (filtered ? filtered : data?.case_studies)?.map((item, index) => (
+            <StoryCard
+              key={index}
+              data={filtered ? item : item.case_studies_id}
+            />
+          ))
+        )}
+      </div>
+      <div className="w-full flex items-center justify-center my-16">
+        <Link href={`${data?.button_url}`}>
+          <Button variant="outline" label={data?.button_text} />
+        </Link>
+      </div>
+      <div className="min-h-[60vh] w-screen p-6 flex items-center justify-center">
+        <NudgeCard
+          title={data?.last_section_heading}
+          label={data?.last_section_button_text}
+          url={data?.last_section_button_url}
+        />
+      </div>
+    </main>
+  );
+};
 export default CaseStudy;

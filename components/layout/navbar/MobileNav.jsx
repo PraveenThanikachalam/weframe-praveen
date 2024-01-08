@@ -14,7 +14,7 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
 
   useEffect(() => {
     setVisible2(false);
-  }, [pathname,setVisible2]);
+  }, [pathname, setVisible2]);
 
   return (
     <div
@@ -68,7 +68,6 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
                       className="w-full"
                       href={val?.link_url}
                       key={val?.link_heading}
-                      
                     >
                       <div className=" w-full bg-[#020C0D] py-1 border-b border-gray-800 px-5 relative flex items-center justify-center">
                         <div>
@@ -82,11 +81,9 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
                 </ul>
               </div>
             ) : (
-             
-                <Link key={index+100} className="underline" href={item?.url}>
-                  {item?.label}
-                </Link>
-             
+              <Link key={index + 100} className="underline" href={item?.url}>
+                {item?.label}
+              </Link>
             );
           })}
         </ul>

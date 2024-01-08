@@ -12,7 +12,7 @@ import { useInView } from 'react-intersection-observer';
 
 const SlideCard = ({ data }) => {
   const { ref, inView } = useInView({
-    triggerOnce:true
+    triggerOnce: true,
   });
   const swiperRef = useRef();
   const [isMobile, setIsMobile] = useState(false);
@@ -31,7 +31,12 @@ const SlideCard = ({ data }) => {
   }, []);
 
   return (
-    <div ref={ref} className={`w-full max-w-screen-xl ${inView ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'} transition-all duration-500 mx-auto items-center justify-center flex`}>
+    <div
+      ref={ref}
+      className={`w-full max-w-screen-xl ${
+        inView ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+      } transition-all duration-500 mx-auto items-center justify-center flex`}
+    >
       <Swiper
         // install Swiper modules
         spaceBetween={20}

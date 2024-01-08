@@ -85,7 +85,6 @@ const HeroSection = ({ heroData }) => {
         </div>
       </div>
       {/* <div className="w-52 sm:w-[300px] lg:w-[490px] h-[3px] blur-[0.8px] bg-[#42efff] absolute bottom-0   rounded-full"></div> */}
-
     </div>
   );
 };
