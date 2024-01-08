@@ -11,6 +11,7 @@ const BlogCard = ({ title, image, link, tags }) => {
     <Link
       ref={ref}
       href={`${link}`}
+      target="_blank"
       className={`flex items-center ${
         inView ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
       } transition-all duration-500  justify-center `}
