@@ -1,4 +1,5 @@
 'use client';
+// Import necessary modules
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,8 +9,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 
-import { convertToSlug } from '@/lib/utils';
 import { useInView } from 'react-intersection-observer';
+import useAssetInfo from '@/hooks/useAssetInfo';
 
 const SlideCard = ({ data }) => {
   const { ref, inView } = useInView({
@@ -17,6 +18,33 @@ const SlideCard = ({ data }) => {
   });
   const swiperRef = useRef();
   const [isMobile, setIsMobile] = useState(false);
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [slideStates, setSlideStates] = useState(data.map(() => false));
+  const [currentSlide, setCurrentSlide] = useState(null);
+
+  const videoRefs = data.map(() => useRef(null));
+
+  const handlePlay = (index) => {
+    if (videoRefs[index].current) {
+      videoRefs[index].current.play();
+      setIsPlaying(true);
+      setCurrentSlide(index);
+      setSlideStates((prevStates) =>
+        prevStates.map((state, i) => (i === index ? true : false))
+      );
+    }
+  };
+
+  const handlePause = () => {
+    if (videoRefs[currentSlide] && videoRefs[currentSlide].current) {
+      videoRefs[currentSlide].current.pause();
+      setIsPlaying(false);
+      setSlideStates((prevStates) =>
+        prevStates.map((state, i) => (i === currentSlide ? false : state))
+      );
+    }
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,24 +75,27 @@ const SlideCard = ({ data }) => {
         }}
         loop={true}
         style={{
-          width: `${isMobile ? '92vw' : '80vw'}`,
+          width: `${isMobile ? '92vw' : '79vw'}`,
           position: 'relative',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          //   background:'white'
         }}
       >
         {data?.map((slide, index) => {
+          const mediaUrl = `${process.env.NEXT_PUBLIC_API_URL}/assets/${slide?.case_studies_id?.file}`;
+
+          const { type, error } = useAssetInfo(mediaUrl);
+
           return (
             <SwiperSlide key={index}>
-              <div className=" w-full story-card-grd relative border overflow-hidden items-center justify-center  border-gray-600 rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
-                <div className="lg:w-[40%] w-full flex lg:p-6 p-1 flex-col items-center justify-center">
-                  <h1 className="lg:text-2xl text-lg font-bold text-white">
-                    {slide?.case_study_heading}
+              <div className=" w-full lg:h-[480px]  story-card-grd relative border overflow-hidden items-center justify-center rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
+                <div className="lg:w-[40%] w-full flex lg:p-6 p-1 flex-col items-start justify-center">
+                  <h1 className="lg:text-2xl text-lg font-bold text-white line-clamp-2">
+                    {slide?.case_studies_id?.heading}
                   </h1>
                   <div className="lg:flex md:flex hidden gap-2 my-3 flex-wrap">
-                    {slide?.tags?.map((tag, index) => {
+                    {slide?.case_studies_id?.tags?.map((tag, index) => {
                       return (
                         <button
                           key={index}
@@ -76,10 +107,10 @@ const SlideCard = ({ data }) => {
                     })}
                   </div>
 
-                  <p className="text-sm mt-2 text-gray-300">
-                    {slide?.case_study_description}
+                  <p className="text-sm mt-2 text-gray-300 line-clamp-6">
+                    {slide?.case_studies_id?.description}
                   </p>
-                  <div className="flex gap-3 mt-5 relative items-center justify-between w-full">
+                  <div className="flex lg:flex-row flex-col gap-3 mt-5 relative items-center justify-between w-full">
                     <div className={` gap-3 flex z-50 text-white`}>
                       <div
                         onClick={() => swiperRef.current.slidePrev()}
@@ -106,26 +137,76 @@ const SlideCard = ({ data }) => {
                         />
                       </div>
                     </div>
-                    <Link
-                      href={`/blogs/${convertToSlug(slide.case_study_heading)}`}
-                    >
-                      <button
-                        className="    
-                      w-36 bg-white hover:text-white hover:bg-transparent border border-gray-500 rounded-full px-4 py-3 transition-all duration-150  font-medium"
+                    {!error && type === 'video' ? (
+                      <>
+                        {slideStates[index] ? (
+                          <button
+                            onClick={() => {
+                              handlePause(index);
+                            }}
+                            className={
+                              'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent rounded-full px-4 py-3 transition-all duration-150  font-medium'
+                            }
+                          >
+                            {' '}
+                            Pause
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => handlePlay(index)}
+                            className={
+                              'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent rounded-full px-4 py-3 transition-all duration-150  font-medium'
+                            }
+                          >
+                            {' '}
+                            Play
+                          </button>
+                        )}
+                      </>
+                    ) : (
+                      <Link
+                        className="w-full"
+                        href={`${slide?.case_studies_id?.button_url}`}
                       >
-                        {slide?.case_study_btn_text}
-                      </button>
-                    </Link>
+                        <button
+                          className={
+                            'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent rounded-full px-4 py-3 transition-all duration-150  font-medium'
+                          }
+                        >
+                          {' '}
+                          {slide?.case_studies_id?.button_text}
+                        </button>
+                      </Link>
+                    )}
                   </div>
                 </div>
-                <div className="lg:w-[60%] w-full py-2  lg:py-0 flex items-center justify-center">
-                  <Image
-                    width={400}
-                    height={300}
-                    className=" h-auto lg:w-[85%] w-full rounded-xl"
-                    src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${slide.image.key}`}
-                    alt=""
-                  />
+                <div className="lg:w-[60%] h-full w-full py-2  lg:py-0 flex items-center justify-center">
+                  {!error &&
+                    (type === 'video' ? (
+                      <video
+                        ref={videoRefs[index]}
+                        width="0"
+                        height="0"
+                        className="lg:w-[85%] w-full h-[95%] "
+                        controls={isPlaying ? true : false}
+                        preload="none"
+                        poster={`${process.env.NEXT_PUBLIC_API_URL}/assets/${slide?.case_studies_id?.thumbnail}`}
+                      >
+                        <source
+                          src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${slide?.case_studies_id?.file}`}
+                          type="video/ogg"
+                        />
+                      </video>
+                    ) : (
+                      <Image
+                        width={500}
+                        height={500}
+                        loading="lazy"
+                        className=" h-auto lg:w-[90%] lg:h-[90%] object-cover rounded-md w-full"
+                        src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${slide?.case_studies_id?.file}`}
+                        alt=""
+                      />
+                    ))}
                 </div>
               </div>
             </SwiperSlide>

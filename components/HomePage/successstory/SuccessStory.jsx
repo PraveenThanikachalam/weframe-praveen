@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Button from '../../ui/Button';
 import SlideCard from './SlideCard';
+import StoryCard from './StoryCard';
 
 const SuccessStory = ({ successData }) => {
   return (
@@ -18,7 +19,11 @@ const SuccessStory = ({ successData }) => {
           </Link>
         </div>
       </div>
-      <SlideCard data={successData?.cases} />
+      {successData?.cases.length > 1 ? (
+        <SlideCard data={successData?.cases} />
+      ) : (
+        <StoryCard data={successData?.cases[0].case_studies_id} />
+      )}
     </div>
   );
 };

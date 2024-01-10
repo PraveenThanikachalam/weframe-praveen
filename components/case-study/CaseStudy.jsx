@@ -18,21 +18,21 @@ const CaseStudy = ({ pageData }) => {
     let tagsFromData = data?.tags?.map((tag) => tag.name) || [];
 
     // Extract unique tags from the 'case_studies' array
-    let uniqueTagsFromCaseStudies = Array.from(
-      new Set(
-        data?.case_studies?.flatMap(
-          (caseStudy) => caseStudy.case_studies_id.tags || []
-        )
-      )
-    );
+    // let uniqueTagsFromCaseStudies = Array.from(
+    //   new Set(
+    //     data?.case_studies?.flatMap(
+    //       (caseStudy) => caseStudy.case_studies_id.tags || []
+    //     )
+    //   )
+    // );
     // Combine both sets of tags
-    let combinedTags = [...tagsFromData, ...uniqueTagsFromCaseStudies];
+    // let combinedTags = [...tagsFromData, ...uniqueTagsFromCaseStudies];
 
     // Remove duplicates by creating a Set
-    let uniqueCombinedTags = Array.from(new Set(combinedTags));
+    // let uniqueCombinedTags = Array.from(new Set(combinedTags));
 
     // Set the 'allTags' state
-    setAllTags(uniqueCombinedTags);
+    setAllTags(tagsFromData);
   }, [data]);
 
   // Use 'allTags' as needed in your component

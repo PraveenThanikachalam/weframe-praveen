@@ -1,6 +1,6 @@
 export default async function getHomeData() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/items/homepage?fields=*,section2_contents.development_platform_id.*,testimonials.*,SEO.*`,
+    `${process.env.NEXT_PUBLIC_API_URL}/items/homepage?fields=*, section2_contents.development_platform_id.*, testimonials.*, SEO.* , case_studies.*, case_studies.case_studies_id.*`,
     {
       headers: {
         Authorization: `Bearer ${process.env.BEARER_TOKEN}`,

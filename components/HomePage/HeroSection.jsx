@@ -8,11 +8,11 @@ const HeroSection = ({ heroData }) => {
     <div className="h-[90vh]  gap-10 text-center  text-white w-full flex flex-col justify-evenly py-10 px-4 items-center relative">
       <div className="lg:w-[60%] w-full z-30  flex flex-col items-center justify-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold font-title-font">
-          {heroData.hero_title}
+          {heroData?.hero_title}
         </h1>
         <div className="lg:w-[70%] w-full">
           <p className="text-base font-light my-2 md:my-7 text-gray-200">
-            {heroData.hero_desc}
+            {heroData?.hero_desc}
           </p>
         </div>
         <div className="gap-2 md:gap-5 flex flex-col lg:flex-row">
