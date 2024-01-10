@@ -32,26 +32,26 @@ const TechStack = ({ techData }) => {
               onClick={() => {
                 setShift(!shift);
               }}
-              className={`flex items-center justify-center transition-all duration-200 z-20 font-semibold cursor-pointer text-md w-[50%] h-full rounded-l-xl ${
-                shift ? ' text-white' : 'text-black '
+              className={`flex items-center z-20 justify-center transition-all duration-200  font-semibold cursor-pointer text-md w-[50%] h-full rounded-r-xl ${
+                shift ? 'text-white' : ' text-black'
               } `}
             >
-              Mobile
+              Web
             </div>
             <div
               onClick={() => {
                 setShift(!shift);
               }}
-              className={`flex items-center z-20 justify-center transition-all duration-200  font-semibold cursor-pointer text-md w-[50%] h-full rounded-r-xl ${
-                shift ? 'text-black ' : ' text-white'
+              className={`flex items-center justify-center transition-all duration-200 z-20 font-semibold cursor-pointer text-md w-[50%] h-full rounded-l-xl ${
+                shift ? ' text-black' : 'text-white'
               } `}
             >
-              Web
+              Mobile
             </div>
           </div>
         </div>
         <div className="techstackComponents max-w-screen-xl w-full flex flex-col items-center justify-center lg:gap-12 gap-8">
-          {shift ? (
+          {!shift ? (
             <>
               {webFrameworks[0]?.development_platform_id?.sections?.map(
                 (plat, index) => (
