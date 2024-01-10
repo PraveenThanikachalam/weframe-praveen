@@ -19,32 +19,43 @@ const SlideCard = ({ data }) => {
   const swiperRef = useRef();
   const [isMobile, setIsMobile] = useState(false);
 
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [slideStates, setSlideStates] = useState(data.map(() => false));
-  const [currentSlide, setCurrentSlide] = useState(null);
+  const SlideCardInfo = (slide) => {
+    const videoRef = useRef(null);
+    const { type, error } = useAssetInfo(`${process.env.NEXT_PUBLIC_API_URL}/assets/${slide?.case_studies_id?.file}`);
+    const [isPlaying, setIsPlaying] = useState(false);
 
-  const videoRefs = data.map(() => useRef(null));
+    const handlePlay = () => {
+      if (videoRef.current) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      }
+    };
 
-  const handlePlay = (index) => {
-    if (videoRefs[index].current) {
-      videoRefs[index].current.play();
-      setIsPlaying(true);
-      setCurrentSlide(index);
-      setSlideStates((prevStates) =>
-        prevStates.map((state, i) => (i === index ? true : false))
-      );
-    }
+    const handlePause = () => {
+      if (videoRef.current) {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
+    };
+
+    useEffect(() => {
+      return () => {
+        if (videoRef.current) {
+          videoRef.current.pause();
+        }
+      };
+    }, []);
+
+    return {
+      videoRef,
+      type,
+      error,
+      isPlaying,
+      handlePlay,
+      handlePause,
+    };
   };
 
-  const handlePause = () => {
-    if (videoRefs[currentSlide] && videoRefs[currentSlide].current) {
-      videoRefs[currentSlide].current.pause();
-      setIsPlaying(false);
-      setSlideStates((prevStates) =>
-        prevStates.map((state, i) => (i === currentSlide ? false : state))
-      );
-    }
-  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -83,9 +94,8 @@ const SlideCard = ({ data }) => {
         }}
       >
         {data?.map((slide, index) => {
-          const mediaUrl = `${process.env.NEXT_PUBLIC_API_URL}/assets/${slide?.case_studies_id?.file}`;
 
-          const { type, error } = useAssetInfo(mediaUrl);
+          const { videoRef, type, error, isPlaying, handlePlay, handlePause } = SlideCardInfo(slide);
 
           return (
             <SwiperSlide key={index}>
@@ -139,10 +149,10 @@ const SlideCard = ({ data }) => {
                     </div>
                     {!error && type === 'video' ? (
                       <>
-                        {slideStates[index] ? (
+                        {isPlaying ? (
                           <button
                             onClick={() => {
-                              handlePause(index);
+                              handlePause();
                             }}
                             className={
                               'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent rounded-full px-4 py-3 transition-all duration-150  font-medium'
@@ -153,7 +163,7 @@ const SlideCard = ({ data }) => {
                           </button>
                         ) : (
                           <button
-                            onClick={() => handlePlay(index)}
+                            onClick={() => handlePlay()}
                             className={
                               'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent rounded-full px-4 py-3 transition-all duration-150  font-medium'
                             }
@@ -184,7 +194,7 @@ const SlideCard = ({ data }) => {
                   {!error &&
                     (type === 'video' ? (
                       <video
-                        ref={videoRefs[index]}
+                        ref={videoRef}
                         width="0"
                         height="0"
                         className="lg:w-[90%] w-full h-[90%] "
