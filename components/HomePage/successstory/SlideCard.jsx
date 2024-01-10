@@ -187,7 +187,7 @@ const SlideCard = ({ data }) => {
                         ref={videoRefs[index]}
                         width="0"
                         height="0"
-                        className="lg:w-[85%] w-full h-[95%] "
+                        className="lg:w-[90%] w-full h-[90%] "
                         controls={isPlaying ? true : false}
                         preload="none"
                         poster={`${process.env.NEXT_PUBLIC_API_URL}/assets/${slide?.case_studies_id?.thumbnail}`}
