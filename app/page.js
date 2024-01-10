@@ -63,7 +63,7 @@ export default async function Home() {
           description: data?.section1_description,
           btn: data?.section1_btn_text,
           link: data?.section1_btn_url,
-          cases: data?.Case_studies,
+          cases: data?.case_studies,
         }}
       />
       <TechStack
