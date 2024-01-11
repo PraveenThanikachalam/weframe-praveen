@@ -1,18 +1,23 @@
-export default async function getQuotationData() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/items/quote_page?fields=*,quote.quotes_id.*,SEO.*`,
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
-      },
-      next: {
-        revalidate: 60,
-      },
+
+export const getQuotationData = async (section) => {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/items/${section}?fields=*, seo.*`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.BEARER_TOKEN}`,
+        },
+        next: {
+          revalidate: 60,
+        },
+      }
+    );
+    if (response.ok) {
+      const data = await response.json();
+      return data.data;
     }
-  );
-  if (res.ok) {
-    const data = await res.json();
-    return data.data;
+    return null;
+  } catch (error) {
+    console.log(error);
   }
-  return null;
-}
+};

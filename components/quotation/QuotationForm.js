@@ -4,11 +4,12 @@ import { useForm } from 'react-hook-form';
 
 export default function QuotationForm({
   formData,
+  note,
   setPage,
   companyFormSubmitted,
   setQuoteCost,
 }) {
-  const defaultValues = formData?.tags?.reduce((acc, category) => {
+  const defaultValues = formData?.reduce((acc, category) => {
     acc[category.heading] = category.choice === 'multiple' ? [] : '';
     return acc;
   }, {});
@@ -42,7 +43,7 @@ export default function QuotationForm({
     const numberOfPages = parseInt(data.no_of_pages) || 1;
     const isUIUXSelected = data['ui-ux'] === 'Yes';
 
-    formData?.tags?.forEach((category) => {
+    formData?.forEach((category) => {
       const selectedOptionNames = data[category.heading];
       const isFrontEndCategory = category.heading
         .toLowerCase()
@@ -169,41 +170,64 @@ export default function QuotationForm({
       </div>
 
       <div className="flex lg:w-[60%] md:w-[60%] w-full flex-col items-center justify-center">
-        {formData?.tags?.map((category, index) => {
+        {formData?.map((category, index) => {
           return (
             <div
               key={index}
               className="w-full mt-6 flex flex-col items-start gap-3 justify-center"
             >
-              <p className="text-sm text-cyan-200">{category.heading}</p>
+              <p className="text-sm text-cyan-200">{category?.heading}</p>
               <div className="flex flex-wrap gap-2">
-                {category.options.map((option, idx) => (
-                  <div key={idx} className="relative mt-2">
-                    <input
-                      type={
-                        category.choice === 'multiple' ? 'checkbox' : 'radio'
-                      }
-                      id={`${category.heading}-${option.name}`}
-                      value={option.name}
-                      className="sr-only" // Hides the input visually
-                      {...register(category.heading)}
-                    />
-                    <label
-                      htmlFor={`${category.heading}-${option.name}`}
-                      className={`px-4 py-2 cursor-pointer rounded-2xl text-xs transform duration-100 font-fira-code border border-gray-300 ${
-                        category.choice === 'multiple'
-                          ? watch(category.heading)?.includes(option.name)
-                            ? 'bg-black text-white border border-cyan-300 shadow-sm shadow-cyan-300'
-                            : 'text-[#999999]'
-                          : watch(category.heading) === option.name
-                          ? 'bg-black text-white border border-cyan-300 shadow-sm shadow-cyan-300'
-                          : 'text-[#999999]'
-                      }`}
-                    >
-                      {option.name}
-                    </label>
+                {category?.choice === 'multiple' ? (
+                  <div className="flex flex-wrap gap-2">
+                    {category?.options.map((option, idx) => (
+                      <div key={idx} className="relative mt-2">
+                        <input
+                          type="checkbox"
+                          id={`${category?.heading}-${option?.name}`}
+                          value={option?.name}
+                          className="sr-only"
+                          {...register(category?.heading)}
+                        />
+                        <label
+                          htmlFor={`${category?.heading}-${option?.name}`}
+                          className={`px-4 py-2 cursor-pointer rounded-2xl text-xs transform duration-100 font-fira-code border border-gray-300 ${
+                            Array.isArray(watch(category?.heading)) &&
+                            watch(category?.heading)?.includes(option?.name)
+                              ? 'bg-black text-white border border-cyan-300 shadow-sm shadow-cyan-300'
+                              : 'text-[#999999]'
+                          }`}
+                        >
+                          {option?.name}
+                        </label>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                ) : (
+                  <div className="flex flex-wrap gap-2">
+                    {category?.options.map((option, idx) => (
+                      <div key={idx} className="relative mt-2">
+                        <input
+                          type="radio"
+                          id={`${category?.heading}-${option?.name}`}
+                          value={option?.name}
+                          className="sr-only"
+                          {...register(category?.heading)}
+                        />
+                        <label
+                          htmlFor={`${category?.heading}-${option?.name}`}
+                          className={`px-4 py-2 cursor-pointer rounded-2xl text-xs transform duration-100 font-fira-code border border-gray-300 ${
+                            watch(category?.heading) === option?.name
+                              ? 'bg-black text-white border border-cyan-300 shadow-sm shadow-cyan-300'
+                              : 'text-[#999999]'
+                          }`}
+                        >
+                          {option?.name}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           );
@@ -211,7 +235,7 @@ export default function QuotationForm({
       </div>
       <div className="lg:w-[60%] w-full flex items-start justify-start">
         <p className="text-cyan-500">
-          Please select one of the options to get your quote
+          {note}
         </p>
       </div>
       <Button
