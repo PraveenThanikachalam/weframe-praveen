@@ -139,7 +139,11 @@ const BlogPage = ({ pageData }) => {
                 title={blog?.title}
                 image={blog?.banner}
                 tags={blog?.tags}
-                link={ blog?.redirect_url ? blog?.redirect_url : `/blogs/${convertToSlug(blog?.title)}`}
+                link={
+                  blog?.redirect_url
+                    ? blog?.redirect_url
+                    : `/blogs/${convertToSlug(blog?.title)}`
+                }
               />
             );
           })
@@ -151,7 +155,11 @@ const BlogPage = ({ pageData }) => {
                 title={blog?.article_id?.title}
                 image={blog?.article_id?.banner}
                 tags={blog?.article_id?.tags}
-                link={ blog?.redirect_url ? blog?.redirect_url : `/blogs/${convertToSlug(blog?.title)}`}
+                link={
+                  blog?.redirect_url
+                    ? blog?.redirect_url
+                    : `/blogs/${convertToSlug(blog?.title)}`
+                }
               />
             );
           })

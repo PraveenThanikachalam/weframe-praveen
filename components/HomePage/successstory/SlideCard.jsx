@@ -21,7 +21,9 @@ const SlideCard = ({ data }) => {
 
   const SlideCardInfo = (slide) => {
     const videoRef = useRef(null);
-    const { type, error } = useAssetInfo(`${process.env.NEXT_PUBLIC_API_URL}/assets/${slide?.case_studies_id?.file}`);
+    const { type, error } = useAssetInfo(
+      `${process.env.NEXT_PUBLIC_API_URL}/assets/${slide?.case_studies_id?.file}`
+    );
     const [isPlaying, setIsPlaying] = useState(false);
 
     const handlePlay = () => {
@@ -55,7 +57,6 @@ const SlideCard = ({ data }) => {
       handlePause,
     };
   };
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -94,8 +95,8 @@ const SlideCard = ({ data }) => {
         }}
       >
         {data?.map((slide, index) => {
-
-          const { videoRef, type, error, isPlaying, handlePlay, handlePause } = SlideCardInfo(slide);
+          const { videoRef, type, error, isPlaying, handlePlay, handlePause } =
+            SlideCardInfo(slide);
 
           return (
             <SwiperSlide key={index}>

@@ -4,11 +4,13 @@ import { useForm } from 'react-hook-form';
 
 export default function QuotationForm({
   formData,
+  note,
   setPage,
   companyFormSubmitted,
   setQuoteCost,
+  uiux_price,
 }) {
-  const defaultValues = formData?.tags?.reduce((acc, category) => {
+  const defaultValues = formData?.reduce((acc, category) => {
     acc[category.heading] = category.choice === 'multiple' ? [] : '';
     return acc;
   }, {});
@@ -21,59 +23,27 @@ export default function QuotationForm({
   } = useForm({ defaultValues });
 
   const onSubmit = (data) => {
-    //-----------------------------------------------------------------------------------
-    //Price Calculation Logic:
-    //  total front-end cost = if ui-ux === "Yes" => (2 * num_of_pages * est_cost)
-    //                         if ui-ux === "No"  => (num_of_pages * est_cost)
-    //  total back-end cost = (num_of_pages * est_cost)
-    //  total 3rd Party Integration = est_cost
-    //  total deployment cost = est_cost
-
-    //Duration Calculation Logic:
-    //  total front-end cost = if ui-ux === "Yes" => (2 * num_of_pages * est_duration)
-    //                         if ui-ux === "No"  => (num_of_pages * est_duration)
-    //  total back-end cost = (num_of_pages * est_duration)
-    //  total 3rd Party Integration = est_duration
-    //  total deployment cost = est_duration
-    //-----------------------------------------------------------------------------------
-
     let totalDuration = 0;
     let totalPrice = 0;
     const numberOfPages = parseInt(data.no_of_pages) || 1;
     const isUIUXSelected = data['ui-ux'] === 'Yes';
 
-    formData?.tags?.forEach((category) => {
+    // For each category find cost and time
+    formData?.forEach((category) => {
       const selectedOptionNames = data[category.heading];
-      const isFrontEndCategory = category.heading
-        .toLowerCase()
-        .includes('frontend');
-      const isBackendCategory = category.heading
-        .toLowerCase()
-        .includes('backend');
 
+      //Multiply est_price with number of pages
       const calculatePrice = (option) => {
         let price = option.estimated_price;
-        if (isFrontEndCategory) {
-          price *= numberOfPages;
-          if (isUIUXSelected) {
-            price *= 2;
-          }
-        } else if (isBackendCategory) {
-          price *= numberOfPages;
-        }
+        price *= numberOfPages;
+
         return price;
       };
-
+      //Multiply est_time with number of pages
       const calculateDuration = (option) => {
         let dur = option.estimated_duration;
-        if (isFrontEndCategory) {
-          dur *= numberOfPages;
-          if (isUIUXSelected) {
-            dur *= 2;
-          }
-        } else if (isBackendCategory) {
-          dur *= numberOfPages;
-        }
+        dur *= numberOfPages;
+
         return dur;
       };
 
@@ -104,6 +74,11 @@ export default function QuotationForm({
         });
       }
     });
+
+    if (uiux_price && isUIUXSelected) {
+      totalPrice += uiux_price * numberOfPages;
+    }
+
     setQuoteCost({ totalCost: totalPrice, totalTime: totalDuration });
     if (companyFormSubmitted) {
       setPage((prev) => prev + 2);
@@ -169,50 +144,71 @@ export default function QuotationForm({
       </div>
 
       <div className="flex lg:w-[60%] md:w-[60%] w-full flex-col items-center justify-center">
-        {formData?.tags?.map((category, index) => {
+        {formData?.map((category, index) => {
           return (
             <div
               key={index}
               className="w-full mt-6 flex flex-col items-start gap-3 justify-center"
             >
-              <p className="text-sm text-cyan-200">{category.heading}</p>
+              <p className="text-sm text-cyan-200">{category?.heading}</p>
               <div className="flex flex-wrap gap-2">
-                {category.options.map((option, idx) => (
-                  <div key={idx} className="relative mt-2">
-                    <input
-                      type={
-                        category.choice === 'multiple' ? 'checkbox' : 'radio'
-                      }
-                      id={`${category.heading}-${option.name}`}
-                      value={option.name}
-                      className="sr-only" // Hides the input visually
-                      {...register(category.heading)}
-                    />
-                    <label
-                      htmlFor={`${category.heading}-${option.name}`}
-                      className={`px-4 py-2 cursor-pointer rounded-2xl text-xs transform duration-100 font-fira-code border border-gray-300 ${
-                        category.choice === 'multiple'
-                          ? watch(category.heading)?.includes(option.name)
-                            ? 'bg-black text-white border border-cyan-300 shadow-sm shadow-cyan-300'
-                            : 'text-[#999999]'
-                          : watch(category.heading) === option.name
-                          ? 'bg-black text-white border border-cyan-300 shadow-sm shadow-cyan-300'
-                          : 'text-[#999999]'
-                      }`}
-                    >
-                      {option.name}
-                    </label>
+                {category?.choice === 'multiple' ? (
+                  <div className="flex flex-wrap gap-2">
+                    {category?.options.map((option, idx) => (
+                      <div key={idx} className="relative mt-2">
+                        <input
+                          type="checkbox"
+                          id={`${category?.heading}-${option?.name}`}
+                          value={option?.name}
+                          className="sr-only"
+                          {...register(category?.heading)}
+                        />
+                        <label
+                          htmlFor={`${category?.heading}-${option?.name}`}
+                          className={`px-4 py-2 cursor-pointer rounded-2xl text-xs transform duration-100 font-fira-code border border-gray-300 ${
+                            Array.isArray(watch(category?.heading)) &&
+                            watch(category?.heading)?.includes(option?.name)
+                              ? 'bg-black text-white border border-cyan-300 shadow-sm shadow-cyan-300'
+                              : 'text-[#999999]'
+                          }`}
+                        >
+                          {option?.name}
+                        </label>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                ) : (
+                  <div className="flex flex-wrap gap-2">
+                    {category?.options.map((option, idx) => (
+                      <div key={idx} className="relative mt-2">
+                        <input
+                          type="radio"
+                          id={`${category?.heading}-${option?.name}`}
+                          value={option?.name}
+                          className="sr-only"
+                          {...register(category?.heading)}
+                        />
+                        <label
+                          htmlFor={`${category?.heading}-${option?.name}`}
+                          className={`px-4 py-2 cursor-pointer rounded-2xl text-xs transform duration-100 font-fira-code border border-gray-300 ${
+                            watch(category?.heading) === option?.name
+                              ? 'bg-black text-white border border-cyan-300 shadow-sm shadow-cyan-300'
+                              : 'text-[#999999]'
+                          }`}
+                        >
+                          {option?.name}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           );
         })}
       </div>
       <div className="lg:w-[60%] w-full flex items-start justify-start">
-        <p className="text-cyan-500">
-          Please select one of the options to get your quote
-        </p>
+        <p className="text-cyan-500">{note}</p>
       </div>
       <Button
         type="submit"

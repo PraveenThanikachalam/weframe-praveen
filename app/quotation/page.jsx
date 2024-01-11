@@ -1,21 +1,21 @@
 import Quotation from '@/components/quotation/Quotation';
-import getQuotationData from '@/data/getQuotationData';
+import { getQuotationData } from '@/data/getQuotationData';
 
 export async function generateMetadata(parent) {
-  const seoData = await getQuotationData();
-  if (seoData.SEO) {
+  const seoData = await getQuotationData('jamstack_quote_page');
+  if (seoData.seo) {
     const previousImages = (await parent).openGraph?.images || [];
     return {
-      metadataBase: new URL(seoData?.SEO?.canonical_url),
-      title: seoData?.SEO?.meta_title,
-      description: seoData?.SEO?.meta_description,
+      metadataBase: new URL(seoData?.seo?.canonical_url),
+      title: seoData?.seo?.meta_title,
+      description: seoData?.seo?.meta_description,
       alternates: {
-        canonical: seoData?.SEO?.canonical_url,
+        canonical: seoData?.seo?.canonical_url,
       },
-      keywords: seoData?.SEO?.meta_keywords,
+      keywords: seoData?.seo?.meta_keywords,
       robots: {
-        index: !seoData?.SEO?.no_follow,
-        follow: !seoData?.SEO?.no_index,
+        index: !seoData?.seo?.no_follow,
+        follow: !seoData?.seo?.no_index,
         nocache: true,
       },
       openGraph: {
@@ -34,11 +34,11 @@ export async function generateMetadata(parent) {
 }
 
 const Quote = async () => {
-  const data = await getQuotationData();
-  if (!data) return null;
+  const data = await getQuotationData('headless_quote_page');
+
   return (
     <main className="max-w-screen-xl mx-auto px-4 flex flex-col items-center justify-center">
-      <Quotation quotationData={data} />
+      <Quotation />
     </main>
   );
 };
