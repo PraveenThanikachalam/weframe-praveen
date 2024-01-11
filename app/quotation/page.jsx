@@ -38,7 +38,7 @@ const Quote = async () => {
 
   return (
     <main className="max-w-screen-xl mx-auto px-4 flex flex-col items-center justify-center">
-      <Quotation  />
+      <Quotation />
     </main>
   );
 };

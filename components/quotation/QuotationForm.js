@@ -8,6 +8,7 @@ export default function QuotationForm({
   setPage,
   companyFormSubmitted,
   setQuoteCost,
+  uiux_price,
 }) {
   const defaultValues = formData?.reduce((acc, category) => {
     acc[category.heading] = category.choice === 'multiple' ? [] : '';
@@ -22,59 +23,27 @@ export default function QuotationForm({
   } = useForm({ defaultValues });
 
   const onSubmit = (data) => {
-    //-----------------------------------------------------------------------------------
-    //Price Calculation Logic:
-    //  total front-end cost = if ui-ux === "Yes" => (2 * num_of_pages * est_cost)
-    //                         if ui-ux === "No"  => (num_of_pages * est_cost)
-    //  total back-end cost = (num_of_pages * est_cost)
-    //  total 3rd Party Integration = est_cost
-    //  total deployment cost = est_cost
-
-    //Duration Calculation Logic:
-    //  total front-end cost = if ui-ux === "Yes" => (2 * num_of_pages * est_duration)
-    //                         if ui-ux === "No"  => (num_of_pages * est_duration)
-    //  total back-end cost = (num_of_pages * est_duration)
-    //  total 3rd Party Integration = est_duration
-    //  total deployment cost = est_duration
-    //-----------------------------------------------------------------------------------
-
     let totalDuration = 0;
     let totalPrice = 0;
     const numberOfPages = parseInt(data.no_of_pages) || 1;
     const isUIUXSelected = data['ui-ux'] === 'Yes';
 
+    // For each category find cost and time
     formData?.forEach((category) => {
       const selectedOptionNames = data[category.heading];
-      const isFrontEndCategory = category.heading
-        .toLowerCase()
-        .includes('frontend');
-      const isBackendCategory = category.heading
-        .toLowerCase()
-        .includes('backend');
 
+      //Multiply est_price with number of pages
       const calculatePrice = (option) => {
         let price = option.estimated_price;
-        if (isFrontEndCategory) {
-          price *= numberOfPages;
-          if (isUIUXSelected) {
-            price *= 2;
-          }
-        } else if (isBackendCategory) {
-          price *= numberOfPages;
-        }
+        price *= numberOfPages;
+
         return price;
       };
-
+      //Multiply est_time with number of pages
       const calculateDuration = (option) => {
         let dur = option.estimated_duration;
-        if (isFrontEndCategory) {
-          dur *= numberOfPages;
-          if (isUIUXSelected) {
-            dur *= 2;
-          }
-        } else if (isBackendCategory) {
-          dur *= numberOfPages;
-        }
+        dur *= numberOfPages;
+
         return dur;
       };
 
@@ -105,6 +74,11 @@ export default function QuotationForm({
         });
       }
     });
+
+    if (uiux_price && isUIUXSelected) {
+      totalPrice += uiux_price * numberOfPages;
+    }
+
     setQuoteCost({ totalCost: totalPrice, totalTime: totalDuration });
     if (companyFormSubmitted) {
       setPage((prev) => prev + 2);
@@ -234,9 +208,7 @@ export default function QuotationForm({
         })}
       </div>
       <div className="lg:w-[60%] w-full flex items-start justify-start">
-        <p className="text-cyan-500">
-          {note}
-        </p>
+        <p className="text-cyan-500">{note}</p>
       </div>
       <Button
         type="submit"

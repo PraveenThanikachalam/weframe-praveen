@@ -1,7 +1,7 @@
 import NudgeCard from '@/components/ui/NudgeCard';
 import { getBlogArticle } from '@/utils/getBlogArticle';
 import Image from 'next/image';
-import styles from './Article.module.css'
+import styles from './Article.module.css';
 
 function slugToTitle(slug) {
   const word = slug

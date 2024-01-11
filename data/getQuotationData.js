@@ -1,4 +1,3 @@
-
 export const getQuotationData = async (section) => {
   try {
     const response = await fetch(

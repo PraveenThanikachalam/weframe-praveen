@@ -13,7 +13,6 @@ export default function Quotation() {
   const [quoteCost, setQuoteCost] = useState({ totalCost: 0, totalTime: 0 });
   const [companyFormSubmitted, setCompanyFormSubmitted] = useState(false);
 
-
   const fetchData = async () => {
     const section = shift ? 'headless_quote_page' : 'jamstack_quote_page';
     try {
@@ -70,6 +69,7 @@ export default function Quotation() {
               setPage={setPage}
               companyFormSubmitted={companyFormSubmitted}
               setQuoteCost={setQuoteCost}
+              uiux_price={data?.uiux_price}
             />
           )}
           {page === 1 && (

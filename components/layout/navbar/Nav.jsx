@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,7 +7,7 @@ import DropDownBig from './DropDownBig';
 import MobileNav from './MobileNav';
 import SvgRenderer from '@/lib/svg_renderer';
 
-const Nav = ({navData}) => {
+const Nav = ({ navData }) => {
   const [visible, setVisible] = useState(false);
   const [visible2, setVisible2] = useState(false);
   const [data, setData] = useState(navData);

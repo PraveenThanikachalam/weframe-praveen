@@ -1,5 +1,5 @@
 import { Lexend } from 'next/font/google';
-import { oceanwide} from '../fonts/index';
+import { oceanwide } from '../fonts/index';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -19,10 +19,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${oceanwide.variable}`}
-    >
+    <html lang="en" className={`${oceanwide.variable}`}>
       <body className={`${font.className} overflow-y-scroll no-scrollbar`}>
         <NextTopLoader
           color="#00e6e6"

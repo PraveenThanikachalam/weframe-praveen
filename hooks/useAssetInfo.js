@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-
 const useAssetInfo = (url) => {
   const [assetInfo, setAssetInfo] = useState({ type: 'other' });
 
