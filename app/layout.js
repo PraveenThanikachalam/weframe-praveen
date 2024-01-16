@@ -5,6 +5,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Matrix from '@/components/ui/Matrix';
 import NextTopLoader from 'nextjs-toploader';
+import TopMessage from '@/components/layout/navbar/TopMessage';
 
 const font = Lexend({ subsets: ['latin'] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
           easing="ease"
           height={2}
         />
+        <TopMessage/>
         <Navbar />
         <Matrix />
         {children}
