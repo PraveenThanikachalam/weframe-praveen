@@ -6,7 +6,7 @@ import StoryCard from './StoryCard';
 const SuccessStory = ({ successData }) => {
   return (
     <div className="successStory mt-20 z-10 mx-4 md:mx-10 flex flex-col items-center justify-center">
-      <div className="w-[80vw] max-w-screen-2xl mb-8 flex flex-col lg:flex-row gap-4 items-center justify-between">
+      <div className="w-full max-w-screen-xl mb-8 flex flex-col lg:flex-row gap-4 items-center justify-between">
         <div className="lg:w-[35vw] text-center lg:text-left w-full">
           <h1 className="text-4xl font-bold text-white">
             {successData?.heading}
