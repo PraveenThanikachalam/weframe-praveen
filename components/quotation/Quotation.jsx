@@ -1,17 +1,22 @@
 'use client';
-import SwitchButton from '../ui/SwitchButton';
 import { useEffect, useState } from 'react';
 import QuotationForm from './QuotationForm';
 import NudgeCard from '../ui/NudgeCard';
 import CompanyForm from './CompanyForm';
 import QuotationResult from './QuotationResult';
+import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
-export default function Quotation() {
+export default function Quotation({ pageData }) {
   const [page, setPage] = useState(0);
-  const [data, setData] = useState();
-  const [shift, setShift] = useState(false);
+  const [data, setData] = useState(pageData);
   const [quoteCost, setQuoteCost] = useState({ totalCost: 0, totalTime: 0 });
   const [companyFormSubmitted, setCompanyFormSubmitted] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+  const [shift, setShift] = useState(
+    pathname === '/cost-calculator/headless-commerce-quote' ? true : false
+  );
 
   const fetchData = async () => {
     const section = shift ? 'headless_quote_page' : 'jamstack_quote_page';
@@ -54,12 +59,37 @@ export default function Quotation() {
                 </p>
               ))}
             </h1>
-            <SwitchButton
-              label1={'Jamstack Web Dev'}
-              label2={'Headless Commerce'}
-              setShift={setShift}
-              shift={shift}
-            />
+            
+          {/* //switch button */}
+            <div className="rounded-2xl  h-14 mt-4 overflow-hidden flex relative items-center justify-center border-[1px] border-white shadow-sm shadow-white">
+              <div
+                className={`w-[50%] h-full absolute right-0 slide z-10 bg-white ${
+                  shift ? 'translate-x-0' : '-translate-x-full'
+                } transition-transform duration-200`}
+              ></div>
+              <div
+                onClick={() => {
+                  setShift(!shift);
+                  router.push('/cost-calculator/jamstack-development-quote')
+                }}
+                className={`flex items-center z-20 justify-center font-semibold cursor-pointer shadow transition-all duration-500  lg:text-md text-sm lg:h-full h-14 px-10 py-2 rounded-l-xl ${
+                  shift ? 'text-white' : 'text-black'
+                } `}
+              >
+                Jamstack Development
+              </div>
+              <div
+                onClick={() => {
+                  setShift(!shift);
+                  router.push('/cost-calculator/headless-commerce-quote')
+                }}
+                className={`flex items-center z-20 justify-center font-semibold transition-all duration-500 cursor-pointer lg:text-md text-sm px-10 py-2 lg:h-full h-14 rounded-r-xl ${
+                  shift ? 'text-black' : 'text-white'
+                } `}
+              >
+                Headless Commerce
+              </div>
+            </div>
           </div>
 
           {page === 0 && (
