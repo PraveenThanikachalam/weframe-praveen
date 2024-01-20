@@ -31,44 +31,44 @@ const HeroSection = ({ heroData }) => {
           </p>
           <div className=" relative mt-5 sm:mt-0 w-full md:w-[45vw] overflow-hidden block [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
             <div className="flex">
-              <div className="flex animate-slidehorizontal">
-                {heroData?.icons?.map((logo, index) => {
+              <div className="flex animate-slidehorizontal gap-5 md:gap-10">
+                {heroData?.icons?.map(({icon_id}) => {
                   return (
-                    <div className="h-8 md:h-12 w-20 md:w-32 mx-4" key={index}>
+                    <div className="h-5 md:h-9 w-max mx-4" key={icon_id.id}>
                       <SvgRenderer
-                        svgText={logo.svg}
+                        svgText={icon_id.svg}
                         className={'object-contain'}
                       />
                     </div>
                   );
                 })}
-                {heroData?.icons?.map((logo, index) => {
+                {heroData?.icons?.map(({icon_id}) => {
                   return (
-                    <div className="h-8 md:h-12 w-20 md:w-32 mx-4" key={index}>
+                    <div className="h-5 md:h-8 w-max mx-4" key={icon_id.id}>
                       <SvgRenderer
-                        svgText={logo.svg}
+                        svgText={icon_id.svg}
                         className={'object-contain'}
                       />
                     </div>
                   );
                 })}
               </div>
-              <div className="flex animate-slidehorizontal">
-                {heroData?.icons?.map((logo, index) => {
+              <div className="flex animate-slidehorizontal gap-5 md:gap-10">
+                {heroData?.icons?.map(({icon_id}) => {
                   return (
-                    <div className="h-8 md:h-12 w-20 md:w-32 mx-4" key={index}>
+                    <div className="h-5 md:h-8 w-max mx-4" key={icon_id.id}>
                       <SvgRenderer
-                        svgText={logo.svg}
+                        svgText={icon_id.svg}
                         className={'object-contain'}
                       />
                     </div>
                   );
                 })}
-                {heroData?.icons?.map((logo, index) => {
+                {heroData?.icons?.map(({icon_id}) => {
                   return (
-                    <div className="h-8 md:h-12 w-20 md:w-32 mx-4" key={index}>
+                    <div className="h-5 md:h-8 w-max mx-4" key={icon_id.id}>
                       <SvgRenderer
-                        svgText={logo.svg}
+                        svgText={icon_id.svg}
                         className={'object-contain'}
                       />
                     </div>
