@@ -1,6 +1,8 @@
 'use client';
 import Button from '../ui/Button';
 import { useForm } from 'react-hook-form';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 export default function QuotationForm({
   formData,
@@ -9,18 +11,25 @@ export default function QuotationForm({
   companyFormSubmitted,
   setQuoteCost,
   uiux_price,
+  ui_ux_duration,
+  headlessSlug,
 }) {
   const defaultValues = formData?.reduce((acc, category) => {
     acc[category.heading] = category.choice === 'multiple' ? [] : '';
     return acc;
   }, {});
 
+  const pathname = usePathname()
+  const [isHeadless, setIsHeadless] = useState(pathname === `/calculator/${headlessSlug}` ? true : false);
+
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm({ defaultValues });
+  } = useForm({
+    defaultValues
+  });
 
   const onSubmit = (data) => {
     let totalDuration = 0;
@@ -30,7 +39,7 @@ export default function QuotationForm({
 
     // For each category find cost and time
     formData?.forEach((category) => {
-      const selectedOptionNames = data[category.heading];
+      const selectedOptionNames = data[category?.heading];
 
       //Multiply est_price with number of pages
       const calculatePrice = (option) => {
@@ -64,7 +73,7 @@ export default function QuotationForm({
         Array.isArray(selectedOptionNames)
       ) {
         selectedOptionNames.forEach((optionName) => {
-          const selectedOption = category.options.find(
+          const selectedOption = category?.options.find(
             (option) => option.name === optionName
           );
           if (selectedOption) {
@@ -75,8 +84,9 @@ export default function QuotationForm({
       }
     });
 
-    if (uiux_price && isUIUXSelected) {
+    if (uiux_price && ui_ux_duration && isUIUXSelected) {
       totalPrice += uiux_price * numberOfPages;
+      totalDuration += ui_ux_duration;
     }
 
     setQuoteCost({ totalCost: totalPrice, totalTime: totalDuration });
@@ -110,12 +120,10 @@ export default function QuotationForm({
                     id="no_of_pages"
                     name="no_of_pages"
                     className="w-full navbar bg-opacity-50 font-light rounded-lg border border-gray-300 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 h-10 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    {...register('no_of_pages', { required: true })}
+                    {...register('no_of_pages', { required: true, min: isHeadless ? 25 : 1} )}
                   />
                   {errors.no_of_pages && (
-                    <span className="text-xs text-cyan-500">
-                      This field is required!
-                    </span>
+                    <span className="text-xs text-cyan-500"> {isHeadless ? 'Please consider a minimum of 25 pages.' : 'This field is required.'}</span>
                   )}
                 </div>
               </div>

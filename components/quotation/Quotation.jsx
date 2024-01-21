@@ -7,7 +7,7 @@ import QuotationResult from './QuotationResult';
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
-export default function Quotation({ pageData }) {
+export default function Quotation({ pageData, headlessSlug,jamstackSlug }) {
   const [page, setPage] = useState(0);
   const [data, setData] = useState(pageData);
   const [quoteCost, setQuoteCost] = useState({ totalCost: 0, totalTime: 0 });
@@ -15,7 +15,7 @@ export default function Quotation({ pageData }) {
   const pathname = usePathname();
   const router = useRouter();
   const [shift, setShift] = useState(
-    pathname === '/cost-calculator/headless-commerce-quote' ? true : false
+    pathname === `/calculator/${headlessSlug}` ? true : false
   );
 
   const fetchData = async () => {
@@ -46,6 +46,7 @@ export default function Quotation({ pageData }) {
     fetchData();
   }, [shift]);
 
+
   return (
     <>
       {page < 2 && (
@@ -70,7 +71,7 @@ export default function Quotation({ pageData }) {
               <div
                 onClick={() => {
                   setShift(!shift);
-                  router.push('/cost-calculator/jamstack-development-quote')
+                  router.push(`/calculator/${jamstackSlug}`)
                 }}
                 className={`flex items-center z-20 justify-center font-semibold cursor-pointer shadow transition-all duration-500  lg:text-md text-sm lg:h-full h-14 px-10 py-2 rounded-l-xl ${
                   shift ? 'text-white' : 'text-black'
@@ -81,7 +82,7 @@ export default function Quotation({ pageData }) {
               <div
                 onClick={() => {
                   setShift(!shift);
-                  router.push('/cost-calculator/headless-commerce-quote')
+                  router.push(`/calculator/${headlessSlug}`)
                 }}
                 className={`flex items-center z-20 justify-center font-semibold transition-all duration-500 cursor-pointer lg:text-md text-sm px-10 py-2 lg:h-full h-14 rounded-r-xl ${
                   shift ? 'text-black' : 'text-white'
@@ -100,6 +101,8 @@ export default function Quotation({ pageData }) {
               companyFormSubmitted={companyFormSubmitted}
               setQuoteCost={setQuoteCost}
               uiux_price={data?.uiux_price}
+              ui_ux_duration={data?.ui_ux_duration}
+              headlessSlug={headlessSlug}
             />
           )}
           {page === 1 && (
