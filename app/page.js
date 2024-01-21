@@ -7,6 +7,7 @@ import NudgeCard from '@/components/ui/NudgeCard';
 import OurClient from '@/components/HomePage/OurClient';
 import Testimonials from '@/components/HomePage/Testimonials';
 import getHomeData from '@/data/getHomeData';
+import { getJamstackSlug } from '@/utils/getJamstackSlug';
 
 export async function generateMetadata(parent) {
   const seoData = await getHomeData();
@@ -42,6 +43,7 @@ export async function generateMetadata(parent) {
 
 export default async function Home() {
   const data = await getHomeData();
+  const buttonSlug = await getJamstackSlug('jamstack_quote_page')
   if (!data) return null;
   return (
     <main className="flex flex-col justify-center items-center w-full">
@@ -52,7 +54,7 @@ export default async function Home() {
           section1_description: data?.section1_description,
           icons_heading: data?.icons_heading,
           icons: data?.icon,
-          button1_url: data?.button1_url,
+          button1_url: `/calculator/${buttonSlug}`,
           button1_text: data?.button1_text,
           button2_url: data?.button2_url,
           button2_text: data?.button2_text,
