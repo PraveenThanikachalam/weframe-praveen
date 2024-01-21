@@ -2,15 +2,13 @@ import Quotation from '@/components/quotation/Quotation';
 import { getQuotationData } from '@/data/getQuotationData';
 import { getJamstackSlug } from '@/utils/getJamstackSlug';
 import React from 'react';
-import { headers } from 'next/headers';
 
 export async function generateMetadata(parent) {
-  const heads = headers();
-  const pathname = heads.get('next-url');
+  const pathname = parent.params.quote;
   const jamstackSlug = await getJamstackSlug('jamstack_quote_page');
   if (pathname && jamstackSlug) {
     var seoData = await getQuotationData(
-      pathname === `/calculator/${jamstackSlug}`
+      pathname === jamstackSlug
         ? 'jamstack_quote_page'
         : 'headless_quote_page'
     );
