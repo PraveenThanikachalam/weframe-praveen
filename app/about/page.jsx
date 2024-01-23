@@ -59,17 +59,17 @@ const AboutPage = async () => {
         <div className="w-full z-30  flex flex-col md:mt-6 items-center justify-end gap-2">
           <p className="md:mb-6 text-lg font-medium opacity-0">Trusted by</p>
           <div className=" relative mt-5 flex items-center justify-center sm:mt-0 w-full md:w-[60vw] overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
-            <div className="flex glow gap-12">
+            <div className="flex glow md:gap-12 gap-6">
               {data?.stats.map((stat, index) => {
                 return (
                   <div
                     key={index}
                     className="flex flex-col items-center gap-1 justify-center"
                   >
-                    <h1 className="lg:text-5xl text-xl font-bold text-white">
+                    <h1 className="lg:text-5xl text-xl font-bold  text-white">
                       {stat.value}
                     </h1>
-                    <p className="text-white">{stat.label}</p>
+                    <p className="text-white text-xs md:text-base font-bold md:font-medium ">{stat.label}</p>
                   </div>
                 );
               })}
@@ -80,7 +80,7 @@ const AboutPage = async () => {
           <BackLightEffect />
         </div>
       </div>
-      <div className="lg:my-56 mt-28">
+      <div className="lg:my-56 mt-36">
         <ProgressFlow
           title={data?.section1_heading}
           arr={data?.section1_points}
