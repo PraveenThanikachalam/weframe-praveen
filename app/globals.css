@@ -225,3 +225,20 @@ input::-webkit-inner-spin-button {
     @apply lg:text-xl text-lg font-semibold;
   }
 } */
+
+
+.myPlayer {
+	overflow: hidden;
+	width: 100%;
+	aspect-ratio: 16/9;
+	pointer-events: none;
+  color: transparent;
+}
+
+.myPlayer iframe {
+  width: 700%;
+  height: 100%;
+  margin-left:-300%;
+}
+
+
