@@ -1,10 +1,10 @@
-'use client';
+'use client'
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRef, useState } from 'react';
+import ReactPlayer from 'react-player';
 
 const TestimonialCard = ({
-  type,
   source,
   desc,
   authorName,
@@ -16,23 +16,35 @@ const TestimonialCard = ({
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const videoRef = useRef();
-
-  const handlePlay = () => {
-    videoRef.current.play();
-    setIsPlaying(true);
+  const getYouTubeVideoId = (url) => {
+    const videoIdRegex =
+      /(?:youtu\.be\/|youtube\.com(?:\/embed\/|\/v\/|\/watch\?v=|\/videos\?=(?:.*&)?v=)|\/youtu\.be\/)([^"&?\/\s]{11})/;
+    const match = url?.match(videoIdRegex);
+    return match ? match[1] : null;
   };
 
-  const handlePause = () => {
-    videoRef.current.pause();
-    setIsPlaying(false);
+  const handlePlayPause = () => {
+    setIsPlaying((prevIsPlaying) => !prevIsPlaying);
   };
+
+  const handlePlayerStateChange = (state) => {
+    setIsPlaying(state === 'playing');
+  };
+
+  useEffect(() => {
+    // Run only on the client side
+    const videoId = getYouTubeVideoId(source);
+    if (videoId) {
+      ReactPlayer.canEnablePIP = false;
+    }
+  }, [source]);
+
   return (
     <div className="relative h-full bg-cover flex items-center justify-center rounded-xl overflow-hidden">
-      {type === 'image' && (
+      {desc ? (
         <>
           <Image
-            src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${source}`}
+            src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${thumbnail}`}
             alt="bgImage"
             fill
             className={`object-cover -z-[1] ${desc && 'brightness-[10%]'}`}
@@ -42,32 +54,43 @@ const TestimonialCard = ({
             {desc}
           </p>
         </>
-      )}
-      {type === 'video' && (
-        <video
-          ref={videoRef}
-          preload="none"
-          poster={`${process.env.NEXT_PUBLIC_API_URL}/assets/${thumbnail}`}
-          className="w-full h-full object-cover rounded-xl absolute inset-0 -z-[1]"
-          loop
-        >
-          <source
-            src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${source}`}
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
+      ) : (
+        <ReactPlayer
+          url={`https://www.youtube.com/watch?v=${getYouTubeVideoId(source)}&vq=hd720&modestbranding=1&showinfo=0&fs=0`}
+          // light={`${process.env.NEXT_PUBLIC_API_URL}/assets/${thumbnail}`}
+          className="  object-cover absolute inset-0"
+          playing={isPlaying}
+          width="100%"
+          height="100%"
+          onPlay={() => handlePlayerStateChange('playing')}
+          onPause={() => handlePlayerStateChange('paused')}
+          onEnded={() => handlePlayerStateChange('ended')}
+          config={{
+            youtube: {
+              playerVars: {
+                autoplay: 0,
+                showinfo: 0,
+                fs: 1,
+                iv_load_policy: 3,
+                rel: 0,
+                start: 0,
+                enablejsapi: 1,
+                vq: 'hd1080',
+              },
+            },
+          }}
+        />
       )}
       <div className="w-full h-full flex flex-col justify-between gap-3 rounded-xl">
-        <div className="flex justify-end">
+        <div className="flex justify-end z-20">
           <Link href={`${viewUrl}`}>
-            <p className="text-white text-xs font-bold cursor-pointer px-7 py-5">
+            <p className="text-white hover:text-cyan-500 hover:underline text-xs font-bold cursor-pointer px-7 py-5">
               {viewBtn}
             </p>
           </Link>
         </div>
         <div className="w-full h-1/2 bg-gradient-to-t from-black/80 to-black/0 px-7 py-5 items-end flex justify-between">
-          <div className="flex gap-2">
+          <div className="flex z-20 gap-2">
             <Image
               width={400}
               height={300}
@@ -83,10 +106,10 @@ const TestimonialCard = ({
               <p className="text-[#999] text-xs font-normal">{authorDesc}</p>
             </div>
           </div>
-          {type === 'video' && (
-            <div>
-              {isPlaying ? (
-                <button onClick={handlePause}>
+          {thumbnail && source && (
+            <div className="z-20">
+              <button onClick={handlePlayPause}>
+                {isPlaying ? (
                   <Image
                     width={400}
                     height={300}
@@ -95,9 +118,7 @@ const TestimonialCard = ({
                     loading="lazy"
                     alt="pause"
                   />
-                </button>
-              ) : (
-                <button onClick={handlePlay}>
+                ) : (
                   <Image
                     width={400}
                     height={300}
@@ -106,8 +127,8 @@ const TestimonialCard = ({
                     loading="lazy"
                     alt="play"
                   />
-                </button>
-              )}
+                )}
+              </button>
             </div>
           )}
         </div>

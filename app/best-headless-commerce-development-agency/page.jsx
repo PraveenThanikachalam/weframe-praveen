@@ -157,8 +157,12 @@ const Headless = async () => {
         />
       </div>
 
-      <Testimonials testData={data?.testimonials} />
-    </div>
+      <Testimonials
+        testData={{
+          testimonial_heading: data?.testimonial_heading,
+          testimonial_cards: data?.testimonial,
+        }}
+      />     </div>
   );
 };
 

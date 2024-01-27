@@ -2,7 +2,12 @@
 import { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import TestimonialCard from './TestimonialCard';
+import dynamic from 'next/dynamic'
+
+const TestimonialCard = dynamic(() => import('./TestimonialCard'), {
+  ssr: false,
+  });
+// import TestimonialCard from ;
 import Image from 'next/image';
 
 const Testimonials = ({ testData }) => {
@@ -21,6 +26,7 @@ const Testimonials = ({ testData }) => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
 
   return (
     <>
@@ -77,16 +83,16 @@ const Testimonials = ({ testData }) => {
         >
           {testData?.testimonial_cards?.map((item, index) => (
             <SwiperSlide key={index} className="!h-full max-h-[480px]">
+              
               <TestimonialCard
-                type={item?.background_type}
-                source={item?.background?.key}
-                desc={item?.description}
-                authorName={item?.user_name}
-                authorDesc={item?.user_profession}
-                authorPhoto={item?.user_avatar?.key}
-                viewBtn={item?.project_button_name}
-                viewUrl={item?.project_url}
-                thumbnail={item?.thumbnail?.key}
+                source={item?.testimonials_id?.video_url}
+                desc={item?.testimonials_id?.client_testimonial}
+                authorName={item?.testimonials_id?.client_name}
+                authorDesc={item?.testimonials_id?.client_profession}
+                authorPhoto={item?.testimonials_id?.client_avatar}
+                viewBtn={item?.testimonials_id?.project_name}
+                viewUrl={item?.testimonials_id?.project_url}
+                thumbnail={item?.testimonials_id?.image}
               />
             </SwiperSlide>
           ))}
