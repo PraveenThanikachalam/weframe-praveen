@@ -1,7 +1,7 @@
 export const getHeadlessPage = async () => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/items/headless_commerce?fields=*, testimonials.*, section4_contents.development_platform_id.*, SEO.*`,
+      `${process.env.NEXT_PUBLIC_API_URL}/items/headless_commerce?fields=*, testimonial.testimonials_id.*, section4_contents.development_platform_id.*, SEO.*`,
       {
         headers: {
           Authorization: `Bearer ${process.env.BEARER_TOKEN}`,

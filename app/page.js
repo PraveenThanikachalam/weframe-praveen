@@ -91,8 +91,8 @@ export default async function Home() {
       />
       <Testimonials
         testData={{
-          testimonial_heading: data?.testimonials?.testimonial_heading,
-          testimonial_cards: data?.testimonials?.testimonial_cards,
+          testimonial_heading: data?.testimonial_heading,
+          testimonial_cards: data?.testimonial,
         }}
       />
       <OurClient
