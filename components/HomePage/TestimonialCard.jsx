@@ -50,7 +50,7 @@ const TestimonialCard = ({
             src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${thumbnail}`}
             alt="bgImage"
             fill
-            className={`object-cover -z-[1] ${desc && 'brightness-[10%]'}`}
+            className={`object-cover  ${desc && 'brightness-[90%]'}`}
             loading="lazy"
           />
           <p className="absolute inset-0 w-full px-7 py-4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm md:text-base lg:text-lg xl:text-xl">
