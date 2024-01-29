@@ -59,7 +59,7 @@ const TestimonialCard = ({
         </>
       ) : (
         <>
-        <div onClick={()=>{ setIsStarted(true); setIsPlaying(true)}} className={`w-full h-full top-0 bg-opacity-0  ${isStarted ? 'hidden' : 'cursor-pointer'} z-40 absolute bg-white`}></div>
+        <div onClick={()=>{ setIsStarted(true); setIsPlaying(true)}} className={`w-full h-full top-0  bg-opacity-0 ${isStarted ? 'hidden' : 'cursor-pointer'} z-50 absolute bg-white`}></div>
         <ReactPlayer
           url={`https://www.youtube.com/watch?v=${getYouTubeVideoId(source)}&vq=hd720&modestbranding=1&showinfo=0&fs=0&controls=0&iv_load_policy=3&nologo=1`}
           light={ isStarted ? false : `${process.env.NEXT_PUBLIC_API_URL}/assets/${thumbnail}`}
@@ -89,15 +89,15 @@ const TestimonialCard = ({
         </>
       )}
       <div className="w-full h-full  flex flex-col justify-between gap-3 rounded-xl">
-       <div className='flex justify-end z-40 p-6'>
-       <Link href={`${viewUrl}`}>
-            <p className="text-white hover:text-cyan-500   glow underline text-xs font-bold cursor-pointer ">
-              {viewBtn} &#129030;
+       <div className='flex justify-end  p-6'>
+       <Link className='z-50' href={`${viewUrl}`}>
+            <p className="text-white  hover:text-cyan-500  flex items-center justify-center gap-1 glow underline text-xs font-bold cursor-pointer ">
+              {viewBtn} <Image src={'/icons/arrow-right.svg'} alt='img' width={200} height={300} className='w-2 h-auto'/>
             </p>
           </Link>
        </div>
-        <div className="w-full h-1/2 bg-gradient-to-t from-black/80 to-black/0 px-7 py-5 z-50 items-end flex justify-between">
-          <div className="flex z-20 gap-2">
+        <div className="w-full h-1/2 bg-gradient-to-t from-black/80 to-black/0 px-7 py-5  items-end flex justify-between">
+          <div className="flex z-50 gap-2">
             <Image
               width={400}
               height={300}
@@ -116,7 +116,7 @@ const TestimonialCard = ({
           </div>
         
           {thumbnail && source && (
-            <div className={` ${isStarted ? 'block' : 'hidden'}`}>
+            <div className={` z-50 ${isStarted ? 'block' : 'hidden'}`}>
               <button onClick={handlePlayPause}>
                 {isPlaying ? (
                   <Image
