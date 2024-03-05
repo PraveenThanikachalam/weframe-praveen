@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${oceanwide.variable}`}>
       <body className={`${font.className} overflow-y-scroll no-scrollbar`}>
-      <link rel="icon" href='/logo2.jpg' sizes="any" />
+      <link rel="icon" href='/favicon.ico' sizes="any" />
         <NextTopLoader
           color="#00e6e6"
           showSpinner={false}
