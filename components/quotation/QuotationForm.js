@@ -13,14 +13,19 @@ export default function QuotationForm({
   uiux_price,
   ui_ux_duration,
   headlessSlug,
+  minimum_pages,
+  per_page_price,
+  per_page_duration,
 }) {
   const defaultValues = formData?.reduce((acc, category) => {
     acc[category.heading] = category.choice === 'multiple' ? [] : '';
     return acc;
   }, {});
 
-  const pathname = usePathname()
-  const [isHeadless, setIsHeadless] = useState(pathname === `/calculator/${headlessSlug}` ? true : false);
+  const pathname = usePathname();
+  const [isHeadless, setIsHeadless] = useState(
+    pathname === `/calculator/${headlessSlug}` ? true : false
+  );
 
   const {
     register,
@@ -28,68 +33,122 @@ export default function QuotationForm({
     watch,
     formState: { errors },
   } = useForm({
-    defaultValues
+    defaultValues,
   });
 
   const onSubmit = (data) => {
-    let totalDuration = 0;
-    let totalPrice = 0;
-    const numberOfPages = parseInt(data.no_of_pages) || 1;
-    const isUIUXSelected = data['ui-ux'] === 'Yes';
+    if (!isHeadless) {
+      let totalDuration = 0;
+      let totalPrice = 0;
+      const numberOfPages = parseInt(data.no_of_pages) || 1;
+      const isUIUXSelected = data['ui-ux'] === 'Yes';
 
-    // For each category find cost and time
-    formData?.forEach((category) => {
-      const selectedOptionNames = data[category?.heading];
+      // For each category find cost and time
+      formData?.forEach((category) => {
+        const selectedOptionNames = data[category?.heading];
 
-      //Multiply est_price with number of pages
-      const calculatePrice = (option) => {
-        let price = option.estimated_price;
-        price *= numberOfPages;
+        //Multiply est_price with number of pages
+        const calculatePrice = (option) => {
+          let price = option.estimated_price;
+          price *= numberOfPages;
 
-        return price;
-      };
-      //Multiply est_time with number of pages
-      const calculateDuration = (option) => {
-        let dur = option.estimated_duration;
-        dur *= numberOfPages;
+          return price;
+        };
+        //Multiply est_time with number of pages
+        const calculateDuration = (option) => {
+          let dur = option.estimated_duration;
+          dur *= numberOfPages;
 
-        return dur;
-      };
+          return dur;
+        };
 
-      // Handling for single choice
-      if (category.choice === 'single' && selectedOptionNames) {
-        const selectedOption = category.options.find(
-          (option) => option.name === selectedOptionNames
-        );
-        if (selectedOption) {
-          totalDuration += calculateDuration(selectedOption);
-          totalPrice += calculatePrice(selectedOption);
-        }
-      }
-
-      // Handling for multiple choice
-      if (
-        category.choice === 'multiple' &&
-        Array.isArray(selectedOptionNames)
-      ) {
-        selectedOptionNames.forEach((optionName) => {
-          const selectedOption = category?.options.find(
-            (option) => option.name === optionName
+        // Handling for single choice
+        if (category.choice === 'single' && selectedOptionNames) {
+          const selectedOption = category.options.find(
+            (option) => option.name === selectedOptionNames
           );
           if (selectedOption) {
             totalDuration += calculateDuration(selectedOption);
             totalPrice += calculatePrice(selectedOption);
           }
-        });
-      }
-    });
+        }
 
-    if (uiux_price && ui_ux_duration && isUIUXSelected) {
-      totalPrice += uiux_price * numberOfPages;
-      totalDuration += ui_ux_duration;
+        // Handling for multiple choice
+        if (
+          category.choice === 'multiple' &&
+          Array.isArray(selectedOptionNames)
+        ) {
+          selectedOptionNames.forEach((optionName) => {
+            const selectedOption = category?.options.find(
+              (option) => option.name === optionName
+            );
+            if (selectedOption) {
+              totalDuration += calculateDuration(selectedOption);
+              totalPrice += calculatePrice(selectedOption);
+            }
+          });
+        }
+      });
+
+      if (uiux_price && ui_ux_duration && isUIUXSelected) {
+        totalPrice += uiux_price * numberOfPages;
+        totalDuration += ui_ux_duration;
+      }
+
+      setQuoteCost({ totalCost: totalPrice, totalTime: totalDuration });
+    } else {
+      let totalDuration = 0;
+      let totalPrice = 0;
+      const numberOfPages = parseInt(data.no_of_pages) || 1;
+      const isUIUXSelected = data['ui-ux'] === 'Yes';
+
+      // For each category find cost and time
+      formData?.forEach((category) => {
+        const selectedOptionNames = data[category?.heading];
+
+        // Handling for single choice
+        if (category.choice === 'single' && selectedOptionNames) {
+          const selectedOption = category.options.find(
+            (option) => option.name === selectedOptionNames
+          );
+          if (selectedOption) {
+            // For single-choice options, don't multiply by numberOfPages
+            totalDuration += selectedOption.estimated_duration;
+            totalPrice += selectedOption.estimated_price;
+          }
+        }
+
+        // Handling for multiple choice
+        if (
+          category.choice === 'multiple' &&
+          Array.isArray(selectedOptionNames)
+        ) {
+          selectedOptionNames.forEach((optionName) => {
+            const selectedOption = category?.options.find(
+              (option) => option.name === optionName
+            );
+            if (selectedOption) {
+              totalDuration += selectedOption.estimated_duration;
+              totalPrice += selectedOption.estimated_price;
+            }
+          });
+        }
+      });
+
+      if (numberOfPages > 15 && isHeadless) {
+        const additionalPages = numberOfPages - 15;
+        totalPrice += additionalPages * per_page_price;
+        totalDuration += additionalPages * per_page_duration;
+      }
+
+      if (uiux_price && ui_ux_duration && isUIUXSelected) {
+        totalPrice += uiux_price * numberOfPages;
+        totalDuration += ui_ux_duration;
+      }
+
+      setQuoteCost({ totalCost: totalPrice, totalTime: totalDuration });
     }
 
-    setQuoteCost({ totalCost: totalPrice, totalTime: totalDuration });
     if (companyFormSubmitted) {
       setPage((prev) => prev + 2);
     } else {
@@ -116,14 +175,22 @@ export default function QuotationForm({
                   </label>
                   <input
                     type="number"
-                    placeholder="23"
+                    placeholder={minimum_pages}
                     id="no_of_pages"
                     name="no_of_pages"
                     className="w-full navbar bg-opacity-50 font-light rounded-lg border border-gray-300 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 h-10 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    {...register('no_of_pages', { required: true, min: isHeadless ? 25 : 1} )}
+                    {...register('no_of_pages', {
+                      required: true,
+                      min: isHeadless ? +`${minimum_pages}` : 1,
+                    })}
                   />
                   {errors.no_of_pages && (
-                    <span className="text-xs text-cyan-500"> {isHeadless ? 'Please consider a minimum of 25 pages.' : 'This field is required.'}</span>
+                    <span className="text-xs text-cyan-500">
+                      {' '}
+                      {isHeadless
+                        ? `Please consider a minimum of ${minimum_pages} pages.`
+                        : 'This field is required.'}
+                    </span>
                   )}
                 </div>
               </div>

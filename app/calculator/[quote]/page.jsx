@@ -50,6 +50,7 @@ const QuotePage = async () => {
   const jamstackSlug = await getJamstackSlug('jamstack_quote_page');
 
   if (!data) return;
+
   return (
     <main className="max-w-screen-xl mx-auto px-4 flex flex-col items-center justify-center">
       <Quotation

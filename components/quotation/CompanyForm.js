@@ -167,6 +167,7 @@ export default function CompanyForm({ setPage, setCompanyFormSubmitted }) {
               type="submit"
               variant="filled"
               label={'Calculate Quote'}
+              className='mx-auto'
               onClick={() => {}}
             />
           </form>
