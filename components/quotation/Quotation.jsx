@@ -46,6 +46,8 @@ export default function Quotation({ pageData, headlessSlug,jamstackSlug }) {
     fetchData();
   }, [shift]);
 
+  // console.log(data)
+
 
   return (
     <>
@@ -103,6 +105,9 @@ export default function Quotation({ pageData, headlessSlug,jamstackSlug }) {
               uiux_price={data?.uiux_price}
               ui_ux_duration={data?.ui_ux_duration}
               headlessSlug={headlessSlug}
+              minimum_pages={data?.minimum_pages}
+              per_page_price={data?.per_page_price}
+              per_page_duration={data?.per_page_duration}
             />
           )}
           {page === 1 && (
