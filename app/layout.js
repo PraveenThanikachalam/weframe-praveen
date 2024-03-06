@@ -13,23 +13,20 @@ export const metadata = {
   title: 'WeframeTech',
   description:
     'Jamstack & Headless Commerce Agency, We recognize the demand for high-speed, secure, and easily scalable websites. Leveraging the power of Jamstack, we deliver an exceptional web development experience tailored to your specific requirements, Get an instant quote for your project.',
-  // icons: {
-  //   icon: '/assets/logo.svg',
-  // },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${oceanwide.variable}`}>
+      <link rel="icon" href="/favicon.ico" sizes="96x96" type="image/x-icon" />
       <body className={`${font.className} overflow-y-scroll no-scrollbar`}>
-      <link rel="icon" href='/favicon.ico' sizes="any" />
         <NextTopLoader
           color="#00e6e6"
           showSpinner={false}
           easing="ease"
           height={2}
         />
-        <TopMessage/>
+        <TopMessage />
         <Navbar />
         <Matrix />
         {children}
