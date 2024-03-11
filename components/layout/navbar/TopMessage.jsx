@@ -11,7 +11,7 @@ const TopMessage = () => {
     <div>
       {showUnderDevelopment && (
         <div className="bg-[#123d41] p-2 text-center">
-          <p className="text-sm text-gray-100 font-medium">
+          <p className="text-sm text-gray-100 z-20 sticky top-0 font-medium">
             This website is currently under development. We appreciate your
             patience. If you have any urgent inquiries or require assistance,
             please feel free to contact us:

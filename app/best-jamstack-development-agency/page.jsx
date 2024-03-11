@@ -52,7 +52,7 @@ const Jamstack = async () => {
       <div className="w-full z-10  h-[50%] bg-gradient-to-b from-[#1996a291] to-[#020C0D] absolute top-0"></div>
       <div className=" max-w-screen-xl  z-20 flex lg:flex-row flex-col items-center justify-center ">
         <div className="left my-16  h-full flex flex-col items-center justify-center w-full lg:w-[50%]">
-          <div className="flex flex-col gap-2 lg:items-start items-center  justify-center">
+          <div className="flex flex-col gap-4 lg:items-start items-center  justify-center">
             <h1 className="lg:text-6xl md:text-6xl text-4xl lg:text-start text-center  font-bold  font-title-font gradient-text">
               {data?.heading_points[0].point} <br />{' '}
               {data?.heading_points[1].point} <br />{' '}
@@ -60,7 +60,7 @@ const Jamstack = async () => {
             </h1>
             <p
               style={{ color: 'rgba(153, 153, 153, 1)' }}
-              className="font-light mt-4 lg:text-left text-center"
+              className="font-light lg:text-left text-center"
             >
               {data?.description}
             </p>
@@ -118,7 +118,7 @@ const Jamstack = async () => {
         </div>
       </div>
 
-      <div className="max-w-screen-xl lg:my-16 my-12 flex flex-col gap-16">
+      <div className="max-w-screen-xl lg:my-16 my-12 flex flex-col gap-12">
         <div className="w-full flex lg:flex-row flex-col gap-5  lg:gap-0 items-center justify-between">
           <h1 className="lg:text-4xl text-3xl md:text-4xl font-title-font text-white font-semibold">
             {data?.section2_heading}

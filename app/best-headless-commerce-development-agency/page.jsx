@@ -58,7 +58,7 @@ const Headless = async () => {
             </h1>
             <p
               style={{ color: 'rgba(153, 153, 153, 1)' }}
-              className="font-light mt-4 lg:text-left text-center"
+              className="font-light lg:text-left text-center"
             >
               {data?.description}
             </p>
@@ -82,7 +82,6 @@ const Headless = async () => {
           </div>
         </div>
       </div>
-
       <div className=" my-24 max-w-screen-xl z-20 gap-8 flex flex-col items-center justify-center">
         <div className="w-full flex items-center justify-start">
           <div className="lg:w-[50%] w-full text-center lg:text-left">
@@ -114,7 +113,6 @@ const Headless = async () => {
           </video>
         </div>
       </div>
-
       <div className="max-w-screen-xl w-full lg:my-16 my-12 flex flex-col gap-16">
         <div className="w-full flex lg:flex-row flex-col gap-5  lg:gap-0 items-center justify-between">
           <h1 className="lg:text-4xl text-3xl md:text-4xl md:text-left text-center font-title-font text-white font-semibold">
@@ -137,18 +135,15 @@ const Headless = async () => {
           })}
         </div>
       </div>
-
       <div className="mt-24">
         <ProgressFlow
           title={data?.section3_heading}
           arr={data?.section3_points}
         />
       </div>
-
       <div className="w-full flex items-center justify-center lg:my-10 my-6">
         <TechStack techData={techstack} />
       </div>
-
       <div className="w-full flex justify-center lg:my-10">
         <NudgeCard
           title={data?.section5_heading}
@@ -156,13 +151,13 @@ const Headless = async () => {
           url={data?.section5_button_url}
         />
       </div>
-
       <Testimonials
         testData={{
           testimonial_heading: data?.testimonial_heading,
           testimonial_cards: data?.testimonial,
         }}
-      />     </div>
+      />{' '}
+    </div>
   );
 };
 
