@@ -17,6 +17,8 @@ export default function Quotation({ pageData, headlessSlug,jamstackSlug }) {
   const [shift, setShift] = useState(
     pathname === `/calculator/${headlessSlug}` ? true : false
   );
+  const [type,setType] = useState(shift ? 'Headless Commerce' : 'Jamstack Development')
+  const [selected,setSelected] = useState('')
 
   const fetchData = async () => {
     const section = shift ? 'headless_quote_page' : 'jamstack_quote_page';
@@ -108,12 +110,15 @@ export default function Quotation({ pageData, headlessSlug,jamstackSlug }) {
               minimum_pages={data?.minimum_pages}
               per_page_price={data?.per_page_price}
               per_page_duration={data?.per_page_duration}
+              setSelected={setSelected}
             />
           )}
           {page === 1 && (
             <CompanyForm
               setPage={setPage}
               setCompanyFormSubmitted={setCompanyFormSubmitted}
+              selected={selected}
+              type={type}
             />
           )}
 

@@ -3,7 +3,7 @@
 import Button from '../ui/Button';
 import { useForm } from 'react-hook-form';
 
-export default function CompanyForm({ setPage, setCompanyFormSubmitted }) {
+export default function CompanyForm({ setPage, setCompanyFormSubmitted,type,selected }) {
   const {
     register,
     handleSubmit,
@@ -25,6 +25,8 @@ export default function CompanyForm({ setPage, setCompanyFormSubmitted }) {
             phone_number: data.phone,
             company_size: data.size,
             company_website: data.website,
+            type:type,
+            technologies_used:selected
           }),
         }
       );

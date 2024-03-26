@@ -16,6 +16,7 @@ export default function QuotationForm({
   minimum_pages,
   per_page_price,
   per_page_duration,
+  setSelected,
 }) {
   const defaultValues = formData?.reduce((acc, category) => {
     acc[category.heading] = category.choice === 'multiple' ? [] : '';
@@ -42,6 +43,12 @@ export default function QuotationForm({
       let totalPrice = 0;
       const numberOfPages = parseInt(data.no_of_pages) || 1;
       const isUIUXSelected = data['ui-ux'] === 'Yes';
+
+      setSelected({
+        pages: numberOfPages,
+        uiux: isUIUXSelected,
+        data: data,
+      });
 
       // For each category find cost and time
       formData?.forEach((category) => {
@@ -101,6 +108,12 @@ export default function QuotationForm({
       let totalPrice = 0;
       const numberOfPages = parseInt(data.no_of_pages) || 1;
       const isUIUXSelected = data['ui-ux'] === 'Yes';
+
+      setSelected({
+        pages: numberOfPages,
+        uiux: isUIUXSelected,
+        data: data,
+      });
 
       // For each category find cost and time
       formData?.forEach((category) => {
