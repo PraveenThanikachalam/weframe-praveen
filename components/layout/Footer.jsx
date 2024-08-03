@@ -2,6 +2,7 @@ import SvgRenderer from '@/lib/svg_renderer';
 import { getFooter } from '@/utils/getFooter';
 import Link from 'next/link';
 import NudgeCard from '../ui/NudgeCard';
+import Image from 'next/image';
 
 const Footer = async () => {
   const data = await getFooter();
@@ -21,7 +22,9 @@ const Footer = async () => {
           <div className="lg:w-[40%] w-full text-center lg:text-left">
             <div className="flex flex-col lg:items-start items-center lg:justify-start justify-center">
               <div>
-                <SvgRenderer svgText={data?.logo} />
+                {/* <SvgRenderer svgText={data?.logo} /> */}
+                <Image src={'/updated.png'} alt='logo' width={500} height={500} className='h-8 w-auto'/>
+
               </div>
               <p
                 style={{ color: 'rgba(153, 153, 153, 1)' }}
