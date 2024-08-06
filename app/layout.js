@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
       <link rel="manifest" href="/site.webmanifest" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
 
-      <body className={`${font.className} overflow-y-scroll no-scrollbar`}>
+      <body className={`${font.className} overflow-y-scroll overflow-x-hidden no-scrollbar`}>
         <NextTopLoader
           color="#00e6e6"
           showSpinner={false}
