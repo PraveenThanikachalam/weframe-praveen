@@ -16,7 +16,7 @@ const Nav = ({ navData }) => {
 
   return (
     <div className="w-full sticky top-0 bg-opacity-25 z-40 bg-[#020c0d]  bg-transparent backdrop-blur-sm">
-      <div className="w-full flex items-center justify-between text-white py-6 md:px-10 px-5">
+      <div className="w-full flex items-center justify-between text-white md:py-7 py-6 md:px-10 px-5">
         <div>
           <Link href={'/'} aria-label="Website logo">
             {/* <SvgRenderer svgText={data?.logo} /> */}

@@ -87,7 +87,7 @@ const Jamstack = async () => {
         </div>
       </div>
 
-      <div className=" my-24 max-w-screen-xl z-20 gap-8 flex flex-col items-center justify-center">
+      {/* <div className=" my-24 max-w-screen-xl z-20 gap-8 flex flex-col items-center justify-center">
         <div className="w-full flex items-center justify-start">
           <div className="lg:w-[50%] w-full text-center lg:text-left">
             <h1 className="lg:text-4xl text-2xl md:text-4xl text-white font-title-font font-bold">
@@ -116,7 +116,7 @@ const Jamstack = async () => {
             />
           </video>
         </div>
-      </div>
+      </div> */}
 
       <div className="max-w-screen-xl lg:my-16 my-12 flex flex-col gap-12">
         <div className="w-full flex lg:flex-row flex-col gap-5  lg:gap-0 items-center justify-between">

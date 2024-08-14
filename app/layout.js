@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
           easing="ease"
           height={2}
         />
-        <TopMessage />
+        {/* <TopMessage /> */}
         <Navbar />
         <Matrix />
         {children}

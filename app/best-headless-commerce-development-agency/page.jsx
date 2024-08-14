@@ -82,7 +82,7 @@ const Headless = async () => {
           </div>
         </div>
       </div>
-      <div className=" my-24 max-w-screen-xl z-20 gap-8 flex flex-col items-center justify-center">
+      {/* <div className=" my-24 max-w-screen-xl z-20 gap-8 flex flex-col items-center justify-center">
         <div className="w-full flex items-center justify-start">
           <div className="lg:w-[50%] w-full text-center lg:text-left">
             <h1 className="lg:text-4xl text-2xl md:text-4xl text-white font-title-font font-bold">
@@ -112,7 +112,7 @@ const Headless = async () => {
             />
           </video>
         </div>
-      </div>
+      </div> */}
       <div className="max-w-screen-xl w-full lg:my-16 my-12 flex flex-col gap-16">
         <div className="w-full flex lg:flex-row flex-col gap-5  lg:gap-0 items-center justify-between">
           <h1 className="lg:text-4xl text-3xl md:text-4xl md:text-left text-center font-title-font text-white font-semibold">
