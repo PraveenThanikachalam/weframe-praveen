@@ -80,7 +80,7 @@ const StoryCard = ({ data }) => {
               )}
             </>
           ) : (
-            <Link className="w-full" href={data?.button_url}>
+            <Link className="w-full" href={data?.button_url ?? '/'}>
               <button
                 className={
                   'w-full border border-gray-500 text-white hover:bg-white hover:text-black bg-transparent rounded-full px-4 py-3 transition-all duration-150  font-medium'

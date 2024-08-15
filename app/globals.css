@@ -253,4 +253,54 @@ input::-webkit-inner-spin-button {
   }
 }
 
+.chevron {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.chevron::before,
+.chevron::after {
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 1.5px;
+  /* border-radius: 1px; */
+  background: rgb(255, 255, 255);
+  transition: transform 0.3s ease;
+}
+
+.chevron::before {
+  top: 50%;
+  left: 0;
+  transform: rotate(46deg);
+}
+
+.chevron::after {
+  top: 50%;
+  right: -0.5px;
+  transform: rotate(-46deg);
+}
+
+.chevron.up::before {
+  transform: rotate(-46deg);
+}
+
+.chevron.up::after {
+  transform: rotate(46deg);
+}
+
+.chevron.down::before {
+  transform: rotate(46deg);
+}
+
+.chevron.down::after {
+  transform: rotate(-46deg);
+}
+
+
+
+
 
