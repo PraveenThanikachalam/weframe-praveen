@@ -7,7 +7,7 @@ import {
 
 const FaqComponent = ({ faq }) => {
   return (
-    <div className="faq w-full px-4 flex my-20 items-center text-center justify-center flex-col">
+    <div className="faq w-full px-4 flex  items-center text-center justify-center flex-col">
       <div>
         <h2 className="text-4xl font-bold text-white">{faq?.faq_heading}</h2>
       </div>

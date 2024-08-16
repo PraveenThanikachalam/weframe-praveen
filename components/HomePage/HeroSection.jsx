@@ -6,7 +6,7 @@ import SvgRenderer from '@/lib/svg_renderer';
 const HeroSection = ({ heroData }) => {
   // console.log(heroData?.icons)
   return (
-    <div className="h-[90vh]  gap-10 text-center  text-white w-full flex flex-col justify-evenly py-10 px-4 items-center relative">
+    <div className="h-[90vh] max-w-screen-xl mx-auto gap-10 text-center  text-white w-full flex flex-col justify-evenly py-10 px-4 items-center relative">
       <div className="lg:w-[60%] w-full z-30  flex flex-col items-center justify-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold font-title-font">
           {heroData?.hero_title}

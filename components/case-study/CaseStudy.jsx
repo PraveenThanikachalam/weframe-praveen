@@ -1,69 +1,47 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import TagButton from '@/components/ui/TagButton';
 import StoryCard from '@/components/HomePage/successstory/StoryCard';
 import Button from '@/components/ui/Button';
 import NudgeCard from '@/components/ui/NudgeCard';
-import { getFilterCaseStudies } from '@/utils/getFilterCaseStudies';
-import Link from 'next/link';
 
 const CaseStudy = ({ pageData }) => {
   const [data, setData] = useState(pageData);
   const [selectedFilters, setSelectedFilters] = useState([]);
-  const [filtered, setFiltered] = useState();
+  const [filtered, setFiltered] = useState(null);
   const [allTags, setAllTags] = useState([]);
+  const [display, setDisplay] = useState(6);
+
+
 
   useEffect(() => {
-    // Extract tags from the 'data' object
     let tagsFromData = data?.tags?.map((tag) => tag.name) || [];
-
-    // Extract unique tags from the 'case_studies' array
-    // let uniqueTagsFromCaseStudies = Array.from(
-    //   new Set(
-    //     data?.case_studies?.flatMap(
-    //       (caseStudy) => caseStudy.case_studies_id.tags || []
-    //     )
-    //   )
-    // );
-    // Combine both sets of tags
-    // let combinedTags = [...tagsFromData, ...uniqueTagsFromCaseStudies];
-
-    // Remove duplicates by creating a Set
-    // let uniqueCombinedTags = Array.from(new Set(combinedTags));
-
-    // Set the 'allTags' state
     setAllTags(tagsFromData);
   }, [data]);
 
-  // Use 'allTags' as needed in your component
-
   useEffect(() => {
-    const fetchFilteredCaseStudies = async () => {
-      try {
-        let filterParams;
+    const filterCaseStudies = () => {
+      // Assuming `caseStudies` is your array of case studies data
+      const filteredCaseStudies = data?.case_studies?.filter((caseStudy) =>
+        selectedFilters.every((filter) =>
+          caseStudy.case_studies_id.tags.some((tag) =>
+            tag.toLowerCase().includes(filter.toLowerCase())
+          )
+        )
+      );
 
-        if (selectedFilters.length > 0) {
-          filterParams = {
-            _and: selectedFilters.map((tag) => ({
-              tags: {
-                _icontains: tag,
-              },
-            })),
-          };
-        } else {
-          filterParams = {};
-        }
-
-        const filteredCaseStudies = await getFilterCaseStudies(filterParams);
-
-        setFiltered(filteredCaseStudies);
-      } catch (error) {
-        console.error('Error fetching filtered case studies:', error);
-      }
+      setFiltered(filteredCaseStudies);
+      setDisplay(filteredCaseStudies?.length);
     };
 
-    fetchFilteredCaseStudies();
-  }, [selectedFilters]);
+    if (selectedFilters.length > 0) {
+      filterCaseStudies();
+    } else {
+      setFiltered(null);
+      setDisplay(6);
+    }
+  }, [selectedFilters]); // Add caseStudies to the dependency array if it's fetched or changes dynamically
+
+
   return (
     <main className="max-w-screen-xl mx-auto px-4 flex flex-col items-center justify-center">
       <div className="w-full lg:my-28 my-20  flex items-center justify-center">
@@ -119,24 +97,32 @@ const CaseStudy = ({ pageData }) => {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-col gap-14 items-center justify-center">
+      <div className="w-full flex flex-col gap-[24px] items-center justify-center">
         {selectedFilters.length > 0 && filtered && filtered.length === 0 ? (
-          <p className="font-title-font text-gray-300 text-sm">
+          <p className="font-title-font h-56 text-gray-300 text-sm">
             No Case Studies Found.
           </p>
         ) : (
-          (filtered ? filtered : data?.case_studies)?.map((item, index) => (
-            <StoryCard
-              key={index}
-              data={filtered ? item : item.case_studies_id}
-            />
-          ))
+          (filtered ? filtered : data?.case_studies)?.map(
+            (item, index) =>
+              index + 1 <= display && (
+                <StoryCard key={index} data={item.case_studies_id} />
+              )
+          )
         )}
       </div>
-      <div className="w-full flex items-center justify-center my-16">
-        <Link href={`${data?.button_url}`}>
-          <Button variant="outline" label={data?.button_text} />
-        </Link>
+      <div
+        className={`w-full flex items-center ${
+          (display >= data?.case_studies?.length || filtered || data?.case_studies?.length<=6) && 'hidden'
+        } justify-center my-16 `}
+      >
+        <Button
+          onClick={() => {
+            setDisplay(display + 6);
+          }}
+          variant="outline"
+          label={data?.button_text}
+        />
       </div>
       <div className="min-h-[60vh] w-screen p-6 flex items-center justify-center">
         <NudgeCard

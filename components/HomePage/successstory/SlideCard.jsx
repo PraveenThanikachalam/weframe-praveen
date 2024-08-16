@@ -74,7 +74,7 @@ const SlideCard = ({ data }) => {
   return (
     <div
       ref={ref}
-      className={`w-full max-w-screen-xl ${
+      className={`w-full  ${
         inView ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
       } transition-all duration-500 mx-auto items-center justify-center flex`}
     >
@@ -87,20 +87,21 @@ const SlideCard = ({ data }) => {
         }}
         loop={true}
         style={{
-          width: `${isMobile ? '92vw' : '79vw'}`,
+          // width: `${isMobile ? '92vw' : '79vw'}`,
           position: 'relative',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
         }}
+        className='w-full'
       >
         {data?.map((slide, index) => {
           const { videoRef, type, error, isPlaying, handlePlay, handlePause } =
             SlideCardInfo(slide);
 
           return (
-            <SwiperSlide key={index}>
-              <div className=" w-full lg:h-[480px]  story-card-grd relative border overflow-hidden items-center justify-center rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
+            <SwiperSlide key={index} className='w-full'>
+              <div className=" w-full md:h-[480px] h-[600px]  story-card-grd relative border overflow-hidden items-center justify-center rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
                 <div className="lg:w-[40%] w-full flex lg:p-6 p-1 flex-col items-start justify-center">
                   <h1 className="lg:text-2xl text-lg font-bold text-white line-clamp-2">
                     {slide?.case_studies_id?.heading}

@@ -11,7 +11,7 @@ const ProgressFlowCard = ({ title, desc, index }) => {
     <div
       ref={ref}
       key={index}
-      className={`mb-8 flex  ${
+      className={`mb-5 flex  ${
         inView ? 'translate-y-0 opacity-100' : ' translate-y-32 opacity-0'
       } transition-all duration-500  justify-between  items-center w-full ${
         index % 2 === 0

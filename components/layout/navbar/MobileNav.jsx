@@ -18,9 +18,9 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
 
   return (
     <div
-      className={`absolute z-50 w-full min-h-96 overflow-x-hidden py-10 animate-fade-in-down top-0 bg-[#020c0d]  ${
-        visible2 ? 'flex' : 'hidden'
-      } flex-col items-center justify-center gap-4`}
+      className={`absolute z-50 w-full min-h-96 flex overflow-x-hidden py-10  top-0 bg-[#020c0d]  ${
+        visible2 ? 'translate-y-0' : '-translate-y-full'
+      } flex-col items-center transition-all duration-200 justify-center gap-4`}
     >
       <Image
         onClick={() => {

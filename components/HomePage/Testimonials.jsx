@@ -29,8 +29,8 @@ const Testimonials = ({ testData }) => {
 
 
   return (
-    <>
-      <div className=" w-full md:w-4/5 max-w-screen-xl my-20  flex items-center justify-center">
+    <div className='flex flex-col w-full'>
+      <div className=" w-full mb-8  max-w-screen-xl mx-auto  flex items-center justify-center">
         <div className="w-full flex flex-col lg:flex-row text-center lg:text-left items-center justify-between">
           <div>
             <h1 className="lg:text-4xl text-2xl md:text-4xl text-white font-bold">
@@ -69,7 +69,7 @@ const Testimonials = ({ testData }) => {
       <div className="w-full overflow-hidden flex items-center justify-end">
         <Swiper
           style={{
-            width: `${isMobile ? '90vw' : '80vw'}`,
+            width: `${isMobile ? '95%' : '100%'}`,
             maxWidth: '1280px',
             height: '480px',
             overflow: 'visible',
@@ -98,7 +98,7 @@ const Testimonials = ({ testData }) => {
           ))}
         </Swiper>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -17,10 +17,10 @@ const TechStack = ({ techData }) => {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <div className="techStack w-full py-16 px-4 flex flex-col gap-5 md:gap-10 items-center justify-center">
-        <div className="w-full max-w-screen-xl text-center flex flex-col gap-5 md:gap-10 items-center justify-center">
+      <div className="techStack w-full  flex flex-col gap-5 md:gap-10 items-center justify-center">
+        <div className="w-full  text-center flex flex-col gap-5 md:gap-10 items-center justify-center">
           <h1 className="lg:text-4xl text-3xl md:text-4xl font-bold text-white">
-            {techData?.section2_heading}
+            {techData?.section2_heading ?? 'How we develop for'}
           </h1>
           <div className="rounded-xl relative border overflow-hidden w-64 h-12 border-gray-400 flex items-center justify-center">
             <div
@@ -50,7 +50,7 @@ const TechStack = ({ techData }) => {
             </div>
           </div>
         </div>
-        <div className="techstackComponents max-w-screen-xl w-full flex flex-col items-center justify-center lg:gap-12 gap-8">
+        <div className="techstackComponents max-w-screen-xl w-full flex flex-col items-center justify-center lg:gap-[24px] gap-8">
           {!shift ? (
             <>
               {webFrameworks[0]?.development_platform_id?.sections?.map(

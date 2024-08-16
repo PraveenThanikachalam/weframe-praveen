@@ -48,10 +48,10 @@ const Headless = async () => {
     section2_contents: data?.section4_contents,
   };
   return (
-    <div className=" w-full lg:px-8 px-3 min-h-screen flex flex-col items-center ">
+    <div className=" w-full px-4 md:px-0 max-w-screen-xl mx-auto md:gap-[120px] gap-[80px] min-h-screen flex flex-col items-center ">
       <div className="w-full z-10  h-[50%] bg-gradient-to-b from-[#1996a291] to-[#020C0D] absolute top-0"></div>
-      <div className=" max-w-screen-xl  z-20 flex lg:flex-row flex-col items-center justify-center ">
-        <div className="left my-16  h-full flex flex-col items-center justify-center w-full lg:w-[50%]">
+      <div className=" w-full mt-20 z-20 gap-5 flex lg:flex-row flex-col items-center justify-center ">
+        <div className="left   h-full flex flex-col items-center justify-center w-full lg:w-[50%]">
           <div className="flex flex-col gap-4 lg:items-start items-center  justify-center">
             <h1 className="lg:text-6xl md:text-6xl text-4xl lg:text-start text-center  font-bold  font-title-font gradient-text">
               {data?.heading}
@@ -113,8 +113,8 @@ const Headless = async () => {
           </video>
         </div>
       </div> */}
-      <div className="max-w-screen-xl w-full lg:my-16 my-12 flex flex-col gap-16">
-        <div className="w-full flex lg:flex-row flex-col gap-5  lg:gap-0 items-center justify-between">
+      <div className=" w-full  flex flex-col ">
+        <div className="w-full flex lg:flex-row flex-col gap-5 mb-8 lg:gap-0 items-center justify-between">
           <h1 className="lg:text-4xl text-3xl md:text-4xl md:text-left text-center font-title-font text-white font-semibold">
             {data?.section2_heading}
           </h1>
@@ -122,7 +122,7 @@ const Headless = async () => {
             <Button variant="outline" label={data?.section2_btn_text} />
           </Link>
         </div>
-        <div className="w-full flex flex-wrap items-center justify-center gap-5">
+        <div className="w-full grid md:grid-cols-3 grid-cols-1 gap-5">
           {data?.section2_cards.map((item, index) => {
             return (
               <MediumBox
@@ -135,16 +135,16 @@ const Headless = async () => {
           })}
         </div>
       </div>
-      <div className="mt-24">
+      <div className="">
         <ProgressFlow
           title={data?.section3_heading}
           arr={data?.section3_points}
         />
       </div>
-      <div className="w-full flex items-center justify-center lg:my-10 my-6">
+      <div className="w-full flex items-center justify-center ">
         <TechStack techData={techstack} />
       </div>
-      <div className="w-full flex justify-center lg:my-10">
+      <div className="w-full flex justify-center ">
         <NudgeCard
           title={data?.section5_heading}
           label={data?.section5_button_text}
