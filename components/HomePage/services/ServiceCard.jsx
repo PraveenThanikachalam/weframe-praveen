@@ -11,13 +11,13 @@ const ServiceCard = ({ title, img, url }) => {
   return (
     <Link
       ref={ref}
-      className={`w-72 md:w-[30%] transition-all duration-500 z-20 ${
+      className={`w-full h-[200px] transition-all duration-500 z-20 ${
         inView ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
       }`}
       href={`${url}`}
     >
       <div
-        className={`serviceCard cursor-pointer  hover:shadow-sm hover:shadow-cyan-500 text-gray-300 hover:text-gray-100 bg-gradient-to-br from-[#1FBCCB1F] via-[#020C0D] to-transparent transition-all duration-200 max-w-xs h-32 rounded-xl flex items-center justify-start relative border overflow-hidden border-gray-600`}
+        className={`serviceCard w-full h-full cursor-pointer  hover:shadow-sm hover:shadow-cyan-500  bg-gradient-to-br from-[#1FBCCB1F] via-[#020C0D] to-transparent transition-all duration-200  rounded-xl flex items-center justify-start relative border overflow-hidden border-gray-600`}
       >
         <Image
           alt="img"
@@ -33,8 +33,8 @@ const ServiceCard = ({ title, img, url }) => {
           />
         )}
 
-        <div className="w-[70%] h-full bg-cover relative">
-          <h2 className="text-xl font-bold   absolute bottom-6 left-6">
+        <div className="w-[65%] h-full bg-cover relative">
+          <h2 className="text-[27px] font-bold  bg-clip-text text-transparent bg-gradient-to-b from-[#FFFFFF] to-[#999999] absolute bottom-6 left-6">
             {title}
           </h2>
         </div>

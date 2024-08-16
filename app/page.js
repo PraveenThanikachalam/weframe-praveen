@@ -46,7 +46,7 @@ export default async function Home() {
   const buttonSlug = await getJamstackSlug('jamstack_quote_page')
   if (!data) return null;
   return (
-    <main className="flex flex-col justify-center items-center w-full">
+    <main className="flex flex-col justify-center md:gap-[120px] gap-[60px] items-center w-full">
       <HeroSection
         heroData={{
           hero_title: data?.hero_title,

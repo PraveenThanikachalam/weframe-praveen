@@ -97,7 +97,7 @@ const CaseStudy = ({ pageData }) => {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-col gap-14 items-center justify-center">
+      <div className="w-full flex flex-col gap-[24px] items-center justify-center">
         {selectedFilters.length > 0 && filtered && filtered.length === 0 ? (
           <p className="font-title-font h-56 text-gray-300 text-sm">
             No Case Studies Found.

@@ -51,7 +51,7 @@ const OurClient = ({ clientsData }) => {
   const slidesArr = createSlidesArr([...clientsData.clients]);
 
   return (
-    <div className=" clients mt-28 max-w-screen-2xl w-full flex flex-col gap-14 items-center justify-center">
+    <div className=" clients mx-auto max-w-screen-xl w-full flex flex-col gap-14 items-center justify-center">
       <h1 className="text-4xl font-bold text-white">
         {clientsData?.client_section_heading}
       </h1>

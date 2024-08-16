@@ -31,9 +31,9 @@ const StoryCard = ({ data }) => {
   return (
     <div
       ref={ref}
-      className={`lg:w-[80vw] ${
+      className={`w-full ${
         inView ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-      } transition-all lg:h-[480px] duration-500 w-full max-w-screen-xl story-card-grd  border  border-gray-600 rounded-xl flex flex-col-reverse lg:flex-row p-5 `}
+      } transition-all lg:h-[480px] duration-500 story-card-grd  border  border-gray-600 rounded-xl flex flex-col-reverse lg:flex-row p-5 `}
     >
       <div className="lg:w-[40%] w-full flex lg:p-6 p-1 flex-col items-start justify-center">
         <h1 className="lg:text-2xl text-lg font-bold text-white">
