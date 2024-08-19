@@ -5,7 +5,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Matrix from '@/components/ui/Matrix';
 import NextTopLoader from 'nextjs-toploader';
-import TopMessage from '@/components/layout/navbar/TopMessage';
+// import TopMessage from '@/components/layout/navbar/TopMessage';
 
 const font = Lexend({ subsets: ['latin'] });
 
@@ -45,7 +45,9 @@ export default function RootLayout({ children }) {
       <link rel="manifest" href="/site.webmanifest" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
 
-      <body className={`${font.className} overflow-y-scroll overflow-x-hidden no-scrollbar`}>
+      <body
+        className={`${font.className} overflow-y-scroll overflow-x-hidden no-scrollbar`}
+      >
         <NextTopLoader
           color="#00e6e6"
           showSpinner={false}

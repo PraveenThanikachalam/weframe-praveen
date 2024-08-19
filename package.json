@@ -17,6 +17,7 @@
     "clsx": "^2.0.0",
     "isomorphic-dompurify": "^2.0.0",
     "next": "14.0.1",
+    "next-recaptcha-v3": "^1.4.1",
     "nextjs-toploader": "^1.6.4",
     "prettier": "^3.0.3",
     "react": "^18",

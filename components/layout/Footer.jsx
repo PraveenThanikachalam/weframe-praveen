@@ -3,6 +3,7 @@ import { getFooter } from '@/utils/getFooter';
 import Link from 'next/link';
 import NudgeCard from '../ui/NudgeCard';
 import Image from 'next/image';
+import DirectusIcon from '../ui/DirectusIcon';
 
 const Footer = async () => {
   const data = await getFooter();
@@ -23,8 +24,13 @@ const Footer = async () => {
             <div className="flex flex-col lg:items-start items-center lg:justify-start justify-center">
               <div>
                 {/* <SvgRenderer svgText={data?.logo} /> */}
-                <Image src={'/updated.png'} alt='logo' width={500} height={500} className='h-8 w-auto'/>
-
+                <Image
+                  src={'/updated.png'}
+                  alt="logo"
+                  width={500}
+                  height={500}
+                  className="h-8 w-auto"
+                />
               </div>
               <p
                 style={{ color: 'rgba(153, 153, 153, 1)' }}
@@ -65,6 +71,17 @@ const Footer = async () => {
         <div className="h-[1px] bg-gray-500 w-[90%] lg:mt-10 mt-6"></div>
         <div className="text-white lg:mt-10 mt-5 flex flex-col lg:flex-row items-center justify-between w-[90%]">
           <p className="lg:text-sm text-xs">{data?.copyright_text}</p>
+          <div className="lg:text-sm text-xs gap-1 flex items-center justify-center">
+            <DirectusIcon />
+            <p>Powered by</p>{' '}
+            <Link
+              href={'https://directus.io'}
+              target='_blank'
+              className="flex items-center underline justify-center  text-cyan-300"
+            >
+              Directus.
+            </Link>
+          </div>
         </div>
       </div>
     </main>
