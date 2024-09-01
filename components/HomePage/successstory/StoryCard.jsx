@@ -33,7 +33,7 @@ const StoryCard = ({ data, animate = true }) => {
     <div
       ref={ref}
       className={cn(
-        'w-full transition-all lg:h-[480px] duration-500 story-card-grd  border  border-gray-600 rounded-xl flex flex-col-reverse lg:flex-row p-5',
+        'w-full transition-all lg:h-[480px] h-[600px] duration-500 story-card-grd  border  border-gray-600 rounded-xl flex flex-col-reverse lg:flex-row p-5',
         inView ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0',
         !animate && 'translate-y-0 opacity-100'
       )}

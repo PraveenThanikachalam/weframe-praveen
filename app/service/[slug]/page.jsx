@@ -15,9 +15,9 @@ const page = async ({ params }) => {
   const data = await getServicePage(params.slug);
 
   return (
-    <div className=" w-full px-4 md:px-0  min-h-screen flex flex-col md:gap-80 gap-[80px] items-center">
+    <div className=" w-full px-4 md:px-0  min-h-screen flex flex-col md:gap-48 overflow-x-hidden gap-[80px] items-center">
       <div className="w-full z-10 h-[50%] bg-gradient-to-b from-[#1996a291] to-[#020C0D] absolute top-0"></div>
-      <div className=" max-w-screen-xl mt-20 gap-5 z-20 flex flex-col items-center justify-center">
+      <div className=" max-w-screen-xl md:mt-32 mt-20 gap-5 z-20 flex flex-col items-center justify-center">
         <div className="left h-full flex flex-col items-center justify-center w-full max-w-4xl">
           <div className="flex flex-col gap-4 items-center justify-center">
             <h1 className="text-4xl md:text-5xl lg:text-[50px] font-bold text-center font-title-font gradient-text">
@@ -25,7 +25,7 @@ const page = async ({ params }) => {
             </h1>
             <p
               style={{ color: 'rgba(153, 153, 153, 1)' }}
-              className="font-light text-center"
+              className="font-light text-center md:w-[500px] w-full"
             >
               {data.hero_description}
             </p>

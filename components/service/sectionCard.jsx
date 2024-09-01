@@ -75,7 +75,7 @@ const CollapsibleCard = ({ data, index, expanded, setExpanded }) => {
       }}
       className={cn(
         'flex items-center justify-center px-6 py-10 rounded-2xl bg-gradient-to-br from-[#1FBCCB1F] via-[#020C0D] to-transparent hover:shadow-sm hover:shadow-cyan-500 border border-gray-600 text-gray-300 h-[420px]',
-        isExpanded ? 'w-full' : 'w-1/3'
+        isExpanded ? 'w-full' : 'md:w-1/3 w-full'
       )}
       style={{
         transition: 'width 0.3s ease-in',
@@ -89,7 +89,7 @@ const CollapsibleCard = ({ data, index, expanded, setExpanded }) => {
             'overflow-hidden text-sm md:text-base lg:text-lg mt-8 transition-opacity duration-300 line-clamp-6',
             showText
               ? 'opacity-100 translate-y-0 max-h-[180px]'
-              : 'opacity-0 translate-y-full max-h-0'
+              : 'md:opacity-0 md:translate-y-full md:max-h-0'
           )}
           style={{
             transition: 'max-height 0.3s ease-in',
@@ -147,7 +147,7 @@ const SectionCard = ({ data }) => {
           data.type === 'section1' && 'md:flex-[2.5] grid grid-cols-2',
           data.type === 'section2' &&
             'grid-cols-2 md:grid-cols-6 gap-y-5 md:gap-5 lg:gap-10',
-          data.type === 'section3' && 'flex items-stretch gap-5',
+          data.type === 'section3' && 'md:flex grid grid-cols-1 items-stretch gap-5',
           data.type === 'section4' && 'grid grid-cols-1 md:grid-cols-2 gap-5'
         )}
       >

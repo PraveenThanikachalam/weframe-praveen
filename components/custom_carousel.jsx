@@ -71,7 +71,7 @@ const CustomCarousel = ({
         </div>
       </div>
 
-      <div className="w-full overflow-hidden flex items-center justify-end">
+      <div className="w-full overflow-hidden py-5 flex items-center justify-end">
         <Swiper
           style={{
             width: `${isMobile ? '95%' : '100%'}`,
@@ -85,6 +85,7 @@ const CustomCarousel = ({
           }}
           initialSlide={initialSlide}
           centeredSlides={centeredSlides}
+          loop={true}
         >
           {children.map((child, index) => (
             <SwiperSlide
