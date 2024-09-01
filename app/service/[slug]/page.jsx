@@ -11,6 +11,37 @@ import { getServicePage } from '@/utils/getServicePage';
 import Link from 'next/link';
 import React from 'react';
 
+export async function generateMetadata({params},parent) {
+  const seoData = await getServicePage(params.slug);
+  if (seoData?.seo) {
+    const previousImages = (await parent).openGraph?.images || [];
+    return {
+      title: seoData?.seo?.meta_title,
+      description: seoData?.seo?.meta_description,
+      alternates: {
+        canonical: seoData?.seo?.canonical_url,
+      },
+      keywords: seoData?.seo?.meta_keywords,
+      robots: {
+        index: !seoData?.seo?.no_follow,
+        follow: !seoData?.seo?.no_index,
+        nocache: true,
+      },
+      openGraph: {
+        images: [
+          `${process.env.NEXT_PUBLIC_BASE_URL}/assets/${seoData?.seo?.og_image}`,
+          ...previousImages,
+        ],
+      },
+    };
+  }
+  return {
+    title: 'WeframeTech',
+    description:
+      'Jamstack & Headless Commerce Agency, We recognize the demand for high-speed, secure, and easily scalable websites. Leveraging the power of Jamstack, we deliver an exceptional web development experience tailored to your specific requirements, Get an instant quote for your project.',
+  };
+}
+
 const page = async ({ params }) => {
   const data = await getServicePage(params.slug);
 
@@ -51,35 +82,64 @@ const page = async ({ params }) => {
         </div>
       </div>
 
-      <CustomCarousel
-        testData={{
-          heading: data.success_story_title,
-          description: data.success_story_desc,
-          cards: data.success_stories,
-        }}
-        slidesPerView={2.5}
-        spaceBetween={20}
-        centeredSlides={true}
-        initialSlide={1}
-      >
-        {data.success_stories?.map(({ service_stories_id }) => (
-          <SuccessStoryCard
-            key={service_stories_id.id}
-            data={{
-              heading: service_stories_id.title,
-              description: service_stories_id.description,
-              image: service_stories_id.image,
-              url: service_stories_id.url,
-            }}
-          />
-        ))}
-      </CustomCarousel>
+      {data?.success_stories?.length <= 3 ? (
+        <div className="w-full max-w-screen-xl mx-auto flex flex-col gap-8">
+          <div className='md:text-start text-center'>
+            <h1 className="lg:text-4xl text-2xl md:text-4xl text-white font-bold mb-1.5">
+              {data.success_story_title}
+            </h1>
+            <p className="text-gray-300 font-light md:text-xl">
+              {data.success_story_desc}
+            </p>
+          </div>
+
+          <div className='w-full flex md:flex-row flex-col gap-5 items-center justify-center'>
+
+       
+          {data.success_stories?.map(({ service_stories_id }) => (
+            <SuccessStoryCard
+              key={service_stories_id.id}
+              data={{
+                heading: service_stories_id.title,
+                description: service_stories_id.description,
+                image: service_stories_id.image,
+                url: service_stories_id.url,
+              }}
+            />
+          ))}
+             </div>
+        </div>
+      ) : (
+        <CustomCarousel
+          testData={{
+            heading: data.success_story_title,
+            description: data.success_story_desc,
+            cards: data.success_stories,
+          }}
+          slidesPerView={2.5}
+          spaceBetween={20}
+          centeredSlides={true}
+          initialSlide={1}
+        >
+          {data.success_stories?.map(({ service_stories_id }) => (
+            <SuccessStoryCard
+              key={service_stories_id.id}
+              data={{
+                heading: service_stories_id.title,
+                description: service_stories_id.description,
+                image: service_stories_id.image,
+                url: service_stories_id.url,
+              }}
+            />
+          ))}
+        </CustomCarousel>
+      )}
 
       <div className="flex flex-col items-center w-full max-w-screen-xl">
-        <h2 className="text-white w-full text-start font-semibold lg:text-5xl text-2xl md:text-4xl mb-16">
+        <h2 className="text-white w-full text-center font-semibold lg:text-5xl text-2xl md:text-4xl mb-16">
           {data.subscription_heading}
         </h2>
-        <div className="flex gap-8 overflow-auto max-w-[100vw] px-4">
+        <div className="flex md:flex-row flex-col md:gap-8 gap-5  max-w-[100vw] ">
           {data.subscription_cards?.map((card) => (
             <SubscriptionCard
               key={card.id}
@@ -100,9 +160,9 @@ const page = async ({ params }) => {
 
       <CustomCarousel
         testData={{
-          heading: data.success_story_title,
-          description: data.success_story_desc,
-          cards: data.success_stories,
+          heading: data?.case_study_title,
+          description: data?.case_study_desc,
+          cards: data?.case_studies,
         }}
         slidesPerView={1.2}
         spaceBetween={20}

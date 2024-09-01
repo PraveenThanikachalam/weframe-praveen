@@ -44,13 +44,13 @@ const TestimonialCard = ({
 
   return (
     <div className="relative border border-[#1b9ca81f] h-full bg-cover flex items-center justify-center rounded-xl overflow-hidden">
-      {desc ? (
+      {!source ? (
         <>
           <Image
             src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${thumbnail}`}
             alt="bgImage"
             fill
-            className={`object-cover  ${desc && 'brightness-[90%]'}`}
+            className={` ${desc ? 'object-cover' : 'object-contain'} h-full w-full  ${desc && 'brightness-[90%]'}`}
             loading="lazy"
           />
           <p className="absolute inset-0 w-full px-7 py-4 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-44 md:-translate-y-1/2 text-sm md:text-base lg:text-lg xl:text-xl">

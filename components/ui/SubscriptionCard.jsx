@@ -17,7 +17,7 @@ const SubscriptionCard = ({ data }) => {
         href={data.btn_url || '#'}
         className="flex w-full items-center justify-center py-8 mb-5 border-b border-white/20"
       >
-        <Button label={data.btn_text} />
+        <Button label={data.btn_text} className='w-full hover:bg-transparent hover:text-white transition-all duration-200' />
       </Link>
 
       <div>
