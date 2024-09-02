@@ -1,7 +1,7 @@
 export const getServicePage = async (slug) => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/items/service_pages?filter={ "slug": { "_eq": "${slug}" }}&fields=*, success_stories.service_stories_id.* , subscription_cards.service_subscription_id.* , case_studies.case_studies_id.*, testimonials.testimonials_id.*, sections.service_sections_id.*, seo.*`,
+      `${process.env.NEXT_PUBLIC_API_URL}/items/service_pages?filter={ "slug": { "_eq": "${slug}" }}&fields=*, success_stories.case_studies_id.* , subscription_cards.service_subscription_id.* , case_studies.case_studies_id.*, testimonials.testimonials_id.*, sections.service_sections_id.*, seo.*`,
       {
         headers: {
           Authorization: `Bearer ${process.env.BEARER_TOKEN}`,

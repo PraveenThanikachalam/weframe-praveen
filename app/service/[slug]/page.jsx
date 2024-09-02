@@ -44,6 +44,7 @@ export async function generateMetadata({params},parent) {
 
 const page = async ({ params }) => {
   const data = await getServicePage(params.slug);
+  if(!data) return 
 
   return (
     <div className=" w-full px-4 md:px-0  min-h-screen flex flex-col md:gap-48 overflow-x-hidden gap-[80px] items-center">
@@ -52,19 +53,19 @@ const page = async ({ params }) => {
         <div className="left h-full flex flex-col items-center justify-center w-full max-w-4xl">
           <div className="flex flex-col gap-4 items-center justify-center">
             <h1 className="text-4xl md:text-5xl lg:text-[50px] font-bold text-center font-title-font gradient-text">
-              {data.hero_title}
+              {data?.hero_title}
             </h1>
             <p
               style={{ color: 'rgba(153, 153, 153, 1)' }}
               className="font-light text-center md:w-[500px] w-full"
             >
-              {data.hero_description}
+              {data?.hero_description}
             </p>
-            <Link href={data.hero_btn_url}>
+            <Link href={data?.hero_btn_url}>
               <Button
-                label={data.hero_btn_text}
+                label={data?.hero_btn_text}
                 variant="filled"
-                className="w-max px-5"
+                className="w-max px-5 hover:bg-transparent hover:text-white transition-all duration-200"
               />
             </Link>
 
@@ -86,24 +87,24 @@ const page = async ({ params }) => {
         <div className="w-full max-w-screen-xl mx-auto flex flex-col gap-8">
           <div className='md:text-start text-center'>
             <h1 className="lg:text-4xl text-2xl md:text-4xl text-white font-bold mb-1.5">
-              {data.success_story_title}
+              {data?.success_story_title}
             </h1>
             <p className="text-gray-300 font-light md:text-xl">
-              {data.success_story_desc}
+              {data?.success_story_desc}
             </p>
           </div>
 
           <div className='w-full flex md:flex-row flex-col gap-5 items-center justify-center'>
 
        
-          {data.success_stories?.map(({ service_stories_id }) => (
+          {data?.success_stories?.map(({ case_studies_id }) => (
             <SuccessStoryCard
-              key={service_stories_id.id}
+              key={case_studies_id?.id}
               data={{
-                heading: service_stories_id.title,
-                description: service_stories_id.description,
-                image: service_stories_id.image,
-                url: service_stories_id.url,
+                heading: case_studies_id?.heading,
+                description: case_studies_id?.description,
+                image: case_studies_id?.thumbnail,
+                url: case_studies_id?.button_url,
               }}
             />
           ))}
@@ -112,23 +113,23 @@ const page = async ({ params }) => {
       ) : (
         <CustomCarousel
           testData={{
-            heading: data.success_story_title,
-            description: data.success_story_desc,
-            cards: data.success_stories,
+            heading: data?.success_story_title,
+            description: data?.success_story_desc,
+            cards: data?.success_stories,
           }}
           slidesPerView={2.5}
           spaceBetween={20}
           centeredSlides={true}
           initialSlide={1}
         >
-          {data.success_stories?.map(({ service_stories_id }) => (
+          {data?.success_stories?.map(({ case_studies_id }) => (
             <SuccessStoryCard
-              key={service_stories_id.id}
+              key={case_studies_id?.id}
               data={{
-                heading: service_stories_id.title,
-                description: service_stories_id.description,
-                image: service_stories_id.image,
-                url: service_stories_id.url,
+                heading: case_studies_id?.heading,
+                description: case_studies_id?.description,
+                image: case_studies_id?.thumbnail,
+                url: case_studies_id?.button_url,
               }}
             />
           ))}
@@ -137,10 +138,10 @@ const page = async ({ params }) => {
 
       <div className="flex flex-col items-center w-full max-w-screen-xl">
         <h2 className="text-white w-full text-center font-semibold lg:text-5xl text-2xl md:text-4xl mb-16">
-          {data.subscription_heading}
+          {data?.subscription_heading}
         </h2>
         <div className="flex md:flex-row flex-col md:gap-8 gap-5  max-w-[100vw] ">
-          {data.subscription_cards?.map((card) => (
+          {data?.subscription_cards?.map((card) => (
             <SubscriptionCard
               key={card.id}
               data={card.service_subscription_id}
@@ -150,7 +151,7 @@ const page = async ({ params }) => {
       </div>
 
       <>
-        {data.sections?.map(({ service_sections_id }) => (
+        {data?.sections?.map(({ service_sections_id }) => (
           <SectionCard
             key={service_sections_id.id}
             data={service_sections_id}
