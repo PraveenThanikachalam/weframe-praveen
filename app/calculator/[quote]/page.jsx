@@ -8,16 +8,13 @@ export async function generateMetadata(parent) {
   const jamstackSlug = await getJamstackSlug('jamstack_quote_page');
   if (pathname && jamstackSlug) {
     var seoData = await getQuotationData(
-      pathname === jamstackSlug
-        ? 'jamstack_quote_page'
-        : 'headless_quote_page'
+      pathname === jamstackSlug ? 'jamstack_quote_page' : 'headless_quote_page'
     );
   }
 
   if (seoData?.seo) {
     const previousImages = (await parent).openGraph?.images || [];
     return {
-      metadataBase: new URL(seoData?.seo?.canonical_url),
       title: seoData?.seo?.meta_title,
       description: seoData?.seo?.meta_description,
       alternates: {
@@ -25,9 +22,8 @@ export async function generateMetadata(parent) {
       },
       keywords: seoData?.seo?.meta_keywords,
       robots: {
-        index: !seoData?.seo?.no_follow,
-        follow: !seoData?.seo?.no_index,
-        nocache: true,
+        index: true,
+        follow: true,
       },
       openGraph: {
         images: [

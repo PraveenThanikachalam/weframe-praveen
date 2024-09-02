@@ -11,7 +11,7 @@ import { getServicePage } from '@/utils/getServicePage';
 import Link from 'next/link';
 import React from 'react';
 
-export async function generateMetadata({params},parent) {
+export async function generateMetadata({ params }, parent) {
   const seoData = await getServicePage(params.slug);
   if (seoData?.seo) {
     const previousImages = (await parent).openGraph?.images || [];
@@ -23,9 +23,8 @@ export async function generateMetadata({params},parent) {
       },
       keywords: seoData?.seo?.meta_keywords,
       robots: {
-        index: !seoData?.seo?.no_follow,
-        follow: !seoData?.seo?.no_index,
-        nocache: true,
+        index: true,
+        follow: true,
       },
       openGraph: {
         images: [
@@ -44,7 +43,7 @@ export async function generateMetadata({params},parent) {
 
 const page = async ({ params }) => {
   const data = await getServicePage(params.slug);
-  if(!data) return 
+  if (!data) return;
 
   return (
     <div className=" w-full px-4 md:px-0  min-h-screen flex flex-col md:gap-48 overflow-x-hidden gap-[80px] items-center">
@@ -85,7 +84,7 @@ const page = async ({ params }) => {
 
       {data?.success_stories?.length <= 3 ? (
         <div className="w-full max-w-screen-xl mx-auto flex flex-col gap-8">
-          <div className='md:text-start text-center'>
+          <div className="md:text-start text-center">
             <h1 className="lg:text-4xl text-2xl md:text-4xl text-white font-bold mb-1.5">
               {data?.success_story_title}
             </h1>
@@ -94,21 +93,19 @@ const page = async ({ params }) => {
             </p>
           </div>
 
-          <div className='w-full flex md:flex-row flex-col gap-5 items-center justify-center'>
-
-       
-          {data?.success_stories?.map(({ case_studies_id }) => (
-            <SuccessStoryCard
-              key={case_studies_id?.id}
-              data={{
-                heading: case_studies_id?.heading,
-                description: case_studies_id?.description,
-                image: case_studies_id?.thumbnail,
-                url: case_studies_id?.button_url,
-              }}
-            />
-          ))}
-             </div>
+          <div className="w-full flex md:flex-row flex-col gap-5 items-center justify-center">
+            {data?.success_stories?.map(({ case_studies_id }) => (
+              <SuccessStoryCard
+                key={case_studies_id?.id}
+                data={{
+                  heading: case_studies_id?.heading,
+                  description: case_studies_id?.description,
+                  image: case_studies_id?.thumbnail,
+                  url: case_studies_id?.button_url,
+                }}
+              />
+            ))}
+          </div>
         </div>
       ) : (
         <CustomCarousel

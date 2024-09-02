@@ -13,7 +13,6 @@ export async function generateMetadata(parent) {
   if (seoData.SEO) {
     const previousImages = (await parent).openGraph?.images || [];
     return {
-      metadataBase: new URL(seoData?.SEO?.canonical_url),
       title: seoData?.SEO?.meta_title,
       description: seoData?.SEO?.meta_description,
       alternates: {
@@ -21,9 +20,8 @@ export async function generateMetadata(parent) {
       },
       keywords: seoData?.SEO?.meta_keywords,
       robots: {
-        index: !seoData?.SEO?.no_follow,
-        follow: !seoData?.SEO?.no_index,
-        nocache: true,
+        index: true,
+        follow: true,
       },
       openGraph: {
         images: [
