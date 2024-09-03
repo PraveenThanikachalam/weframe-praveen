@@ -6,14 +6,14 @@ const SuccessStoryCard = ({ data }) => {
   return (
     <Link
       href={data.url || '#'}
-      className=" w-full relative border border-gray-600 overflow-hidden items-center justify-center rounded-xl flex flex-col p-5"
+      className=" w-full md:h-[600px] h-[560px] relative border border-gray-600 overflow-hidden items-center justify-start rounded-xl flex flex-col p-5"
     >
-      <div className="h-full w-full py-2  lg:py-0 flex items-center justify-center">
+      <div className="h-[350px] w-full py-2  lg:py-0 flex items-center justify-center">
         <Image
           width={500}
           height={500}
           loading="lazy"
-          className=" h-auto lg:w-[90%] lg:h-[90%] object-cover rounded-md w-full"
+          className=" h-full object-cover rounded-md w-full"
           src={`${process.env.NEXT_PUBLIC_API_URL}/assets/${data?.image}`}
           alt=""
         />
@@ -23,7 +23,7 @@ const SuccessStoryCard = ({ data }) => {
           {data?.heading}
         </h1>
 
-        <p className="text-sm mt-2 text-gray-300 line-clamp-6">
+        <p className="text-sm mt-2 text-gray-300 line-clamp-5">
           {data?.description}
         </p>
       </div>
