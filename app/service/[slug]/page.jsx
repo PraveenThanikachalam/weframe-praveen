@@ -100,7 +100,7 @@ const page = async ({ params }) => {
                 data={{
                   heading: case_studies_id?.heading,
                   description: case_studies_id?.description,
-                  image: case_studies_id?.thumbnail,
+                  image: case_studies_id?.file,
                   url: case_studies_id?.button_url,
                 }}
               />
@@ -125,7 +125,7 @@ const page = async ({ params }) => {
               data={{
                 heading: case_studies_id?.heading,
                 description: case_studies_id?.description,
-                image: case_studies_id?.thumbnail,
+                image: case_studies_id?.file,
                 url: case_studies_id?.button_url,
               }}
             />
