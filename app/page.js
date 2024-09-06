@@ -1,16 +1,26 @@
-import FaqComponent from '@/components/HomePage/FaqComponent';
 import HeroSection from '@/components/HomePage/HeroSection';
 import SuccessStory from '@/components/HomePage/successstory/SuccessStory';
-import Services from '@/components/HomePage/services/Services';
-import TechStack from '@/components/HomePage/techstackcomponents/TechStack';
-import NudgeCard from '@/components/ui/NudgeCard';
-import OurClient from '@/components/HomePage/OurClient';
-import Testimonials from '@/components/HomePage/Testimonials';
+const FaqComponent = dynamic(() =>
+  import('@/components/HomePage/FaqComponent')
+);
+const Services = dynamic(() =>
+  import('@/components/HomePage/services/Services')
+);
+const TechStack = dynamic(() =>
+  import('@/components/HomePage/techstackcomponents/TechStack')
+);
+const NudgeCard = dynamic(() => import('@/components/ui/NudgeCard'));
+const OurClient = dynamic(() => import('@/components/HomePage/OurClient'));
+const Testimonials = dynamic(() =>
+  import('@/components/HomePage/Testimonials')
+);
 import getHomeData from '@/data/getHomeData';
 import { getJamstackSlug } from '@/utils/getJamstackSlug';
+import getHomeSeo from '@/utils/seo/getHomeSeo';
+import dynamic from 'next/dynamic';
 
 export async function generateMetadata(parent) {
-  const seoData = await getHomeData();
+  const seoData = await getHomeSeo();
   if (seoData?.SEO) {
     const previousImages = (await parent).openGraph?.images || [];
     return {
@@ -22,7 +32,7 @@ export async function generateMetadata(parent) {
       keywords: seoData?.SEO?.meta_keywords,
       robots: {
         index: true,
-        follow:true
+        follow: true,
       },
       openGraph: {
         images: [
@@ -41,10 +51,10 @@ export async function generateMetadata(parent) {
 
 export default async function Home() {
   const data = await getHomeData();
-  const buttonSlug = await getJamstackSlug('jamstack_quote_page')
+  const buttonSlug = await getJamstackSlug('jamstack_quote_page');
   if (!data) return null;
   return (
-    <main className="flex flex-col justify-center md:gap-[120px] gap-[60px] items-center w-full">
+    <main className="flex flex-col justify-center md:gap-[120px] gap-[60px] px-4 items-center w-full">
       <HeroSection
         heroData={{
           hero_title: data?.hero_title,

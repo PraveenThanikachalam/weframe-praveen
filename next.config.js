@@ -15,6 +15,11 @@ const nextConfig = {
     
         // Set mode to production for optimized builds
         config.mode = dev ? 'development' : 'production';
+
+        config.optimization.splitChunks = {
+          chunks: 'all',
+          automaticNameDelimiter: '.',
+        };
     
         return config;
       }

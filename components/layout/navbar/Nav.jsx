@@ -67,6 +67,7 @@ const Nav = ({ navData }) => {
                   key={index}
                   href={item?.url}
                   aria-label="Blogs"
+                  prefetch={false}
                 >
                   {item?.label}
                 </Link>

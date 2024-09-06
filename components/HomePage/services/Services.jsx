@@ -1,10 +1,8 @@
-import Link from 'next/link';
 import ServiceCard from './ServiceCard';
-import Button from '@/components/ui/Button';
 
 const Services = ({ servicesData }) => {
   return (
-    <div className="w-full max-w-screen-xl mx-auto px-4 md:px-0 flex flex-col  items-center justify-center">
+    <div className="w-full max-w-screen-xl mx-auto  flex flex-col  items-center justify-center">
       <div className="w-full mb-8 flex flex-col lg:flex-row items-center gap-4 justify-center">
         <div className=" w-full text-center md:w-[600px]">
           <h1 className="text-4xl font-bold text-white">
