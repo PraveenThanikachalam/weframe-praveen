@@ -9,15 +9,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 
-import { useInView } from 'react-intersection-observer';
 import useAssetInfo from '@/hooks/useAssetInfo';
 
 const SlideCard = ({ data }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-  });
   const swiperRef = useRef();
-  const [isMobile, setIsMobile] = useState(false);
 
   const SlideCardInfo = (slide) => {
     const videoRef = useRef(null);
@@ -58,25 +53,9 @@ const SlideCard = ({ data }) => {
     };
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      const screenWidth = window.innerWidth;
-      setIsMobile(screenWidth <= 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
     <div
-      ref={ref}
-      className={`w-full  ${
-        inView ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-      } transition-all duration-500 mx-auto items-center justify-center flex`}
+      className={`w-full transition-all duration-500 mx-auto items-center justify-center flex`}
     >
       <Swiper
         // install Swiper modules
@@ -93,15 +72,15 @@ const SlideCard = ({ data }) => {
           alignItems: 'center',
           justifyContent: 'center',
         }}
-        className='w-full'
+        className="w-full"
       >
         {data?.map((slide, index) => {
           const { videoRef, type, error, isPlaying, handlePlay, handlePause } =
             SlideCardInfo(slide);
 
           return (
-            <SwiperSlide key={index} className='w-full'>
-              <div className=" w-full md:h-[480px] h-[600px]  story-card-grd relative border overflow-hidden items-center justify-center rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
+            <SwiperSlide key={index} className="w-full">
+              <div className=" w-full lg:h-[480px] md:h-[1000px] h-[700px]  story-card-grd relative border overflow-hidden items-center justify-center rounded-xl flex flex-col-reverse lg:flex-row p-5 ">
                 <div className="lg:w-[40%] w-full flex lg:p-6 p-1 flex-col items-start justify-center">
                   <h1 className="lg:text-2xl text-lg font-bold text-white line-clamp-2">
                     {slide?.case_studies_id?.heading}
@@ -133,6 +112,7 @@ const SlideCard = ({ data }) => {
                           src={'/icons/arrow-left.svg'}
                           width={0}
                           height={0}
+                          loading="lazy"
                           className="w-4 h-auto"
                         />
                       </div>
@@ -145,6 +125,7 @@ const SlideCard = ({ data }) => {
                           src={'/icons/arrow-right.svg'}
                           width={0}
                           height={0}
+                          loading="lazy"
                           className="w-4 h-auto"
                         />
                       </div>

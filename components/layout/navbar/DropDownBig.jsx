@@ -12,7 +12,7 @@ const DropDownBig = ({ visible, setVisible, navlist }) => {
     >
       {navlist?.map((item, index) => {
         return (
-          <Link key={index} href={item?.link_url}>
+          <Link key={index} prefetch={false} href={item?.link_url}>
             <div
               className={`rounded-xl group w-full ${
                 visible && 'animate-fade-in-down'

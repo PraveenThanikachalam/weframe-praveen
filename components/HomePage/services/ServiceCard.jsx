@@ -2,18 +2,11 @@
 import SvgRenderer from '@/lib/svg_renderer';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useInView } from 'react-intersection-observer';
 
 const ServiceCard = ({ title, img, url }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-  });
   return (
     <Link
-      ref={ref}
-      className={`w-full h-[200px] transition-all duration-500 z-20 ${
-        inView ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-      }`}
+      className={`w-full h-[200px] transition-all duration-500 z-20 `}
       href={`${url}`}
     >
       <div

@@ -35,7 +35,7 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
       />
 
       <nav>
-        <ul className="gap-8 p-6 rounded-xl glow flex flex-col text-white text-sm font-medium items-center justify-center">
+        <div className="gap-8 p-6 rounded-xl glow flex flex-col text-white text-sm font-medium items-center justify-center">
           {navItems?.map((item, index) => {
             return item.links ? (
               <div key={item?.label} className="group">
@@ -58,7 +58,7 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
                     />
                   </div>
                 </div>
-                <ul
+                <div
                   className={`${
                     servicesDropdownOpen ? 'max-h-96 mt-3' : 'max-h-0'
                   } space-y-2 text-white flex items-center transition-all duration-500 justify-center flex-col rounded-md w-[90vw] px-4 shadow-lg overflow-hidden`}
@@ -66,6 +66,7 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
                   {item.links?.map((val, index2) => (
                     <Link
                       className="w-full"
+                      prefetch={false}
                       href={val?.link_url}
                       key={val?.link_heading}
                     >
@@ -78,15 +79,15 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
                       </div>
                     </Link>
                   ))}
-                </ul>
+                </div>
               </div>
             ) : (
-              <Link key={index + 100} className="underline" href={item?.url}>
+              <Link prefetch={false} key={index + 100} className="underline" href={item?.url}>
                 {item?.label}
               </Link>
             );
           })}
-        </ul>
+        </div>
       </nav>
     </div>
   );
