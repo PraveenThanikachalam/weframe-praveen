@@ -49,6 +49,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${font.className} overflow-y-scroll overflow-x-hidden no-scrollbar`}
       >
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-N95T29H"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          ></iframe>
+        </noscript>
         <NextTopLoader
           color="#00e6e6"
           showSpinner={false}
