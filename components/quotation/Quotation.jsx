@@ -7,7 +7,7 @@ import QuotationResult from './QuotationResult';
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
-export default function Quotation({ pageData, headlessSlug,jamstackSlug }) {
+export default function Quotation({ pageData, headlessSlug, jamstackSlug }) {
   const [page, setPage] = useState(0);
   const [data, setData] = useState(pageData);
   const [quoteCost, setQuoteCost] = useState({ totalCost: 0, totalTime: 0 });
@@ -17,8 +17,10 @@ export default function Quotation({ pageData, headlessSlug,jamstackSlug }) {
   const [shift, setShift] = useState(
     pathname === `/calculator/${headlessSlug}` ? true : false
   );
-  const [type,setType] = useState(shift ? 'Headless Commerce' : 'Jamstack Development')
-  const [selected,setSelected] = useState('')
+  const [type, setType] = useState(
+    shift ? 'Headless Commerce' : 'Jamstack Development'
+  );
+  const [selected, setSelected] = useState('');
 
   const fetchData = async () => {
     const section = shift ? 'headless_quote_page' : 'jamstack_quote_page';
@@ -50,7 +52,6 @@ export default function Quotation({ pageData, headlessSlug,jamstackSlug }) {
 
   // console.log(data)
 
-
   return (
     <>
       {page < 2 && (
@@ -64,8 +65,8 @@ export default function Quotation({ pageData, headlessSlug,jamstackSlug }) {
                 </p>
               ))}
             </h1>
-            
-          {/* //switch button */}
+
+            {/* //switch button */}
             <div className="rounded-2xl  h-14 mt-4 overflow-hidden flex relative items-center justify-center border-[1px] border-white shadow-sm shadow-white">
               <div
                 className={`w-[50%] h-full absolute right-0 slide z-10 bg-white ${
@@ -75,7 +76,7 @@ export default function Quotation({ pageData, headlessSlug,jamstackSlug }) {
               <div
                 onClick={() => {
                   setShift(!shift);
-                  router.push(`/calculator/${jamstackSlug}`)
+                  router.push(`/calculator/${jamstackSlug}`);
                 }}
                 className={`flex items-center z-20 justify-center font-semibold cursor-pointer shadow transition-all duration-500  lg:text-md text-sm lg:h-full h-14 px-10 py-2 rounded-l-xl ${
                   shift ? 'text-white' : 'text-black'
@@ -86,7 +87,7 @@ export default function Quotation({ pageData, headlessSlug,jamstackSlug }) {
               <div
                 onClick={() => {
                   setShift(!shift);
-                  router.push(`/calculator/${headlessSlug}`)
+                  router.push(`/calculator/${headlessSlug}`);
                 }}
                 className={`flex items-center z-20 justify-center font-semibold transition-all duration-500 cursor-pointer lg:text-md text-sm px-10 py-2 lg:h-full h-14 rounded-r-xl ${
                   shift ? 'text-black' : 'text-white'

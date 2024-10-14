@@ -2,11 +2,11 @@
 import { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 
 const TestimonialCard = dynamic(() => import('./TestimonialCard'), {
   ssr: false,
-  });
+});
 // import TestimonialCard from ;
 import Image from 'next/image';
 
@@ -27,9 +27,8 @@ const Testimonials = ({ testData }) => {
     };
   }, []);
 
-
   return (
-    <div className='flex flex-col w-full'>
+    <div className="flex flex-col w-full">
       <div className=" w-full mb-8  max-w-screen-xl mx-auto  flex items-center justify-center">
         <div className="w-full flex flex-col lg:flex-row text-center lg:text-left items-center justify-between">
           <div>
@@ -83,7 +82,6 @@ const Testimonials = ({ testData }) => {
         >
           {testData?.testimonial_cards?.map((item, index) => (
             <SwiperSlide key={index} className="!h-full max-h-[480px]">
-              
               <TestimonialCard
                 source={item?.testimonials_id?.video_url}
                 desc={item?.testimonials_id?.client_testimonial}

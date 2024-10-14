@@ -20,7 +20,7 @@ export async function generateMetadata(parent) {
       keywords: seoData?.SEO?.meta_keywords,
       robots: {
         index: true,
-        follow: true
+        follow: true,
       },
       openGraph: {
         images: [
@@ -84,7 +84,6 @@ const Jamstack = async () => {
           </div>
         </div>
       </div>
-
       {/* <div className=" my-24 max-w-screen-xl z-20 gap-8 flex flex-col items-center justify-center">
         <div className="w-full flex items-center justify-start">
           <div className="lg:w-[50%] w-full text-center lg:text-left">
@@ -115,7 +114,6 @@ const Jamstack = async () => {
           </video>
         </div>
       </div> */}
-
       <div className="w-full flex flex-col ">
         <div className="w-full mb-8 flex lg:flex-row flex-col gap-5  lg:gap-0 items-center justify-between">
           <h1 className="lg:text-4xl text-3xl md:text-4xl font-title-font text-white font-semibold">
@@ -138,11 +136,9 @@ const Jamstack = async () => {
           })}
         </div>
       </div>
-
       <div className="w-full flex items-center justify-center">
         <TechStack techData={techstack} />
       </div>
-
       <div className="w-full flex justify-center">
         <NudgeCard
           title={data?.section4_heading}
@@ -150,13 +146,13 @@ const Jamstack = async () => {
           url={data?.section4_button_url}
         />
       </div>
-
       <Testimonials
         testData={{
           testimonial_heading: data?.testimonial_heading,
           testimonial_cards: data?.testimonial,
         }}
-      />    </div>
+      />{' '}
+    </div>
   );
 };
 

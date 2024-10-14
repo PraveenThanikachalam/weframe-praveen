@@ -1,7 +1,7 @@
 import React from 'react';
 import BackLightEffect from '../ui/BackLightEffect';
 
-const HeroIcons = ({heading,icons}) => {
+const HeroIcons = ({ heading, icons }) => {
   return (
     <div className="w-full flex justify-center relative">
       <div className="w-full z-30 flex flex-col md:mt-6 items-center justify-end gap-2 lg:gap-4">

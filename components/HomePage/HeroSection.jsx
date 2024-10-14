@@ -1,33 +1,35 @@
-import Button from '../ui/Button';
-import Link from 'next/link';
-import dynamic from 'next/dynamic';
-const HeroIcons = dynamic(() => import('./HeroIcons'),{ssr:false});
+import dynamic from "next/dynamic";
+import SpaceBackground from "../ui/space-hero-ui/SpaceBackground";
+import FlashButton from "../ui/space-hero-ui/FlashButton";
+import Companies from "../ui/space-hero-ui/Companies";
+
+const HeroIcons = dynamic(() => import("./HeroIcons"), { ssr: false });
 
 const HeroSection = ({ heroData }) => {
-  return (
-    <div className="h-[90vh] max-w-screen-xl mx-auto gap-10 text-center  text-white w-full flex flex-col justify-evenly py-10  items-center relative">
-      <div className="lg:w-[60%] w-full z-30  flex flex-col items-center justify-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold font-title-font">
-          {heroData?.hero_title}
-        </h1>
-        <div className="lg:w-[70%] w-full">
-          <p className="text-base font-light my-2 md:my-7 text-gray-200">
-            {heroData?.hero_desc}
-          </p>
-        </div>
-        <div className="gap-2 md:gap-5 flex flex-col lg:flex-row">
-          <Link href={`${heroData?.button1_url}`}>
-            <Button variant="filled" label={heroData?.button1_text} />
-          </Link>
-          <Link href={`${heroData?.button2_url}`}>
-            <Button variant="outline" label={heroData?.button2_text} />
-          </Link>
-        </div>
-      </div>
+	return (
+		<div className="h-[100vh] w-screen text-center text-white z-10 flex flex-col justify-end overflow-hidden items-center relative">
+			<SpaceBackground />
+			<div className="z-0 w-full h-full flex text-center flex-col gap-y-3 mt-4 p-2 md:p-0 -translate-y-36 items-center justify-center absolute top-0">
+				<div className="text-center text-4xl mt-8 sm:text-5xl text-transparent bg-gradient-to-tr bg-clip-text from-white via-white/80 to-white/60 font-bold p-3 md:leading-[54px]">
+					<span className="text-transparent bg-clip-text bg-gradient-to-tr from-[#31B1D9] to-[#3DD771]">
+						Design
+					</span>{" "}
+					& <span className="italic">Jamstack</span> for high <br /> growth B2B
+				</div>
+				<div className="text-md bg-gradient-to-r leading-7 text-white">
+					<span>
+						We are a team of JAM stack and branding experts, passionate
+					</span>
+					<span className="text-white/60">
+						<br /> about building sites that set you in the top 1%
+					</span>
+				</div>
+				<FlashButton />
+			</div>
 
-      <HeroIcons heading={heroData?.icons_heading} icons={heroData?.icons} />
-    </div>
-  );
+			<Companies />
+		</div>
+	);
 };
 
 export default HeroSection;

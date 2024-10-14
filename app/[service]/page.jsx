@@ -17,13 +17,14 @@ export async function generateMetadata({ params }, parent) {
       keywords: seoData?.SEO?.meta_keywords || '',
       robots: {
         index: true,
-        follow: true
+        follow: true,
       },
       openGraph: {
-        images: [
-          `${process.env.NEXT_PUBLIC_BASE_URL}/assets/${seoData?.SEO?.og_image}`,
-          ...previousImages,
-        ] || [],
+        images:
+          [
+            `${process.env.NEXT_PUBLIC_BASE_URL}/assets/${seoData?.SEO?.og_image}`,
+            ...previousImages,
+          ] || [],
       },
     };
   }

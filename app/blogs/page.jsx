@@ -14,7 +14,7 @@ export async function generateMetadata(parent) {
       keywords: seoData?.SEO?.meta_keywords,
       robots: {
         index: true,
-        follow:true,
+        follow: true,
       },
       openGraph: {
         images: [

@@ -12,7 +12,7 @@ const ContactForm = ({ data }) => {
   const [show, setShow] = useState(false);
   const [success, setSuccess] = useState(false);
   const [services, setServices] = useState([]);
-  const [loading,setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const { executeRecaptcha } = useReCaptcha();
 
   const {
@@ -24,7 +24,7 @@ const ContactForm = ({ data }) => {
 
   // Handle form submission
   const onSubmit = async (formData) => {
-    setLoading(true)
+    setLoading(true);
     const token = await executeRecaptcha('form_submit');
     const score = await verifyRecaptcha(token);
 
@@ -48,7 +48,7 @@ const ContactForm = ({ data }) => {
         if (response.ok) {
           setSuccess(true);
           setShow(true);
-          setLoading(false)
+          setLoading(false);
           setTimeout(() => {
             setShow(false);
           }, 4000);
@@ -58,14 +58,14 @@ const ContactForm = ({ data }) => {
         } else {
           setSuccess(false);
           setShow(true);
-          setLoading(false)
-          reset()
+          setLoading(false);
+          reset();
           console.error('Error submitting the form');
         }
       } catch (error) {
         console.log(error);
-        setLoading(false)
-        reset()
+        setLoading(false);
+        reset();
       }
     } else {
       setSuccess(false);
@@ -73,11 +73,11 @@ const ContactForm = ({ data }) => {
       setTimeout(() => {
         setShow(false);
       }, 3000);
-      reset()
+      reset();
     }
 
-    setLoading(false)
-    reset()
+    setLoading(false);
+    reset();
   };
 
   return (
@@ -204,7 +204,11 @@ const ContactForm = ({ data }) => {
           <div className="my-16 lg:mt-8 w-full flex items-end justify-center ">
             <div className="flex lg:flex-row md:flex-row flex-col w-full items-center lg:justify-end justify-center lg:gap-2 gap-3 ">
               <Link href={data?.button1_url ? data?.button1_url : '/contact'}>
-                <Button label={data?.button1_text} variant="outline" className='!py-0 h-[56px]' />
+                <Button
+                  label={data?.button1_text}
+                  variant="outline"
+                  className="!py-0 h-[56px]"
+                />
               </Link>
 
               <button

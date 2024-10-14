@@ -82,7 +82,12 @@ const MobileNav = ({ visible2, setVisible2, navItems }) => {
                 </div>
               </div>
             ) : (
-              <Link prefetch={false} key={index + 100} className="underline" href={item?.url}>
+              <Link
+                prefetch={false}
+                key={index + 100}
+                className="underline"
+                href={item?.url}
+              >
                 {item?.label}
               </Link>
             );

@@ -35,7 +35,8 @@ const SectionCardItem = ({ className, data, type, index }) => (
       className={cn(
         'text-xl lg:text-3xl font-semibold text-left mt-auto',
         type === 'section1' && 'mt-0',
-        type == 'section2' && 'bg-clip-text text-transparent bg-gradient-to-b from-[#FFFFFF] to-[#999999] w-full  '
+        type == 'section2' &&
+          'bg-clip-text text-transparent bg-gradient-to-b from-[#FFFFFF] to-[#999999] w-full  '
       )}
     >
       {data.title}
@@ -145,10 +146,12 @@ const SectionCard = ({ data }) => {
       <div
         className={cn(
           'grid md:px-4',
-          data.type === 'section1' && 'md:flex-[2.5] grid md:grid-cols-2 grid-cols-1',
+          data.type === 'section1' &&
+            'md:flex-[2.5] grid md:grid-cols-2 grid-cols-1',
           data.type === 'section2' &&
             'grid-cols-2 md:grid-cols-6 gap-y-5 md:gap-5 lg:gap-10',
-          data.type === 'section3' && 'md:flex grid grid-cols-1 items-stretch gap-5',
+          data.type === 'section3' &&
+            'md:flex grid grid-cols-1 items-stretch gap-5',
           data.type === 'section4' && 'grid grid-cols-1 md:grid-cols-2 gap-5'
         )}
       >

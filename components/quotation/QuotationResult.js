@@ -5,7 +5,7 @@ import Button from '../ui/Button';
 import { useState } from 'react';
 
 export default function QuotationResult({ setPage, bookUrl, result }) {
-  const [cost,setCost] = useState(result.totalCost.toLocaleString()) // Format the number
+  const [cost, setCost] = useState(result.totalCost.toLocaleString()); // Format the number
 
   return (
     <div className="w-full p-8 min-h-[80vh] flex flex-col items-center justify-evenly">
@@ -13,9 +13,7 @@ export default function QuotationResult({ setPage, bookUrl, result }) {
         <h1 className="text-lg font-semibold text-gray-200">
           Your estimate quotation for project requirement is:
         </h1>
-        <h1 className="text-6xl text-cyan-200 font-bold">
-          ${cost}
-        </h1>
+        <h1 className="text-6xl text-cyan-200 font-bold">${cost}</h1>
         <p className="text-sm text-gray-300">
           Approximate Duration: {result.totalTime} hours
         </p>

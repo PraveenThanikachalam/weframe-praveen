@@ -12,12 +12,12 @@ const Nav = ({ navData }) => {
   const [visible, setVisible] = useState(false);
   const [visible2, setVisible2] = useState(false);
   const [data, setData] = useState(navData);
-  const pathname = usePathname()
+  const pathname = usePathname();
 
-  useEffect(()=>{
-    setVisible(false)
-    setVisible2(false)
-  },[pathname])
+  useEffect(() => {
+    setVisible(false);
+    setVisible2(false);
+  }, [pathname]);
 
   const navItems = useMemo(() => data?.nav_items || [], [data?.nav_items]);
 

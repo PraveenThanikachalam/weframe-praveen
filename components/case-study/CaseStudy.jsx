@@ -11,8 +11,6 @@ const CaseStudy = ({ pageData }) => {
   const [allTags, setAllTags] = useState([]);
   const [display, setDisplay] = useState(6);
 
-
-
   useEffect(() => {
     let tagsFromData = data?.tags?.map((tag) => tag.name) || [];
     setAllTags(tagsFromData);
@@ -40,7 +38,6 @@ const CaseStudy = ({ pageData }) => {
       setDisplay(6);
     }
   }, [selectedFilters]); // Add caseStudies to the dependency array if it's fetched or changes dynamically
-
 
   return (
     <main className="max-w-screen-xl mx-auto px-4 flex flex-col items-center justify-center">
@@ -113,7 +110,10 @@ const CaseStudy = ({ pageData }) => {
       </div>
       <div
         className={`w-full flex items-center ${
-          (display >= data?.case_studies?.length || filtered || data?.case_studies?.length<=6) && 'hidden'
+          (display >= data?.case_studies?.length ||
+            filtered ||
+            data?.case_studies?.length <= 6) &&
+          'hidden'
         } justify-center my-16 `}
       >
         <Button

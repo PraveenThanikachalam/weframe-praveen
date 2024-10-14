@@ -1,21 +1,19 @@
 export const getContactUsPage = async () => {
-    try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/items/contact_us?fields=*.*`,
-        {
-          
-          next: {
-            revalidate: 60,
-          },
-        }
-      );
-      if (response.ok) {
-        const data = await response.json();
-        return data.data;
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/items/contact_us?fields=*.*`,
+      {
+        next: {
+          revalidate: 60,
+        },
       }
-      return null;
-    } catch (error) {
-      console.log(error);
+    );
+    if (response.ok) {
+      const data = await response.json();
+      return data.data;
     }
-  };
-  
+    return null;
+  } catch (error) {
+    console.log(error);
+  }
+};

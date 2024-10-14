@@ -76,7 +76,7 @@ const Footer = async () => {
             <p>Powered by</p>{' '}
             <Link
               href={'https://directus.io'}
-              target='_blank'
+              target="_blank"
               className="flex items-center underline justify-center  text-cyan-300"
             >
               Directus.
