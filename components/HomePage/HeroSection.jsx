@@ -27,7 +27,7 @@ const HeroSection = ({ heroData }) => {
       <SpaceBackground />
       <div className="z-0 w-full h-full flex text-center flex-col gap-y-3 mt-4 p-2 md:p-0 -translate-y-36 items-center justify-center absolute top-0">
         <div className="text-center text-2xl mt-8 sm:text-5xl text-transparent bg-gradient-to-tr bg-clip-text from-white via-white/80 to-white/60 font-bold p-3 md:leading-[54px]">
-          <span className="text-transparent bg-clip-text bg-gradient-to-tr from-[#31B1D9] to-[#3DD771]">
+          <span className="text-transparent  tracking-wide bg-clip-text bg-gradient-to-tr from-[#31B1D9] to-[#3DD771]">
             Design
           </span>{' '}
           & <span className={libreBaskerville.className}>Jamstack</span> for high <br /> growth B2B
