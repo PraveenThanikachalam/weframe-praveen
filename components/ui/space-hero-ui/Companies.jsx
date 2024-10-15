@@ -37,7 +37,7 @@ export default function Companies() {
 						className=" flex-shrink-0"
 						initial={{ scale: 0 }}
 						animate={{ scale: 1 }}
-						transition={{ duration: 0.6, delay: index * 0.2 }}
+						transition={{ duration: 0.2, delay: index * 0.2 }}
 					>
 						<Image
 							src={sponsor.src}

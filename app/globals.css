@@ -379,10 +379,10 @@ input::-webkit-inner-spin-button {
 }
 
 .animated-border-box {
-  max-height: 74px;
+  /* max-height: 74px;
   max-width: 250px;
   height: 100%;
-  width: 100%;
+  width: 100%; */
   position: absolute;
   overflow: hidden;
   z-index: 0;

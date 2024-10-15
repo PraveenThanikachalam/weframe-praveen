@@ -89,13 +89,13 @@ const Navbar = () => {
 							<div className="flex text-white w-auto items-center text-md justify-center gap-[10px] lg:gap-[23px]  ">
 								{showItems && (
 									<>
-										<motion.p
+										{/* <motion.p
 											initial={{ opacity: 0, y: 20 }}
 											animate={{ opacity: 1, y: 0 }}
 											transition={{ delay: 1.5, duration: 0.6 }}
 										>
 											Log in
-										</motion.p>
+										</motion.p> */}
 										<ContactUsBtn />
 									</>
 								)}
@@ -156,7 +156,7 @@ const Navbar = () => {
 				)}
 
 				<div className="hidden md:flex text-white w-auto items-center justify-center gap-[10px] lg:gap-[23px] z-10 ">
-					<Link href={"#login"}>Log in</Link>
+					{/* <Link href={"#login"}>Log in</Link> */}
 					<ContactUsBtn />
 				</div>
 			</div>
