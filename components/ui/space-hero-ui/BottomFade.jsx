@@ -1,5 +1,5 @@
 import * as React from "react";
-const BgGradients = (props) => (
+const SVGComponent = (props) => (
 	<svg
 		width={1440}
 		height={1024}
@@ -8,14 +8,7 @@ const BgGradients = (props) => (
 		xmlns="http://www.w3.org/2000/svg"
 		{...props}
 	>
-		<rect width={1440} height={1024} rx={20} fill="nonw" />
-		<rect
-			width={1440}
-			height={1024}
-			rx={20}
-			fill="url(#paint0_radial_5_520)"
-			fillOpacity={0.1}
-		/>
+		<rect width={1440} height={1024} rx={20} fill="none" />
 		<rect
 			width={1440}
 			height={1024}
@@ -24,17 +17,6 @@ const BgGradients = (props) => (
 			fillOpacity={0.2}
 		/>
 		<defs>
-			<radialGradient
-				id="paint0_radial_5_520"
-				cx={0}
-				cy={0}
-				r={1}
-				gradientUnits="userSpaceOnUse"
-				gradientTransform="translate(720 381.5) rotate(90) scale(642.5 903.516)"
-			>
-				<stop stopColor="white" />
-				<stop offset={0.540927} stopColor="white" stopOpacity={0} />
-			</radialGradient>
 			<radialGradient
 				id="paint1_radial_5_520"
 				cx={0}
@@ -49,4 +31,4 @@ const BgGradients = (props) => (
 		</defs>
 	</svg>
 );
-export default BgGradients;
+export default SVGComponent;

@@ -75,3 +75,15 @@ export default function RootLayout({ children }) {
 		</html>
 	);
 }
+<div
+	className="absolute bottom-0  left-0 w-full h-44 z-50 pointer-events-none"
+	style={{
+		background: `radial-gradient(
+	  80% 80% at 50% 100%, /* Make the gradient wider and taller */
+	  rgba(0, 0, 0, 1) 0%,
+	  rgba(0, 0, 0, 0.5) 50%,
+	  rgba(0, 0, 0, 0.4) 60%,
+	  rgba(0, 0, 0, 0) 100%
+  )`,
+	}}
+/>;
