@@ -4,14 +4,14 @@ const SVGComponent = (props) => (
 		width={1440}
 		height={1024}
 		viewBox="0 0 1440 1024"
+		preserveAspectRatio="xMidYMid meet"
 		fill="none"
-		xmlns="http://www.w3.org/2000/svg"
 		{...props}
 	>
 		<rect width={1440} height={1024} rx={20} fill="none" />
 		<rect
 			width={1440}
-			height={1024}
+			height={1324}
 			rx={20}
 			fill="url(#paint1_radial_5_520)"
 			fillOpacity={0.2}

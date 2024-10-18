@@ -47,7 +47,7 @@ const SpaceBackground = () => {
 				<MiddleGrid />
 			</div>
 
-			<div className=" absolute w-full brightness-90 h-full bottom-0 flex items-center justify-center z-30">
+			<div className=" absolute w-full brightness-90 h-full hidden lg:flex bottom-0 items-center justify-center z-30">
 				<BottomFade />
 			</div>
 

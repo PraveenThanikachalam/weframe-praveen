@@ -16,13 +16,13 @@ const BgGradients = (props) => (
 			fill="url(#paint0_radial_5_520)"
 			fillOpacity={0.1}
 		/>
-		<rect
+		{/* <rect
 			width={1440}
 			height={1024}
 			rx={20}
 			fill="url(#paint1_radial_5_520)"
 			fillOpacity={0.2}
-		/>
+		/> */}
 		<defs>
 			<radialGradient
 				id="paint0_radial_5_520"
