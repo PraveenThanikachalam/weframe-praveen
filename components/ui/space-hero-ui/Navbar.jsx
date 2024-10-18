@@ -20,11 +20,11 @@ const Links = [
 		name: "Services",
 	},
 	{
-		href: "case-study",
+		href: "/case-study",
 		name: "Case Studies",
 	},
 	{
-		href: "about",
+		href: "/about",
 		name: "About Us",
 	},
 ];
