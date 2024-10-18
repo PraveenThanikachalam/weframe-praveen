@@ -8,6 +8,7 @@ import { MdOutlineClose } from "react-icons/md";
 import ContactUsBtn from "./ContactUs";
 import Image from "next/image";
 import Link from "next/link";
+import { sf_pro } from "@/fonts";
 
 const Links = [
 	{
@@ -23,7 +24,7 @@ const Links = [
 		name: "Case Studies",
 	},
 	{
-		href: "#aboutus",
+		href: "about",
 		name: "About Us",
 	},
 ];
@@ -48,7 +49,9 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className="w-full h-0 sticky top-9 md:top-16 z-40 md:px-4 px-2 md:py-0 flex items-start justify-center">
+		<div
+			className={`${sf_pro.className} w-full h-0 sticky tracking-wide top-9 md:top-16 z-40 md:px-4 px-2 md:py-0 flex items-start justify-center`}
+		>
 			<div className=" relative lg:w-[1133x] md:w-auto w-full text-sm md:text-sm lg:text-[16px] xl:text-lg flex items-center gap-5 md:gap-[20px] lg:gap-[77px] bg-black rounded-3xl px-[34px] py-[16px] justify-between z-10 h-auto border-2 border-transparent bg-clip-border">
 				{/* Gradient border */}
 				<motion.div

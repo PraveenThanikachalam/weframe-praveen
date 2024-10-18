@@ -6,6 +6,7 @@ import TopGrid from "./TopGrid";
 import MiddleGrid from "./MiddleGrid";
 import BottomGrid from "./BottomGrid";
 import Image from "next/image";
+import BgGradients from "./BgGrads";
 
 const SpaceBackground = () => {
 	useEffect(() => {
@@ -37,7 +38,10 @@ const SpaceBackground = () => {
 			<div className="w-auto z-10 absolute md:relative -translate-y-5 h-auto">
 				<TopGrid />
 			</div>
-			<div className=" text-white text-2xl shadowd -translate-y-32 -z-4 "></div>
+			<div className=" text-white text-2xl  -translate-y-32 -z-4 "></div>
+			<div className="text-white text-2xl lg:flex hidden absolute w-full h-auto items-center justify-center -z-4">
+				<BgGradients />
+			</div>
 			<div className=" absolute w-full h-full flex items-center justify-center">
 				<MiddleGrid />
 			</div>
