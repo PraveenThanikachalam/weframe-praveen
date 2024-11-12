@@ -9,13 +9,7 @@ const SVGComponent = (props) => (
 		{...props}
 	>
 		<rect width={1440} height={1024} rx={20} fill="none" />
-		<rect
-			width={1440}
-			height={1324}
-			rx={20}
-			fill="url(#paint1_radial_5_520)"
-			fillOpacity={0.2}
-		/>
+		
 		<defs>
 			<radialGradient
 				id="paint1_radial_5_520"
