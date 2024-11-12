@@ -9,7 +9,7 @@ import ContactUsBtn from './ContactUs';
 import Image from 'next/image';
 import Link from 'next/link';
 import { sf_pro } from '@/fonts';
-import NavbarOuter from './NavbarOuter';
+import nav from '../../../public/for-space-hero/Nav.png';
 
 const Links = [
   {
@@ -51,13 +51,13 @@ const Navbar = () => {
 
   return (
     <div
-      className={`${sf_pro.className} w-full h-0 sticky tracking-wide  top-9 md:top-16 z-40 md:px-4 px-2 md:py-0 flex items-start justify-center`}
+      className={`${sf_pro.className} w-full h-0 sticky tracking-wide top-9 md:top-16 z-40 md:px-4 px-2 md:py-0 flex items-start justify-center`}
     >
-      <div className="absolute backdrop-blur-sm w-[1123px]">
-        <NavbarOuter />
+      <div className=" navbarOuter lg:flex hidden absolute backdrop-blur-sm w-[98vw] lg:w-[93vw] xl:w-[1133px]">
+        <Image src={nav} alt=""></Image>
       </div>
 
-      <div className=" relative lg:w-[1133x] md:w-auto w-full text-sm md:text-sm lg:text-[16px] xl:text-lg flex items-center gap-5 md:gap-[20px] lg:gap-[77px] bg-transparent rounded-3xl px-[34px] py-[16px] justify-between z-10 h-auto border-2 border-transparent bg-clip-border">
+      <div className="relative lg:w-[1133px] md:w-[98vw] w-full text-sm md:text-sm lg:text-[16px] from-[#5BD4DD] via-transparent to-[#5BD4DD] lg:from-transparent lg:to-transparent lg:bg-none border border-transparent bg-clip-border xl:text-lg flex items-center gap-5 md:gap-[20px] lg:gap-[77px] rounded-3xl px-[34px] py-[16px] justify-between z-10 h-auto">
         {/* Gradient border */}
         <motion.div
           className="absolute inset-0 bg-gradient-to-tr brightness-50 p-[1px] rounded-3xl -z-40"
@@ -66,7 +66,7 @@ const Navbar = () => {
           }
           transition={{ duration: 0.8, ease: 'easeInOut' }}
         >
-          <div className="h-full w-full brightness-200 text-white rounded-3xl">
+          <div className="h-full w-full brightness-200 lg:hidden flex bg-black text-white rounded-3xl">
             <div
               className={
                 isClosed || !isOpened
@@ -112,16 +112,16 @@ const Navbar = () => {
           </div>
         </motion.div>
 
-        <div className="Logo lg:min-w-[210px] flex items-center justify-center w-[150px] min-h-[40px]">
+        <div className="Logo lg:min-w-[210px] flex items-center justify-center w-[200px] md:w-[200px] min-h-[40px]">
           <Image priority src={Logo} alt="company-logo" />
         </div>
 
-        <div className="Elements hidden md:flex">
+        <div className="Elements hidden md:flex w-full xl:w-auto">
           <div className="flex w-full text-white gap-x-2 md:gap-[10px] lg:gap-[24px] xl:gap-[64px] items-center h-full mt-[1px] justify-around">
             {Links.map((items, idx) => (
               <Link
                 key={idx}
-                className="bg-gradient-to-b text-transparent from-white via-white/60 to-black bg-clip-text"
+                className="bg-gradient-to-b md:text-[16px] lg:text-xl text-transparent from-white via-white/60 to-black bg-clip-text"
                 href={items.href}
               >
                 {items.name}
