@@ -10,6 +10,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { sf_pro } from '@/fonts';
 import nav from '../../../public/for-space-hero/Nav.png';
+import ServiceDropdown from './Service_dropdown';
+import { getHeader } from '@/utils/getHeader';
 
 const Links = [
   {
@@ -29,11 +31,13 @@ const Links = [
     name: 'About Us',
   },
 ];
-
-const Navbar = () => {
+const Navbar = (props) => {
   const [isOpened, setIsOpened] = useState(false);
   const [isClosed, setIsClosed] = useState(true);
   const [showItems, setShowItems] = useState(false);
+  const [data, setData] = useState(props.NavData);
+
+  console.log(data);
 
   const handleMenuOpen = () => {
     setIsOpened(true);
@@ -167,6 +171,15 @@ const Navbar = () => {
           {/* <Link href={"#login"}>Log in</Link> */}
           <ContactUsBtn />
         </div>
+      </div>
+      <div className="w-full px-10 py-5 h-auto absolute mt-24 grid grid-cols-2 grid-rows-4 gap-3 items-center justify-center">
+        {data.nav_items[0].links.map((item) => (
+          <ServiceDropdown
+            title={item.link_heading}
+            content={item?.link_description}
+            url={item.link_url}
+          />
+        ))}
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer';
 import Matrix from '@/components/ui/Matrix';
 import NextTopLoader from 'nextjs-toploader';
 import Service_dropdown from '@/components/ui/space-hero-ui/Service_dropdown';
+import { getHeader } from '@/utils/getHeader';
 // import TopMessage from '@/components/layout/navbar/TopMessage';
 
 const font = Lexend({ subsets: ['latin'] });
@@ -24,7 +25,9 @@ export const metadata = {
   /* <meta name="google-site-verification" content="9pRBHxV_nsy51H_05l3T69xYwyraF_KOEE2a4PbhIEw" /> */
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const NavData = await getHeader();
+
   return (
     <html lang="en" className={`${oceanwide.variable}`}>
       <head>
@@ -66,7 +69,7 @@ export default function RootLayout({ children }) {
           height={2}
         />
         {/* <Service_dropdown /> */}
-        <Navbar />
+        <Navbar NavData={NavData} />
         <Matrix />
         {children}
         <Footer />
