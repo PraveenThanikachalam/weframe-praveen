@@ -173,8 +173,9 @@ const Navbar = (props) => {
         </div>
       </div>
       <div className="w-full px-10 py-5 h-auto absolute mt-24 grid grid-cols-2 grid-rows-4 gap-3 items-center justify-center">
-        {data.nav_items[0].links.map((item) => (
+        {data.nav_items[0].links.map((item, idx) => (
           <ServiceDropdown
+            key={idx}
             title={item.link_heading}
             content={item?.link_description}
             url={item.link_url}
