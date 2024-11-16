@@ -26,24 +26,20 @@ export default function ServiceDropdown({ title, content, url }) {
       />
 
       <Image
-        className={`absolute bottom-0  w-full transition-all duration-650 px-[2px] ease-in-out ${
+        className={`absolute bottom-0  w-full transition-all duration-900 delay-100 px-[2px] ease-in-out ${
           isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
         }`}
         src={CardOuter2}
         alt="Card outer hover effect"
       />
 
-      <div className="absolute inset-0 overflow-hidden">
-        <Image
-          className={`absolute bottom-0 left-1/2 -translate-x-1/2 transition-all duration-650 ease-in-out ${
-            isHovered
-              ? 'translate-y-0 opacity-100'
-              : 'translate-y-full opacity-0'
-          }`}
-          src={BgGradient}
-          alt="Background gradient"
-        />
-      </div>
+      <Image
+        className={`absolute bottom-0 w-full left-1/2 -translate-x-1/2 transition-all duration-1000 delay-100 ease-in-out ${
+          isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+        }`}
+        src={BgGradient}
+        alt="Background gradient"
+      />
 
       <div className="absolute inset-0 p-[1px]">
         <div className="h-full w-full z-10 rounded-xl bg-transparent">
