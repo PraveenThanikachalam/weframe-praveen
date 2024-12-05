@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Logo from '@/public/updated.png';
 import Hamburger from '@/public/for-space-hero/hamburger.png';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { MdOutlineClose } from 'react-icons/md';
 import ContactUsBtn from './ContactUs';
 import Image from 'next/image';
@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { sf_pro } from '@/fonts';
 import nav from '../../../public/for-space-hero/Nav.png';
 import ServiceDropdown from './Service_dropdown';
-import { getHeader } from '@/utils/getHeader';
+import DropDownBG from '../../../public/for-space-hero/DropDownBG.png';
 
 const Links = [
   {
@@ -31,13 +31,13 @@ const Links = [
     name: 'About Us',
   },
 ];
+
 const Navbar = (props) => {
   const [isOpened, setIsOpened] = useState(false);
   const [isClosed, setIsClosed] = useState(true);
   const [showItems, setShowItems] = useState(false);
   const [data, setData] = useState(props.NavData);
-
-  console.log(data);
+  const [showServicesDropdown, setShowServicesDropdown] = useState(false);
 
   const handleMenuOpen = () => {
     setIsOpened(true);
@@ -53,11 +53,47 @@ const Navbar = (props) => {
     setShowItems(false);
   };
 
+  const toggleServicesDropdown = () => {
+    setShowServicesDropdown(!showServicesDropdown);
+  };
+
+  const shutterVariants = {
+    closed: {
+      height: 0, // Shrinks the height of the container
+      opacity: 0, // Optional: Fade out during the close
+      transition: {
+        height: {
+          duration: 0.4,
+          ease: [0.25, 0.1, 0.25, 1],
+        },
+        opacity: {
+          duration: 0.2,
+          ease: 'easeInOut',
+        },
+      },
+    },
+    open: {
+      height: 'auto', // Expands the height of the container
+      opacity: 1, // Optional: Fade in during the open
+      transition: {
+        height: {
+          duration: 0.4,
+          ease: [0.25, 0.1, 0.25, 1],
+        },
+        opacity: {
+          duration: 0.2,
+          ease: 'easeInOut',
+          delay: 0.1,
+        },
+      },
+    },
+  };
+
   return (
     <div
       className={`${sf_pro.className} w-full h-0 sticky tracking-wide top-9 md:top-16 z-40 md:px-4 px-2 md:py-0 flex items-start justify-center`}
     >
-      <div className=" navbarOuter lg:flex hidden absolute backdrop-blur-sm w-[98vw] lg:w-[93vw] xl:w-[1133px]">
+      <div className="navbarOuter lg:flex hidden absolute backdrop-blur-sm w-[98vw] lg:w-[93vw] xl:w-[1133px]">
         <Image src={nav} alt=""></Image>
       </div>
 
@@ -90,6 +126,11 @@ const Navbar = (props) => {
                       <Link
                         href={items.href}
                         className="bg-gradient-to-b text-transparent from-white via-white/60 to-black bg-clip-text"
+                        onClick={
+                          items.name === 'Services'
+                            ? toggleServicesDropdown
+                            : undefined
+                        }
                       >
                         {items.name}
                       </Link>
@@ -101,13 +142,6 @@ const Navbar = (props) => {
               <div className="flex text-white w-auto items-center text-md justify-center gap-[10px] lg:gap-[23px]  ">
                 {showItems && (
                   <>
-                    {/* <motion.p
-											initial={{ opacity: 0, y: 20 }}
-											animate={{ opacity: 1, y: 0 }}
-											transition={{ delay: 1.5, duration: 0.6 }}
-										>
-											Log in
-										</motion.p> */}
                     <ContactUsBtn />
                   </>
                 )}
@@ -127,6 +161,9 @@ const Navbar = (props) => {
                 key={idx}
                 className="bg-gradient-to-b md:text-[16px] lg:text-xl text-transparent from-white via-white/60 to-black bg-clip-text"
                 href={items.href}
+                onClick={
+                  items.name === 'Services' ? toggleServicesDropdown : undefined
+                }
               >
                 {items.name}
               </Link>
@@ -168,20 +205,31 @@ const Navbar = (props) => {
         )}
 
         <div className="hidden md:flex text-white w-auto items-center justify-center gap-[10px] lg:gap-[23px] z-10 ">
-          {/* <Link href={"#login"}>Log in</Link> */}
           <ContactUsBtn />
         </div>
       </div>
-      <div className="w-full px-10 py-5 h-auto absolute mt-24 grid grid-cols-2 grid-rows-4 gap-3 items-center justify-center">
-        {data.nav_items[0].links.map((item, idx) => (
-          <ServiceDropdown
-            key={idx}
-            title={item.link_heading}
-            content={item?.link_description}
-            url={item.link_url}
-          />
-        ))}
-      </div>
+      <AnimatePresence initial={false} mode="wait" onExitComplete={() => null}>
+        {showServicesDropdown && (
+          <motion.div
+            className="w-full px-10 py-5 h-auto absolute mt-24 grid grid-cols-2 grid-rows-4 gap-3 items-center justify-center  backdrop-blur-md rounded-b-3xl"
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={shutterVariants}
+            layout
+          >
+            <Image src={DropDownBG} alt="" className="w-full h-full absolute" />
+            {data.nav_items[0].links.map((item, idx) => (
+              <ServiceDropdown
+                key={idx}
+                title={item.link_heading}
+                content={item?.link_description}
+                url={item.link_url}
+              />
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

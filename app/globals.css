@@ -491,3 +491,13 @@ input::-webkit-inner-spin-button {
 
   /* Auto layout */
 }
+
+.motion-container {
+  overflow: hidden; /* Ensures children don't break out of the shrinking container */
+  position: relative; /* Ensures the layout stays intact */
+}
+
+.motion-container > * {
+  position: relative; /* Makes sure child elements remain stationary */
+  transform: none; /* Prevents unintended scaling or movement */
+}
