@@ -1,5 +1,6 @@
 import HeroSection from '@/components/HomePage/HeroSection';
 import SuccessStory from '@/components/HomePage/successstory/SuccessStory';
+import WhyUs from '@/components/HomePage/WhyUs';
 const FaqComponent = dynamic(() =>
   import('@/components/HomePage/FaqComponent')
 );
@@ -68,6 +69,7 @@ export default async function Home() {
           button2_text: data?.button2_text,
         }}
       />
+      <WhyUs />
       <SuccessStory
         successData={{
           heading: data?.section1_heading,

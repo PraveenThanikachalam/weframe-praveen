@@ -501,3 +501,28 @@ input::-webkit-inner-spin-button {
   position: relative; /* Makes sure child elements remain stationary */
   transform: none; /* Prevents unintended scaling or movement */
 }
+
+.shine {
+  width: 1500px;
+  height: 150px;
+  margin-left: -100px;
+  transform: rotate(-30deg);
+  background: -webkit-linear-gradient(
+    top,
+    transparent,
+    rgba(15, 93, 102, 0.1),
+    transparent
+  );
+  position: absolute;
+  animation: shine 4s ease-in-out infinite;
+  animation-delay: 1s; /* Add a 1-second delay */
+}
+
+@keyframes shine {
+  0% {
+    margin-top: -250px;
+  }
+  100% {
+    margin-top: 1000px;
+  }
+}
