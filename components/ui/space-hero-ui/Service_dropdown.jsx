@@ -6,8 +6,15 @@ import MatrixBG from './MatrixBG';
 import CardOuter from '@/public/for-space-hero/CardOuter.png';
 import CardOuter2 from '@/public/for-space-hero/CardOuter2.png';
 import BgGradient from '@/public/for-space-hero/BgGradient.png';
-import { sf_pro } from '@/fonts';
 import Link from 'next/link';
+import localFont from 'next/font/local';
+
+const sf_pro = localFont({
+  src: '../../../fonts/sf_pro/sf_pro.woff2',
+  display: 'swap',
+  weight: '100',
+  variable: '--sf-pro',
+});
 
 export default function ServiceDropdown({ title, content, url }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -15,7 +22,7 @@ export default function ServiceDropdown({ title, content, url }) {
   return (
     <Link
       href={url}
-      className="relative h-[110px] w-auto backdrop-blur-sm rounded-xl overflow-hidden"
+      className="relative md:h-[110px] h-[50px] w-auto backdrop-blur-sm rounded-xl overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -26,7 +33,7 @@ export default function ServiceDropdown({ title, content, url }) {
       />
 
       <Image
-        className={`absolute bottom-0  w-full transition-all duration-900 delay-100 px-[2px] ease-in-out ${
+        className={`absolute bottom-0 w-full transition-all duration-900 delay-100 px-[2px] ease-in-out ${
           isHovered ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
         }`}
         src={CardOuter2}
@@ -47,7 +54,7 @@ export default function ServiceDropdown({ title, content, url }) {
             <h1 className="text-2xl bg-clip-text text-transparent bg-gradient-to-b from-white/60 via-white/60 to-black">
               {title ? title : 'Title comes here...'}
             </h1>
-            <p className={`${sf_pro.className} text-md text-white/25`}>
+            <p className={`${sf_pro.className} hidden md:flex text-md text-white/25`}>
               {content ? content : 'Explore digital Content comes here...'}
             </p>
           </div>

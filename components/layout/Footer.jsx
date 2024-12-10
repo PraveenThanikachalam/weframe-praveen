@@ -4,6 +4,7 @@ import Link from 'next/link';
 import NudgeCard from '../ui/NudgeCard';
 import Image from 'next/image';
 import DirectusIcon from '../ui/DirectusIcon';
+import NewCTA from '../ui/NewCTA';
 
 const Footer = async () => {
   const data = await getFooter();
@@ -11,12 +12,13 @@ const Footer = async () => {
 
   return (
     <main>
-      <div className="w-[100vw] mt-16 bg-[#031416] footer p-6 h-[60vh] border-b-2 border-gray-800 flex items-center justify-center">
-        <NudgeCard
+      <div className="w-[100vw] md:h-[90vh] h-[60vh] md:bg-black mt-16 bg-[#031416] footer border-b-2 border-gray-800 flex items-center justify-center">
+        {/* <NudgeCard
           title={data?.cta_heading}
           label={data?.cta_button_text}
           url={data?.cta_button_url}
-        />
+        /> */}
+        <NewCTA />
       </div>
       <div className="bg-[#031416] w-full relative bottom-0 p-6 flex flex-col items-center justify-center text-white ">
         <div className="lg:w-[90%] w-full lg:flex-row flex-col flex items-center lg:justify-between justify-center">

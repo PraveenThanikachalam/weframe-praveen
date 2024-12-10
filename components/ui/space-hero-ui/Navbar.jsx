@@ -211,7 +211,7 @@ const Navbar = (props) => {
       <AnimatePresence initial={false} mode="wait" onExitComplete={() => null}>
         {showServicesDropdown && (
           <motion.div
-            className="w-full px-10 py-5 h-auto absolute mt-24 grid grid-cols-2 grid-rows-4 gap-3 items-center justify-center  backdrop-blur-md rounded-b-3xl"
+            className="w-full px-10 py-5 absolute mt-24 grid md:grid-cols-2 grid-cols-1 grid-rows-4 gap-3 items-center justify-center  backdrop-blur-md rounded-b-3xl"
             initial="closed"
             animate="open"
             exit="closed"
