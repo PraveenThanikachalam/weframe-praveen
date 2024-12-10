@@ -18,9 +18,9 @@ const sf_pro = localFont({
 export default function NewCTA() {
   return (
     <div
-      className={`w-full h-full relative overflow-hidden flex flex-col pb-20 items-center justify-center ${sf_pro.className}`}
+      className={`h-full relative md:w-[80%] md:bg-black md:rounded-3xl w-full overflow-hidden flex flex-col pb-20 items-center justify-center ${sf_pro.className}`}
     >
-      <div className="top-gradient "></div>
+      <div className="top-gradient"></div>
       <div className="relative h-full w-full flex items-center justify-center flex-col">
         <Image
           className="w-full brightness-75 absolute top-0"
@@ -51,7 +51,7 @@ export default function NewCTA() {
             href={
               'https://calendly.com/vipuluthaiah/weframe-tech?month=2024-10'
             }
-            className="animated-border-box w-[200px] md:w-[250px] h-[75px]"
+            className="animated-border-box-cta w-[200px] md:w-[250px] h-[75px]"
           >
             <div className="flashlight" />
             <div className="absolute inset-0 flex items-center justify-center z-20">
@@ -64,7 +64,7 @@ export default function NewCTA() {
         <p className="text-white/50 tracking-wide flex gap-2 items-center justify-center translate-y-24">
           No credit card required{' '}
           <span>
-            <Image className='w-3 h-3' src={PointVector} alt="" />{' '}
+            <Image className="w-3 h-3" src={PointVector} alt="" />{' '}
           </span>{' '}
           14-days free trial
         </p>

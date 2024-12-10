@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function FlashButton() {
+export default function FlashButton(className) {
 	return (
 		<Link
 			href={"https://calendly.com/vipuluthaiah/weframe-tech?month=2024-10"}

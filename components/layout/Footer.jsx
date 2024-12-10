@@ -12,7 +12,7 @@ const Footer = async () => {
 
   return (
     <main>
-      <div className="w-[100vw] md:h-[90vh] h-[60vh] md:bg-black mt-16 bg-[#031416] footer border-b-2 border-gray-800 flex items-center justify-center">
+      <div className="w-[100vw] md:h-[90vh] h-[60vh] py-0 md:py-20 mt-16 footer border-b-2 border-gray-800 flex items-center justify-center">
         {/* <NudgeCard
           title={data?.cta_heading}
           label={data?.cta_button_text}
