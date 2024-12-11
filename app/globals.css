@@ -485,7 +485,7 @@ input::-webkit-inner-spin-button {
   top: 2px;
   width: calc(100% - 4px);
   height: calc(100% - 4px);
-  background: #1d1e2246;
+  background: #1d1e226a;
   border-radius: 50px;
 }
 
@@ -575,26 +575,26 @@ input::-webkit-inner-spin-button {
 
 .top-gradient {
   height: 1000px;
-  width: 2500px;
+  width: 2000px;
   background-image: radial-gradient(
     closest-side,
-    rgba(255, 255, 255, 0.5),
+    rgba(68, 142, 148, 1),
     rgba(0, 0, 0, 0)
   );
   position: absolute;
   top: -770px;
-  filter: blur(50);
+  filter: blur(50px);
 }
 
 .bottom-gradient {
   height: 1000px;
-  width: 2500px;
+  width: 2000px;
   background-image: radial-gradient(
     closest-side,
-    rgba(255, 255, 255, 0.5),
+    rgba(68, 142, 148, 1),
     rgba(0, 0, 0, 0)
   );
   position: absolute;
   top: 570px;
-  filter: blur(50);
+  filter: blur(50px);
 }

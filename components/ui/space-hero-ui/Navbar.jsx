@@ -59,8 +59,8 @@ const Navbar = (props) => {
 
   const shutterVariants = {
     closed: {
-      height: 0, // Shrinks the height of the container
-      opacity: 0, // Optional: Fade out during the close
+      height: 0,
+      opacity: 0,
       transition: {
         height: {
           duration: 0.4,
@@ -73,8 +73,8 @@ const Navbar = (props) => {
       },
     },
     open: {
-      height: 'auto', // Expands the height of the container
-      opacity: 1, // Optional: Fade in during the open
+      height: 'auto',
+      opacity: 1,
       transition: {
         height: {
           duration: 0.4,
