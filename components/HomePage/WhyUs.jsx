@@ -56,7 +56,7 @@ const cardData = {
 export default function WhyUs() {
   return (
     <div
-      className={` w-full h-full flex flex-col items-center justify-center xl:px-40 ${roboto.className}`}
+      className={` w-full h-full flex flex-col items-center px-4 justify-center xl:px-40 ${roboto.className}`}
     >
       <div className="flex w-full flex-col lg:flex-row justify-around">
         <p className="text-[35px] font-bold text-white">

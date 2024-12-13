@@ -2,7 +2,7 @@ import * as React from "react";
 import { useEffect, useRef } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 
-const SvgComponent = (props) => {
+const BottomGrid = (props) => {
 	const controls1 = useAnimationControls();
 	const controls2 = useAnimationControls();
 	const controls3 = useAnimationControls();
@@ -375,4 +375,4 @@ const SvgComponent = (props) => {
 	);
 };
 
-export default SvgComponent;
+export default BottomGrid;

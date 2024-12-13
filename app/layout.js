@@ -8,6 +8,8 @@ import Matrix from '@/components/ui/Matrix';
 import NextTopLoader from 'nextjs-toploader';
 import Service_dropdown from '@/components/ui/space-hero-ui/Service_dropdown';
 import { getHeader } from '@/utils/getHeader';
+import MobileNav from '@/components/layout/navbar/MobileNav';
+import MobileNavbar from '@/components/ui/space-hero-ui/mobile-nav';
 // import TopMessage from '@/components/layout/navbar/TopMessage';
 
 const font = Lexend({ subsets: ['latin'] });

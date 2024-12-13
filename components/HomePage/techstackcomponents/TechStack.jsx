@@ -13,7 +13,7 @@ const TechStack = ({ techData }) => {
   ) ?? [[]];
 
   return (
-    <div className="techStack w-full flex flex-col gap-5 md:gap-10 items-center justify-center">
+    <div className="techStack w-full flex px-4 flex-col gap-5 md:gap-10 items-center justify-center">
       <div className="w-full  text-center flex flex-col gap-5 md:gap-10 items-center justify-center">
         <h1 className="lg:text-4xl text-3xl md:text-4xl font-bold text-white">
           {techData?.section2_heading ?? 'How we develop for'}

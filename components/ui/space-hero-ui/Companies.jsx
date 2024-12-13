@@ -21,7 +21,7 @@ export default function Companies() {
 	return (
 		<div className="text-center w-full pb-10 md:pb-14 h-auto flex flex-col items-center md:gap-14 justify-center">
 			<motion.h1
-				className="bg-gradient-to-b from-white text-1xl font-bold md:text-[22px] via-white to-white/40 text-transparent bg-clip-text"
+				className="bg-gradient-to-b from-white text-1xl font-bold md:text-[22px] via-white/80 to-white/0 text-transparent bg-clip-text"
 				initial={{ y: 50, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ duration: 0.8, ease: "easeOut" }}
@@ -30,7 +30,7 @@ export default function Companies() {
 			</motion.h1>
 
 			{/* Container for sponsor logos */}
-			<div className="md:flex justify-between md:w-[100vw] md:px-4 lg:w-[100vh] hidden items-center h-auto mt-8 mx-auto lg:flex-justify-around relative sm:mt-0 w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+			<div className="md:flex justify-between md:w-[100vw] md:px-4 lg:w-[100vh] hidden items-center h-auto md:mt-8 mx-auto lg:flex-justify-around relative sm:mt-0 w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
 				<motion.div
 					className=" flex-shrink-0 flex gap-x-32 items-center justify-center"
 					animate={{ x: [1000, 0, -1000] }} // Adjust distance based on content width

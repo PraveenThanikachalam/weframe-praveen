@@ -42,7 +42,7 @@ export default function FlashButton({ className }) {
   return (
     <Link
       href={'https://calendly.com/vipuluthaiah/weframe-tech?month=2024-10'}
-      className={`animated-border-box w-[200px] md:w-[250px] h-[75px] translate-y-48 md:translate-y-48 ${className}`}
+      className={`animated-border-box w-[200px] md:w-[250px] h-[75px] translate-y-36 md:translate-y-48 ${className}`}
     >
       <div ref={buttonRef} className="relative w-full h-full overflow-hidden">
         <div className="flashlight" />

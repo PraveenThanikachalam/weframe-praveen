@@ -10,6 +10,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { sf_pro } from '@/fonts';
 import nav from '../../../public/for-space-hero/Nav.png';
+import NavLine from '@/public/for-space-hero/NavLine.png';
+
 import ServiceDropdown from './Service_dropdown';
 import DropDownBG from '../../../public/for-space-hero/DropDownBG.png';
 
@@ -91,22 +93,27 @@ const Navbar = (props) => {
 
   return (
     <div
-      className={`${sf_pro.className} w-full h-0 sticky tracking-wide top-9 md:top-16 z-40 md:px-4 px-2 md:py-0 flex items-start justify-center`}
+      className={`${sf_pro.className} w-full h-0 sticky flex tracking-wide top-9 md:top-16 z-40 md:px-4 px-2 md:py-0 items-start justify-center`}
     >
       <div className="navbarOuter lg:flex hidden absolute backdrop-blur-sm w-[98vw] lg:w-[93vw] xl:w-[1133px]">
         <Image src={nav} alt=""></Image>
       </div>
 
-      <div className="relative lg:w-[1133px] md:w-[98vw] w-full text-sm md:text-sm lg:text-[16px] from-[#5BD4DD] via-transparent to-[#5BD4DD] lg:from-transparent lg:to-transparent lg:bg-none border border-transparent bg-clip-border xl:text-lg flex items-center gap-5 md:gap-[20px] lg:gap-[77px] rounded-3xl px-[34px] py-[16px] justify-between z-10 h-auto">
+      <div className="relative lg:w-[1133px] md:w-[98vw] w-full md:pt-4 text-sm md:text-sm lg:text-[16px] md:pb-4 pb-2 lg:from-transparent lg:to-transparent lg:bg-none border border-transparent bg-clip-border xl:text-lg flex items-center gap-5 md:gap-[20px] lg:gap-[77px] rounded-3xl px-[24px] py-[6px] justify-between z-10 h-auto">
         {/* Gradient border */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-tr brightness-50 p-[1px] rounded-3xl -z-40"
+          className="absolute inset-0 bg-gradient-to-tr  backdrop-blur-lg p-[1px] rounded-3xl -z-40"
           animate={
             isOpened ? { height: ['100%', 400] } : { height: [400, '100%'] }
           }
           transition={{ duration: 0.8, ease: 'easeInOut' }}
         >
-          <div className="h-full w-full brightness-200 lg:hidden flex bg-black text-white rounded-3xl">
+          <div className="h-full w-full brightness-200 lg:hidden py-7 flex bg-transparent text-white rounded-3xl">
+            <Image
+              src={NavLine}
+              alt=""
+              className="w-full absolute z-40 bottom-0"
+            />
             <div
               className={
                 isClosed || !isOpened
@@ -150,7 +157,7 @@ const Navbar = (props) => {
           </div>
         </motion.div>
 
-        <div className="Logo lg:min-w-[210px] flex items-center justify-center w-[200px] md:w-[200px] min-h-[40px]">
+        <div className="Logo lg:min-w-[210px] flex items-center justify-center w-[130px] md:w-[200px] min-h-[40px]">
           <Image priority src={Logo} alt="company-logo" />
         </div>
 

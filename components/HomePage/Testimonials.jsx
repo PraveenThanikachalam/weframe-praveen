@@ -28,7 +28,7 @@ const Testimonials = ({ testData }) => {
   }, []);
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full pl-2">
       <div className=" w-full mb-8  max-w-screen-xl mx-auto  flex items-center justify-center">
         <div className="w-full flex flex-col lg:flex-row text-center lg:text-left items-center justify-between">
           <div>
