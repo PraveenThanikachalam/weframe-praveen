@@ -117,10 +117,10 @@ const Navbar = (props) => {
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
             transition={{ type: 'spring', stiffness: 500, damping: 60 }}
-            className="bg-[#020708] absolute w-screen h-screen z-50 md:hidden flex flex-col"
+            className="bg-[#020708] absolute w-screen h-screen z-[10] md:hidden flex flex-col"
           >
-            <div className="radial -right-[60px] absolute w-[600px] h-[700px]"></div>
-            <div className="w-full h-full items-center -translate-y-[1vh] justify-start top-36 relative flex flex-col gap-y-[3vh] px-9">
+            <div className="radial -right-[60px] absolute w-[600px] h-[700px] -z-10"></div>
+            <div className="w-full h-full items-center relative z-20 -translate-y-[1vh] justify-start top-36 flex flex-col gap-y-[3vh] px-9">
               {data.nav_items[0].links.map((item, idx) => (
                 <motion.div
                   variants={menuItemVariants}
@@ -156,7 +156,7 @@ const Navbar = (props) => {
                 </motion.div>
               ))}
             </div>
-            <div className="w-full relative z-50 flex gap-y-5 flex-col pb-[4vh] h-full items-center px-8 justify-end">
+            <div className="w-full relative -z-[1] flex gap-y-5 flex-col pb-[4vh] h-full items-center px-8 justify-end">
               <Link
                 onClick={() => setIsOpened(false)}
                 href={'/calculator/jamstack-website-cost-calculator-estimator'}
@@ -192,7 +192,7 @@ const Navbar = (props) => {
         )}
       </AnimatePresence>
 
-      <div className="relative lg:w-[1133px] z-50 backdrop-blur-sm pt-2 top-9 md:top-0 md:w-[98vw] w-full md:pt-4 text-sm md:text-sm lg:text-[16px] md:pb-4 pb-2 border border-transparent bg-clip-border xl:text-lg flex items-center gap-5 md:gap-[20px] lg:gap-[77px] rounded-3xl px-[24px] md:py-[6px] justify-between h-auto">
+      <div className="relative lg:w-[1133px] z-10 backdrop-blur-sm pt-2 top-9 md:top-0 md:w-[98vw] w-full md:pt-4 text-sm md:text-sm lg:text-[16px] md:pb-4 pb-2 border border-transparent bg-clip-border xl:text-lg flex items-center gap-5 md:gap-[20px] lg:gap-[77px] rounded-3xl px-[24px] md:py-[6px] justify-between h-auto">
         <motion.div className="absolute inset-0 -z-40">
           <div className="h-full w-full brightness-200 lg:hidden flex bg-transparent text-white rounded-3xl">
             <Image
@@ -255,12 +255,12 @@ const Navbar = (props) => {
         ) : (
           <button
             onClick={handleMenuClose}
-            className="relative w-[90px] h-[44px] md:hidden -z-50"
+            className="relative w-[90px] h-[44px] md:hidden -z-10"
           >
             {' '}
-            <div className={`animated-border-box-nav md:hidden w-full h-full`}>
+            <div className={`animated-border-box-nav md:hidden overflow-hidden w-full h-full`}>
               <div className="relative w-full h-full rounded-full overflow-hidden">
-                <div className="flashlight" />
+                <div className="flashlight1 overflow-hidden -z-50" />
                 <div className="absolute inset-0 flex items-center justify-center z-20">
                   <p className="text-md bg-gradient-to-b flex gap-x-1 items-center justify-center from-white/10 to-white text-transparent bg-clip-text tracking-wide">
                     <RiCloseFill className="text-white/50 w-5 h-5" /> Close

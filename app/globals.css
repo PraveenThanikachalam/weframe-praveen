@@ -460,26 +460,6 @@ input::-webkit-inner-spin-button {
   animation: rotate 6s linear infinite;
 }
 
-.animated-border-box-nav:before,
-.animated-border-box-glow-nav:before {
-  content: '';
-  z-index: 2;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(0deg);
-  position: absolute;
-  width: 316px;
-  height: 316px;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-image: conic-gradient(
-    rgba(0, 0, 0, 0),
-    rgba(255, 255, 255, 0.5) rgba(0, 0, 0, 0) 25%
-  );
-  animation: rotate 6s linear infinite;
-}
-
 .flashlight {
   top: 50%;
   left: 50%;
@@ -497,6 +477,25 @@ input::-webkit-inner-spin-button {
   );
   animation: rotate 6s linear infinite;
 }
+
+.flashlight1 {
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%) rotate(0deg);
+  position: absolute;
+  width: 416px;
+  height: 416px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: conic-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0) 25%
+  );
+  animation: rotate 6s linear infinite;
+}
+
 
 .animated-border-box:after {
   content: '';
