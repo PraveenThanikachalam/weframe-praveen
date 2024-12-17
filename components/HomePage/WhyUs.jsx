@@ -56,19 +56,21 @@ const cardData = {
 export default function WhyUs() {
   return (
     <div
-      className={` w-full h-full flex flex-col items-center px-4 justify-center xl:px-40 ${roboto.className}`}
+      className={` w-full h-full relative z-0 flex flex-col items-center px-4 justify-center xl:px-40 ${roboto.className}`}
     >
-      <div className="flex w-full flex-col lg:flex-row justify-around">
-        <p className="text-[35px] font-bold text-white">
+      <div className="flex w-full flex-col gap-6 text-center lg:flex-row items-center justify-around">
+        <p className="md:text-[35px] text-[25px] font-bold text-white">
           Why choose Weframetech?
         </p>
-        <p className={`text-lg text-white lg:w-[600px] ${inter.className}`}>
+        <p
+          className={`md:text-lg text-sm w-[327px] md:text-left text-center md:text-white text-white/70 lg:w-[600px] ${inter.className}`}
+        >
           Weframetech delivers end-to-end influencer marketing solutions with a
           proven track record of success. We create tailored campaigns that
           drive authentic engagement.
         </p>
       </div>
-      <div className="w-full h-1/2 mt-10 flex flex-col lg:flex-row gap-4 justify-center">
+      <div className="w-full h-1/2 mt-10 flex flex-col lg:flex-row md:gap-4 gap-14 justify-center">
         {Object.entries(cardData).map(([key, value], idx) => (
           <div
             key={idx}
@@ -113,7 +115,9 @@ export default function WhyUs() {
                       <p className="text-xl font-bold text-white -translate-y-1">
                         ·
                       </p>
-                      <p className="text-[16px] tracking-wide leading-6">{text}</p>
+                      <p className="text-[16px] tracking-wide leading-6">
+                        {text}
+                      </p>
                     </div>
                   </div>
                 ))}

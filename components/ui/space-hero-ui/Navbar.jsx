@@ -2,16 +2,14 @@
 
 import { useState } from 'react';
 import Logo from '@/public/updated.png';
-import Hamburger from '@/public/for-space-hero/hamburger.png';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MdOutlineClose } from 'react-icons/md';
 import ContactUsBtn from './ContactUs';
 import Image from 'next/image';
 import Link from 'next/link';
 import { sf_pro } from '@/fonts';
 import nav from '../../../public/for-space-hero/Nav.png';
 import NavLine from '@/public/for-space-hero/NavLine.png';
-
+import { RiCloseFill } from 'react-icons/ri';
 import ServiceDropdown from './Service_dropdown';
 import DropDownBG from '../../../public/for-space-hero/DropDownBG.png';
 
@@ -91,24 +89,112 @@ const Navbar = (props) => {
     },
   };
 
+  const menuItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    }),
+  };
+
   return (
     <div
-      className={`${sf_pro.className} w-full h-0 sticky flex tracking-wide top-9 md:top-16 z-40 md:px-4 px-2 md:py-0 items-start justify-center`}
+      className={`${sf_pro.className} w-full h-0 fixed md:sticky flex tracking-wide top-0 md:top-16 z-40 md:px-4 px-2 md:py-0 items-start justify-center`}
     >
-      <div className="navbarOuter lg:flex hidden absolute backdrop-blur-sm w-[98vw] lg:w-[93vw] xl:w-[1133px]">
+      <div className="navbarOuter lg:flex hidden absolute w-[98vw] lg:w-[93vw] xl:w-[1133px]">
         <Image src={nav} alt=""></Image>
       </div>
+      <AnimatePresence>
+        {' '}
+        {isOpened && (
+          <motion.div
+            initial={{ x: '-100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '-100%' }}
+            transition={{ type: 'spring', stiffness: 500, damping: 60 }}
+            className="bg-[#020708] absolute w-screen h-screen z-50 md:hidden flex flex-col"
+          >
+            <div className="radial -right-[60px] absolute w-[600px] h-[700px]"></div>
+            <div className="w-full h-full items-center -translate-y-[1vh] justify-start top-36 relative flex flex-col gap-y-[3vh] px-9">
+              {data.nav_items[0].links.map((item, idx) => (
+                <motion.div
+                  variants={menuItemVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="w-full"
+                  custom={idx}
+                  key={idx}
+                >
+                  <Link
+                    href={item.link_url}
+                    onClick={() => setIsOpened(!isOpened)}
+                    className="flex relative w-full justify-between items-center"
+                  >
+                    <span className="bg-gradient-to-b from-white/10 via-white/60 to-white text-transparent bg-clip-text text-lg">
+                      {item.link_heading}
+                    </span>
+                    <Image
+                      src={'/for-space-hero/To-arrow.png'}
+                      className="w-6 h-6"
+                      alt=""
+                      width={50}
+                      height={50}
+                    />
+                    <Image
+                      className="absolute brightness-200 w-full h-full mt-[3vh]"
+                      width={50}
+                      height={50}
+                      src={'/for-space-hero/service_line.png'}
+                      alt=""
+                    />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+            <div className="w-full relative z-50 flex gap-y-5 flex-col pb-[4vh] h-full items-center px-8 justify-end">
+              <Link
+                onClick={() => setIsOpened(false)}
+                href={'/calculator/jamstack-website-cost-calculator-estimator'}
+                className="relative w-full h-[46px] md:hidden "
+              >
+                {' '}
+                <div
+                  className={`animated-border-box-nav md:hidden w-full h-full`}
+                >
+                  <div className="relative w-full h-full rounded-full overflow-hidden">
+                    <div className="flashlight" />
+                    <div className="absolute inset-0 flex items-center justify-center z-20">
+                      <p className="text-sm text-white tracking-wide font-bold">
+                        GET QUOTATION
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+              <Link
+                href={'/contact'}
+                onClick={() => setIsOpened(false)}
+                style={{}}
+                className="contact-shadow relative bg-gradient-to-br w-full h-[46px] rounded-full from-white/90 shadow-white via-transparent to-white/90 p-[1px]"
+              >
+                {/* <Image src={'/for-space-her0/contact-border.png'} alt="" className='' /> */}
+                <span className="text-md rounded-full text-white w-full items-center justify-center h-full flex bg-black">
+                  Contact Us
+                </span>
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      <div className="relative lg:w-[1133px] md:w-[98vw] w-full md:pt-4 text-sm md:text-sm lg:text-[16px] md:pb-4 pb-2 lg:from-transparent lg:to-transparent lg:bg-none border border-transparent bg-clip-border xl:text-lg flex items-center gap-5 md:gap-[20px] lg:gap-[77px] rounded-3xl px-[24px] py-[6px] justify-between z-10 h-auto">
-        {/* Gradient border */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-tr  backdrop-blur-lg p-[1px] rounded-3xl -z-40"
-          animate={
-            isOpened ? { height: ['100%', 400] } : { height: [400, '100%'] }
-          }
-          transition={{ duration: 0.8, ease: 'easeInOut' }}
-        >
-          <div className="h-full w-full brightness-200 lg:hidden py-7 flex bg-transparent text-white rounded-3xl">
+      <div className="relative lg:w-[1133px] z-50 backdrop-blur-sm pt-2 top-9 md:top-0 md:w-[98vw] w-full md:pt-4 text-sm md:text-sm lg:text-[16px] md:pb-4 pb-2 border border-transparent bg-clip-border xl:text-lg flex items-center gap-5 md:gap-[20px] lg:gap-[77px] rounded-3xl px-[24px] md:py-[6px] justify-between h-auto">
+        <motion.div className="absolute inset-0 -z-40">
+          <div className="h-full w-full brightness-200 lg:hidden flex bg-transparent text-white rounded-3xl">
             <Image
               src={NavLine}
               alt=""
@@ -120,46 +206,17 @@ const Navbar = (props) => {
                   ? ' hidden md:hidden '
                   : 'w-full h-full flex md:hidden pt-20 pb-10 flex-col gap-6 '
               }
-            >
-              {showItems && (
-                <div className="flex flex-col w-full text-2xl text-white gap-2 md:gap-x-[25px] lg:gap-[34px] xl:gap-[64px] items-center h-full mt-[1px] justify-around">
-                  {Links.map((items, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial="hidden"
-                      custom={idx}
-                      animate="visible"
-                    >
-                      <Link
-                        href={items.href}
-                        className="bg-gradient-to-b text-transparent from-white via-white/60 to-black bg-clip-text"
-                        onClick={
-                          items.name === 'Services'
-                            ? toggleServicesDropdown
-                            : undefined
-                        }
-                      >
-                        {items.name}
-                      </Link>
-                    </motion.div>
-                  ))}
-                </div>
-              )}
-
-              <div className="flex text-white w-auto items-center text-md justify-center gap-[10px] lg:gap-[23px]  ">
-                {showItems && (
-                  <>
-                    <ContactUsBtn />
-                  </>
-                )}
-              </div>
-            </div>
+            ></div>
           </div>
         </motion.div>
 
-        <div className="Logo lg:min-w-[210px] flex items-center justify-center w-[130px] md:w-[200px] min-h-[40px]">
+        <Link
+          href={'/'}
+          onClick={() => setIsOpened(false)}
+          className="Logo lg:min-w-[210px] flex items-center justify-center w-[130px] md:w-[200px] min-h-[40px]"
+        >
           <Image priority src={Logo} alt="company-logo" />
-        </div>
+        </Link>
 
         <div className="Elements hidden md:flex w-full xl:w-auto">
           <div className="flex w-full text-white gap-x-2 md:gap-[10px] lg:gap-[24px] xl:gap-[64px] items-center h-full mt-[1px] justify-around">
@@ -179,36 +236,39 @@ const Navbar = (props) => {
         </div>
 
         {!isOpened ? (
-          <motion.button
+          <button
             onClick={handleMenuOpen}
-            className="text-white w-[82px] h-[35px] items-center gap-x-2 md:hidden justify-center relative flex bg-white/5 rounded-3xl"
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            whileHover={{
-              scale: 1.1,
-              backgroundColor: 'rgba(255,255,255,0.15)',
-            }}
-            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            className="relative w-[90px] h-[44px] md:hidden "
           >
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#5BD4DD] via-black to-[#5BD4DD] brightness-50 rounded-3xl p-[1px] -z-40">
-              <div className="h-full w-full bg-black rounded-3xl"></div>
+            {' '}
+            <div className={`animated-border-box-nav md:hidden w-full h-full`}>
+              <div className="relative w-full h-full rounded-full overflow-hidden">
+                <div className="flashlight" />
+                <div className="absolute inset-0 flex items-center justify-center z-20">
+                  <p className="text-md bg-gradient-to-b from-white/10 to-white text-transparent bg-clip-text tracking-wide">
+                    Menu
+                  </p>
+                </div>
+              </div>
             </div>
-            <Image src={Hamburger} alt="menu" />
-            <span className="bg-gradient-to-b font-bold text-transparent from-white via-white/60 to-black bg-clip-text">
-              Menu
-            </span>
-          </motion.button>
+          </button>
         ) : (
-          <motion.button
+          <button
             onClick={handleMenuClose}
-            className="w-[82px] h-[35px] flex justify-center md:hidden items-center"
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            className="relative w-[90px] h-[44px] md:hidden -z-50"
           >
-            <MdOutlineClose className="w-10 h-10 text-white/20 " />
-          </motion.button>
+            {' '}
+            <div className={`animated-border-box-nav md:hidden w-full h-full`}>
+              <div className="relative w-full h-full rounded-full overflow-hidden">
+                <div className="flashlight" />
+                <div className="absolute inset-0 flex items-center justify-center z-20">
+                  <p className="text-md bg-gradient-to-b flex gap-x-1 items-center justify-center from-white/10 to-white text-transparent bg-clip-text tracking-wide">
+                    <RiCloseFill className="text-white/50 w-5 h-5" /> Close
+                  </p>
+                </div>
+              </div>
+            </div>
+          </button>
         )}
 
         <div className="hidden md:flex text-white w-auto items-center justify-center gap-[10px] lg:gap-[23px] z-10 ">
@@ -218,7 +278,7 @@ const Navbar = (props) => {
       <AnimatePresence initial={false} mode="wait" onExitComplete={() => null}>
         {showServicesDropdown && (
           <motion.div
-            className="w-full px-10 py-5 absolute mt-24 grid md:grid-cols-2 grid-cols-1 grid-rows-4 gap-3 items-center justify-center  backdrop-blur-md rounded-b-3xl"
+            className="w-full px-10 py-5 absolute mt-24 grid md:grid-cols-2 grid-cols-1 grid-rows-4 gap-3 items-center justify-center  backdrop-blur-lg rounded-b-3xl"
             initial="closed"
             animate="open"
             exit="closed"

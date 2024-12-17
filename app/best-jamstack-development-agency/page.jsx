@@ -46,7 +46,7 @@ const Jamstack = async () => {
   };
 
   return (
-    <div className=" w-full px-4 md:px-0  min-h-screen flex flex-col max-w-screen-xl mx-auto md:gap-[120px] gap-[80px] items-center ">
+    <div className=" w-full px-4 md:px-0 mt-16 md:mt-24 min-h-screen flex flex-col max-w-screen-xl mx-auto md:gap-[120px] gap-[80px] items-center ">
       <div className="w-full z-10  h-[50%] bg-gradient-to-b from-[#1996a291] to-[#020C0D] absolute top-0"></div>
       <div className=" max-w-screen-xl mt-20 gap-5 z-20 flex lg:flex-row flex-col items-center justify-center ">
         <div className="left   h-full flex flex-col items-center justify-center w-full lg:w-[50%]">

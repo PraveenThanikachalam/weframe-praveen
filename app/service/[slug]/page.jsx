@@ -46,7 +46,7 @@ const page = async ({ params }) => {
   if (!data) return;
 
   return (
-    <div className=" w-full px-4 md:px-0  min-h-screen flex flex-col md:gap-48 overflow-x-hidden gap-[80px] items-center">
+    <div className=" w-full px-4 md:px-0 mt-14 md:mt-24 min-h-screen flex flex-col md:gap-48 overflow-x-hidden gap-[80px] items-center">
       <div className="w-full z-10 h-[50%] bg-gradient-to-b from-[#1996a291] to-[#020C0D] absolute top-0"></div>
       <div className=" max-w-screen-xl md:mt-32 mt-20 gap-5 z-20 flex flex-col items-center justify-center">
         <div className="left h-full flex flex-col items-center justify-center w-full max-w-4xl">

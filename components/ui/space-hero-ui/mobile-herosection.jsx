@@ -20,11 +20,11 @@ export default function MobileHerosection() {
       className={`${sf_pro.className} w-full h-[100vh] relative overflow-hidden z-0 bg-[#020708]`}
     >
       <MobileBg />
-      <div className="absolute top-0 h-full w-full flex items-center flex-col justify-center -translate-y-16 ">
-        <span className="text-[32px] font-bold text-white">
+      <div className="absolute top-0 h-full w-full flex items-center align-middle text-center flex-col justify-center -translate-y-16 ">
+        <span className="text-[34px] font-bold text-white/90">
           Jamstack & Headless
         </span>
-        <span className="text-[32px] font-semibold text-[#A8ACAD]">
+        <span className="text-[30px] font-semibold text-[#A8ACAD]">
           {' '}
           Commerce{' '}
           <span
@@ -33,7 +33,7 @@ export default function MobileHerosection() {
             Specialists
           </span>
         </span>
-        <span className="text-center md:w-[530px] break-words align-middle text-[14px] bg-gradient-to-b p-2 from-white to-white/30 leading-6 z-10 bg-clip-text text-transparent ">
+        <span className="text-center md:w-[530px] w-[350px] break-words align-middle text-[14px] bg-gradient-to-b p-2 from-white to-white/30 leading-6 z-10 bg-clip-text text-transparent ">
           Welcome to WeframeTech—where we build cutting-edge, high-performance
           websites engineered to elevate your business into the top 1%.
         </span>

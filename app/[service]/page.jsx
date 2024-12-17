@@ -43,7 +43,7 @@ const Service = async ({ params }) => {
     section2_contents: data?.section1_content,
   };
   return (
-    <main className="w-full ">
+    <main className="w-full">
       <div className="w-full flex items-center justify-center relative z-20">
         <div className="w-full -z-10 absolute h-screen  bottom-0  ">
           <Image

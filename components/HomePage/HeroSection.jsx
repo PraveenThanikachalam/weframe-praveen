@@ -26,19 +26,15 @@ const bircolageGrotesque = Bricolage_Grotesque({
 const HeroSection = ({ heroData }) => {
   const [isMobile, setIsMobile] = useState(false);
 
-  // Check screen size
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 1024); // Mobile view for screens less than 1024px
+      setIsMobile(window.innerWidth < 1024); 
     };
 
-    // Initial check
     checkScreenSize();
 
-    // Add event listener to handle window resizing
     window.addEventListener('resize', checkScreenSize);
 
-    // Cleanup on unmount
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
